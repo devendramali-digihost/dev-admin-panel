@@ -78,3 +78,46 @@
     display: block;
   }
 }
+.waves-effect {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  // overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  .dropdown{
+    .dropdown-menu{
+      position: absolute;
+      top: 95% !important;
+    }
+  }
+  .show{
+    .dropdown-menu{
+      -webkit-box-shadow: 0 5px 12px rgba(0, 0, 0, .1);
+      box-shadow: 0 5px 12px rgba(0, 0, 0, .1);
+      // -webkit-animation-name: DropDownSlide;
+      animation-name: DropDownSlide;
+      -webkit-animation-duration: .3s;
+      animation-duration: .3s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      margin: 0;
+      position: absolute;
+      z-index: 1000;
+    }
+  }
+}
+@keyframes DropDownSlide {
+  100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0)
+  }
+
+  0% {
+      -webkit-transform: translateY(10px);
+      transform: translateY(10px)
+  }
+}
