@@ -33,27 +33,22 @@ export const renderRoutes = (routes = []) => (
 const routes = [
   {
     exact: 'true',
-    path: '/login',
-    element: lazy(() => import('./views/auth/signin/SignIn1'))
+    path: '/auth/signin',
+    element: lazy(() => import('./views/auth/signin/SignIn'))
   },
+  // {
+  //   exact: 'true',
+  //   path: '/auth/signup-1',
+  //   element: lazy(() => import('./views/auth/signup/SignUp1'))
+  // },
   {
     exact: 'true',
-    path: '/auth/signin-1',
-    element: lazy(() => import('./views/auth/signin/SignIn1'))
-  },
-  {
-    exact: 'true',
-    path: '/auth/signup-1',
-    element: lazy(() => import('./views/auth/signup/SignUp1'))
-  },
-  {
-    exact: 'true',
-    path: '/auth/forgotpassword-1',
+    path: '/auth/forgotpassword',
     element: lazy(() => import('./views/auth/signin/Forgotpassword'))
   },
   {
     exact: 'true',
-    path: '/auth/resetpassword-1',
+    path: '/auth/resetpassword',
     element: lazy(() => import('./views/auth/signin/Resetpassword'))
   },
   {
@@ -105,21 +100,21 @@ const routes = [
         path: '/forms/form-companysignup',
         element: lazy(() => import('./views/forms/CompanySignUp'))
       },
-      // {
-      //   exact: 'true',
-      //   path: '/create-page/create-new-page',
-      //   element: lazy(() => import('./views/create-page/CreateNewPage'))
-      // },
+      {
+        exact: 'true',
+        path: '/create-page/create-new-page',
+        element: lazy(() => import('./views/create-page/CreateNewPage'))
+      },
       // {
       //   exact: 'true',
       //   path: '/create-page/page-list',
       //   element: lazy(() => import('./views/create-page/PageList'))
       // },
-      // {
-      //   exact: 'true',
-      //   path: '/tables/bootstrap',
-      //   element: lazy(() => import('./views/tables/BootstrapTable'))
-      // },
+      {
+        exact: 'true',
+        path: '/tables/bootstrap',
+        element: lazy(() => import('./views/tables/BootstrapTable'))
+      },
       // {
       //   exact: 'true',
       //   path: '/charts/nvd3',

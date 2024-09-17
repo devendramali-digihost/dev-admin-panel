@@ -79,22 +79,21 @@ const menuItems = {
 					type: 'item',
 					icon: 'feather icon-file-text',
 					url: '/forms/form-companysignup'
+				},
+				{
+					id: 'table',
+					title: 'Create New Page',
+					type: 'item',
+					icon: 'feather icon-file-text',
+					url: '/create-page/create-new-page'
+				},
+				{
+					id: 'table',
+					title: 'Basic Table',
+					type: 'item',
+					icon: 'feather icon-file-text',
+					url: '/tables/bootstrap'
 				}
-				// ,
-				// {
-				// 	id: 'table',
-				// 	title: 'Create New Page',
-				// 	type: 'item',
-				// 	icon: 'feather icon-file-text',
-				// 	url: '/create-page/create-new-page'
-				// },
-				// {
-				// 	id: 'table',
-				// 	title: 'Page List',
-				// 	type: 'item',
-				// 	icon: 'feather icon-file-text',
-				// 	url: '/create-page/page-list'
-				// }
 
 			]
 		},
@@ -162,71 +161,8 @@ const menuItems = {
 		// 		classes: 'nav-item',
 		// 		icon: 'feather icon-sidebar'
 		// 		},
-		// 		{
-		// 		id: 'documentation',
-		// 		title: 'Documentation',
-		// 		type: 'item',
-		// 		icon: 'feather icon-book',
-		// 		classes: 'nav-item',
-		// 		url: 'https://codedthemes.gitbook.io/datta/',
-		// 		target: true,
-		// 		external: true
-		// 		},
-		// 		{
-		// 		id: 'menu-level',
-		// 		title: 'Menu Levels',
-		// 		type: 'collapse',
-		// 		icon: 'feather icon-menu',
-		// 		children: [
-		// 			{
-		// 			id: 'menu-level-1.1',
-		// 			title: 'Menu Level 1.1',
-		// 			type: 'item',
-		// 			url: '#!'
-		// 			},
-		// 			{
-		// 			id: 'menu-level-1.2',
-		// 			title: 'Menu Level 2.2',
-		// 			type: 'collapse',
-		// 			children: [
-		// 				{
-		// 				id: 'menu-level-2.1',
-		// 				title: 'Menu Level 2.1',
-		// 				type: 'item',
-		// 				url: '#'
-		// 				},
-		// 				{
-		// 				id: 'menu-level-2.2',
-		// 				title: 'Menu Level 2.2',
-		// 				type: 'collapse',
-		// 				children: [
-		// 					{
-		// 					id: 'menu-level-3.1',
-		// 					title: 'Menu Level 3.1',
-		// 					type: 'item',
-		// 					url: '#'
-		// 					},
-		// 					{
-		// 					id: 'menu-level-3.2',
-		// 					title: 'Menu Level 3.2',
-		// 					type: 'item',
-		// 					url: '#'
-		// 					}
-		// 				]
-		// 				}
-		// 			]
-		// 			}
-		// 		]
-		// 		}
-		// 		// ,
-		// 		// {
-		// 		//   id: 'disabled-menu',
-		// 		//   title: 'Disabled Menu',
-		// 		//   type: 'item',
-		// 		//   url: '#',
-		// 		//   classes: 'nav-item disabled',
-		// 		//   icon: 'feather icon-power'
-		// 		// }
+		//
+		//
 		// 	]
 		// }
 	]

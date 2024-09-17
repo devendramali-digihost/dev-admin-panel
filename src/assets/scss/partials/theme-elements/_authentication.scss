@@ -1,174 +1,301 @@
 /**  =====================
       Authentication css start
 ==========================  **/
-.auth-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  min-width: 100%;
-  min-height: 100vh;
-  a,
-  p > a {
-    color: $theme-heading-color;
-    font-weight: 600;
-  }
-  .btn-auth-gen {
-    .btn-icon {
-      width: 140px;
-      height: 140px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 45px;
+// .auth-wrapper {
+//   position: relative;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   overflow: hidden;
+//   min-width: 100%;
+//   min-height: 100vh;
+//   a,
+//   p > a {
+//     color: $theme-heading-color;
+//     font-weight: 600;
+//   }
+//   .btn-auth-gen {
+//     .btn-icon {
+//       width: 140px;
+//       height: 140px;
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//       font-size: 45px;
 
-      small {
-        font-size: 15px;
-      }
+//       small {
+//         font-size: 15px;
+//       }
+//     }
+//   }
+//   .input-group {
+//     background: transparent;
+//   }
+//   .card {
+//     margin-bottom: 0;
+//   }
+
+//   > div {
+//     z-index: 5;
+//   }
+
+//   .auth-content {
+//     position: relative;
+//     width: 390px;
+//     padding: 15px;
+//     z-index: 5;
+//     &.multyform,
+//     &.subscribe {
+//       width: 750px;
+//     }
+//   }
+//   @media only screen and (max-width: 768px) {
+//     max-width: 360px;
+//   }
+//   @media only screen and (max-width: 575px) {
+//     .card {
+//       .card-body {
+//         padding: 30px 15px;
+//       }
+//     }
+//   }
+
+//   .auth-icon {
+//     font-size: 30px;
+//     &:before {
+//       background: $theme-color;
+//       background-clip: inherit;
+//       -webkit-background-clip: text;
+//       -webkit-text-fill-color: transparent;
+//     }
+//     color: #1dcae0;
+//   }
+
+//   &.offline {
+//     background-image: none;
+
+//     &:before {
+//       display: none;
+//     }
+//   }
+
+//   .auth-bg {
+//     .r {
+//       position: absolute;
+//       width: 300px;
+//       height: 300px;
+//       border-radius: 50%;
+
+//       &:first-child {
+//         top: -100px;
+//         right: -100px;
+//         background: $theme-color;
+//       }
+
+//       &:last-child {
+//         left: -100px;
+//         bottom: -100px;
+//         background: $theme-color2;
+//       }
+
+//       &.s {
+//         width: 20px;
+//         height: 20px;
+//         &:nth-child(2) {
+//           top: 150px;
+//           right: -150px;
+//           background: $primary-color;
+//         }
+
+//         &:nth-child(3) {
+//           left: -150px;
+//           bottom: 150px;
+//           background: $success-color;
+//         }
+//       }
+
+//       &:nth-child(odd) {
+//         animation: floating 7s infinite;
+//       }
+
+//       &:nth-child(even) {
+//         animation: floating 9s infinite;
+//       }
+//     }
+//   }
+// }
+// /* image variant start */
+// .aut-bg-img {
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   background-position: center;
+// }
+// .aut-bg-img-side {
+//   p {
+//     line-height: 2;
+//   }
+// }
+// .aut-bg-img,
+// .aut-bg-img-side {
+//   .custom-select,
+//   .form-control {
+//     background: transparent;
+//   }
+// }
+// .auth-tabs {
+//   .tab-content {
+//     overflow: hidden;
+//     position: relative;
+//     .tab-pane > * {
+//       position: relative;
+//       z-index: 5;
+//     }
+//     .auth-icon {
+//       position: absolute;
+//       bottom: 0;
+//       right: 0;
+//       font-size: 180px;
+//       transform: rotate(-30deg);
+//       z-index: 1;
+//       opacity: 0.2;
+//     }
+//   }
+// }
+/* image varient start */
+// @keyframes floating {
+//   from {
+//     transform: rotate(0deg) translate(-10px) rotate(0deg);
+//   }
+
+//   to {
+//     transform: rotate(360deg) translate(-10px) rotate(-360deg);
+//   }
+// }
+/**====== Authentication css end ======**/
+
+.auth-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  p,
+  a {
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+  }
+
+  p {
+    a {
+      color: $primary-color;
     }
   }
-  .input-group {
-    background: transparent;
-  }
-  .card {
-    margin-bottom: 0;
-  }
-
-  > div {
-    z-index: 5;
+  .auth-row {
+    min-height: 100vh;
+    gap: 0;
   }
 
   .auth-content {
-    position: relative;
-    width: 390px;
-    padding: 15px;
-    z-index: 5;
-    &.multyform,
-    &.subscribe {
-      width: 750px;
-    }
-  }
-  @media only screen and (max-width: 768px) {
-    max-width: 360px;
-  }
-  @media only screen and (max-width: 575px) {
+    height: 100%;
     .card {
+      height: 100%;
+
       .card-body {
-        padding: 30px 15px;
-      }
-    }
-  }
-
-  .auth-icon {
-    font-size: 30px;
-    &:before {
-      background: $theme-color;
-      background-clip: inherit;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    color: #1dcae0;
-  }
-
-  &.offline {
-    background-image: none;
-
-    &:before {
-      display: none;
-    }
-  }
-
-  .auth-bg {
-    .r {
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-
-      &:first-child {
-        top: -100px;
-        right: -100px;
-        background: $theme-color;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0rem 6rem;
       }
 
-      &:last-child {
-        left: -100px;
-        bottom: -100px;
-        background: $theme-color2;
-      }
-
-      &.s {
-        width: 20px;
-        height: 20px;
-        &:nth-child(2) {
-          top: 150px;
-          right: -150px;
-          background: $primary-color;
+      .input-container {
+        border: var(--bs-border-width) solid var(--bs-border-color);
+        border-radius: var(--bs-border-radius);
+        position: relative;
+        input {
+          border: 0;
+          height: auto;
+          padding-left: 45px;
+          padding-top: 25px;
+          font-family: 'Nunito', sans-serif;
         }
-
-        &:nth-child(3) {
-          left: -150px;
-          bottom: 150px;
-          background: $success-color;
+        svg {
+          color: #1a776f;
+          font-size: 18px;
+        }
+        .form-label {
+          position: absolute;
+          left: 45px;
+          top: 5px;
+          font-family: 'Nunito', sans-serif;
         }
       }
-
-      &:nth-child(odd) {
-        animation: floating 7s infinite;
-      }
-
-      &:nth-child(even) {
-        animation: floating 9s infinite;
-      }
     }
   }
-}
-/* image variant start */
-.aut-bg-img {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.aut-bg-img-side {
-  p {
-    line-height: 2;
+  .logo {
+    img {
+      width: 80%;
+      margin-bottom: 20px;
+    }
   }
-}
-.aut-bg-img,
-.aut-bg-img-side {
-  .custom-select,
-  .form-control {
-    background: transparent;
-  }
-}
-.auth-tabs {
-  .tab-content {
-    overflow: hidden;
+  .image {
+    height: 100%;
     position: relative;
-    .tab-pane > * {
-      position: relative;
-      z-index: 5;
-    }
-    .auth-icon {
+    &::after {
+      content: '';
       position: absolute;
-      bottom: 0;
-      right: 0;
-      font-size: 180px;
-      transform: rotate(-30deg);
-      z-index: 1;
-      opacity: 0.2;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #36323275;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: left;
+    }
+  }
+  form {
+    .icon {
+      position: absolute;
+      top: 50%;
+      left: 1%;
+      transform: translateY(-50%);
+      background: #fff;
+      height: 96%;
+      width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .form-check {
+      display: flex;
+      gap: 10px;
+      .form-check-input {
+        &:checked {
+          background-color: #1a776f;
+          border-color: #1a776f;
+        }
+        &:focus {
+          border-color: #1a776f;
+          outline: 0;
+          box-shadow: 0 0 0 0.15rem rgb(26 119 111 / 28%);
+        }
+      }
+    }
+    button {
+      padding: 10px 30px;
+      font-family: 'Nunito', sans-serif;
+    }
+  }
+  .below-text {
+    margin-top: 34px;
+  }
+  .forgot {
+    a {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      justify-content: center;
+      gap: 10px;
     }
   }
 }
-/* image varient start */
-@keyframes floating {
-  from {
-    transform: rotate(0deg) translate(-10px) rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg) translate(-10px) rotate(-360deg);
-  }
-}
-/**====== Authentication css end ======**/

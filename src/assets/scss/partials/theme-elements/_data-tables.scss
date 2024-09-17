@@ -5,13 +5,16 @@
   color: #888;
   td,
   th {
-    border-top: 1px solid $theme-border;
+    // border-top: 1px solid $theme-border;
+    border-top: 0;
     white-space: nowrap;
     padding: 1.05rem 0.75rem;
+    color: $dark-color
   }
 
   thead th {
     border-bottom: 1px solid $theme-border;
+    font-weight: 600;
   }
 
   tbody + tbody {
