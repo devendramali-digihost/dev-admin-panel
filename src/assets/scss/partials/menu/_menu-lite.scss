@@ -232,15 +232,19 @@
         background: transparent;
       }
 
-      &:after {
-        content: '\e842';
-        font-family: 'feather';
-        font-size: 15px;
-        border: none;
-        position: absolute;
-        top: 0;
-        right: 0;
+      &#dropdown-basic{
+        &:after {
+          content: '\e842';
+          font-family: 'feather';
+          font-size: 15px;
+          border: none;
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
       }
+
+      
     }
 
     .dropdown-menu {
@@ -1114,7 +1118,9 @@
   }
 }
 .navbar-collapse {
-  background: #e5f1f1;
+  background: #ffffff;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
 }
 /* menu [ vertical ] css end */
 
