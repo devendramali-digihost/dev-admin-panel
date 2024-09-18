@@ -55,13 +55,13 @@ const CompanySignUp = () => {
                                     <Col lg={6}>
                                         <Form.Group className="mb-3" controlId="CompanyDescription">
                                             <Form.Label>Company Description</Form.Label>
-                                            <Form.Control as="textarea" rows={3} placeholder="Add Company Description" />
+                                            <Form.Control as="textarea" rows={1} placeholder="Add Company Description" />
                                         </Form.Group>
                                     </Col>
                                     <Col lg={6}>
                                         <Form.Group className="mb-3" controlId="CompanyDomain">
                                             <Form.Label>Company Domain</Form.Label>
-                                            <Form.Control as="textarea" rows={3} placeholder="Add Company Domain" />
+                                            <Form.Control as="textarea" rows={1} placeholder="Add Company Domain" />
                                         </Form.Group>
                                     </Col>
                                     <Col lg={12}>
