@@ -6,7 +6,8 @@ import NavRight from './NavRight';
 
 import { ConfigContext } from '../../../contexts/ConfigContext';
 import * as actionType from '../../../store/actions';
-
+import Waves from 'node-waves';
+import 'node-waves/dist/waves.css';
 const NavBar = () => {
   const [moreToggle, setMoreToggle] = useState(false);
   const configContext = useContext(ConfigContext);
@@ -28,6 +29,8 @@ const NavBar = () => {
   };
 
   let moreClass = ['mob-toggler'];
+  
+  Waves.init();
 
   let collapseClass = ['collapse navbar-collapse'];
   if (moreToggle) {

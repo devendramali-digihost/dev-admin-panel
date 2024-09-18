@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ListGroup, Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import useWindowSize from '../../../../hooks/useWindowSize';
 import NavSearch from './NavSearch';
 
+
 const NavLeft = () => {
   const windowSize = useWindowSize();
 
-  let navItemClass = ['nav-item'];
+  let navItemClass = ['nav-item waves-effect-1' ];
   if (windowSize.width <= 575) {
     navItemClass = [...navItemClass, 'd-none'];
   }
 
+ 
+
+ 
   return (
     <React.Fragment>
       <ListGroup as="ul" bsPrefix=" " className="navbar-nav mr-auto">
@@ -20,8 +24,8 @@ const NavLeft = () => {
           <NavSearch windowWidth={windowSize.width} />
         </ListGroup.Item>
         <ListGroup.Item as="li" bsPrefix=" " className={navItemClass.join(' ') }>
-          <Dropdown align={'start'}>
-            <Dropdown.Toggle variant={'link'} id="dropdown-basic">
+          <Dropdown align={'start'}  >
+            <Dropdown.Toggle variant={'link'} id="dropdown-basic" className='waves-effect dropdown-basic'>
               Dropdown
             </Dropdown.Toggle>
             <ul>

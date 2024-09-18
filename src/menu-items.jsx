@@ -96,7 +96,7 @@ const menuItems = {
         },
         {
 			id: 'form',
-			title: 'Sign In test',
+			title: 'Sign In test test',
 			type: 'item',
 			icon: 'feather icon-file-text',
 			url: '/auth/signin'
