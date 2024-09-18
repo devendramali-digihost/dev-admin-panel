@@ -15,6 +15,22 @@
   thead th {
     border-bottom: 1px solid $theme-border;
     font-weight: 600;
+    padding: .75rem .75rem;
+    background-color: var(--bs-table-bg);
+    -webkit-box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+    box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+
+    &:first-child{
+      padding-left: 0;
+    }
+  }
+
+  tbody{
+    td{
+      &:first-child{
+        padding-left: 0;
+      }
+    }
   }
 
   tbody + tbody {

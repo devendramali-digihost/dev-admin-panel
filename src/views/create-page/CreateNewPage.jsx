@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Row, Col, Card, Table, Form  } from 'react-bootstrap';
+import { Row, Col, Card, Table, Form, Button } from 'react-bootstrap';
 
 const CreateNewPage = () => {
 	// Initial state for rows, each row contains a name and an age
@@ -28,23 +28,27 @@ const CreateNewPage = () => {
 		<React.Fragment>
 			<Row>
 				<Card>
-					{/* <Card.Header>
-						<Card.Title as="h5">Basic Table</Card.Title>
-						<span className="d-block m-t-5">
-							use bootstrap <code>Table</code> component
-						</span>
-					</Card.Header> */}
+					<Card.Header>
+						<Row>
+							<Col lg={3}>
+								<Form.Group controlId="PageName">
+									<Form.Label>Page Name</Form.Label>
+									<Form.Control type="text" placeholder="Page Name" />
+								</Form.Group>
+							</Col>
+						</Row>
+					</Card.Header>
 					<Card.Body>
 						<Table responsive>
 							<thead>
 								<tr>
-									<th>Name</th>
-									<th>Type</th>
-									<th>Length Value</th>
-									<th>Key</th>
-									<th>Field</th>
-									<th>field Type</th>
-									<th>Actions</th>
+									<th style={{minWidth:"240px"}}>Name</th>
+									<th style={{minWidth:"240px"}}>Type</th>
+									<th style={{minWidth:"240px"}}>Length Value</th>
+									<th style={{minWidth:"240px"}}>Key</th>
+									<th style={{minWidth:"240px"}}>Field</th>
+									<th style={{minWidth:"240px"}}>field Type</th>
+									<th style={{minWidth:"100px"}}>Actions</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -52,12 +56,12 @@ const CreateNewPage = () => {
 									<tr key={index}>
 										<td>
 											<input
-											type="text"
-											name="name"
-											className="form-control"
-											value={row.name}
-											onChange={(e) => handleChange(index, e)}
-											placeholder="Enter name"
+												type="text"
+												name="name"
+												className="form-control"
+												value={row.name}
+												onChange={(e) => handleChange(index, e)}
+												placeholder="Enter name"
 											/>
 										</td>
 										<td>
@@ -73,11 +77,12 @@ const CreateNewPage = () => {
 										</td>
 										<td>
 											<input
-											type="number"
-											name="age"
-											value={row.age}
-											onChange={(e) => handleChange(index, e)}
-											placeholder="Enter age"
+												type="number"
+												className="form-control"
+												name="age"
+												value={row.age}
+												onChange={(e) => handleChange(index, e)}
+												placeholder="Enter age"
 											/>
 										</td>
 										<td>
@@ -111,13 +116,22 @@ const CreateNewPage = () => {
 											</Form.Select>
 										</td>
 										<td>
-											<button onClick={() => handleRemoveRow(index)}>Delete</button>
+											<a onClick={() => handleRemoveRow(index)} className="btn btn-outline-danger btn-sm edit" title="Delete">
+												<i class="fas fa-times m-0" title="Close"></i>
+
+											</a>
 										</td>
 									</tr>
 								))}
 							</tbody>
 						</Table>
-						<button onClick={handleAddRow}>Add Row</button>
+						<Row>
+							<Col lg={12}>
+								<div className="text-end mt-5">
+									<Button variant="primary" onClick={handleAddRow}>Add Row</Button>
+								</div>
+							</Col>
+						</Row>
 					</Card.Body>
 				</Card>
 			</Row>
