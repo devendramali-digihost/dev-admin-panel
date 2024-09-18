@@ -47,7 +47,7 @@ const CreateNewPage = () => {
 									<th style={{minWidth:"240px"}}>Length Value</th>
 									<th style={{minWidth:"240px"}}>Key</th>
 									<th style={{minWidth:"240px"}}>Field</th>
-									<th style={{minWidth:"240px"}}>field Type</th>
+									<th style={{minWidth:"240px"}}>Field Type</th>
 									<th style={{minWidth:"100px"}}>Actions</th>
 								</tr>
 							</thead>
@@ -127,8 +127,13 @@ const CreateNewPage = () => {
 						</Table>
 						<Row>
 							<Col lg={12}>
-								<div className="text-end mt-5">
+								<div className="text-start mb-3 mt-5">
 									<Button variant="primary" onClick={handleAddRow}>Add Row</Button>
+								</div>
+							</Col>
+							<Col lg={12}>
+								<div className="text-end">
+									<Button variant="primary">Submit</Button>
 								</div>
 							</Col>
 						</Row>
