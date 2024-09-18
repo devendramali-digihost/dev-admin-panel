@@ -2,7 +2,7 @@ const menuItems = {
 	items: [
 		{
 			id: 'navigation',
-			title: 'Navigation11',
+			title: 'Navigation',
 			type: 'group',
 			icon: 'icon-navigation',
 			children: [
