@@ -1,0 +1,25 @@
+.company-list {
+  .card {
+    padding: 25px;
+    h4 {
+      font-size: 15px;
+      margin: 0 0 7px 0;
+      font-weight: 500;
+      color: $dark-color;
+    }
+    .edit-button {
+      color: $secondary-color;
+      background: #fff;
+      border: 1px solid $secondary-color;
+
+      &:hover {
+        color: #fff;
+        background: $secondary-color;
+      }
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}

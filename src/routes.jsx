@@ -76,6 +76,13 @@ const routes = [
         path: '/tables/bootstrap',
         element: lazy(() => import('./views/tables/BootstrapTable'))
       },
+      // Company list
+      {
+        exact: 'true',
+        path: '/company/company-list',
+        element: lazy(() => import('./views/company/companyList'))
+      },
+      // Company list
       {
         path: '*',
         exact: 'true',
