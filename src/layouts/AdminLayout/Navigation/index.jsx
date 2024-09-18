@@ -5,7 +5,7 @@ import useWindowSize from '../../../hooks/useWindowSize';
 
 import NavLogo from './NavLogo';
 import NavContent from './NavContent';
-import navigation from '../../../menu-items';
+import navigation from '../../../menu-items-bkp';
 
 const Navigation = () => {
   const configContext = useContext(ConfigContext);

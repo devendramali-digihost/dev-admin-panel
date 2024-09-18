@@ -37,9 +37,9 @@ const NavRight = () => {
   return (
     <React.Fragment>
       <ListGroup as="ul" bsPrefix=" " className="navbar-nav ml-auto" id="navbar-right">
-        <ListGroup.Item as="li" bsPrefix=" " className='waves-effect'>
+        <ListGroup.Item as="li" bsPrefix=" " className='waves-effect-1'>
           <Dropdown align="end">
-            <Dropdown.Toggle as={Link} variant="link" to="#" id="dropdown-basic">
+            <Dropdown.Toggle as={Link} variant="link" to="#" id="dropdown-basic" className='waves-effect'>
               <i className="feather icon-bell icon" />
             </Dropdown.Toggle>
             <Dropdown.Menu align="end" className="notification notification-scroll">
@@ -108,23 +108,23 @@ const NavRight = () => {
             </Dropdown.Menu>
           </Dropdown>
         </ListGroup.Item>
-        <ListGroup.Item as="li" bsPrefix=" ">
+        <ListGroup.Item as="li" bsPrefix=" " className='waves-effect-1'>
           <Dropdown>
-            <Dropdown.Toggle as={Link} variant="link" to="#" className="displayChatbox" onClick={() => setListOpen(true)}>
+            <Dropdown.Toggle as={Link} variant="link" to="#" className="displayChatbox waves-effect" onClick={() => setListOpen(true)}>
               <i className="icon feather icon-mail" />
             </Dropdown.Toggle>
           </Dropdown>
         </ListGroup.Item>
-        <ListGroup.Item as="li" bsPrefix=" " className='waves-effect'>
+        <ListGroup.Item as="li" bsPrefix=" " className='waves-effect-1'>
           <Dropdown align={'end'} className="drp-user menu-drp-user">
-            <Dropdown.Toggle as={Link} variant="link" to="#" id="dropdown-basic" className='profile-notification-1'>
+            <Dropdown.Toggle as={Link} variant="link" to="#" id="dropdown-basic" className='profile-notification-1 waves-effect'>
             <div className="pro-head">
                 <img src={avatar1} className="img-radius" alt="User Profile" />
                 <span>John Doe</span>
                
               </div>
             </Dropdown.Toggle>
-            <Dropdown.Menu align="end" className="profile-notification">
+            <Dropdown.Menu align="end" className="profile-notification ">
               <div className="pro-head">
                 <img src={avatar1} className="img-radius" alt="User Profile" />
                 <span>John Doe</span>
