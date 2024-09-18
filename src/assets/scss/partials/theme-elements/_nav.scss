@@ -121,3 +121,12 @@
       transform: translateY(10px)
   }
 }
+#navbar-right{
+  .dropdown{
+    .dropdown-toggle{
+      &::after{
+        display: none;
+      }
+    }
+  }
+}
