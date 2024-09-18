@@ -95,13 +95,12 @@ const menuItems = {
           url: '/tables/bootstrap'
         },
         {
-          id: 'form',
-          title: 'Sign In',
-          type: 'item',
-          url: '/auth/signin',
-          target: true,
-          breadcrumbs: false
-        },
+			id: 'form',
+			title: 'Sign In',
+			type: 'item',
+			icon: 'feather icon-file-text',
+			url: '/auth/signin'
+		},
         {
           id: 'form',
           title: 'Forgot Password',
