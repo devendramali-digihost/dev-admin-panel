@@ -93,6 +93,28 @@ const menuItems = {
           type: 'item',
           icon: 'feather icon-file-text',
           url: '/tables/bootstrap'
+        },
+        {
+          id: 'form',
+          title: 'Sign In',
+          type: 'item',
+          url: '/auth/signin',
+          target: true,
+          breadcrumbs: false
+        },
+        {
+          id: 'form',
+          title: 'Forgot Password',
+          type: 'item',
+          icon: 'feather icon-file-text',
+          url: '/auth/forgotpassword'
+        },
+        {
+          id: 'form',
+          title: 'Reset Password',
+          type: 'item',
+          icon: 'feather icon-file-text',
+          url: '/auth/resetpassword'
         }
       ]
     }

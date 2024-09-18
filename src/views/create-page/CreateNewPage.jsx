@@ -54,6 +54,7 @@ const CreateNewPage = () => {
 											<input
 											type="text"
 											name="name"
+											className="form-control"
 											value={row.name}
 											onChange={(e) => handleChange(index, e)}
 											placeholder="Enter name"

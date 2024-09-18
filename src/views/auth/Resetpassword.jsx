@@ -1,15 +1,12 @@
 import React from 'react';
 import { Card, Row, Col, Button, Form, FloatingLabel, Container } from 'react-bootstrap';
-import { FaRegUser } from 'react-icons/fa6';
 import { NavLink } from 'react-router-dom';
-import logo from '../../../assets/images/auth/logo.png';
+import logo from '../../assets/images/auth/logo.png';
 import { MdLockOutline } from 'react-icons/md';
-import loginImage from '../../../assets/images/auth/login.jpg';
-import Breadcrumb from '../../../layouts/AdminLayout/Breadcrumb';
+import loginImage from '../../assets/images/auth/login.jpg';
 const Resetpassword = () => {
   return (
     <React.Fragment>
-      <Breadcrumb />
       <div className="auth-wrapper">
         <Container fluid>
           <Row className="auth-row">
@@ -70,49 +67,7 @@ const Resetpassword = () => {
         </Container>
       </div>
     </React.Fragment>
-    // <React.Fragment>
-    //     <Breadcrumb />
-    //     <div className="auth-wrapper">
-    //         <div className="auth-content">
-    //             <div className="auth-bg">
-    //                 <span className="r" />
-    //                 <span className="r s" />
-    //                 <span className="r s" />
-    //                 <span className="r" />
-    //             </div>
-    //             <Card className="borderless text-center">
-    //                 <Card.Body>
-    //                     <div className="mb-4">
-    //                         <i className="feather icon-unlock auth-icon" />
-    //                         <h5 className="mt-1">Reset Password</h5>
-    //                     </div>
-    //                     <Form>
-    //                         <FloatingLabel controlId="floatingPassword" label="Set New Password">
-    //                             <Form.Control
-    //                                 type="password"
-    //                                 placeholder="Set New Password"
-    //                                 className="mb-3"
-    //                             />
-    //                         </FloatingLabel>
-    //                         <FloatingLabel controlId="floatingPassword" label="Confirm New Password">
-    //                             <Form.Control
-    //                                 type="password"
-    //                                 placeholder="Confirm New Password"
-    //                             />
-    //                         </FloatingLabel>
-    //                         <Row className="mt-4">
-    //                             <Col mt={2}>
-    //                                 <Button className="btn-block mb-4" color="primary" size="large" type="submit" variant="primary">
-    //                                     Submit
-    //                                 </Button>
-    //                             </Col>
-    //                         </Row>
-    //                     </Form>
-    //                 </Card.Body>
-    //             </Card>
-    //         </div>
-    //     </div>
-    // </React.Fragment>
+
   );
 };
 

@@ -9,12 +9,18 @@
 }
 
 .breadcrumb-item {
+  > a {
+    color: #505d69;
+  }
   + .breadcrumb-item {
     color: $primary-color;
   }
 
   &.active {
-    color: $theme-heading-color;
+    color: #74788d;
+    a {
+      color: #74788d;
+    }
   }
 }
 
@@ -26,5 +32,30 @@
     background-color: $primary-color;
     border-color: $primary-color;
   }
+}
+
+.bread-crumb-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+
+  .page-header-title {
+    h5 {
+      font-size: 16px;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #373b3b;
+    }
+  }
+  ul.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.page-header-title + .breadcrumb > .breadcrumb-item:last-child a {
+  color: #74788d;
+  font-weight: 400;
 }
 /**====== Breadcrumbs & Pagination css end ======**/

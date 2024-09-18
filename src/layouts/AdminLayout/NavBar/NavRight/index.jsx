@@ -116,9 +116,13 @@ const NavRight = () => {
           </Dropdown>
         </ListGroup.Item>
         <ListGroup.Item as="li" bsPrefix=" " className='waves-effect'>
-          <Dropdown align={'end'} className="drp-user">
-            <Dropdown.Toggle as={Link} variant="link" to="#" id="dropdown-basic">
-              <i className="icon feather icon-settings" />
+          <Dropdown align={'end'} className="drp-user menu-drp-user">
+            <Dropdown.Toggle as={Link} variant="link" to="#" id="dropdown-basic" className='profile-notification-1'>
+            <div className="pro-head">
+                <img src={avatar1} className="img-radius" alt="User Profile" />
+                <span>John Doe</span>
+               
+              </div>
             </Dropdown.Toggle>
             <Dropdown.Menu align="end" className="profile-notification">
               <div className="pro-head">
@@ -151,6 +155,14 @@ const NavRight = () => {
                 </ListGroup.Item>
               </ListGroup>
             </Dropdown.Menu>
+          </Dropdown>
+        </ListGroup.Item>
+        <ListGroup.Item as="li" bsPrefix=" " className='waves-effect'>
+          <Dropdown align={'end'} className="drp-user">
+            <Dropdown.Toggle as={Link} variant="link" to="#" id="dropdown-basic">
+              <i className="icon feather icon-settings" />
+            </Dropdown.Toggle>
+          
           </Dropdown>
         </ListGroup.Item>
       </ListGroup>

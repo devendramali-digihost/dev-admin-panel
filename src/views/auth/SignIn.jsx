@@ -2,16 +2,14 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import { Row, Col, Container } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import loginImage from '../../../assets/images/auth/login.jpg';
-import logo from '../../../assets/images/auth/logo.png';
-import Breadcrumb from '../../../layouts/AdminLayout/Breadcrumb';
+import loginImage from '../../assets/images/auth/login.jpg';
+import logo from '../../assets/images/auth/logo.png';
 import AuthLogin from './JWTLogin';
 import { IoMdLock } from 'react-icons/io';
 
 const Signin1 = () => {
   return (
     <React.Fragment>
-      <Breadcrumb />
       <div className="auth-wrapper">
         <Container fluid>
           <Row className="auth-row">
