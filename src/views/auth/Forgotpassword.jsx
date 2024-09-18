@@ -1,21 +1,12 @@
 import React from 'react';
-import { Card, Row, Container, Col, Button, Alert, Form, FloatingLabel } from 'react-bootstrap';
+import { Card, Row, Container, Col, Button, Alert, Form} from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import loginImage from '../../../assets/images/auth/login.jpg';
-import logo from '../../../assets/images/auth/logo.png';
-import Breadcrumb from '../../../layouts/AdminLayout/Breadcrumb';
-
-import AuthLogin from './JWTLogin';
-import { FaRegUser } from 'react-icons/fa6';
-import { IoMdLock } from 'react-icons/io';
-import { MdLockOutline } from 'react-icons/md';
+import loginImage from '../../assets/images/auth/login.jpg';
+import logo from '../../assets/images/auth/logo.png';
 import { MdOutlineEmail } from 'react-icons/md';
-
-// import Breadcrumb from '../../../layouts/AdminLayout/Breadcrumb';
 const Forgotpassword = () => {
   return (
     <React.Fragment>
-      <Breadcrumb />
       <div className="auth-wrapper">
         <Container fluid>
           <Row className="auth-row">
@@ -46,7 +37,7 @@ const Forgotpassword = () => {
                       <Row className="mt-4">
                         <Col mt={2}>
                           <Button className="btn-block mb-4" color="primary" size="large" type="submit" variant="primary">
-                            Reset
+                            Submit
                           </Button>
                         </Col>
                       </Row>
