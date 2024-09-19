@@ -7,8 +7,8 @@ const NavIcon = ({ items }) => {
   if (items.icon) {
     navIcons = (
       <span className="pcoded-micon">
-        <i className={items.icon} />
-        {/* <img src={items.src} alt="" /> */}
+        {/* <i className={items.icon} /> */}
+        <img src={items.src} alt="" />
       </span>
     );
   }

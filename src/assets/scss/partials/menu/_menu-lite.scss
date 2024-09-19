@@ -292,6 +292,11 @@
         a {
           padding: 10px;
           font-size: 14px;
+          &:active,
+          &:hover{
+            background: transparent;
+            color: $primary-color !important;
+          }
         }
 
         &.active,
@@ -372,6 +377,8 @@
             font-family: $nunito-font;
             strong {
               color: #222;
+              font-size: .9rem;
+              font-weight: 500;
             }
           }
 
