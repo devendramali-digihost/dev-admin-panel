@@ -39,16 +39,16 @@ const CreateNewPage = () => {
 						</Row>
 					</Card.Header>
 					<Card.Body>
-						<Table responsive>
+						<Table responsive hover>
 							<thead>
 								<tr>
-									<th style={{minWidth:"240px"}}>Name</th>
-									<th style={{minWidth:"240px"}}>Type</th>
-									<th style={{minWidth:"240px"}}>Length Value</th>
-									<th style={{minWidth:"240px"}}>Key</th>
-									<th style={{minWidth:"240px"}}>Field</th>
-									<th style={{minWidth:"240px"}}>Field Type</th>
-									<th style={{minWidth:"100px"}}>Actions</th>
+									<th style={{minWidth:"170px"}}>Name</th>
+									<th style={{minWidth:"155px"}}>Type</th>
+									<th style={{minWidth:"130px"}}>Length Value</th>
+									<th style={{minWidth:"160px"}}>Key</th>
+									<th style={{minWidth:"160px"}}>Field</th>
+									<th style={{minWidth:"170px"}}>Field Type</th>
+									<th style={{minWidth:"75px"}}>Actions</th>
 								</tr>
 							</thead>
 							<tbody>
