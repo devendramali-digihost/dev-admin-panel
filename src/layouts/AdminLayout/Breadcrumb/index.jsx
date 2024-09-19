@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ListGroup } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 import { GoChevronRight } from 'react-icons/go';
-import navigation from '../../../menu-items-bkp';
+import navigation from '../../../menu-items';
 import { BASE_TITLE } from '../../../config/constant';
 
 const Breadcrumb = () => {
