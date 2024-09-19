@@ -14,7 +14,7 @@ const CompanyList = () => {
   const handleShow = () => setShow(true);
   return (
     <div className="company-list">
-      <Breadcrumb />
+      {/* <Breadcrumb /> */}
       <div className="card">
         <h4>Company List</h4>
         <Table>
@@ -80,27 +80,25 @@ const CompanyList = () => {
           </tbody>
         </Table>
       </div>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} className="ns-modal">
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <h4>NS Records</h4>
         </Modal.Header>
         <Modal.Body>
-          <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+          <Form className="form">
+            <Form.Group className="mb-3 form-in" controlId="exampleForm.ControlInput1">
               <Form.Label>NS 1</Form.Label>
-              <Form.Control type="email" placeholder="name@example.com" />
+              <Form.Control type="email" placeholder="NS 1" />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Group className="mb-3 form-in" controlId="exampleForm.ControlInput1">
               <Form.Label>NS 2</Form.Label>
-              <Form.Control type="email" placeholder="name@example.com" />
+              <Form.Control type="email" placeholder="NS 2" />
             </Form.Group>
+            <Button variant="primary" onClick={handleClose}>
+              Submit
+            </Button>
           </Form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
       </Modal>
     </div>
   );

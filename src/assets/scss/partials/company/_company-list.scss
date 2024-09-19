@@ -23,3 +23,23 @@
     }
   }
 }
+.ns-modal {
+  .modal-header {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+  .modal-content {
+    border-radius: 3px;
+    border: 0;
+  }
+  .form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    .form-in {
+      width: 100%;
+    }
+  }
+}
