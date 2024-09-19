@@ -39,7 +39,7 @@ const CreateNewPage = () => {
 						</Row>
 					</Card.Header>
 					<Card.Body>
-						<Table responsive hover>
+						<Table responsive hover >
 							<thead>
 								<tr>
 									<th style={{minWidth:"170px"}}>Name</th>
