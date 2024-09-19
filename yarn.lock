@@ -3682,6 +3682,7 @@ __metadata:
     formik: "npm:^2.4.5"
     immutable: "npm:^4.3.5"
     jquery: "npm:^3.7.1"
+    node-waves: "npm:^0.7.6"
     prettier: "npm:3.2.5"
     process: "npm:^0.11.10"
     react: "npm:^18.2.0"
@@ -6071,6 +6072,13 @@ __metadata:
   version: 2.0.18
   resolution: "node-releases@npm:2.0.18"
   checksum: 10c0/786ac9db9d7226339e1dc84bbb42007cb054a346bd9257e6aa154d294f01bc6a6cddb1348fa099f079be6580acbb470e3c048effd5f719325abd0179e566fd27
+  languageName: node
+  linkType: hard
+
+"node-waves@npm:^0.7.6":
+  version: 0.7.6
+  resolution: "node-waves@npm:0.7.6"
+  checksum: 10c0/fd43ddba11e58e350d5d18fdb4eff1a4a81f8bd43c8c3bff38bc874f5c473d5e77c4367150d551e422897088460c588991f87e9b6b082ee6f3c96c00c12d39ad
   languageName: node
   linkType: hard
 
