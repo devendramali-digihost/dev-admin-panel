@@ -24,12 +24,13 @@ const NavLeft = () => {
           <NavSearch windowWidth={windowSize.width} />
         </ListGroup.Item>
         <ListGroup.Item as="li" bsPrefix=" " className={navItemClass.join(' ') }>
-          <Dropdown align={'start'}  >
+          <Dropdown align={'start'} className='position-static '  >
             <Dropdown.Toggle variant={'link'} id="dropdown-basic" className='waves-effect dropdown-basic'>
               Dropdown
             </Dropdown.Toggle>
-            <ul>
-              <Dropdown.Menu>
+            <Dropdown.Menu className='w-100  p-5 py-3'>
+              <div className="d-flex">
+              <ul> 
                 <li>
                   <Link to="#" className="dropdown-item">
                     Action
@@ -45,8 +46,128 @@ const NavLeft = () => {
                     Something else here
                   </Link>
                 </li>
-              </Dropdown.Menu>
-            </ul>
+                <li>
+                  <Link to="#" className="dropdown-item">
+                    Another action
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#" className="dropdown-item">
+                    Something else here
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#" className="dropdown-item">
+                    Another action
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#" className="dropdown-item">
+                    Something else here
+                  </Link>
+                </li>
+              </ul>
+              <ul>
+                 <li>
+                <Link to="#" className="dropdown-item">
+                  Action
+                </Link>
+              </li>
+              <li>
+                <Link to="#" className="dropdown-item">
+                  Another action
+                </Link>
+              </li>
+              <li>
+                <Link to="#" className="dropdown-item">
+                  Something else here
+                </Link>
+              </li> <li>
+                  <Link to="#" className="dropdown-item">
+                    Another action
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#" className="dropdown-item">
+                    Something else here
+                  </Link>
+                </li>
+              </ul>
+              <ul> 
+                <li>
+                <Link to="#" className="dropdown-item">
+                  Action
+                </Link>
+              </li>
+              <li>
+                <Link to="#" className="dropdown-item">
+                  Another action
+                </Link>
+              </li>
+              <li>
+                <Link to="#" className="dropdown-item">
+                  Something else here
+                </Link>
+              </li> <li>
+                  <Link to="#" className="dropdown-item">
+                    Another action
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#" className="dropdown-item">
+                    Something else here
+                  </Link>
+                </li>
+              </ul>
+              <ul> 
+                <li>
+                <Link to="#" className="dropdown-item">
+                  Action
+                </Link>
+              </li>
+              <li>
+                <Link to="#" className="dropdown-item">
+                  Another action
+                </Link>
+              </li>
+              <li>
+                <Link to="#" className="dropdown-item">
+                  Something else here
+                </Link>
+              </li> <li>
+                  <Link to="#" className="dropdown-item">
+                    Another action
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#" className="dropdown-item">
+                    Something else here
+                  </Link>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <Link to="#" className="dropdown-item">
+                    Another action
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#" className="dropdown-item">
+                    Something else here
+                  </Link>
+                </li> <li>
+                  <Link to="#" className="dropdown-item">
+                    Another action
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#" className="dropdown-item">
+                    Something else here
+                  </Link>
+                </li>
+              </ul>
+              </div>
+            </Dropdown.Menu>
           </Dropdown>
         </ListGroup.Item>
         

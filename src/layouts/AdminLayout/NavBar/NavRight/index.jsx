@@ -30,7 +30,21 @@ const NavRight = () => {
       name: 'Suzen',
       image: avatar4,
       details: 'Purchase New Theme and make payment',
-      activity: 'yesterday'
+      activity: '2 days'
+    }
+    ,
+    {
+      name: 'Suzen',
+      image: avatar4,
+      details: 'Purchase New Theme and make payment',
+      activity: '2 days'
+    }
+    ,
+    {
+      name: 'Suzen',
+      image: avatar4,
+      details: 'Purchase New Theme and make payment',
+      activity: '2 days'
     }
   ];
 
@@ -46,55 +60,61 @@ const NavRight = () => {
               <div className="noti-head">
                 <h6 className="d-inline-block m-b-0">Notifications</h6>
                 <div className="float-end">
-                  <Link to="#" className="me-2">
+                  {/* <Link to="#" className="me-2">
                     mark as read
-                  </Link>
+                  </Link> */}
                   <Link to="#">clear all</Link>
                 </div>
               </div>
               <PerfectScrollbar>
                 <ListGroup as="ul" bsPrefix=" " variant="flush" className="noti-body">
-                  <ListGroup.Item as="li" bsPrefix=" " className="n-title">
+                  {/* <ListGroup.Item as="li" bsPrefix=" " className="n-title">
                     <p className="m-b-0">NEW</p>
-                  </ListGroup.Item>
+                  </ListGroup.Item> */}
                   <ListGroup.Item as="li" bsPrefix=" " className="notification">
                     <Card
-                      className="d-flex align-items-center shadow-none mb-0 p-0"
+                      className="d-flex  shadow-none mb-0 p-0"
                       style={{ flexDirection: 'row', backgroundColor: 'unset' }}
                     >
                       <img className="img-radius" src={avatar1} alt="Generic placeholder" />
                       <Card.Body className="p-0">
                         <p>
                           <strong>John Doe</strong>
+                        
+                        </p>
+                        <p>If several languages coalesce the grammar</p>
+                        <p>
                           <span className="n-time text-muted">
                             <i className="icon feather icon-clock me-2" />
-                            30 min
+                            30 min ago
                           </span>
                         </p>
-                        <p>New ticket Added</p>
                       </Card.Body>
                     </Card>
                   </ListGroup.Item>
-                  <ListGroup.Item as="li" bsPrefix=" " className="n-title">
+                  {/* <ListGroup.Item as="li" bsPrefix=" " className="n-title">
                     <p className="m-b-0">EARLIER</p>
-                  </ListGroup.Item>
+                  </ListGroup.Item> */}
                   {notiData.map((data, index) => {
                     return (
                       <ListGroup.Item key={index} as="li" bsPrefix=" " className="notification">
                         <Card
-                          className="d-flex align-items-center shadow-none mb-0 p-0"
+                          className="d-flex  shadow-none mb-0 p-0"
                           style={{ flexDirection: 'row', backgroundColor: 'unset' }}
                         >
                           <img className="img-radius" src={data.image} alt="Generic placeholder" />
                           <Card.Body className="p-0">
                             <p>
                               <strong>{data.name}</strong>
-                              <span className="n-time text-muted">
-                                <i className="icon feather icon-clock me-2" />
-                                {data.activity}
-                              </span>
+                              
                             </p>
                             <p>{data.details}</p>
+                            <p>
+                            <span className="n-time text-muted">
+                                <i className="icon feather icon-clock me-2" />
+                                {data.activity} ago
+                              </span>
+                            </p>
                           </Card.Body>
                         </Card>
                       </ListGroup.Item>
