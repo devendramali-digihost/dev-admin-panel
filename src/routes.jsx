@@ -80,7 +80,7 @@ const routes = [
       {
         exact: 'true',
         path: '/company/company-list',
-        element: lazy(() => import('./views/company/companyList'))
+        element: lazy(() => import('./views/company/CompanyList'))
       },
       // Company list
       {
