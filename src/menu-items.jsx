@@ -85,7 +85,7 @@ const menuItems = {
           title: 'Company List',
           type: 'item',
           icon: 'feather icon-file-text',
-          url: '/forms/form-companysignup'
+          url: '/company/company-list'
         },
         {
           id: 'table',
