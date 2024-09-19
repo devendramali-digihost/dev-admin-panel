@@ -81,6 +81,13 @@ const menuItems = {
           url: '/forms/form-companysignup'
         },
         {
+          id: 'forms',
+          title: 'Company List',
+          type: 'item',
+          icon: 'feather icon-file-text',
+          url: '/forms/form-companysignup'
+        },
+        {
           id: 'table',
           title: 'Create New Page',
           type: 'item',
@@ -95,12 +102,12 @@ const menuItems = {
           url: '/tables/bootstrap'
         },
         {
-			id: 'form',
-			title: 'Sign In test test',
-			type: 'item',
-			icon: 'feather icon-file-text',
-			url: '/auth/signin'
-		},
+          id: 'form',
+          title: 'Sign In test test',
+          type: 'item',
+          icon: 'feather icon-file-text',
+          url: '/auth/signin'
+        },
         {
           id: 'form',
           title: 'Forgot Password',
