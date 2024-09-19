@@ -115,6 +115,7 @@ const NavRight = () => {
             </Dropdown.Toggle>
           </Dropdown>
         </ListGroup.Item>
+
         <ListGroup.Item as="li" bsPrefix=" " className='waves-effect-1'>
           <Dropdown align={'end'} className="drp-user menu-drp-user">
             <Dropdown.Toggle as={Link} variant="link" to="#" id="dropdown-basic" className='profile-notification-1 waves-effect'>
@@ -125,24 +126,25 @@ const NavRight = () => {
               </div>
             </Dropdown.Toggle>
             <Dropdown.Menu align="end" className="profile-notification ">
-              <div className="pro-head">
+              {/* <div className="pro-head">
                 <img src={avatar1} className="img-radius" alt="User Profile" />
                 <span>John Doe</span>
                 <Link to="#" className="dud-logout" title="Logout">
                   <i className="feather icon-log-out" />
                 </Link>
-              </div>
+              </div> */}
               <ListGroup as="ul" bsPrefix=" " variant="flush" className="pro-body">
-                <ListGroup.Item as="li" bsPrefix=" ">
-                  <Link to="#" className="dropdown-item">
-                    <i className="feather icon-settings" /> Settings
-                  </Link>
-                </ListGroup.Item>
                 <ListGroup.Item as="li" bsPrefix=" ">
                   <Link to="#" className="dropdown-item">
                     <i className="feather icon-user" /> Profile
                   </Link>
                 </ListGroup.Item>
+                <ListGroup.Item as="li" bsPrefix=" ">
+                  <Link to="#" className="dropdown-item">
+                    <i className="feather icon-settings" /> Settings
+                  </Link>
+                </ListGroup.Item>
+               
                 <ListGroup.Item as="li" bsPrefix=" ">
                   <Link to="#" className="dropdown-item">
                     <i className="feather icon-mail" /> My Messages
@@ -154,11 +156,22 @@ const NavRight = () => {
                   </Link>
                 </ListGroup.Item>
               </ListGroup>
+              <div className="dropdown-divider"></div>
+              <ListGroup as="ul" bsPrefix=" " variant="flush" className="pro-body log-out">
+                <ListGroup.Item as="li" bsPrefix=" ">
+                  <Link to="#" className="dropdown-item">
+                    <i className="feather icon-log-out" /> LogOut
+                  </Link>
+                </ListGroup.Item>
+          
+              </ListGroup>
             </Dropdown.Menu>
           </Dropdown>
         </ListGroup.Item>
-        <ListGroup.Item as="li" bsPrefix=" " className='waves-effect'>
-          <Dropdown align={'end'} className="drp-user">
+
+
+        <ListGroup.Item as="li" bsPrefix=" " className='waves-effect-1'>
+          <Dropdown align={'end'} className="drp-user waves-effect">
             <Dropdown.Toggle as={Link} variant="link" to="#" id="dropdown-basic">
               <i className="icon feather icon-settings" />
             </Dropdown.Toggle>

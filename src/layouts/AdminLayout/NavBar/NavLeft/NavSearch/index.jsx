@@ -44,7 +44,7 @@ const NavSearch = (props) => {
           >
             <i className="feather icon-search input-group-text" />
           </span>
-          <input type="text" id="m-search" className="form-control" placeholder="Search..." style={{ width: "100px" }} />
+          <input type="text" id="m-search" className="form-control" placeholder="Search..." />
           {/* <Link to="#" className="input-group-append search-close" onClick={searchOffHandler}>
             <i className="feather icon-x input-group-text" />
           </Link> */}
