@@ -246,32 +246,49 @@
   }
 
   .dropdown {
-    .dropdown-toggle {
-      line-height: $header-height;
-      display: inline-flex;
-      padding-right: 10px;
-      padding-left: 10px;
-      height: 100%;
-      align-content: center;
-      align-items: center;
-
-      &.show,
-      &:active {
-        background: transparent;
-      }
-
-      &#dropdown-basic {
-        &:after {
-          content: '\e842';
-          font-family: 'feather';
-          font-size: 15px;
-          border: none;
-          position: absolute;
-          top: 0;
-          right: 0;
-          // display: none;
+        .dropdown-toggle {
+        line-height: $header-height;
+        display: inline-flex;
+        padding-right: 10px;
+        padding-left: 10px;
+        height: 100%;
+        align-content: center;
+        align-items: center;
+        &.show,
+        &:active {
+            background: #fafafa;
         }
-      }
+
+        &#dropdown-basic {
+            &:after {
+                content: '\e842';
+                font-family: 'feather';
+                font-size: 15px;
+                border: none;
+                position: absolute;
+                top: 0;
+                right: 0;
+                display: none;
+            }
+        }
+        .noti-dot {
+            position: absolute;
+            display: inline-block;
+            height: 6px;
+            width: 6px;
+            background-color: #ff3d60;
+            border-radius: 50%;
+            top: 20px;
+            right: 14px;
+        }
+        &.profile-notification-1{
+            i{
+                font-weight: 400;
+                line-height: 1.5;
+                font-size: .9rem;
+                padding: 0rem 0.25rem;
+            }
+        }
     }
 
     .dropdown-menu {
@@ -426,11 +443,13 @@
           // padding: 15px;
           position: relative;
           // background: $primary-color;
-          padding-right: 10px;
+          padding-right: 0px;
 
           img {
+            height: 36px;
             width: 36px;
-            margin-right: 10px;
+            background-color: #f1f5f7;
+            padding: 3px;
           }
         }
       }
@@ -535,7 +554,7 @@
     .dropdown-toggle {
       &#dropdown-basic {
         &::after {
-          display: block;
+        //   display: block;
         }
       }
     }
@@ -644,7 +663,8 @@
   background: $menu-dark-background;
   color: $menu-dark-text-color;
   transition: all 0.3s ease-in-out;
-  box-shadow: 1px 0 20px 0 rgb(63, 77, 103);
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
 
   ul {
     padding-left: 0;
