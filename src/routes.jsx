@@ -82,6 +82,11 @@ const routes = [
         path: '/company/company-list',
         element: lazy(() => import('./views/company/CompanyList'))
       },
+      {
+        exact: 'true',
+        path: '/company/edit-company',
+        element: lazy(() => import('./views/company/EditCompany'))
+      },
       // Company list
       {
         path: '*',
