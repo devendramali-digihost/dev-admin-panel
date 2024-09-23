@@ -1,4 +1,4 @@
-import {dashboardImg1,dashboardImg2,dashboardImg3,dashboardImg4} from "./../src/images"
+import { dashboardImg1, dashboardImg2, dashboardImg3, dashboardImg4 } from './../src/images';
 const menuItems = {
   items: [
     {
@@ -12,7 +12,7 @@ const menuItems = {
           title: 'Dashboard',
           type: 'item',
           icon: 'feather icon-home',
-          src:dashboardImg1,
+          src: dashboardImg1,
           url: '/app/dashboard/default'
         }
       ]
@@ -80,15 +80,15 @@ const menuItems = {
           title: 'Company Sign-Up',
           type: 'item',
           icon: 'feather icon-file-text',
-          src:dashboardImg3,
-          url: '/forms/form-companysignup'
+          src: dashboardImg3,
+          url: '/company/company-signup'
         },
         {
           id: 'forms',
           title: 'Company List',
           type: 'item',
           icon: 'feather icon-file-text',
-          src:dashboardImg1,
+          src: dashboardImg1,
           url: '/company/company-list'
         },
         {
@@ -96,7 +96,7 @@ const menuItems = {
           title: 'Create New Page',
           type: 'item',
           icon: 'feather icon-file-text',
-          src:dashboardImg4,
+          src: dashboardImg4,
           url: '/create-page/create-new-page'
         },
         {
@@ -104,7 +104,7 @@ const menuItems = {
           title: 'Basic Table',
           type: 'item',
           icon: 'feather icon-file-text',
-          src:dashboardImg2,
+          src: dashboardImg2,
           url: '/tables/bootstrap'
         },
         {
@@ -112,7 +112,7 @@ const menuItems = {
           title: 'Sign In test test',
           type: 'item',
           icon: 'feather icon-file-text',
-          src:dashboardImg1,
+          src: dashboardImg1,
           url: '/auth/signin'
         },
         {
@@ -120,7 +120,7 @@ const menuItems = {
           title: 'Forgot Password',
           type: 'item',
           icon: 'feather icon-file-text',
-          src:dashboardImg1,
+          src: dashboardImg1,
           url: '/auth/forgotpassword'
         },
         {
@@ -128,8 +128,16 @@ const menuItems = {
           title: 'Reset Password',
           type: 'item',
           icon: 'feather icon-file-text',
-          src:dashboardImg1,
+          src: dashboardImg1,
           url: '/auth/resetpassword'
+        },
+        {
+          id: 'form',
+          title: 'My Profile',
+          type: 'item',
+          icon: 'feather icon-file-text',
+          src: dashboardImg1,
+          url: '/profile/my-profile'
         }
       ]
     }

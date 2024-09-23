@@ -63,8 +63,8 @@ const routes = [
       },
       {
         exact: 'true',
-        path: '/forms/form-companysignup',
-        element: lazy(() => import('./views/forms/CompanySignUp'))
+        path: '/company/company-signup',
+        element: lazy(() => import('./views/company/CompanySignUp'))
       },
       {
         exact: 'true',
@@ -88,6 +88,13 @@ const routes = [
         element: lazy(() => import('./views/company/EditCompany'))
       },
       // Company list
+      // Profile
+      {
+        exact: 'true',
+        path: '/profile/my-profile',
+        element: lazy(() => import('./views/profile/MyProfile'))
+      },
+      // Profile
       {
         path: '*',
         exact: 'true',

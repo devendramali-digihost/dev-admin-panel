@@ -33,7 +33,7 @@ const Resetpassword = () => {
                       </Form.Group>
                       <Form.Group className="mb-3" controlId="password">
                         <div className="input-container">
-                          <Form.Label>New Password</Form.Label>
+                          <Form.Label>Confirm New Password</Form.Label>
                           <Form.Control type="password" placeholder="Confirm New Password" name="password" />
                           <span className="icon">
                             <MdLockOutline />
@@ -67,7 +67,6 @@ const Resetpassword = () => {
         </Container>
       </div>
     </React.Fragment>
-
   );
 };
 
