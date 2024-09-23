@@ -113,7 +113,7 @@
     }
   }
   .navbar-nav {
-    padding-left: 0;
+    padding-left: 3%;
     list-style: none;
     margin-bottom: 0;
     display: inline-flex;
@@ -385,7 +385,7 @@
           }
 
           &.notification:hover {
-            background: transparentize($primary-color, 0.9);
+            background: color.scale($primary-color, $alpha: -90%);
           }
 
           p {
@@ -516,7 +516,7 @@
           &:active,
           &:focus,
           &:hover {
-            background: transparentize($primary-color, 0.9);
+            background: color.scale($primary-color, $alpha: -90%);
 
             > a {
               background: transparent;
@@ -712,7 +712,7 @@
     width: 37px;
     height: $header-height;
     position: absolute;
-    right: 10px;
+    right: -17%;
     top: 0;
     padding: 0 10px;
     transition: all 0.3s ease-in-out;
@@ -720,33 +720,33 @@
     span {
       position: relative;
       display: block;
-      width: 100%;
-      height: 2.8px;
-      background-color: $menu-dark-text-color;
+      width: 15px;
+      height: 2px;
+      background-color: $secondary-color;
       transition: all 0.3s ease-in-out;
       backface-visibility: hidden;
       border-radius: 2px;
 
       &:after,
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         left: 0;
-        height: 2.8px;
-        background-color: $menu-dark-text-color;
+        height: 2px;
+        background-color: $secondary-color;
         transition: all 0.3s;
         backface-visibility: hidden;
         border-radius: 2px;
       }
 
       &:after {
-        top: 5px;
-        width: 70%;
+        top: 7px;
+        width: 20px;
       }
 
       &:before {
-        top: -5px;
-        width: 40%;
+        top: -7px;
+        width: 20px;
       }
     }
 
@@ -924,7 +924,7 @@
   }
 
   .pcoded-submenu {
-    background: darken($header-dark-background, 0%);
+    background: color.scale($header-dark-background, $lightness: 0%);
     padding: 15px 0;
   }
 
@@ -1030,7 +1030,8 @@
               left: calc(calc(#{$Menu-collapsed-width} / 2) - 3px);
               width: 1px;
               height: calc(100% - 49px);
-              background: transparentize($menu-dark-text-color, 0.8);
+              background: color.scale($menu-dark-text-color, $alpha: -80%);
+
             }
 
             li {
@@ -1092,7 +1093,7 @@
 
         .mobile-menu {
           display: flex;
-          right: 10px;
+          right: -17%;
         }
       }
 
@@ -1210,7 +1211,7 @@
         }
 
         > a {
-          background: darken($menu-dark-background, 6%);
+          background: color.scale($menu-dark-background, $lightness: -92.7272727273%);
           color: #fff;
         }
       }
