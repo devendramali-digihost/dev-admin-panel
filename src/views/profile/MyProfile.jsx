@@ -79,6 +79,15 @@ const MyProfile = () => {
                           </div>
                         </Form.Group>
                       </Col>
+                      <Col sm={6}>
+                        <Form.Group className="mb-3" controlId="image">
+                          <div className="input-container">
+                            <Form.Label>Upload Image</Form.Label>
+                            <Form.Control type="file" name="image" />
+                            {/* <button className="eye">{showPassword['confirm-new-password'] ? <FaRegEye /> : <FaRegEyeSlash />}</button> */}
+                          </div>
+                        </Form.Group>
+                      </Col>
                     </Row>
                     <Row className="mt-4">
                       <Col mt={2}>

@@ -184,3 +184,38 @@ button[disabled] {
 .ns-button {
   font-size: 14px;
 }
+
+.input[type='file'] {
+  background-color: #4caf50; /* Green background */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.input[type='file']:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.add-button {
+  margin-top: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.remove-field {
+  margin-top: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 0 4px 4px 0;
+}
