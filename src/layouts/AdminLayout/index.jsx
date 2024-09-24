@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useRef } from 'react';
 import Navigation from './Navigation';
 import NavBar from './NavBar';
 import Breadcrumb from './Breadcrumb';
-
+import Footer from './footer';
 import useWindowSize from '../../hooks/useWindowSize';
 import useOutsideClick from '../../hooks/useOutsideClick';
 import { ConfigContext } from '../../contexts/ConfigContext';
@@ -43,6 +43,7 @@ const AdminLayout = ({ children }) => {
 		<React.Fragment>
 			<Navigation />
 			<NavBar />
+
 		</React.Fragment>
 	);
 	let mainContainer = (
@@ -55,6 +56,7 @@ const AdminLayout = ({ children }) => {
 						{children}
 					</div>
 				</div>
+				<Footer />
 			</div>
 		</div>
 		</React.Fragment>

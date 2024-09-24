@@ -37,25 +37,27 @@
 .bread-crumb-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 7px;
+  margin-bottom: 24px;
 
   .page-header-title {
     h5 {
-      font-size: 16px;
+      font-size: 15px;
       text-transform: uppercase;
-      font-weight: bold;
-      color: #373b3b;
+      font-weight: 600;
+      color: $theme-heading-color;
+      margin-bottom: 0;
     }
   }
   ul.breadcrumb {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: .5rem;
+    margin-bottom: 0rem;
   }
 }
 
 .page-header-title + .breadcrumb > .breadcrumb-item:last-child a {
-  color: #74788d;
+  color: #748d8a;
   font-weight: 400;
 }
 /**====== Breadcrumbs & Pagination css end ======**/

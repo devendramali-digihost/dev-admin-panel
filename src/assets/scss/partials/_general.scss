@@ -83,11 +83,11 @@ label {
 
   > .breadcrumb-item {
     a {
-      color: #888;
+      color: #4f6866;
     }
 
     &:last-child a {
-      color: #111;
+      color: #748d8a;
       font-weight: 600;
     }
   }
@@ -129,12 +129,17 @@ p.text-muted {
 }
 
 .card {
-  border-radius: 0;
-  box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
-  border: none;
-  margin-bottom: 30px;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid #f1f5f7;
+  border-radius: .25rem;
   transition: all 0.5s ease-in-out;
-  --bs-card-title-color: #111;
+  --bs-card-title-color: $theme-heading-color;
+  margin-bottom: 24px;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
   .card-header {
     background-color: transparent;
     border-bottom: 1px solid #f1f1f1;

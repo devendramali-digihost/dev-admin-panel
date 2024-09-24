@@ -17,11 +17,11 @@ const menuItems = {
 				},
 				{
 					id: 'dashboard',
-					title: 'Company Sign-Up',
+					title: 'Business Account',
 					type: 'item',
-					icon: 'feather icon-home',
+					icon: 'feather icon-file-text',
 					src: dashboardImg3,
-          			url: '/forms/form-companysignup'
+					url: '/company/business-account'
 				},
 				{
 					id: 'dashboard',
