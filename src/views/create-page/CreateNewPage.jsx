@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Select from 'react-select'
 import { Row, Col, Card, Table, Form, Button } from 'react-bootstrap';
 
 const CreateNewPage = () => {
@@ -23,7 +24,31 @@ const CreateNewPage = () => {
 		);
 		setRows(updatedRows);
 	};
+	const options = [
+		{ value: 'chocolate', label: 'Chocolate' },
+		{ value: 'strawberry', label: 'Strawberry' },
+		{ value: 'vanilla', label: 'Vanilla' }
+	];
+	// const ReactSelect = styled(Select)`
+	// 	.Select-control {
+	// 		height: 26px;
+	// 		font-size: small;
 
+	// 		.Select-placeholder {
+	// 		line-height: 26px;
+	// 		font-size: small;
+	// 		}
+
+	// 		.Select-value {
+	// 		line-height: 26px;
+	// 		}
+
+	// 		.Select-input {
+	// 		height: 26px;
+	// 		font-size: small;
+	// 		}
+	// 	}
+	// `;
 	return (
 		<React.Fragment>
 			<Row>
@@ -65,7 +90,7 @@ const CreateNewPage = () => {
 											/>
 										</td>
 										<td>
-											<Form.Select aria-label="Default select example">
+											{/* <Form.Select aria-label="Default select example">
 												<option >Select type</option>
 												<option selected="">INT</option>
 												<option>VARCHAR</option>
@@ -73,7 +98,152 @@ const CreateNewPage = () => {
 												<option>LONGTEXT</option>
 												<option>DATETIME</option>
 												<option>Data Editor</option>
+											</Form.Select> */}
+											<Select options={options} />
+										</td>
+										<td>
+											<input
+												type="number"
+												className="form-control"
+												name="age"
+												value={row.age}
+												onChange={(e) => handleChange(index, e)}
+												placeholder="Enter age"
+											/>
+										</td>
+										<td>
+											<Form.Select aria-label="Default select example">
+												<option	option>Select Key</option>
+												<option selected="">Primary Key</option>
+												<option>Foreign key</option>
+												<option>Unique Key</option>
 											</Form.Select>
+										</td>
+										<td>
+											<Form.Select aria-label="Default select example">
+												<option disabled="">Select Fields</option>
+												<option selected="">Auto Save</option>
+												<option>Optional</option>
+												<option>Required</option>
+												<option>Backend</option>
+											</Form.Select>
+										</td>
+										<td>
+											<Form.Select aria-label="Default select example">
+												<option selected="">Select Option</option>
+												<option>Text</option>
+												<option>Dropdown</option>
+												<option>Textarea</option>
+												<option>file</option>
+												<option>Radio</option>
+												<option>CheckBox</option>
+												<option>DatePicker</option>
+												<option>Data Editor</option>
+											</Form.Select>
+										</td>
+										<td>
+											<a onClick={() => handleRemoveRow(index)} className="btn btn-outline-danger btn-sm edit" title="Delete">
+												<i class="fas fa-times m-0" title="Close"></i>
+
+											</a>
+										</td>
+									</tr>
+								))}
+								{rows.map((row, index) => (
+									<tr key={index}>
+										<td>
+											<input
+												type="text"
+												name="name"
+												className="form-control"
+												value={row.name}
+												onChange={(e) => handleChange(index, e)}
+												placeholder="Enter name"
+											/>
+										</td>
+										<td>
+											{/* <Form.Select aria-label="Default select example">
+												<option >Select type</option>
+												<option selected="">INT</option>
+												<option>VARCHAR</option>
+												<option>TEXT</option>
+												<option>LONGTEXT</option>
+												<option>DATETIME</option>
+												<option>Data Editor</option>
+											</Form.Select> */}
+											<Select options={options} />
+										</td>
+										<td>
+											<input
+												type="number"
+												className="form-control"
+												name="age"
+												value={row.age}
+												onChange={(e) => handleChange(index, e)}
+												placeholder="Enter age"
+											/>
+										</td>
+										<td>
+											<Form.Select aria-label="Default select example">
+												<option	option>Select Key</option>
+												<option selected="">Primary Key</option>
+												<option>Foreign key</option>
+												<option>Unique Key</option>
+											</Form.Select>
+										</td>
+										<td>
+											<Form.Select aria-label="Default select example">
+												<option disabled="">Select Fields</option>
+												<option selected="">Auto Save</option>
+												<option>Optional</option>
+												<option>Required</option>
+												<option>Backend</option>
+											</Form.Select>
+										</td>
+										<td>
+											<Form.Select aria-label="Default select example">
+												<option selected="">Select Option</option>
+												<option>Text</option>
+												<option>Dropdown</option>
+												<option>Textarea</option>
+												<option>file</option>
+												<option>Radio</option>
+												<option>CheckBox</option>
+												<option>DatePicker</option>
+												<option>Data Editor</option>
+											</Form.Select>
+										</td>
+										<td>
+											<a onClick={() => handleRemoveRow(index)} className="btn btn-outline-danger btn-sm edit" title="Delete">
+												<i class="fas fa-times m-0" title="Close"></i>
+
+											</a>
+										</td>
+									</tr>
+								))}
+								{rows.map((row, index) => (
+									<tr key={index}>
+										<td>
+											<input
+												type="text"
+												name="name"
+												className="form-control"
+												value={row.name}
+												onChange={(e) => handleChange(index, e)}
+												placeholder="Enter name"
+											/>
+										</td>
+										<td>
+											{/* <Form.Select aria-label="Default select example">
+												<option >Select type</option>
+												<option selected="">INT</option>
+												<option>VARCHAR</option>
+												<option>TEXT</option>
+												<option>LONGTEXT</option>
+												<option>DATETIME</option>
+												<option>Data Editor</option>
+											</Form.Select> */}
+											<Select options={options} />
 										</td>
 										<td>
 											<input
