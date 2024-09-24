@@ -16,15 +16,15 @@ const menuItems = {
 					url: '/app/dashboard/default'
 				},
 				{
-					id: 'forms',
+					id: 'dashboard',
 					title: 'Company Sign-Up',
 					type: 'item',
-					icon: 'feather icon-file-text',
+					icon: 'feather icon-home',
 					src: dashboardImg3,
-					url: '/forms/form-companysignup'
+          			url: '/forms/form-companysignup'
 				},
 				{
-					id: 'forms',
+					id: 'dashboard',
 					title: 'Company List',
 					type: 'item',
 					icon: 'feather icon-file-text',
@@ -32,7 +32,7 @@ const menuItems = {
 					url: '/company/company-list'
 				},
 				{
-					id: 'table',
+					id: 'dashboard',
 					title: 'Create New Page',
 					type: 'item',
 					icon: 'feather icon-file-text',
@@ -40,7 +40,7 @@ const menuItems = {
 					url: '/create-page/create-new-page'
 				},
 				{
-					id: 'table',
+					id: 'dashboard',
 					title: 'Basic Table',
 					type: 'item',
 					icon: 'feather icon-file-text',
@@ -48,39 +48,53 @@ const menuItems = {
 					url: '/tables/bootstrap'
 				},
 				{
-					id: 'form',
-					title: 'Sign In test test',
-					type: 'item',
-					icon: 'feather icon-file-text',
+					id: 'auth',
+					title: 'Authentication',
+					type: 'collapse',
+					icon: 'feather icon-lock',
 					src: dashboardImg1,
-					url: '/auth/signin'
+					badge: {
+						title: 'New',
+						type: 'label-danger'
+					},
+					children: [
+						{
+							id: 'signup-1',
+							title: 'Sign In',
+							type: 'item',
+							url: '/auth/signin',
+							target: true,
+							breadcrumbs: false
+						},
+						{
+							id: 'form',
+							title: 'Forgot Password',
+							type: 'item',
+							url: '/auth/forgotpassword',
+							target: true,
+							breadcrumbs: false
+						},
+						{
+							id: 'form',
+							title: 'Reset Password',
+							type: 'item',
+							url: '/auth/resetpassword',
+							target: true,
+							breadcrumbs: false
+						},
+					]
 				},
 				{
-					id: 'form',
-					title: 'Forgot Password',
-					type: 'item',
-					icon: 'feather icon-file-text',
-					src: dashboardImg1,
-					url: '/auth/forgotpassword'
-				},
-				{
-					id: 'form',
-					title: 'Reset Password',
-					type: 'item',
-					icon: 'feather icon-file-text',
-					src: dashboardImg1,
-					url: '/auth/resetpassword'
-				},
-				{
-					id: 'form',
+					id: 'dashboard',
 					title: 'My Profile',
 					type: 'item',
 					icon: 'feather icon-file-text',
 					src: dashboardImg1,
 					url: '/profile/my-profile'
-				}
+				},
 			]
-		}
+		},
+
 	]
 };
 
