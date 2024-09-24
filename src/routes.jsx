@@ -97,7 +97,25 @@ const routes = [
         path: '*',
         exact: 'true',
         element: () => <Navigate to={BASE_URL} />
-      }
+      },  
+       // Admin 
+      {
+        exact: 'true',
+        path: '/template/create-admin',
+        element: lazy(() => import('./views/template/CreateAdmin'))
+      },
+      // {
+      //   exact: 'true',
+      //   path: '/template/admin-list',
+      //   element: lazy(() => import('./views/template/AdminList'))
+      // },
+
+         // Buy Domain
+         {
+          exact: 'true',
+          path: '/buy-domain',
+          element: lazy(() => import('./views/buy-domain/BuyDomain'))
+        },
     ]
   }
 ];

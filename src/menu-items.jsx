@@ -92,6 +92,30 @@ const menuItems = {
 					src: dashboardImg1,
 					url: '/profile/my-profile'
 				},
+				{
+					id: 'dashboard',
+					title: 'My Profile',
+					type: 'item',
+					icon: 'feather icon-file-text',
+					src: dashboardImg1,
+					url: '/profile/my-profile'
+				},
+				// {
+				// 	id: 'forms',
+				// 	title: 'Create Admin',
+				// 	type: 'item',
+				// 	icon: 'feather icon-file-text',
+				// 	src:dashboardImg3,
+				// 	url: '/template/create-admin'
+				//   },
+				{
+					id: 'forms',
+					title: 'Buy Domain',
+					type: 'item',
+					icon: 'feather icon-file-text',
+					src:dashboardImg3,
+					url: '/buy-domain'
+				  },
 			]
 		},
 
