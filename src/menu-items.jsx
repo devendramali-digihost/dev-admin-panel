@@ -81,7 +81,7 @@ const menuItems = {
           type: 'item',
           icon: 'feather icon-file-text',
           src: dashboardImg3,
-          url: '/company/company-signup'
+          url: '/forms/form-companysignup'
         },
         {
           id: 'forms',

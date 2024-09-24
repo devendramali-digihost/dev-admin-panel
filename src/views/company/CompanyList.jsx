@@ -150,7 +150,7 @@ const CompanyList = () => {
     },
     cells: {
       style: {
-        padding: '10px 16px', // Adds padding to cells
+        padding: '10px', // Adds padding to cells
         fontSize: '14px',
         color: '#444',
         border: '1px solid #f0f5f5',
