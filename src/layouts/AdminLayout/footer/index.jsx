@@ -4,14 +4,14 @@ function Footer() {
 	return (
 		<React.Fragment>
 			<footer className="footer">
-				<Row>
-					<Col lg={6}>
+				<div className='d-flex justify-content-between'>
+					<div>
 					&copy; {new Date().getFullYear()} Copyright:{' '} © DigiHost.
-					</Col>
-					<Col lg={6}>
+					</div>
+					<div>
 						Crafted with <i class="mdi mdi-heart text-danger"></i> by <a href="https://1.envato.market/themesdesign" target="_blank">DigiHost</a>
-					</Col>
-				</Row>
+					</div>
+				</div>
 			</footer>
 		</React.Fragment>
 	)
