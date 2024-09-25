@@ -62,6 +62,15 @@
                         font-size: 19px;
                         color: #000;
                         font-weight: 500;
+                        display: flex;
+                        align-items: center;
+                        .condition-box{
+                            max-width: 250px;
+                            p{
+                                margin-bottom: 0;
+                                font-size: 12px;
+                            }
+                        }
                         .buy-btn{
                             margin-left: 10px;
                             // background: transparent;
