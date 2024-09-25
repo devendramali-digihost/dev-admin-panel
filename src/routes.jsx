@@ -114,7 +114,14 @@ const routes = [
          {
           exact: 'true',
           path: '/buy-domain',
-          element: lazy(() => import('./views/buy-domain/BuyDomain'))
+          element: lazy(() => import('./views/domain/BuyDomain'))
+        },
+
+         //NsVerify
+         {
+          exact: 'true',
+          path: '/ns-verify',
+          element: lazy(() => import('./views/domain/NsVerify'))
         },
     ]
   }

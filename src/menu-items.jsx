@@ -116,6 +116,14 @@ const menuItems = {
 					src:dashboardImg3,
 					url: '/buy-domain'
 				  },
+				{
+					id: 'forms',
+					title: 'Ns Verify',
+					type: 'item',
+					icon: 'feather icon-file-text',
+					src:dashboardImg3,
+					url: '/ns-verify'
+				  },
 			]
 		},
 
