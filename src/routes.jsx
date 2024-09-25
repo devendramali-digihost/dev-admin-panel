@@ -89,6 +89,11 @@ const routes = [
       },
       {
         exact: 'true',
+        path: '/company/domain-verify',
+        element: lazy(() => import('./views/company/DomainVerify'))
+      },
+      {
+        exact: 'true',
         path: '/profile/my-profile',
         element: lazy(() => import('./views/profile/MyProfile'))
       },
@@ -97,8 +102,8 @@ const routes = [
         path: '*',
         exact: 'true',
         element: () => <Navigate to={BASE_URL} />
-      },  
-       // Admin 
+      },
+      // Admin
       {
         exact: 'true',
         path: '/template/create-admin',
@@ -110,19 +115,19 @@ const routes = [
       //   element: lazy(() => import('./views/template/AdminList'))
       // },
 
-         // Buy Domain
-         {
-          exact: 'true',
-          path: '/buy-domain',
-          element: lazy(() => import('./views/domain/BuyDomain'))
-        },
+      // Buy Domain
+      {
+        exact: 'true',
+        path: '/buy-domain',
+        element: lazy(() => import('./views/domain/BuyDomain'))
+      },
 
-         //NsVerify
-         {
-          exact: 'true',
-          path: '/ns-verify',
-          element: lazy(() => import('./views/domain/NsVerify'))
-        },
+      //NsVerify
+      {
+        exact: 'true',
+        path: '/ns-verify',
+        element: lazy(() => import('./views/domain/NsVerify'))
+      }
     ]
   }
 ];

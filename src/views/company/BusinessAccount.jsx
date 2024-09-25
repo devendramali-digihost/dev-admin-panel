@@ -2,31 +2,102 @@ import React, { useState } from 'react';
 import { Row, Col, Card, Form, Button } from 'react-bootstrap';
 import { MdAdd } from 'react-icons/md';
 import { RiDeleteBin5Fill } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 
 const CompanySignUp = () => {
-  const [inputFields, setInputFields] = useState([{ fullName: '' }]);
+  // Separate states for Social Links and Contact Numbers
+  const [socialLinks, setSocialLinks] = useState([{ socialLink: '' }]);
+  const [contactNumbers, setContactNumbers] = useState([{ contact: '' }]);
+  const [emailIds, setEmailIds] = useState([{ emailId: '' }]);
+  const [address, setAddress] = useState([{ address: '' }]);
 
-  const addInputField = () => {
-    setInputFields([...inputFields, { fullName: '' }]);
+  // Handle adding new social link field
+  const addSocialLink = () => {
+    setSocialLinks([...socialLinks, { socialLink: '' }]);
   };
 
-  const removeInputFields = (index) => {
-    const rows = [...inputFields];
+  // Handle adding new contact number field
+  const addContactNumber = () => {
+    setContactNumbers([...contactNumbers, { contact: '' }]);
+  };
+
+  // Email Id
+  const addEmailId = () => {
+    setEmailIds([...emailIds, { emailId: '' }]);
+  };
+
+  // Address
+  const addAddress = () => {
+    setAddress([...address, { emailId: '' }]);
+  };
+
+  // Handle removing specific social link field
+  const removeSocialLink = (index) => {
+    const rows = [...socialLinks];
     rows.splice(index, 1);
-    setInputFields(rows);
+    setSocialLinks(rows);
   };
 
-  const handleChange = (index, event) => {
+  // Handle removing specific contact number field
+  const removeContactNumber = (index) => {
+    const rows = [...contactNumbers];
+    rows.splice(index, 1);
+    setContactNumbers(rows);
+  };
+
+  // Handle removing specific email id field
+  const removeEmailId = (index) => {
+    const rows = [...emailIds];
+    rows.splice(index, 1);
+    setEmailIds(rows);
+  };
+
+  // Handle removing specific email id field
+  const removeAddress = (index) => {
+    const rows = [...address];
+    rows.splice(index, 1);
+    setAddress(rows);
+  };
+
+  // Handle updating social link input
+  const handleSocialChange = (index, event) => {
     const { name, value } = event.target;
-    const list = [...inputFields];
+    const list = [...socialLinks];
     list[index][name] = value;
-    setInputFields(list);
+    setSocialLinks(list);
+  };
+
+  // Handle updating contact number input
+  const handleContactChange = (index, event) => {
+    const { name, value } = event.target;
+    const list = [...contactNumbers];
+    list[index][name] = value;
+    setContactNumbers(list);
+  };
+
+  // Handle updating contact number input
+  const handleEmailIdChange = (index, event) => {
+    const { name, value } = event.target;
+    const list = [...emailIds];
+    list[index][name] = value;
+    setEmailIds(list);
+  };
+
+  // Handle updating contact number input
+  const handleAddress = (index, event) => {
+    const { name, value } = event.target;
+    const list = [...emailIds];
+    list[index][name] = value;
+    setEmailIds(list);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     // Handle form submission logic here
-    console.log(inputFields);
+    console.log('Social Links:', socialLinks);
+    console.log('Contact Numbers:', contactNumbers);
+    console.log('Email Id', emailIds);
+    console.log('Address', address);
   };
 
   return (
@@ -61,71 +132,35 @@ const CompanySignUp = () => {
                     </Form.Group>
                   </Col>
                   <Col lg={6}>
-                    <Form.Group className="mb-3" controlId="CompanyName">
+                    <Form.Group className="mb-3" controlId="CompanyLogo">
                       <Form.Label>Upload Logo</Form.Label>
                       <Form.Control type="file" placeholder="Company Name" />
                     </Form.Group>
                   </Col>
-                  {/* <Col sm={12}>
+
+                  {/* Social Links Section */}
+                  <Col sm={6}>
                     <Row className="mb-3">
-                      {inputFields.map((data, index) => {
-                        const { fullName } = data;
+                      {socialLinks.map((data, index) => {
+                        const { socialLink } = data;
                         return (
-                          <Col md={6} key={index}>
+                          <Col md={12} key={index}>
                             <Form.Group className="mb-3 position-relative" controlId={`SocialLink${index}`}>
                               <Form.Label>Add Social Link</Form.Label>
                               <Form.Control
                                 type="text"
-                                onChange={(event) => handleChange(index, event)}
-                                value={fullName}
-                                name="fullName"
+                                onChange={(event) => handleSocialChange(index, event)}
+                                value={socialLink}
+                                name="socialLink"
                                 placeholder="Add Social Link"
                               />
-                              {inputFields.length > 1 && (
-                                <Button
-                                  variant="outline-danger"
-                                  onClick={() => removeInputFields(index)}
-                                  style={{ position: 'absolute', right: '0', top: '50%', transform: 'translateY(-50%)' }}
-                                >
-                                  <i className="fa fa-window-close"></i>
-                                </Button>
-                              )}
-
-                              <Button variant="primary" onClick={addInputField}>
-                                <MdAdd />
-                              </Button>
-                            </Form.Group>
-                          </Col>
-                        );
-                      })}
-                    </Row>
-                  </Col> */}
-                  <Col sm={12}>
-                    <Row className="mb-3">
-                      {inputFields.map((data, index) => {
-                        const { fullName } = data;
-                        return (
-                          <Col md={6} key={index}>
-                            <Form.Group className="mb-3 position-relative" controlId={`SocialLink${index}`}>
-                              <Form.Label>Add Social Link</Form.Label>
-                              <Form.Control
-                                type="text"
-                                onChange={(event) => handleChange(index, event)}
-                                value={fullName}
-                                name="fullName"
-                                placeholder="Add Social Link"
-                              />
-
-                              {/* Show delete button on all fields except the first one */}
-                              {inputFields.length > 1 && index > 0 && (
-                                <Button onClick={() => removeInputFields(index)} className="remove-field btn-primary">
+                              {socialLinks.length > 1 && index > 0 && (
+                                <Button onClick={() => removeSocialLink(index)} className="remove-field btn-primary">
                                   <RiDeleteBin5Fill />
                                 </Button>
                               )}
-
-                              {/* Show add button only on the first input */}
                               {index === 0 && (
-                                <Button variant="primary" onClick={addInputField} className="add-button">
+                                <Button variant="primary" onClick={addSocialLink} className="add-button">
                                   <MdAdd />
                                 </Button>
                               )}
@@ -135,12 +170,111 @@ const CompanySignUp = () => {
                       })}
                     </Row>
                   </Col>
-                  <Col md={6}></Col>
+
+                  {/* Contact Numbers Section */}
+                  <Col sm={6}>
+                    <Row className="mb-3">
+                      {contactNumbers.map((data, index) => {
+                        const { contact } = data;
+                        return (
+                          <Col md={12} key={index}>
+                            <Form.Group className="mb-3 position-relative" controlId={`ContactNumber${index}`}>
+                              <Form.Label>Contact Number</Form.Label>
+                              <Form.Control
+                                type="text"
+                                onChange={(event) => handleContactChange(index, event)}
+                                value={contact}
+                                name="contact"
+                                placeholder="Contact Number"
+                              />
+                              {contactNumbers.length > 1 && index > 0 && (
+                                <Button onClick={() => removeContactNumber(index)} className="remove-field btn-primary">
+                                  <RiDeleteBin5Fill />
+                                </Button>
+                              )}
+                              {index === 0 && (
+                                <Button variant="primary" onClick={addContactNumber} className="add-button">
+                                  <MdAdd />
+                                </Button>
+                              )}
+                            </Form.Group>
+                          </Col>
+                        );
+                      })}
+                    </Row>
+                  </Col>
+
+                  {/* Email Id Section */}
+                  <Col sm={6}>
+                    <Row className="mb-3">
+                      {emailIds.map((data, index) => {
+                        const { emailId } = data;
+                        return (
+                          <Col md={12} key={index}>
+                            <Form.Group className="mb-3 position-relative" controlId={`ContactNumber${index}`}>
+                              <Form.Label>Email Id</Form.Label>
+                              <Form.Control
+                                type="text"
+                                onChange={(event) => handleEmailIdChange(index, event)}
+                                value={emailId}
+                                name="emailId"
+                                placeholder="Email Id"
+                              />
+                              {emailIds.length > 1 && index > 0 && (
+                                <Button onClick={() => removeEmailId(index)} className="remove-field btn-primary">
+                                  <RiDeleteBin5Fill />
+                                </Button>
+                              )}
+                              {index === 0 && (
+                                <Button variant="primary" onClick={addEmailId} className="add-button">
+                                  <MdAdd />
+                                </Button>
+                              )}
+                            </Form.Group>
+                          </Col>
+                        );
+                      })}
+                    </Row>
+                  </Col>
+
+                  {/* Address Section */}
+                  <Col sm={6}>
+                    <Row className="mb-3">
+                      {address.map((data, index) => {
+                        const { address } = data;
+                        return (
+                          <Col md={12} key={index}>
+                            <Form.Group className="mb-3 position-relative" controlId={`ContactNumber${index}`}>
+                              <Form.Label>Address</Form.Label>
+                              <Form.Control
+                                type="text"
+                                onChange={(event) => handleAddress(index, event)}
+                                value={address}
+                                name="address"
+                                placeholder="Address"
+                              />
+                              {address.length > 1 && index > 0 && (
+                                <Button onClick={() => removeAddress(index)} className="remove-field btn-primary">
+                                  <RiDeleteBin5Fill />
+                                </Button>
+                              )}
+                              {index === 0 && (
+                                <Button variant="primary" onClick={addAddress} className="add-button">
+                                  <MdAdd />
+                                </Button>
+                              )}
+                            </Form.Group>
+                          </Col>
+                        );
+                      })}
+                    </Row>
+                  </Col>
+
                   <Col lg={12}>
                     <div className="text-end">
-                      <Button type="submit" variant="primary">
-                        Submit
-                      </Button>
+                      <Link to="/company/domain-verify" type="submit" className="btn btn-primary" variant="primary">
+                        Create
+                      </Link>
                     </div>
                   </Col>
                 </Row>
