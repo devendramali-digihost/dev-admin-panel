@@ -107,6 +107,14 @@ const menuItems = {
           icon: 'feather icon-file-text',
           src: dashboardImg3,
           url: '/ns-verify'
+        },
+        {
+          id: 'forms',
+          title: 'Form Tamplate',
+          type: 'item',
+          icon: 'feather icon-file-text',
+          src: dashboardImg3,
+          url: '/template/form-template'
         }
       ]
     }

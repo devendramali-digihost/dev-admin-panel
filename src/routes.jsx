@@ -104,11 +104,11 @@ const routes = [
         element: () => <Navigate to={BASE_URL} />
       },
       // Admin
-      {
-        exact: 'true',
-        path: '/template/create-admin',
-        element: lazy(() => import('./views/template/CreateAdmin'))
-      },
+      // {
+      //   exact: 'true',
+      //   path: '/template/create-admin',
+      //   element: lazy(() => import('./views/template/CreateAdmin'))
+      // },
       // {
       //   exact: 'true',
       //   path: '/template/admin-list',
@@ -127,6 +127,12 @@ const routes = [
         exact: 'true',
         path: '/ns-verify',
         element: lazy(() => import('./views/domain/NsVerify'))
+      },
+      // Form Tamplate
+      {
+        exact: 'true',
+        path: '/template/form-template',
+        element: lazy(() => import('./views/admin-tamplate/FormTamplate'))
       }
     ]
   }
