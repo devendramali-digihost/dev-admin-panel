@@ -900,7 +900,7 @@
           li {
             > a {
               text-align: left;
-              padding: 7px 7px 7px 50px;
+              padding: 0.625rem 1.67rem;
               margin: 0;
               display: block;
               font-size: 12.8px;
@@ -1237,6 +1237,7 @@
           top: 0px;
           width: 3px;
           height: calc(100%);
+          display: none;
         }
 
         > a {
