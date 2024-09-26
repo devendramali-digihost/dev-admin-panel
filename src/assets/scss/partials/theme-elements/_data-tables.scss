@@ -178,16 +178,17 @@
   }
 }
 
-.hudJpJ{
-  border: none;
+.create_new_page_card{
+  .rdt_TableHeadRow{
+    border: none;
 
-  .bzEluS {
-    border: 1px solid #f0f5f5;
-    border-left: none;
-    border-bottom: 0;
-
-    &:first-child{
+    .rdt_TableCol {
       border: 1px solid #f0f5f5;
+      border-left: none;
+  
+      &:first-child{
+        border: 1px solid #f0f5f5;
+      }
     }
   }
 }

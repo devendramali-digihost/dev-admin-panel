@@ -95,57 +95,57 @@ const AdminModuleList = () => {
                     <div className="switch">
                       <span>About Us</span>
                       <span class="toggle" onClick={handleShow}>
-                        <input type="checkbox" id="toggle-switch-1" />
-                        <label for="toggle-switch-1"></label>
+                        <input type="checkbox" id="toggle-switch-1.1" />
+                        <label for="toggle-switch-1.1"></label>
                       </span>
                     </div>
                     <div className="switch">
                       <span>FAQ</span>
                       <span class="toggle" onClick={handleShow}>
-                        <input type="checkbox" id="toggle-switch-2" />
-                        <label for="toggle-switch-2"></label>
+                        <input type="checkbox" id="toggle-switch-2.1" />
+                        <label for="toggle-switch-2.1"></label>
                       </span>
                     </div>
                     <div className="switch">
                       <span>Clientle</span>
                       <span class="toggle" onClick={handleShow}>
-                        <input type="checkbox" id="toggle-switch-3" />
-                        <label for="toggle-switch-3"></label>
+                        <input type="checkbox" id="toggle-switch-3.1" />
+                        <label for="toggle-switch-3.1"></label>
                       </span>
                     </div>
                     <div className="switch">
                       <span>Testimonial</span>
                       <span class="toggle" onClick={handleShow}>
-                        <input type="checkbox" id="toggle-switch-4" />
-                        <label for="toggle-switch-4"></label>
+                        <input type="checkbox" id="toggle-switch-4.1" />
+                        <label for="toggle-switch-4.1"></label>
                       </span>
                     </div>
                     <div className="switch">
                       <span>About Us</span>
                       <span class="toggle" onClick={handleShow}>
-                        <input type="checkbox" id="toggle-switch-5" />
-                        <label for="toggle-switch-5"></label>
+                        <input type="checkbox" id="toggle-switch-5.1" />
+                        <label for="toggle-switch-5.1"></label>
                       </span>
                     </div>
                     <div className="switch">
                       <span>About Us</span>
                       <span class="toggle" onClick={handleShow}>
-                        <input type="checkbox" id="toggle-switch-6" />
-                        <label for="toggle-switch-6"></label>
+                        <input type="checkbox" id="toggle-switch-6.1" />
+                        <label for="toggle-switch-6.1"></label>
                       </span>
                     </div>
                     <div className="switch">
                       <span>About Us</span>
                       <span class="toggle" onClick={handleShow}>
-                        <input type="checkbox" id="toggle-switch-7" />
-                        <label for="toggle-switch-7"></label>
+                        <input type="checkbox" id="toggle-switch-7.1" />
+                        <label for="toggle-switch-7.1"></label>
                       </span>
                     </div>
                     <div className="switch">
                       <span>About Us</span>
                       <span class="toggle" onClick={handleShow}>
-                        <input type="checkbox" id="toggle-switch-8" />
-                        <label for="toggle-switch-8"></label>
+                        <input type="checkbox" id="toggle-switch-8.1" />
+                        <label for="toggle-switch-8.1"></label>
                       </span>
                     </div>
                   </div>
@@ -158,57 +158,57 @@ const AdminModuleList = () => {
                     <div className="switch">
                       <span>About Us</span>
                       <span class="toggle" onClick={handleShow}>
-                        <input type="checkbox" id="toggle-switch-1" />
-                        <label for="toggle-switch-1"></label>
+                        <input type="checkbox" id="toggle-switch-1.2" />
+                        <label for="toggle-switch-1.2"></label>
                       </span>
                     </div>
                     <div className="switch">
                       <span>FAQ</span>
                       <span class="toggle" onClick={handleShow}>
-                        <input type="checkbox" id="toggle-switch-2" />
-                        <label for="toggle-switch-2"></label>
+                        <input type="checkbox" id="toggle-switch-2.2" />
+                        <label for="toggle-switch-2.2"></label>
                       </span>
                     </div>
                     <div className="switch">
                       <span>Clientle</span>
                       <span class="toggle" onClick={handleShow}>
-                        <input type="checkbox" id="toggle-switch-3" />
-                        <label for="toggle-switch-3"></label>
+                        <input type="checkbox" id="toggle-switch-3.2" />
+                        <label for="toggle-switch-3.2"></label>
                       </span>
                     </div>
                     <div className="switch">
                       <span>Testimonial</span>
                       <span class="toggle" onClick={handleShow}>
-                        <input type="checkbox" id="toggle-switch-4" />
-                        <label for="toggle-switch-4"></label>
+                        <input type="checkbox" id="toggle-switch-4.2" />
+                        <label for="toggle-switch-4.2"></label>
                       </span>
                     </div>
                     <div className="switch">
                       <span>About Us</span>
                       <span class="toggle" onClick={handleShow}>
-                        <input type="checkbox" id="toggle-switch-5" />
-                        <label for="toggle-switch-5"></label>
+                        <input type="checkbox" id="toggle-switch-5.2" />
+                        <label for="toggle-switch-5.2"></label>
                       </span>
                     </div>
                     <div className="switch">
                       <span>About Us</span>
                       <span class="toggle" onClick={handleShow}>
-                        <input type="checkbox" id="toggle-switch-6" />
-                        <label for="toggle-switch-6"></label>
+                        <input type="checkbox" id="toggle-switch-6.2" />
+                        <label for="toggle-switch-6.2"></label>
                       </span>
                     </div>
                     <div className="switch">
                       <span>About Us</span>
                       <span class="toggle" onClick={handleShow}>
-                        <input type="checkbox" id="toggle-switch-7" />
-                        <label for="toggle-switch-7"></label>
+                        <input type="checkbox" id="toggle-switch-7.2" />
+                        <label for="toggle-switch-7.2"></label>
                       </span>
                     </div>
                     <div className="switch">
                       <span>About Us</span>
                       <span class="toggle" onClick={handleShow}>
-                        <input type="checkbox" id="toggle-switch-8" />
-                        <label for="toggle-switch-8"></label>
+                        <input type="checkbox" id="toggle-switch-8.2" />
+                        <label for="toggle-switch-8.2"></label>
                       </span>
                     </div>
                   </div>

@@ -16,52 +16,6 @@ const menuItems = {
           url: '/app/dashboard/default'
         },
         {
-          id: 'admin',
-          title: 'Admin Template',
-          type: 'collapse',
-          icon: 'feather icon-lock',
-          src: adminTemplate,
-          // badge: {
-          //   title: 'New',
-          //   type: 'label-danger'
-          // },
-          children: [
-            {
-              id: 'dashboard',
-              title: 'Create Admin New Template',
-              type: 'item',
-              // icon: 'feather icon-file-text',
-              src: dashboardImg3,
-              url: '/admin-template/create-admin-template'
-            },
-            {
-              id: 'dashboard',
-              title: 'Create New Page',
-              type: 'item',
-              // icon: 'feather icon-file-text',
-              src: dashboardImg4,
-              url: '/create-page/create-new-page'
-            },
-            {
-              id: 'project',
-              title: 'Admin Module list',
-              type: 'item',
-              // icon: 'feather icon-file-text',
-              src: dashboardImg4,
-              url: '/admin-template/admin-module-list'
-            },
-            {
-              id: 'forms',
-              title: 'Form Tamplate',
-              type: 'item',
-              // icon: 'feather icon-file-text',
-              src: dashboardImg3,
-              url: '/template/form-template'
-            }
-          ]
-        },
-
-        {
           id: 'project',
           title: 'Create Project',
           type: 'collapse',
@@ -109,6 +63,51 @@ const menuItems = {
               // icon: 'feather icon-file-text',
               src: dashboardImg3,
               url: '/ns-verify'
+            }
+          ]
+        },
+        {
+          id: 'admin',
+          title: 'Admin Template',
+          type: 'collapse',
+          icon: 'feather icon-lock',
+          src: adminTemplate,
+          // badge: {
+          //   title: 'New',
+          //   type: 'label-danger'
+          // },
+          children: [
+            {
+              id: 'dashboard',
+              title: 'Create Admin New Template',
+              type: 'item',
+              // icon: 'feather icon-file-text',
+              src: dashboardImg3,
+              url: '/admin-template/create-admin-template'
+            },
+            {
+              id: 'dashboard',
+              title: 'Create New Page',
+              type: 'item',
+              // icon: 'feather icon-file-text',
+              src: dashboardImg4,
+              url: '/create-page/create-new-page'
+            },
+            {
+              id: 'project',
+              title: 'Admin Module list',
+              type: 'item',
+              // icon: 'feather icon-file-text',
+              src: dashboardImg4,
+              url: '/admin-template/admin-module-list'
+            },
+            {
+              id: 'forms',
+              title: 'Form Tamplate',
+              type: 'item',
+              // icon: 'feather icon-file-text',
+              src: dashboardImg3,
+              url: '/template/form-template'
             }
           ]
         }
