@@ -470,3 +470,25 @@ p.text-muted {
     color: #fff !important;
   }
 }
+.form-check-input:checked{
+  background-color: #1a776f;
+  border-color: #1a776f;
+}
+.form-rang:focus,
+.form-check-input:focus{
+  border-color: #1a776f;
+    outline: 0;
+    box-shadow: none !important;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  // width: 10px;
+  -webkit-appearance: none;
+  // height: 10px;
+  cursor: ew-resize;
+  background: #1a776f;
+  box-shadow:none;
+}
+input[type='range']::-webkit-slider-thumb:focus{
+  box-shadow:none;
+}
