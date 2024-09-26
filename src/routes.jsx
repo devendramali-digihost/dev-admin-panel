@@ -133,6 +133,17 @@ const routes = [
         exact: 'true',
         path: '/template/form-template',
         element: lazy(() => import('./views/admin-tamplate/FormTamplate'))
+      },
+      // Admin template
+      {
+        exact: 'true',
+        path: '/admin-template/create-admin-template',
+        element: lazy(() => import('./views/admin-tamplate/CreateAdminTemplate'))
+      },
+      {
+        exact: 'true',
+        path: '/company/create-new-project',
+        element: lazy(() => import('./views/company/CreateNewProject'))
       }
     ]
   }
