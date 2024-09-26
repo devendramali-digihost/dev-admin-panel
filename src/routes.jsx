@@ -104,11 +104,11 @@ const routes = [
         element: () => <Navigate to={BASE_URL} />
       },
       // Admin
-      // {
-      //   exact: 'true',
-      //   path: '/template/create-admin',
-      //   element: lazy(() => import('./views/template/CreateAdmin'))
-      // },
+      {
+        exact: 'true',
+        path: '/template/create-admin',
+        element: lazy(() => import('./views/template/CreateAdmin'))
+      },
       // {
       //   exact: 'true',
       //   path: '/template/admin-list',
@@ -144,6 +144,12 @@ const routes = [
         exact: 'true',
         path: '/company/create-new-project',
         element: lazy(() => import('./views/company/CreateNewProject'))
+      },
+       // Module page
+      {
+        exact: 'true',
+        path: '/create-page/create-module',
+        element: lazy(() => import('./views/create-page/CreateModule'))
       }
     ]
   }
