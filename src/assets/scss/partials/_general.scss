@@ -485,10 +485,58 @@ input[type='range']::-webkit-slider-thumb {
   // width: 10px;
   -webkit-appearance: none;
   // height: 10px;
-  cursor: ew-resize;
   background: #1a776f;
   box-shadow:none;
 }
-input[type='range']::-webkit-slider-thumb:focus{
-  box-shadow:none;
+
+
+
+/* Active thumb color (when dragged) */
+input[type="range"]:active::-webkit-slider-thumb,
+input[type="range"]:focus::-webkit-slider-thumb {
+  background-color: #1a776f;
+  border-color: #1a776f;
+  box-shadow: none ;
+}
+
+/* For Firefox */
+input[type="range"]::-moz-range-thumb {
+  background-color: #1a776f;
+  border-color: #1a776f;
+  box-shadow: none ;
+}
+
+input[type="range"]:active::-moz-range-thumb,
+input[type="range"]:focus::-moz-range-thumb {
+  background-color: #1a776f;
+  border-color: #1a776f;
+  box-shadow: none ;
+}
+
+/* For IE/Edge */
+input[type="range"]::-ms-thumb {
+  background-color: #1a776f;
+  border-color: #1a776f;
+  box-shadow: none ;
+}
+
+input[type="range"]:active::-ms-thumb,
+input[type="range"]:focus::-ms-thumb {
+  background-color: #1a776f;
+  border-color: #1a776f;/* Active color */
+  box-shadow: none ;
+}
+.form-switch .form-check-input{
+  height: 1rem;
+}
+.form-switch .form-check-input:focus{
+  --bs-form-switch-bg:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e");
+}
+.form-switch .form-check-input:checked:focus{
+  --bs-form-switch-bg:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e")
+}
+.css-t3ipsp-control{
+  border-color: #1a776f !important;/* Active color */
+  box-shadow:  none !important;
+  outline: none;
 }
