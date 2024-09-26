@@ -16,45 +16,95 @@ const menuItems = {
           url: '/app/dashboard/default'
         },
         {
-          id: 'business',
-          title: 'Business Account',
-          type: 'item',
-          icon: 'feather icon-file-text',
-          src: dashboardImg3,
-          url: '/company/business-account'
-        },
-        {
-          id: 'dashboard',
-          title: 'Create Admin Template',
-          type: 'item',
-          icon: 'feather icon-file-text',
-          src: dashboardImg3,
-          url: '/admin-template/create-admin-template'
-        },
-        {
-          id: 'dashboard',
-          title: 'Create New Project',
-          type: 'item',
-          icon: 'feather icon-file-text',
-          src: dashboardImg3,
-          url: '/company/create-new-project'
-        },
-        {
-          id: 'dashboard',
-          title: 'Company List',
-          type: 'item',
-          icon: 'feather icon-file-text',
+          id: 'admin',
+          title: 'Admin Template',
+          type: 'collapse',
+          icon: 'feather icon-lock',
           src: dashboardImg1,
-          url: '/company/company-list'
+          // badge: {
+          //   title: 'New',
+          //   type: 'label-danger'
+          // },
+          children: [
+            {
+              id: 'dashboard',
+              title: 'Create Admin New Template',
+              type: 'item',
+              // icon: 'feather icon-file-text',
+              src: dashboardImg3,
+              url: '/admin-template/create-admin-template'
+            },
+            {
+              id: 'dashboard',
+              title: 'Create New Page',
+              type: 'item',
+              // icon: 'feather icon-file-text',
+              src: dashboardImg4,
+              url: '/create-page/create-new-page'
+            },
+            {
+              id: 'forms',
+              title: 'Form Tamplate',
+              type: 'item',
+              // icon: 'feather icon-file-text',
+              src: dashboardImg3,
+              url: '/template/form-template'
+            }
+          ]
         },
+
         {
           id: 'dashboard',
-          title: 'Create New Page',
-          type: 'item',
+          title: 'Project',
+          type: 'collapse',
           icon: 'feather icon-file-text',
-          src: dashboardImg4,
-          url: '/create-page/create-new-page'
-        },
+          src: dashboardImg3,
+          // url: '/company/create-new-project',
+          children: [
+            {
+              id: 'dashboard',
+              title: 'Create New Project',
+              type: 'item',
+              // icon: 'feather icon-file-text',
+              src: dashboardImg3,
+              url: '/company/create-new-project'
+            },
+
+            {
+              id: 'business',
+              title: 'Business Account',
+              type: 'item',
+              // icon: 'feather icon-file-text',
+              src: dashboardImg3,
+              url: '/company/business-account'
+            },
+            {
+              id: 'dashboard',
+              title: 'Company List',
+              type: 'item',
+              // icon: 'feather icon-file-text',
+              src: dashboardImg1,
+              url: '/company/company-list'
+            },
+            {
+              id: 'forms',
+              title: 'Buy Domain',
+              type: 'item',
+              // icon: 'feather icon-file-text',
+              src: dashboardImg3,
+              url: '/buy-domain'
+            },
+            {
+              id: 'forms',
+              title: 'Ns Verify',
+              type: 'item',
+              // icon: 'feather icon-file-text',
+              src: dashboardImg3,
+              url: '/ns-verify'
+            }
+          ]
+        }
+
         // {
         //   id: 'dashboard',
         //   title: 'Basic Table',
@@ -108,30 +158,6 @@ const menuItems = {
         //   src: dashboardImg1,
         //   url: '/profile/my-profile'
         // },
-        {
-          id: 'forms',
-          title: 'Buy Domain',
-          type: 'item',
-          icon: 'feather icon-file-text',
-          src: dashboardImg3,
-          url: '/buy-domain'
-        },
-        {
-          id: 'forms',
-          title: 'Ns Verify',
-          type: 'item',
-          icon: 'feather icon-file-text',
-          src: dashboardImg3,
-          url: '/ns-verify'
-        },
-        {
-          id: 'forms',
-          title: 'Form Tamplate',
-          type: 'item',
-          icon: 'feather icon-file-text',
-          src: dashboardImg3,
-          url: '/template/form-template'
-        }
       ]
     }
   ]
