@@ -14,7 +14,8 @@
 
   thead th {
     border-bottom: 1px solid $theme-border;
-    font-weight: 600;
+    font-weight: 400;
+    color: #212529;
     padding: .75rem .75rem;
     background-color: var(--bs-table-bg);
     -webkit-box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
@@ -42,6 +43,18 @@
     td {
       padding: 0.35rem;
     }
+  }
+
+  .btn.edit{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    margin: auto;
   }
 }
 /* Border versions */
@@ -72,3 +85,11 @@
 }
 
 /**====== Data Tables css end ======**/
+
+
+
+.table-hover > tbody > tr:hover > *{
+  background:rgb(238 246 246 / 5%) !important;
+  border: 1px solid #e8f2f1;
+  color: #eef6f6;
+}
