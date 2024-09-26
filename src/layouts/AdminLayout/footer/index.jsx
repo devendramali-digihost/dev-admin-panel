@@ -9,7 +9,7 @@ function Footer() {
 					&copy; {new Date().getFullYear()} Copyright:{' '} © DigiHost.
 					</div>
 					<div>
-						Crafted with <i class="mdi mdi-heart text-danger"></i> by <a href="https://1.envato.market/themesdesign" target="_blank">DigiHost</a>
+						Crafted with <i class="mdi mdi-heart text-danger"></i> by <a href="https://www.digihost.in/" target="_blank">DigiHost</a>
 					</div>
 				</div>
 			</footer>
