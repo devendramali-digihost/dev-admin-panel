@@ -29,6 +29,12 @@ const Breadcrumb = () => {
             setItem(collapse);
           }
         }
+        else if (collapse.type && collapse.type === 'breadcrumb') {
+          if (location.pathname === collapse.url) {
+            setMain(item);
+            setItem(collapse);
+          }
+        }
         return false;
       });
     }
@@ -77,7 +83,40 @@ const Breadcrumb = () => {
     }
     document.title = title + BASE_TITLE;
   }
-
+  if (item && item.type === 'breadcrumb') {
+    title = item.title;
+    itemContent = (
+      <ListGroup.Item as="li" bsPrefix=" " className="breadcrumb-item">
+        <Link to="#">{title}</Link>
+      </ListGroup.Item>
+    );
+    if (item.breadcrumbs !== false) {
+      breadcrumbContent = (
+        <div className="page-header">
+          <div className="page-block">
+            <div className="row align-items-center">
+              <div className="col-md-12">
+                <div className="bread-crumb-header">
+                  <div className="page-header-title">
+                    <h5 className="">{title}</h5>
+                  </div>
+                  <ListGroup as="ul" bsPrefix=" " className="breadcrumb">
+                    <ListGroup.Item as="li" bsPrefix="" className="breadcrumb-item">
+                      <Link to="/">Digihost</Link>
+                    </ListGroup.Item>
+                    <GoChevronRight />
+                    {mainContent}
+                    {itemContent}
+                  </ListGroup>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    document.title = title + BASE_TITLE;
+  }
   return <React.Fragment>{breadcrumbContent}</React.Fragment>;
 };
 

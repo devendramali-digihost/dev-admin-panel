@@ -79,7 +79,7 @@ const menuItems = {
           children: [
             {
               id: 'dashboard',
-              title: 'Create Admin New Template',
+              title: 'Create New Admin Template',
               type: 'item',
               // icon: 'feather icon-file-text',
               src: dashboardImg3,
@@ -165,6 +165,18 @@ const menuItems = {
         //   src: dashboardImg1,
         //   url: '/profile/my-profile'
         // },
+        ,{
+          id: 'dashboard',
+          title: 'Admin Name',
+          type: 'breadcrumb',
+          url: '/template/create-admin'
+        },
+        {
+          id: 'dashboard',
+          title: 'Create Module',
+          type: 'breadcrumb',
+          url: '/create-page/create-module'
+        },
       ]
     }
   ]
