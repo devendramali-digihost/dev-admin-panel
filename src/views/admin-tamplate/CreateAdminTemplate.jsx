@@ -6,17 +6,16 @@ import { AiOutlinePlus } from 'react-icons/ai';
 const CreateAdminTemplate = () => {
   return (
     <div className="create-new-project">
-      <Container>
+     
         <Card>
           <Card.Body>
             <div className="text-center">
               <Link to="/template/create-admin" className="create-button btn btn-primary waves-effect waves-light">
-                <AiOutlinePlus /> Create Admin Template
+                <AiOutlinePlus /> Create New Admin Template
               </Link>
             </div>
           </Card.Body>
         </Card>
-      </Container>
     </div>
   );
 };

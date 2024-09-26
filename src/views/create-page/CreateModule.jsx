@@ -6,7 +6,7 @@ import { AiOutlinePlus } from 'react-icons/ai';
 const CreateModule = () => {
   return (
     <>
-       <Container>
+     
         <Card>
           <Card.Body>
             <div className="text-center">
@@ -16,7 +16,7 @@ const CreateModule = () => {
             </div>
           </Card.Body>
         </Card>
-      </Container>
+      
     </>
   )
 }
