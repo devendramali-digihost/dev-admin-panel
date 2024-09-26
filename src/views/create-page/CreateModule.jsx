@@ -3,22 +3,22 @@ import { Container, Card } from 'react-bootstrap';
   import { Link } from 'react-router-dom';
 import { AiOutlinePlus } from 'react-icons/ai';
 
-const CreateAdminTemplate = () => {
+const CreateModule = () => {
   return (
-    <div className="create-new-project">
-      <Container>
+    <>
+       <Container>
         <Card>
           <Card.Body>
             <div className="text-center">
-              <Link to="/template/create-admin" className="create-button btn btn-primary waves-effect waves-light">
-                <AiOutlinePlus /> Create Admin Template
+              <Link to="/create-page/create-new-page" className="create-button btn btn-primary waves-effect waves-light">
+                <AiOutlinePlus /> Create Modules
               </Link>
             </div>
           </Card.Body>
         </Card>
       </Container>
-    </div>
-  );
-};
+    </>
+  )
+}
 
-export default CreateAdminTemplate;
+export default CreateModule
