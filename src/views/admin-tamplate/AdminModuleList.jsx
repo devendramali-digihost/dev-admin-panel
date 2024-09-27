@@ -80,7 +80,7 @@ const AdminModuleList = () => {
                 </span>
               </div>
             </div>
-            <Link to="" class="btn btn-primary waves-effect waves-light">
+            <Link to="/create-page/create-new-page" class="btn btn-primary waves-effect waves-light">
               <AiOutlinePlus /> Create New Module
             </Link>
           </Card.Body>
