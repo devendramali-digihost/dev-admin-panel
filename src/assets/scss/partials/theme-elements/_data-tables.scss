@@ -165,3 +165,29 @@
     }
   }
 }
+
+.rdt_TableHeadRow{
+  .rdt_TableCol{
+    .rdt_TableCol_Sortable{
+      .ddvZdT{
+        font-size: 14px;
+        font-weight: 500;
+        color: #141b1b;
+      }
+    }
+  }
+}
+
+.hudJpJ{
+  border: none;
+
+  .bzEluS {
+    border: 1px solid #f0f5f5;
+    border-left: none;
+    border-bottom: 0;
+
+    &:first-child{
+      border: 1px solid #f0f5f5;
+    }
+  }
+}
