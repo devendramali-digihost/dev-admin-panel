@@ -873,12 +873,21 @@
         }
 
         .pcoded-submenu {
-          display: none;
+          // display: none;
+          transition: all .3s linear;
+          max-height: 0;
+          transition: all 0.50s ease-out;
+          overflow: hidden;
+          padding: 0 0 ;
+
         }
 
         &.pcoded-trigger {
           > .pcoded-submenu {
-            display: block;
+            // display: block;
+            max-height: 1000px;
+            transition: all 0.50s ease-in;
+            // padding: 10px 0 0;
           }
 
           > a {
@@ -1224,9 +1233,9 @@
           z-index: 1027;
           position: absolute;
           left: 0;
-          top: 5px;
+          top: 0px;
           width: 3px;
-          height: calc(100% - 5px);
+          height: calc(100%);
         }
 
         > a {
