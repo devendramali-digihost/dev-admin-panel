@@ -93,3 +93,75 @@
   border: 1px solid #e8f2f1;
   color: #eef6f6;
 }
+
+.dLHSn{
+  padding: 10px 16px;
+  border-left:  1px solid #f0f5f5;
+  border-right:  1px solid #f0f5f5;
+  color: #444;
+}
+
+#cell-7-undefined{
+  justify-content: center;
+}
+
+.rdt_TableRow{
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(0, 0, 0, .12);
+
+  &:hover{
+    background-color: #EEEEEE;
+    transition-duration: 0.15s;
+    transition-property: background-color;
+  }
+}
+
+.data_tableHeader{
+  .search-input{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    width: 80%;
+
+    input{
+      // padding: 4px 10px;
+      
+    }
+    label{
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+      color: #888;
+      font-weight: 400;
+    }
+  }
+}
+
+#main-search{
+  .input-group {
+    background-color: #fff;
+    align-items: center;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+
+
+    .search-btn{
+      background: transparent;
+      border: none;
+      margin-right: 0 !important;
+
+      .input-group-text{
+        padding-left: 15px;
+        padding-right: 0px;
+        background: transparent;
+        font-size: 16px;
+        border: none;
+      }
+      
+    }
+    #m-search{
+      border: none;
+    }
+  }
+}
