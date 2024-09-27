@@ -43,6 +43,14 @@ const menuItems = {
               url: '/create-page/create-new-page'
             },
             {
+              id: 'project',
+              title: 'Admin Module list',
+              type: 'item',
+              // icon: 'feather icon-file-text',
+              src: dashboardImg4,
+              url: '/admin-template/admin-module-list'
+            },
+            {
               id: 'forms',
               title: 'Form Tamplate',
               type: 'item',
