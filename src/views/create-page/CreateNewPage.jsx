@@ -190,7 +190,7 @@ const CreateNewPage = () => {
                                                     type="text"
                                                     id="m-search"
                                                     className="form-control"
-                                                    placeholder="Search..."
+                                                    placeholder="Search Page Name"
                                                     value={searchTerm}
                                                     onChange={handleSearch}
                                                 />
