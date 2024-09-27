@@ -169,7 +169,7 @@ const CreateNewPage = () => {
         <React.Fragment>
             <Row>
                 <Col lg={12}>
-                    <Card>
+                    <Card className="create_new_page_card">
                         <Card.Header>
                             <Row className="justify-content-between">
                                 

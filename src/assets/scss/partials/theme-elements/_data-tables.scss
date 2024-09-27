@@ -94,7 +94,7 @@
   color: #eef6f6;
 }
 
-.dLHSn{
+.sc-fAUdSK{
   padding: 10px 16px;
   border-left:  1px solid #f0f5f5;
   border-right:  1px solid #f0f5f5;
@@ -178,16 +178,20 @@
   }
 }
 
-.hudJpJ{
-  border: none;
+.create_new_page_card{
+  .rdt_TableHeadRow{
+    border: none;
 
-  .bzEluS {
-    border: 1px solid #f0f5f5;
-    border-left: none;
-    border-bottom: 0;
-
-    &:first-child{
+    .bzEluS {
       border: 1px solid #f0f5f5;
+      border-left: none;
+  
+      &:first-child{
+        border: 1px solid #f0f5f5;
+      }
     }
   }
+}
+.hudJpJ{
+  
 }
