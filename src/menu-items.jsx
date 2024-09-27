@@ -1,4 +1,4 @@
-import { dashboardImg1, dashboardImg2, dashboardImg3, dashboardImg4 } from './../src/images';
+import { dashboardImg1, dashboardImg2, dashboardImg3, dashboardImg4, adminTemplate, createProject } from './../src/images';
 const menuItems = {
   items: [
     {
@@ -20,7 +20,7 @@ const menuItems = {
           title: 'Admin Template',
           type: 'collapse',
           icon: 'feather icon-lock',
-          src: dashboardImg1,
+          src: adminTemplate,
           // badge: {
           //   title: 'New',
           //   type: 'label-danger'
@@ -54,11 +54,11 @@ const menuItems = {
         },
 
         {
-          id: 'dashboard',
-          title: 'Project',
+          id: 'project',
+          title: 'Create Project',
           type: 'collapse',
           icon: 'feather icon-file-text',
-          src: dashboardImg3,
+          src: createProject,
           // url: '/company/create-new-project',
           children: [
             {

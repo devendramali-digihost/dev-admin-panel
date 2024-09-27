@@ -145,7 +145,12 @@ const routes = [
         path: '/company/create-new-project',
         element: lazy(() => import('./views/company/CreateNewProject'))
       },
-       // Module page
+      {
+        exact: 'true',
+        path: '/admin-template/admin-module-list',
+        element: lazy(() => import('./views/admin-tamplate/AdminModuleList'))
+      },
+      // Module page
       {
         exact: 'true',
         path: '/create-page/create-module',
