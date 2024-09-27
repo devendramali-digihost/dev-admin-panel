@@ -129,20 +129,24 @@ const CreateNewPage = () => {
                 />
             ),
         },
+       
         {
             name: 'Actions',
             cell: (row, index) => (
                 <div className="d-flex align-items-center">
-                    {index === 0 && (
+                    {/* Always show the 'Add Row' button on the last row */}
+                    {index === rows.length - 1 ? (
                         <Button
-                            className="waves-effect waves-light ms-2"
+                            className="waves-effect waves-light"
                             variant="primary"
                             onClick={handleAddRow}
                         >
                             Add Row
                         </Button>
-                    )}
-                    {index !== 0 && (
+                    ) : null}
+    
+                    {/* Show the 'Close' button for all rows except the first and last rows */}
+                    {rows.length > 1 && index !== 0 && index !== rows.length - 1 ? (
                         <a
                             onClick={() => handleRemoveRow(index)}
                             className="btn btn-outline-danger btn-sm edit"
@@ -150,11 +154,24 @@ const CreateNewPage = () => {
                         >
                             <i className="fas fa-times m-0" title="Close"></i>
                         </a>
-                    )}
+                    ) : null}
+    
+                    {/* If there are 2 or more rows, show 'Close' button on the first row */}
+                    {rows.length > 1 && index === 0 ? (
+                        <a
+                            onClick={() => handleRemoveRow(index)}
+                            className="btn btn-outline-danger btn-sm edit"
+                            title="Delete"
+                        >
+                            <i className="fas fa-times m-0" title="Close"></i>
+                        </a>
+                    ) : null}
                 </div>
             ),
         },
+        
     ];
+    
 
     // Custom search input with icon
     const searchOnHandler = () => {
