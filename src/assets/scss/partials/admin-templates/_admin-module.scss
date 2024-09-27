@@ -1,0 +1,91 @@
+.admin-module-list {
+  .heading-texts {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h4 {
+      font-size: 16px;
+      margin-bottom: 30px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+  .accordion {
+    .accordion-item {
+      margin-bottom: 30px;
+      border: 0;
+    }
+    .accordion-button {
+      background: #f1f7f7;
+      border-radius: 2px !important;
+      color: #455251;
+      font-weight: 500;
+      text-transform: capitalize;
+      box-shadow: none;
+    }
+  }
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  input {
+    display: none;
+
+    &:checked ~ label {
+      background: $primary-color;
+
+      &::after {
+        translate: 15px 0;
+        background: #fff;
+        right: 3px;
+        top: 3px;
+      }
+    }
+  }
+  label {
+    display: block;
+    width: 35px;
+    height: 20px;
+    border-radius: 15px;
+    background: #d1d1d1;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &::after {
+      content: '';
+      display: inherit;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #ffffff;
+      position: absolute;
+      left: 3px;
+      top: 3px;
+      transition: 0.3s;
+    }
+  }
+}
+
+.switch-container {
+  display: flex;
+  align-items: center;
+  gap: 0 30px;
+  flex-wrap: wrap;
+
+  .switch {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    span {
+      &:nth-child(1) {
+        display: inline-block;
+        min-width: 80px;
+      }
+    }
+  }
+}
