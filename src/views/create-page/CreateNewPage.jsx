@@ -171,7 +171,16 @@ const CreateNewPage = () => {
                 <Col lg={12}>
                     <Card>
                         <Card.Header>
-                            <Row>
+                            <Row className="justify-content-between">
+                                
+                                <Col lg={4}>
+                                    <div className="data_tableHeader">
+                                        <div className="search-input">
+                                            <Form.Label className="w-50 mb-0">Page Name</Form.Label>
+                                            <Form.Control type="text" placeholder="Page Name" />
+                                        </div>
+                                    </div>
+                                </Col>
                                 <Col lg={3}>
                                     <div className="data_tableHeader">
                                         {/* Your custom search component */}
@@ -194,10 +203,6 @@ const CreateNewPage = () => {
                                                     value={searchTerm}
                                                     onChange={handleSearch}
                                                 />
-                                                {/* Uncomment below to add the search close functionality */}
-                                                {/* <Link to="#" className="input-group-append search-close" onClick={searchOffHandler}>
-                                                    <i className="feather icon-x input-group-text" />
-                                                </Link> */}
                                             </div>
                                         </div>
                                     </div>
