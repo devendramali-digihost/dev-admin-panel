@@ -17,7 +17,7 @@ const NavSearch = (props) => {
 
   const searchOffHandler = () => {
     setIsOpen(true);
-    setSearchString(0); 
+    setSearchString(0);
     setTimeout(() => {
       if (windowWidth < 600) {
         document.querySelector('#navbar-right').classList.remove('d-none');
@@ -33,13 +33,12 @@ const NavSearch = (props) => {
   return (
     <React.Fragment>
       <div id="main-search " className={searchClass.join(' ')}>
-        <div className="input-group"   onClick={searchOnHandler}>
+        <div className="input-group" onClick={searchOnHandler}>
           <span
             onKeyDown={searchOnHandler}
             role="button"
             tabIndex="0"
             className="input-group-append search-btn "
-          
             style={{ borderRadius: '50%', marginRight: 15 }}
           >
             <i className="feather icon-search input-group-text" />
@@ -48,7 +47,6 @@ const NavSearch = (props) => {
           {/* <Link to="#" className="input-group-append search-close" onClick={searchOffHandler}>
             <i className="feather icon-x input-group-text" />
           </Link> */}
-        
         </div>
       </div>
     </React.Fragment>
