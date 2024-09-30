@@ -130,5 +130,9 @@
         a{
             color: $primary-color;
             font-weight: 600;
+            transition: all .3s linear;
+            &:hover{
+                color:$menu-dark-background;
+            }
         }
     }
