@@ -272,7 +272,7 @@ const CompanySignUp = () => {
 
                   <Col lg={12}>
                     <div className="text-end">
-                      <Link to="/company/domain-verify" type="submit" className="btn btn-primary" variant="primary">
+                      <Link to="/company/domain-verify" type="submit" className="btn btn-primary waves-effect waves-light" variant="primary">
                         Create
                       </Link>
                     </div>

@@ -32,7 +32,7 @@ const NsVerify = () => {
                                 <p><span>Ns2 :</span> FG1563NZ1563</p>
                         </div>
                         <div className="text-start">
-                            <Button type="submit" variant="primary">
+                            <Button type="submit" className='waves-effect waves-light' variant="primary">
                                 Verify
                             </Button>
                         </div>

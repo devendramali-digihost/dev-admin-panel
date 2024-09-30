@@ -65,7 +65,7 @@ const CompanyList = () => {
     {
       name: 'NS Record',
       cell: (row) => (
-        <button className="btn btn-primary ns-button" onClick={handleShow}>
+        <button className="btn btn-primary ns-button waves-effect waves-light" onClick={handleShow}>
           NS Record
         </button>
       )
@@ -110,7 +110,7 @@ const CompanyList = () => {
     for (let i = 1; i <= totalPages; i++) {
       if (i <= 5 || (i > 5 && i === currentPage)) {
         pages.push(
-          <button key={i} className={`pagination-button ${i === currentPage ? 'active' : ''}`} onClick={() => handlePageChange(i)}>
+          <button key={i} className={`pagination-button waves-effect waves-light ${i === currentPage ? 'active' : ''}`} onClick={() => handlePageChange(i)}>
             {i}
           </button>
         );
@@ -193,11 +193,11 @@ const CompanyList = () => {
           customStyles={customStyles}
         />
         <div className="pagination-container">
-          <button onClick={prevPage} disabled={currentPage === 1}>
+          <button onClick={prevPage} className='waves-effect waves-light' disabled={currentPage === 1}>
             <MdOutlineChevronLeft />
           </button>
           {renderPagination()}
-          <button onClick={nextPage} disabled={currentPage === totalPages}>
+          <button onClick={nextPage} className='waves-effect waves-light' disabled={currentPage === totalPages}>
             <MdChevronRight />
           </button>
         </div>

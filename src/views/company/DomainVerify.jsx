@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Form, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const DomainVerify = () => {
   return (
@@ -28,10 +29,12 @@ const DomainVerify = () => {
                   </Form.Group>
                 </Col>
                 <Col lg={12}>
-                  <div className="text-start">
-                    <button type="submit" className="btn btn-primary" variant="primary">
+                  <div className="text-start gap-2 d-flex align-items-center buy-btn">
+                    <button type="submit" className="btn btn-primary waves-effect waves-light" variant="primary">
                       Verify
                     </button>
+                    or
+                    <Link to="/buy-domain">Buy Domain</Link>
                   </div>
                   <div className="details">
                     <h4>Details</h4>

@@ -177,6 +177,12 @@ const menuItems = {
           type: 'breadcrumb',
           url: '/create-page/create-module'
         },
+        {
+          id: 'dashboard',
+          title: 'Domain Verification',
+          type: 'breadcrumb',
+          url: '/company/domain-verify'
+        },
       ]
     }
   ]

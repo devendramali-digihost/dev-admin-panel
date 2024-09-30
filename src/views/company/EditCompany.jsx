@@ -96,14 +96,14 @@ const EditCompany = () => {
                   </Col>
                   <Col md={6}>
                     <div className="mb-3">
-                      <Button variant="primary" onClick={addInputField}>
+                      <Button variant="primary" className='waves-effect waves-light' onClick={addInputField}>
                         Add New
                       </Button>
                     </div>
                   </Col>
                   <Col lg={12}>
                     <div className="text-end">
-                      <Button type="submit" variant="primary">
+                      <Button type="submit" className='waves-effect waves-light' variant="primary">
                         Submit
                       </Button>
                     </div>

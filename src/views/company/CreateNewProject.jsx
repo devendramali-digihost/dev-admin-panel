@@ -6,17 +6,17 @@ import { AiOutlinePlus } from 'react-icons/ai';
 const CreateNewProject = () => {
   return (
     <div className="create-new-project">
-      <Container>
+    
         <Card>
           <Card.Body>
             <div className="text-center">
-              <Link to="company/business-account" className="create-button btn btn-primary">
+              <Link to="/company/business-account" className="create-button btn btn-primary waves-effect waves-light">
                 <AiOutlinePlus /> Create New Project
               </Link>
             </div>
           </Card.Body>
         </Card>
-      </Container>
+     
     </div>
   );
 };

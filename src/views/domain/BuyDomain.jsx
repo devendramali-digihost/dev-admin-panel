@@ -139,7 +139,7 @@ const BuyDomain = () => {
                             />
                             <i className="feather icon-search search-icon" />
                         </Form.Group>
-                        <Button type="submit" >Search Domain</Button>
+                        <Button type="submit" className='waves-effect waves-light'>Search Domain</Button>
                     </Form>
                 </div>
                 <div className='domain-container'>
@@ -179,7 +179,7 @@ const BuyDomain = () => {
                                             <span> ₹{domainObj.prize}/yr</span>
                                             <p>{domainObj.condition}</p>
                                         </div>
-                                        <Button className='buy-btn'>Buy Now</Button>
+                                        <Button className='buy-btn waves-effect waves-light'>Buy Now</Button>
                                     </div>
                                 </div>
                             ))}
