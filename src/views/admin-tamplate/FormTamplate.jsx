@@ -33,6 +33,13 @@ const FormTamplate = () => {
   const handleRangeChange = (e) => {
     setRangeValue(e.target.value);
   };
+
+
+  const [color, setColor] = useState('#24786f'); // Default color
+
+  const handleColorChange = (e) => {
+    setColor(e.target.value); // Update the color state
+  };
   return (
     <>
       <Row className="mb-5 form-templates">
@@ -153,8 +160,21 @@ const FormTamplate = () => {
                 <Form.Label className="mb-0" as={Col} md="2">
                   Color
                 </Form.Label>
-                <Col md={10}>
-                  <Form.Control required type="color" value="#24786f" />
+                <Col md={8}>
+                  <Form.Control
+                    required
+                    type="color"
+                    value={color}
+                    onChange={handleColorChange} // Update color on change
+                  />
+                </Col>
+                <Col md={2}>
+                  {/* Display the selected color value */}
+                  <Form.Control
+                    type="text"
+                    value={color}
+                    readOnly // Make it read-only to prevent manual editing
+                  />
                 </Col>
               </Row>
               <Row className="mb-3 align-items-center">
