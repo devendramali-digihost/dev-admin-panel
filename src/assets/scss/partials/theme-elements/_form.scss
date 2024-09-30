@@ -282,3 +282,23 @@ select.form-control-lg:not([size]):not([multiple]) {
 .form-check-reverse{
   display: inline-block;
 }
+
+
+.search_input{
+
+  .input-group{
+    background-color: transparent;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+
+    .input-group-text{
+      padding: 0;
+      padding-left:0.55rem;
+      border: none;
+    }
+
+    input{
+      border: none;
+    }
+  }
+}

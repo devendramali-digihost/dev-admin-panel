@@ -57,7 +57,16 @@ const FormTamplate = () => {
                   Search
                 </Form.Label>
                 <Col md={10}>
-                  <Form.Control required type="search" placeholder="Search Here..." />
+                  <div className="search_input">
+                    <InputGroup>
+                      <InputGroup.Text id="basic-addon1"><i className="feather icon-search" /></InputGroup.Text>
+                      <Form.Control
+                        placeholder="Search..."
+                        aria-label="Username"
+                        aria-describedby="basic-addon1"
+                      />
+                  </InputGroup>
+                  </div>
                 </Col>
               </Row>
               <Row className="mb-3 align-items-center">
