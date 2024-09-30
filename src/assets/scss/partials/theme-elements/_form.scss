@@ -57,6 +57,10 @@
   &::-webkit-input-placeholder {
     color: #aaaeb3;
   }
+
+  &.form-control-color{
+    padding: 0.37rem 0.47rem;
+  }
 }
 
 .form-label{
@@ -273,4 +277,8 @@ select.form-control-lg:not([size]):not([multiple]) {
 			border-color: transparent;
 		}
 	}
+}
+
+.form-check-reverse{
+  display: inline-block;
 }
