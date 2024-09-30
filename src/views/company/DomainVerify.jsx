@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const DomainVerify = () => {
   return (
     <div className="domain-verify">
-      <Container>
+      <div>
         <Card>
           <Card.Body>
             <Form>
@@ -70,7 +70,7 @@ const DomainVerify = () => {
             </Form>
           </Card.Body>
         </Card>
-      </Container>
+      </div>
     </div>
   );
 };
