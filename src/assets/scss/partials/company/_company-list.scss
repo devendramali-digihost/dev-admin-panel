@@ -246,3 +246,38 @@ button[disabled] {
     }
   }
 }
+
+.coming-soon {
+  font-size: 18px;
+  .no{
+    color: $danger-color;
+  }
+}
+.domain-verify{
+  .yes{
+    background: rgb(190 242 218);
+    padding: 4px 15px;
+    color: #0b7b47;
+    border-radius: 7px;
+  }
+  .no{
+    background: rgba(227, 127, 127, 0.37);
+    padding: 4px 15px;
+    color: #d40f0f;
+    border-radius: 7px;
+  }
+}
+.ns-verify{
+  .yes{
+    background: rgb(190 242 218);
+    padding: 4px 15px;
+    color: #0b7b47;
+    border-radius: 7px;
+  }
+  .no{
+    background: rgba(227, 127, 127, 0.37);
+    padding: 4px 15px;
+    color: #d40f0f;
+    border-radius: 7px;
+  }
+}
