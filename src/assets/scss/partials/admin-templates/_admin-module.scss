@@ -14,99 +14,6 @@
     #main-search.open-search {
       width: 25%;
     }
-    // .main-search {
-    //   .input-group {
-    //     // border-radius: 20px;
-    //     // padding: 0;
-    //     display: flex;
-    //     // border: 1px solid #f1f1f1;
-    //     align-items: center;
-    //     padding: 5px 5px 3px 15px;
-    //     border: none;
-    //     height: 38px;
-    //     padding-right: 39px;
-    //     // padding-left: 40px;
-    //     background-color: #f1f5f7;
-    //     -webkit-box-shadow: none;
-    //     box-shadow: none;
-    //     border-radius: 30px;
-
-    //     .form-control,
-    //     .input-group-text {
-    //       background: transparent;
-    //       border: none;
-    //       border-radius: 0;
-    //       padding: 0;
-    //     }
-
-    //     .search-close {
-    //       display: none;
-    //     }
-
-    //     .search-btn {
-    //       border-radius: 50%;
-    //       padding: 0;
-    //       background: transparent;
-    //       border-color: transparent;
-    //       box-shadow: none;
-    //     }
-
-    //     .form-control {
-    //       transition: all 0.3s ease-in-out;
-    //       width: 0;
-    //       font-size: 14px;
-    //     }
-
-    //     .form-control,
-    //     .search-btn {
-    //       &:active,
-    //       &:focus,
-    //       &:hover {
-    //         outline: none;
-    //         box-shadow: none;
-    //       }
-    //     }
-    //   }
-
-    //   // &.open {
-    //   //   .input-group {
-    //   //     background: #fff;
-    //   //     border: 1px solid #f1f1f1;
-    //   //     box-shadow: 0 6px 12px -5px rgba(65, 76, 78, 0.08);
-    //   //     padding: 5px 5px 5px 5px;
-
-    //   //     .search-close {
-    //   //       display: flex;
-    //   //     }
-
-    //   //     .search-btn {
-    //   //       padding: 5px;
-    //   //       margin-left: 5px;
-    //   //       // background: $primary-color;
-    //   //       // border-color: $primary-color;
-
-    //   //       .input-group-text {
-    //   //         // color: #fff;
-    //   //       }
-    //   //     }
-
-    //   //     .form-control {
-    //   //       transition: all 0.3s ease-in-out;
-    //   //       width: 0;
-    //   //     }
-
-    //   //     .form-control,
-    //   //     .search-btn {
-    //   //       &:active,
-    //   //       &:focus,
-    //   //       &:hover {
-    //   //         outline: none;
-    //   //         box-shadow: none;
-    //   //       }
-    //   //     }
-    //   //   }
-    //   // }
-    // }
   }
   .accordion {
     .accordion-item {
@@ -220,4 +127,30 @@
 
 .btn-primary {
   font-size: 14px;
+}
+
+.form-templates {
+  .toggle {
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+  }
+  .form-check.form-check-inline {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    label {
+      margin-bottom: 0;
+    }
+  }
+  .form-check.form-check-reverse {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 7px;
+    flex-direction: row-reverse;
+    label {
+      margin-bottom: 0;
+    }
+  }
 }
