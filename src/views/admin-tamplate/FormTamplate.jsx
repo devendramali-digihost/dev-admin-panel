@@ -1,4 +1,5 @@
 import React from 'react';
+import TextEditor from './TextEditor'
 import Select from 'react-select';
 import { Row, Col, Card, Form, Button, InputGroup, FormControl } from 'react-bootstrap';
 
@@ -376,6 +377,15 @@ const FormTamplate = () => {
                 Submit
               </Button>
             </Card.Body>
+          </Card>
+        </Col>
+        <Col lg={12}>
+          <Card>
+              <Card.Body>
+                  <Card.Title>Text Editor</Card.Title>
+                      <h6 class="font-size-14 mb-3">CKEditor</h6>
+                      <TextEditor/>
+              </Card.Body>
           </Card>
         </Col>
       </Row>
