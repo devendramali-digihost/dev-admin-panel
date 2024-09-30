@@ -125,9 +125,14 @@
   }
 }
 
-.btn-primary {
+.btn{
   font-size: 14px;
 }
+
+.btn + .btn {
+  margin-left: 10px;
+}
+
 
 .form-templates {
   .toggle {
