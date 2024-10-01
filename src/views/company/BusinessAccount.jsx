@@ -145,7 +145,7 @@ const CompanySignUp = () => {
                         const { socialLink } = data;
                         return (
                           <Col md={12} key={index}>
-                            <Form.Group className="mb-3 position-relative" controlId={`SocialLink${index}`}>
+                            <Form.Group className="mt-3 position-relative" controlId={`SocialLink${index}`}>
                               <Form.Label>Add Social Link</Form.Label>
                               <Form.Control
                                 type="text"
@@ -178,7 +178,7 @@ const CompanySignUp = () => {
                         const { contact } = data;
                         return (
                           <Col md={12} key={index}>
-                            <Form.Group className="mb-3 position-relative" controlId={`ContactNumber${index}`}>
+                            <Form.Group className="mt-3 position-relative" controlId={`ContactNumber${index}`}>
                               <Form.Label>Contact Number</Form.Label>
                               <Form.Control
                                 type="text"
@@ -211,7 +211,7 @@ const CompanySignUp = () => {
                         const { emailId } = data;
                         return (
                           <Col md={12} key={index}>
-                            <Form.Group className="mb-3 position-relative" controlId={`EmailId${index}`}>
+                            <Form.Group className="mt-3 position-relative" controlId={`EmailId${index}`}>
                               <Form.Label>Email Id</Form.Label>
                               <Form.Control
                                 type="text"
@@ -244,7 +244,7 @@ const CompanySignUp = () => {
                         const { address } = data;
                         return (
                           <Col md={12} key={index}>
-                            <Form.Group className="mb-3 position-relative" controlId={`Address${index}`}>
+                            <Form.Group className="mt-3 position-relative" controlId={`Address${index}`}>
                               <Form.Label>Address</Form.Label>
                               <Form.Control
                                 type="text"
@@ -272,7 +272,7 @@ const CompanySignUp = () => {
 
                   <Col lg={12}>
                     <div className="text-end">
-                      <Link to="/company/domain-verify" type="submit" className="btn btn-primary waves-effect waves-light">
+                      <Link to="/company/domain-verify" type="submit" className="btn btn-primary waves-effect waves-light mt-4">
                         Create
                       </Link>
                     </div>
