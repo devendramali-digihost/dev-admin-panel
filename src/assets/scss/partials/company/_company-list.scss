@@ -209,7 +209,18 @@ button[disabled] {
   position: absolute;
   bottom: 0;
   right: 0;
+  padding: 0;
   border-radius: 0 4px 4px 0;
+  border: 0;
+  height: 2.5rem;
+  width: 2.5rem;
+  // border-radius: 0 5px 5px 0;
+  background: #1a776f;
+  font-size: 26px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
 }
 
 .remove-field {
@@ -217,7 +228,22 @@ button[disabled] {
   position: absolute;
   bottom: 0;
   right: 0;
+  padding: 0;
   border-radius: 0 4px 4px 0;
+  border: 0;
+  height: 2.5rem;
+  width: 2.5rem;
+  // border-radius: 0 5px 5px 0;
+  background: #eed1d1 !important;
+  font-size: 24px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e72424;
+
+  &:hover {
+    color: #e72424;
+  }
 }
 
 .details {

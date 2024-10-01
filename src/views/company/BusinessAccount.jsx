@@ -9,7 +9,7 @@ const CompanySignUp = () => {
   const [socialLinks, setSocialLinks] = useState([{ socialLink: '' }]);
   const [contactNumbers, setContactNumbers] = useState([{ contact: '' }]);
   const [emailIds, setEmailIds] = useState([{ emailId: '' }]);
-  const [address, setAddress] = useState([{ address: '' }]);
+  const [addresss, setAddresss] = useState([{ address: '' }]);
 
   // Handle adding new social link field
   const addSocialLink = () => {
@@ -28,7 +28,7 @@ const CompanySignUp = () => {
 
   // Address
   const addAddress = () => {
-    setAddress([...address, { emailId: '' }]);
+    setAddresss([...addresss, { address: '' }]);
   };
 
   // Handle removing specific social link field
@@ -52,11 +52,11 @@ const CompanySignUp = () => {
     setEmailIds(rows);
   };
 
-  // Handle removing specific email id field
+  // Handle removing specific address field
   const removeAddress = (index) => {
-    const rows = [...address];
+    const rows = [...addresss];
     rows.splice(index, 1);
-    setAddress(rows);
+    setAddresss(rows);
   };
 
   // Handle updating social link input
@@ -75,7 +75,7 @@ const CompanySignUp = () => {
     setContactNumbers(list);
   };
 
-  // Handle updating contact number input
+  // Handle updating email id input
   const handleEmailIdChange = (index, event) => {
     const { name, value } = event.target;
     const list = [...emailIds];
@@ -83,12 +83,12 @@ const CompanySignUp = () => {
     setEmailIds(list);
   };
 
-  // Handle updating contact number input
-  const handleAddress = (index, event) => {
+  // Handle updating Address input
+  const handleAddressChange = (index, event) => {
     const { name, value } = event.target;
-    const list = [...emailIds];
+    const list = [...addresss];
     list[index][name] = value;
-    setEmailIds(list);
+    setAddresss(list);
   };
 
   const handleSubmit = (event) => {
@@ -97,7 +97,7 @@ const CompanySignUp = () => {
     console.log('Social Links:', socialLinks);
     console.log('Contact Numbers:', contactNumbers);
     console.log('Email Id', emailIds);
-    console.log('Address', address);
+    console.log('Address', addresss);
   };
 
   return (
@@ -155,12 +155,12 @@ const CompanySignUp = () => {
                                 placeholder="Add Social Link"
                               />
                               {socialLinks.length > 1 && index > 0 && (
-                                <Button onClick={() => removeSocialLink(index)} className="remove-field btn-primary">
+                                <Button onClick={() => removeSocialLink(index)} className="remove-field">
                                   <RiDeleteBin5Fill />
                                 </Button>
                               )}
                               {index === 0 && (
-                                <Button variant="primary" onClick={addSocialLink} className="add-button">
+                                <Button onClick={addSocialLink} className="add-button">
                                   <MdAdd />
                                 </Button>
                               )}
@@ -188,12 +188,12 @@ const CompanySignUp = () => {
                                 placeholder="Contact Number"
                               />
                               {contactNumbers.length > 1 && index > 0 && (
-                                <Button onClick={() => removeContactNumber(index)} className="remove-field btn-primary">
+                                <Button onClick={() => removeContactNumber(index)} className="remove-field">
                                   <RiDeleteBin5Fill />
                                 </Button>
                               )}
                               {index === 0 && (
-                                <Button variant="primary" onClick={addContactNumber} className="add-button">
+                                <Button onClick={addContactNumber} className="add-button">
                                   <MdAdd />
                                 </Button>
                               )}
@@ -211,7 +211,7 @@ const CompanySignUp = () => {
                         const { emailId } = data;
                         return (
                           <Col md={12} key={index}>
-                            <Form.Group className="mb-3 position-relative" controlId={`ContactNumber${index}`}>
+                            <Form.Group className="mb-3 position-relative" controlId={`EmailId${index}`}>
                               <Form.Label>Email Id</Form.Label>
                               <Form.Control
                                 type="text"
@@ -221,12 +221,12 @@ const CompanySignUp = () => {
                                 placeholder="Email Id"
                               />
                               {emailIds.length > 1 && index > 0 && (
-                                <Button onClick={() => removeEmailId(index)} className="remove-field btn-primary">
+                                <Button onClick={() => removeEmailId(index)} className="remove-field">
                                   <RiDeleteBin5Fill />
                                 </Button>
                               )}
                               {index === 0 && (
-                                <Button variant="primary" onClick={addEmailId} className="add-button">
+                                <Button onClick={addEmailId} className="add-button">
                                   <MdAdd />
                                 </Button>
                               )}
@@ -237,29 +237,29 @@ const CompanySignUp = () => {
                     </Row>
                   </Col>
 
-                  {/* Address Section */}
+                  {/* Address */}
                   <Col sm={6}>
                     <Row className="mb-3">
-                      {address.map((data, index) => {
+                      {addresss.map((data, index) => {
                         const { address } = data;
                         return (
                           <Col md={12} key={index}>
-                            <Form.Group className="mb-3 position-relative" controlId={`ContactNumber${index}`}>
+                            <Form.Group className="mb-3 position-relative" controlId={`Address${index}`}>
                               <Form.Label>Address</Form.Label>
                               <Form.Control
                                 type="text"
-                                onChange={(event) => handleAddress(index, event)}
+                                onChange={(event) => handleAddressChange(index, event)}
                                 value={address}
                                 name="address"
                                 placeholder="Address"
                               />
-                              {address.length > 1 && index > 0 && (
-                                <Button onClick={() => removeAddress(index)} className="remove-field btn-primary">
+                              {addresss.length > 1 && index > 0 && (
+                                <Button onClick={() => removeAddress(index)} className="remove-field">
                                   <RiDeleteBin5Fill />
                                 </Button>
                               )}
                               {index === 0 && (
-                                <Button variant="primary" onClick={addAddress} className="add-button">
+                                <Button onClick={addAddress} className="add-button">
                                   <MdAdd />
                                 </Button>
                               )}
@@ -272,7 +272,7 @@ const CompanySignUp = () => {
 
                   <Col lg={12}>
                     <div className="text-end">
-                      <Link to="/company/domain-verify" type="submit" className="btn btn-primary waves-effect waves-light" variant="primary">
+                      <Link to="/company/domain-verify" type="submit" className="btn btn-primary waves-effect waves-light">
                         Create
                       </Link>
                     </div>

@@ -109,13 +109,31 @@ a.btn-theme {
   user-select: none;
   background-color: transparent;
   border: 1px solid transparent;
-  padding: .47rem .75rem;
+  // padding: .47rem .75rem;
+  padding: 0.47rem 1.2rem;
   font-size: 1rem;
-  border-radius: .25rem;
-  -webkit-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
-  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
-  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out; 
+  border-radius: 0.25rem;
+  -webkit-transition:
+    color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out,
+    -webkit-box-shadow 0.3s ease-in-out;
+  transition:
+    color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out,
+    -webkit-box-shadow 0.3s ease-in-out;
+  transition:
+    color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+  transition:
+    color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out,
+    -webkit-box-shadow 0.3s ease-in-out;
 
   > i {
     margin-right: 12px;
@@ -230,12 +248,12 @@ a.btn-theme {
   cursor: pointer;
 }
 
-.btn-outline-success{
-    color: #ffffff;
-    background-color: #1a776f;
-    background-image: none;
-    border-color: #1a776f;
-	// height: calc(3.5rem + var(--bs-border-width)* 2);
-    // min-height: calc(3.5rem + var(--bs-border-width)* 2);
-    // line-height: 1.25;
+.btn-outline-success {
+  color: #ffffff;
+  background-color: #1a776f;
+  background-image: none;
+  border-color: #1a776f;
+  // height: calc(3.5rem + var(--bs-border-width)* 2);
+  // min-height: calc(3.5rem + var(--bs-border-width)* 2);
+  // line-height: 1.25;
 }
