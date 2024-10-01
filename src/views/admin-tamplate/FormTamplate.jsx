@@ -388,20 +388,18 @@ const FormTamplate = () => {
               <Button type="button" variant="danger" className="mb-3 waves-effect waves-light">
                 Danger
               </Button>
-              <Button type="button" variant="warning" className="mb-3 waves-effect waves-light">
+              <Button type="button" variant="warning" className="mb-3 ms-xl-0 ms-xxl-2 waves-effect waves-light">
                 Warning
               </Button>
-              <span className="d-lg-block">
-                <Button type="button" variant="info" className="mb-3 ms-2 ms-lg-0 waves-effect waves-light">
-                  Info
-                </Button>
-                <Button type="button" variant="light" className="mb-3 waves-effect waves-light">
-                  Light
-                </Button>
-                <Button type="button" variant="dark" className="mb-3 waves-effect waves-light">
-                  Dark
-                </Button>
-              </span>
+              <Button type="button" variant="info" className="mb-3 waves-effect waves-light">
+                Info
+              </Button>
+              <Button type="button" variant="light" className="mb-3 waves-effect waves-light">
+                Light
+              </Button>
+              <Button type="button" variant="dark" className="mb-3 waves-effect waves-light">
+                Dark
+              </Button>
             </Card.Body>
           </Card>
         </Col>
