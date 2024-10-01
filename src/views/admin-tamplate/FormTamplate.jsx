@@ -366,6 +366,8 @@ const FormTamplate = () => {
                 <Form.Label>File Input</Form.Label>
                 <Form.Control type="file" placeholder="Page Name"></Form.Control>
               </Form.Group>
+              <div style={{height:'55px'}}></div>
+
             </Card.Body>
           </Card>
         </Col>
@@ -375,20 +377,31 @@ const FormTamplate = () => {
               <Card.Title>Buttons</Card.Title>
               <h6 class="font-size-14 mb-3">Form Buttons</h6>
               <Button type="button" variant="primary" className="mb-3 waves-effect waves-light">
-                Submit
+                Primary
               </Button>
               <Button type="button" variant="secondary" className="mb-3 waves-effect waves-light">
-                Submit
+                Secondary
+              </Button>
+              <Button type="button" variant="success" className="mb-3 waves-effect waves-light">
+                Success
               </Button>
               <Button type="button" variant="danger" className="mb-3 waves-effect waves-light">
-                Submit
+                Danger
               </Button>
-              <Button type="button" variant="light" className="mb-3 waves-effect waves-light">
-                Submit
+              <Button type="button" variant="warning" className="mb-3 waves-effect waves-light">
+                Warning
               </Button>
-              <Button type="button" variant="dark" className="mb-3 waves-effect waves-light">
-                Submit
-              </Button>
+              <span className="d-lg-block">
+                <Button type="button" variant="info" className="mb-3 ms-2 ms-lg-0 waves-effect waves-light">
+                  Info
+                </Button>
+                <Button type="button" variant="light" className="mb-3 waves-effect waves-light">
+                  Light
+                </Button>
+                <Button type="button" variant="dark" className="mb-3 waves-effect waves-light">
+                  Dark
+                </Button>
+              </span>
             </Card.Body>
           </Card>
         </Col>
