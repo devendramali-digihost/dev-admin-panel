@@ -39,7 +39,7 @@
   &:focus {
     background: $menu-light-background;
     color: #505d69;
-    border-color: #b1bbc4;
+    border-color: #24786f;
     outline: 0;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -158,10 +158,11 @@ select.form-control-lg:not([size]):not([multiple]) {
 
   &:focus {
     color: #505d69;
-    border-color: #b1bbc4;
+    border-color: #24786f;
     outline: 0;
     -webkit-box-shadow: none;
     box-shadow: none;
+    
   }
 
 
@@ -290,6 +291,9 @@ select.form-control-lg:not([size]):not([multiple]) {
     background-color: transparent;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
+    -webkit-transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
     .input-group-text{
       padding: 0;
@@ -299,6 +303,10 @@ select.form-control-lg:not([size]):not([multiple]) {
 
     input{
       border: none;
+    }
+
+    &:focus , &:active, &:focus-visible , &:focus-within{
+      border: 1px solid #24786f;
     }
   }
 }

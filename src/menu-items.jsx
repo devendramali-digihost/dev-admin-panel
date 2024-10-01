@@ -103,7 +103,7 @@ const menuItems = {
             },
             {
               id: 'forms',
-              title: 'Form Tamplate',
+              title: 'Form Template',
               type: 'item',
               // icon: 'feather icon-file-text',
               src: dashboardImg3,
