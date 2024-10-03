@@ -6,92 +6,72 @@ import { CONFIG } from '../config/constant';
 const initialState = {
   ...CONFIG,
   isOpen: [],
-  isTrigger: []
+  isTrigger: [],
+  collapseMenu: false, // Ensure this is in the state to track the menu collapse status
 };
+
 const ConfigContext = createContext(initialState);
 const { Provider } = ConfigContext;
 
-const ConfigProvider = ({ children }) => {
-  let trigger = [];
-  let open = [];
+const reducer = (state, action) => {
+  let trigger = [...state.isTrigger];
+  let open = [...state.isOpen];
 
-  const [state, dispatch] = useReducer((state, action) => {
-    switch (action.type) {
-      case actionType.CHANGE_LAYOUT:
-        return {
-          ...state,
-          layout: action.layout
-        };
-      case actionType.COLLAPSE_MENU:
-        return {
-          ...state,
-          collapseMenu: !state.collapseMenu
-        };
-      case actionType.COLLAPSE_TOGGLE:
-        if (action.menu.type === 'sub') {
-          open = state.isOpen;
-          trigger = state.isTrigger;
+  switch (action.type) {
+    case actionType.CHANGE_LAYOUT:
+      return { ...state, layout: action.layout };
 
-          const triggerIndex = trigger.indexOf(action.menu.id);
-          if (triggerIndex > -1) {
-            open = open.filter((item) => item !== action.menu.id);
-            trigger = trigger.filter((item) => item !== action.menu.id);
-          }
+    case actionType.COLLAPSE_MENU:
+      return { ...state, collapseMenu: !state.collapseMenu };
 
-          if (triggerIndex === -1) {
-            open = [...open, action.menu.id];
-            trigger = [...trigger, action.menu.id];
-          }
+    case actionType.COLLAPSE_TOGGLE:
+      if (action.menu.type === 'sub') {
+        const triggerIndex = trigger.indexOf(action.menu.id);
+
+        if (triggerIndex > -1) {
+          open = open.filter((item) => item !== action.menu.id);
+          trigger = trigger.filter((item) => item !== action.menu.id);
         } else {
-          open = state.isOpen;
-          const triggerIndex = state.isTrigger.indexOf(action.menu.id);
-          trigger = triggerIndex === -1 ? [action.menu.id] : [];
-          open = triggerIndex === -1 ? [action.menu.id] : [];
+          open.push(action.menu.id);
+          trigger.push(action.menu.id);
         }
-        return {
-          ...state,
-          isOpen: open,
-          isTrigger: trigger
-        };
-      case actionType.NAV_COLLAPSE_LEAVE:
-        if (action.menu.type === 'sub') {
-          open = state.isOpen;
-          trigger = state.isTrigger;
+      } else {
+        const triggerIndex = trigger.indexOf(action.menu.id);
+        trigger = triggerIndex === -1 ? [action.menu.id] : [];
+        open = triggerIndex === -1 ? [action.menu.id] : [];
+      }
+      return { ...state, isOpen: open, isTrigger: trigger };
 
-          const triggerIndex = trigger.indexOf(action.menu.id);
-          if (triggerIndex > -1) {
-            open = open.filter((item) => item !== action.menu.id);
-            trigger = trigger.filter((item) => item !== action.menu.id);
-          }
-          return {
-            ...state,
-            isOpen: open,
-            isTrigger: trigger
-          };
+    case actionType.NAV_COLLAPSE_LEAVE:
+      if (action.menu.type === 'sub') {
+        const triggerIndex = trigger.indexOf(action.menu.id);
+        if (triggerIndex > -1) {
+          open = open.filter((item) => item !== action.menu.id);
+          trigger = trigger.filter((item) => item !== action.menu.id);
         }
-        return { ...state };
-      case actionType.NAV_CONTENT_LEAVE:
-        return {
-          ...state,
-          isOpen: open,
-          isTrigger: trigger
-        };
-      case actionType.RESET:
-        return {
-          ...state,
-          layout: initialState.layout,
-          collapseMenu: initialState.collapseMenu
-        };
-      default:
-        throw new Error();
-    }
-  }, initialState);
+      }
+      return { ...state, isOpen: open, isTrigger: trigger };
+
+    case actionType.NAV_CONTENT_LEAVE:
+      return { ...state, isOpen: [], isTrigger: [] };
+
+    case actionType.RESET:
+      return { ...initialState };
+
+    default:
+      console.warn(`Unhandled action type: ${action.type}`);
+      return state;
+  }
+};
+
+const ConfigProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return <Provider value={{ state, dispatch }}>{children}</Provider>;
 };
 
 ConfigProvider.propTypes = {
-  children: PropTypes.object
+  children: PropTypes.node.isRequired,
 };
 
 export { ConfigContext, ConfigProvider };

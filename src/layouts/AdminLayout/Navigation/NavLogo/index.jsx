@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ConfigContext } from '../../../../contexts/ConfigContext';
 import * as actionType from '../../../../store/actions';
 import avatar2 from '../../../../assets/images/logo-w.png';
+import {logo2} from "./../../../../images"
 const NavLogo = () => {
 	const configContext = useContext(ConfigContext);
 	const { collapseMenu } = configContext.state;
@@ -20,15 +21,19 @@ const NavLogo = () => {
 				<Link to="#" className="b-brand">
 					<div className="">
 						{/* <i className="feather icon-trending-up" /> */}
-						<Link to="#">
+						<Link to="#" className='open-logo'>
 							<img className="img-fluid" style={{ width: '' }} src={avatar2} alt="activity-user" />
 						</Link>
+						<Link to="#" className='colse-menu'>
+							<img  style={{ width: '' }} src={logo2}  />
+						</Link>
+
 					</div>
 					{/* <span className="b-title">Datta Able</span> */}
 				</Link>
-				<Link to="#" className={toggleClass.join(' ')} id="mobile-collapse" onClick={() => dispatch({ type: actionType.COLLAPSE_MENU })}>
+				{/* <Link to="#" className={toggleClass.join(' ')} id="mobile-collapse" onClick={() => dispatch({ type: actionType.COLLAPSE_MENU })}>
 					<span />
-				</Link>
+				</Link> */}
 			</div>
 		</React.Fragment>
 	);
