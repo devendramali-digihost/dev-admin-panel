@@ -1,5 +1,14 @@
 .admin-module-list {
   margin-bottom: 70px;
+
+  .form-check {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    label {
+      margin-bottom: 0;
+    }
+  }
   .heading-texts {
     display: flex;
     align-items: center;
@@ -125,14 +134,13 @@
   }
 }
 
-.btn{
+.btn {
   font-size: 14px;
 }
 
 .btn + .btn {
   margin-left: 10px;
 }
-
 
 .form-templates {
   .toggle {
