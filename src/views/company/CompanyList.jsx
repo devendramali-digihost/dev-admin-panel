@@ -248,6 +248,7 @@ const CompanyList = () => {
     },
     {
       name: 'Website',
+      width: '150px',
       cell: (row) => (
         <Link to="#!" className="btn btn-primary waves-effect waves-light">
           Link
