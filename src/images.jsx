@@ -5,5 +5,10 @@ import dashboardImg4 from './assets/images/sidebar/CreateNewPage.svg';
 import adminTemplate from './assets/images/sidebar/admin-template.svg';
 import createProject from './assets/images/sidebar/create-project.svg';
 import logo2 from './assets/images/sidebar/sm-logo.svg';
+import soupherb from './assets/images/projects/soupherb.jpg';
+import gaikwad from './assets/images/projects/gaikwad.jpg';
+import ongc from './assets/images/projects/ongc.jpg';
+import Lotus from './assets/images/projects/Lotus.jpg';
 
-export { dashboardImg1, dashboardImg2, dashboardImg3, dashboardImg4, adminTemplate, createProject,logo2 };
+
+export { dashboardImg1, dashboardImg2, dashboardImg3, dashboardImg4, adminTemplate, createProject,logo2,soupherb,gaikwad,ongc,Lotus };

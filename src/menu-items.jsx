@@ -13,7 +13,7 @@ const menuItems = {
 					type: 'item',
 					icon: 'feather icon-file-text',
 					src: dashboardImg4,
-					url: '/create-page/create-new-page'
+					url: '/company/create-new-project'
 				},
 				{
 					id: 'auth',

@@ -5,7 +5,9 @@ import { Formik } from 'formik';
 import { FaRegUser } from 'react-icons/fa6';
 import { MdLockOutline } from 'react-icons/md';
 import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FiAlertTriangle } from "react-icons/fi";
+import { IoMdLock } from 'react-icons/io';
 // const [columnGap, setColumnGap] = useState(10);
 const JWTLogin = () => {
   return (
@@ -24,20 +26,6 @@ const JWTLogin = () => {
         <form noValidate onSubmit={handleSubmit}>
           {/* Email Input */}
           <Form.Group className="mb-3" controlId="email">
-            {/* <div className="input-container">
-              <Form.Label>Enter Email </Form.Label>
-              <Form.Control
-                type="email"
-                name="email"
-                placeholder="Enter Email"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                // value={values.email}
-              />
-              <span className="icon">
-                <FaRegUser />
-              </span>
-            </div> */}
             <FloatingLabel
 				controlId="floatingInput"
 				label="Enter Email"
@@ -56,20 +44,6 @@ const JWTLogin = () => {
 
           {/* Password Input */}
           <Form.Group className="mb-3" controlId="password">
-            {/* <div className="input-container">
-              <Form.Label>Enter Password</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Enter Password"
-                name="password"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                // value={values.password}
-              />
-              <span className="icon">
-                <MdLockOutline />
-              </span>
-            </div> */}
 			<FloatingLabel
 				controlId="floatingInput"
 				label="Enter Password"
@@ -86,8 +60,13 @@ const JWTLogin = () => {
             {touched.password && errors.password && <small className="text-danger form-text d-flex justify-content-start align-items-center gap-1"><FiAlertTriangle/> {errors.password}</small>}
           </Form.Group>
           {['checkbox'].map((type) => (
-            <div key={`default-${type}`} className="mb-3">
-              <Form.Check type={type} id={`default-${type}`} label={`Remember me`} />
+            <div key={`default-${type}`} className="mb-3  d-flex justify-content-between align-items-center">
+              	<Form.Check type={type} id={`default-${type}`} label={`Remember me`} />
+			  	<span className="mb-2 text-muted forgot">
+					<NavLink to={'/auth/forgotpassword'} className="text-muted">
+						<IoMdLock /> Forgot your password?
+					</NavLink>
+				</span>
             </div>
           ))}
 
@@ -104,9 +83,10 @@ const JWTLogin = () => {
               {/* <Button className="btn-block mb-4" color="primary" disabled={isSubmitting} size="large" type="submit" variant="primary">
                 Log In
               </Button> */}
-              <Link to="/company/create-new-project" className="btn-block mb-4 create-button btn btn-primary waves-effect waves-light">
+              <Link to="/company/create-new-project" className="btn-block mb-0 create-button btn btn-primary waves-effect waves-light">
                 Log In
               </Link>
+
             </Col>
           </Row>
         </form>
