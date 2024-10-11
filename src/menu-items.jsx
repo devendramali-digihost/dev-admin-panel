@@ -14,44 +14,44 @@ const menuItems = {
 					icon: 'feather icon-file-text',
 					src: dashboardImg4,
 					url: '/company/create-new-project'
-				},
-				{
-					id: 'auth',
-					title: 'Authentication',
-					type: 'collapse',
-					icon: 'feather icon-lock',
-					src: dashboardImg2,
-					badge: {
-						title: 'New',
-						type: 'label-danger'
-					},
-					children: [
-						{
-							id: 'signup-1',
-							title: 'Sign In',
-							type: 'item',
-							url: '/auth/signin',
-							target: true,
-							breadcrumbs: false
-						},
-						{
-							id: 'form',
-							title: 'Forgot Password',
-							type: 'item',
-							url: '/auth/forgotpassword',
-							target: true,
-							breadcrumbs: false
-						},
-						{
-							id: 'form',
-							title: 'Reset Password',
-							type: 'item',
-							url: '/auth/resetpassword',
-							target: true,
-							breadcrumbs: false
-						}
-					]
-				},
+				}
+				// {
+				// 	id: 'auth',
+				// 	title: 'Authentication',
+				// 	type: 'collapse',
+				// 	icon: 'feather icon-lock',
+				// 	src: dashboardImg2,
+				// 	badge: {
+				// 		title: 'New',
+				// 		type: 'label-danger'
+				// 	},
+				// 	children: [
+				// 		{
+				// 			id: 'signup-1',
+				// 			title: 'Sign In',
+				// 			type: 'item',
+				// 			url: '/auth/signin',
+				// 			target: true,
+				// 			breadcrumbs: false
+				// 		},
+				// 		{
+				// 			id: 'form',
+				// 			title: 'Forgot Password',
+				// 			type: 'item',
+				// 			url: '/auth/forgotpassword',
+				// 			target: true,
+				// 			breadcrumbs: false
+				// 		},
+				// 		{
+				// 			id: 'form',
+				// 			title: 'Reset Password',
+				// 			type: 'item',
+				// 			url: '/auth/resetpassword',
+				// 			target: true,
+				// 			breadcrumbs: false
+				// 		}
+				// 	]
+				// },
 			]
 		}
 	]

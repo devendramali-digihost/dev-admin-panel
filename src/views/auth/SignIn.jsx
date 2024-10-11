@@ -29,17 +29,17 @@ const SignIn = () => {
                                     </div>
                                     <AuthLogin />
 
-                                    <div className="below-text">
+                                    {/* <div className="below-text">
                                         <p>
                                             Don't have an account ? <NavLink to={'#'}>Register</NavLink>{' '}
                                         </p>
 
-                                    </div>
+                                    </div> */}
                                 </Card.Body>
                             </Card>
                         </div>
                         <div className='copyright_form'>
-                            <p>Copyright © 2024 DigiHost - All Rights Reserved.</p>
+                            <p>Copyright © {new Date().getFullYear()} Dev Panel. All Rights Reserved. Powered By: <NavLink to={'https://www.digihost.in/'} targe="_blank">DigiHost Tech Solutions Pvt. Ltd.</NavLink></p>
                         </div>
                     </Col>
                 </Row>

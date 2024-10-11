@@ -6,8 +6,7 @@ function Footer() {
 			<footer className="footer">
 				<div className='d-flex justify-content-between'>
 					<div>
-					{/* &copy; {new Date().getFullYear()} Copyright:{' '} © DigiHost. */}
-					Copyright © {new Date().getFullYear()} Dev Panel. All Rights Reserved.
+						Copyright © {new Date().getFullYear()} Dev Panel. All Rights Reserved.
 					</div>
 					<div>
 					Powered By: <a href="https://www.digihost.in/" target="_blank">DigiHost Tech Solutions Pvt. Ltd.</a>
