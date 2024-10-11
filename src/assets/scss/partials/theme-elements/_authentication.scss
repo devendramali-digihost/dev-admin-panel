@@ -197,12 +197,12 @@
 
     .card {
       height: 100%;
-
+      border-radius: 20px;
       .card-body {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 0rem 6rem;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // padding: 0rem 6rem;
 
         @media (max-width: 992px) {
           padding: 0rem 2rem;
@@ -243,7 +243,13 @@
   .image {
     height: 100%;
     position: relative;
-
+    position: absolute;
+    top: -50px;
+    bottom: -50px;
+    left: -50px;
+    right: -50px;
+    z-index: -1;
+    filter: blur(20px);
     @media (max-width: 992px) {
       display: none;
     }

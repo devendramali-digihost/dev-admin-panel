@@ -5,9 +5,8 @@ import { Formik } from 'formik';
 import { FaRegUser } from 'react-icons/fa6';
 import { MdLockOutline } from 'react-icons/md';
 import { Link } from 'react-router-dom';
-import { AiOutlinePlus } from 'react-icons/ai';
 import { FiAlertTriangle } from "react-icons/fi";
-const [columnGap, setColumnGap] = useState(10);
+// const [columnGap, setColumnGap] = useState(10);
 const JWTLogin = () => {
   return (
     <Formik
@@ -25,7 +24,7 @@ const JWTLogin = () => {
         <form noValidate onSubmit={handleSubmit}>
           {/* Email Input */}
           <Form.Group className="mb-3" controlId="email">
-            <div className="input-container">
+            {/* <div className="input-container">
               <Form.Label>Enter Email </Form.Label>
               <Form.Control
                 type="email"
@@ -38,13 +37,26 @@ const JWTLogin = () => {
               <span className="icon">
                 <FaRegUser />
               </span>
-            </div>
-            {touched.email && errors.email && <small className="text-danger form-text"><FiAlertTriangle/>{errors.email}</small>}
+            </div> */}
+            <FloatingLabel
+				controlId="floatingInput"
+				label="Enter Email"
+				className="mb-3"
+            >
+              	<Form.Control
+					type="email"
+					placeholder="Enter Email"
+					onBlur={handleBlur}
+					onChange={handleChange}
+					// value={values.email}
+				/>
+            </FloatingLabel>
+            {touched.email && errors.email && <small className="text-danger form-text d-flex justify-content-start align-items-center gap-1"><FiAlertTriangle/>{errors.email}</small>}
           </Form.Group>
 
           {/* Password Input */}
           <Form.Group className="mb-3" controlId="password">
-            <div className="input-container">
+            {/* <div className="input-container">
               <Form.Label>Enter Password</Form.Label>
               <Form.Control
                 type="password"
@@ -57,8 +69,21 @@ const JWTLogin = () => {
               <span className="icon">
                 <MdLockOutline />
               </span>
-            </div>
-            {touched.password && errors.password && <small className="text-danger form-text"><FiAlertTriangle/> {errors.password}</small>}
+            </div> */}
+			<FloatingLabel
+				controlId="floatingInput"
+				label="Enter Password"
+				className="mb-3"
+            >
+              	<Form.Control
+					type="password"
+					placeholder="Enter Password"
+					onBlur={handleBlur}
+                	onChange={handleChange}
+                	// value={values.password}
+				/>
+            </FloatingLabel>
+            {touched.password && errors.password && <small className="text-danger form-text d-flex justify-content-start align-items-center gap-1"><FiAlertTriangle/> {errors.password}</small>}
           </Form.Group>
           {['checkbox'].map((type) => (
             <div key={`default-${type}`} className="mb-3">
@@ -80,7 +105,7 @@ const JWTLogin = () => {
                 Log In
               </Button> */}
               <Link to="/company/create-new-project" className="btn-block mb-4 create-button btn btn-primary waves-effect waves-light">
-                <AiOutlinePlus /> Log In
+                Log In
               </Link>
             </Col>
           </Row>
