@@ -7,7 +7,7 @@ import logo from '../../assets/images/auth/logo.png';
 import AuthLogin from './JWTLogin';
 import { IoMdLock } from 'react-icons/io';
 
-const Signin1 = () => {
+const SignIn = () => {
   return (
     <React.Fragment>
       <div className="auth-wrapper">
@@ -15,9 +15,9 @@ const Signin1 = () => {
           <Row className="auth-row">
             <Col sm={4} className="p-0">
               <div className="auth-content">
-                <Card className="borderless text-center">
+                <Card className="borderless ">
                   <Card.Body>
-                    <div className="mb-4">
+                    <div className="mb-4 text-center">
                       <div className="logo">
                         <img src={logo} alt="" />
                       </div>
@@ -52,4 +52,4 @@ const Signin1 = () => {
   );
 };
 
-export default Signin1;
+export default SignIn;
