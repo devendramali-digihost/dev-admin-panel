@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { BusinessAccountForm } from './BusinessAccountForm';
 // import './YourStylesheet.css'; // Add your CSS here
-
 const MultiStepForm = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -70,7 +70,9 @@ const MultiStepForm = () => {
         <div className="rightSectionWrapper">
           {/* Step 1: Business Account */}
           <div className={`formContainer ${step === 1 ? '' : 'hide'}`} data-step="1">
-            <div className="mainForm">
+            
+            <BusinessAccountForm/>
+            {/* <div className="mainForm">
               <p className="personal">Business Account</p>
               <p className="personalInfo">
                 Please provide your name, email address, and phone number.
@@ -121,7 +123,7 @@ const MultiStepForm = () => {
                   />
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Step 2: Domain Verification*/}
