@@ -11,39 +11,37 @@ const SignIn = () => {
   return (
     <React.Fragment>
         <div className="auth-wrapper">
-            <Container fluid>
-                <Row className="auth-row d-flex align-items-center justify-content-center">
-                    <div className="image">
-                        <img src={loginImage} alt="" />
+            <Row className="auth-row">
+                <Col sm={6} className="image p-0">
+                    <img src={loginImage} alt="" />
+                    <div className='copyright_form'>
+                        <p>Copyright © {new Date().getFullYear()} Dev Panel. All Rights Reserved. Powered By: <NavLink to={'https://www.digihost.in/'} targe="_blank">DigiHost Tech Solutions Pvt. Ltd.</NavLink></p>
                     </div>
-                    <Col sm={7} className="p-0">
-                        <div className="auth-content">
-                            <Card className="borderless d-flex align-items-center justify-content-center">
-                                <Card.Body className="">
-                                    <div className="mb-4 text-center">
-                                        <div className="logo">
-                                            <img src={logo} alt="" />
-                                        </div>
-                                        <h5 className="mt-1">Welcome Back !</h5>
-                                        <p>Sign in to continue to DiigiiHost.</p>
+                </Col>
+                <Col sm={6} className="p-0">
+                    <div className="auth-content">
+                        <Card className="borderless d-flex align-items-center justify-content-center">
+                            <Card.Body className="">
+                                <div className="mb-4 text-center">
+                                    <div className="logo">
+                                        <img src={logo} alt="" />
                                     </div>
-                                    <AuthLogin />
+                                    <h5 className="mt-1">Welcome Back !</h5>
+                                    <p>Sign in to continue to DiigiiHost.</p>
+                                </div>
+                                <AuthLogin />
 
-                                    {/* <div className="below-text">
-                                        <p>
-                                            Don't have an account ? <NavLink to={'#'}>Register</NavLink>{' '}
-                                        </p>
+                                {/* <div className="below-text">
+                                    <p>
+                                        Don't have an account ? <NavLink to={'#'}>Register</NavLink>{' '}
+                                    </p>
 
-                                    </div> */}
-                                </Card.Body>
-                            </Card>
-                        </div>
-                        <div className='copyright_form'>
-                            <p>Copyright © {new Date().getFullYear()} Dev Panel. All Rights Reserved. Powered By: <NavLink to={'https://www.digihost.in/'} targe="_blank">DigiHost Tech Solutions Pvt. Ltd.</NavLink></p>
-                        </div>
-                    </Col>
-                </Row>
-            </Container>
+                                </div> */}
+                            </Card.Body>
+                        </Card>
+                    </div>
+                </Col>
+            </Row>
         </div>
     </React.Fragment>
   );

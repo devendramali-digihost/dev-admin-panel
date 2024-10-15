@@ -343,6 +343,9 @@ select.form-control-lg:not([size]):not([multiple]) {
 			& ~ label{
 				color: $primary-color;
 				transform: scale(0.85) translateY(-1.5rem) translateX(0.15rem);
+        &:after{
+          background-color: #eef6f6;
+        }
 
 			}
 		}

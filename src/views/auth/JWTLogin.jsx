@@ -60,9 +60,9 @@ const JWTLogin = () => {
             {touched.password && errors.password && <small className="text-danger form-text d-flex justify-content-start align-items-center gap-1"><FiAlertTriangle/> {errors.password}</small>}
           </Form.Group>
           {['checkbox'].map((type) => (
-            <div key={`default-${type}`} className="mb-5 mt-4 d-flex justify-content-between align-items-center">
+            <div key={`default-${type}`} className="mb-0 mt-4 d-flex justify-content-between align-items-center gap-5">
               	<Form.Check type={type} id={`default-${type}`} label={`Remember me`} />
-			  	<span className="mb-2 text-muted forgot">
+			  	<span className="mb-0 text-muted forgot">
 					<NavLink to={'/auth/forgotpassword'} className="text-muted">
 						<IoMdLock /> Forgot your password?
 					</NavLink>
