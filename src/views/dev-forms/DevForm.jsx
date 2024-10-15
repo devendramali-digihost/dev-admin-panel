@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BusinessAccountForm } from './BusinessAccountForm';
-// import './YourStylesheet.css'; // Add your CSS here
+import { DomainVerificationForm } from './DomainVerificationForm';
+
 const MultiStepForm = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -72,87 +73,13 @@ const MultiStepForm = () => {
           <div className={`formContainer ${step === 1 ? '' : 'hide'}`} data-step="1">
             
             <BusinessAccountForm/>
-            {/* <div className="mainForm">
-              <p className="personal">Business Account</p>
-              <p className="personalInfo">
-                Please provide your name, email address, and phone number.
-              </p>
-              <div className="form">
-                <div className="fieldParent">
-                  <div className="labelErrorParent">
-                    <label htmlFor="name">Name</label>
-                  </div>
-                  <input
-                    placeholder="e.g. Stephen King"
-                    type="text"
-                    id="name"
-                    name="name"
-                    className="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                  />
-                </div>
-
-                <div className="fieldParent">
-                  <div className="labelErrorParent">
-                    <label htmlFor="email">Email Address</label>
-                  </div>
-                  <input
-                    placeholder="e.g. stephenking@lorem.com"
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                  />
-                </div>
-
-                <div className="fieldParent">
-                  <div className="labelErrorParent">
-                    <label htmlFor="number">Phone Number</label>
-                  </div>
-                  <input
-                    placeholder="e.g. +1 234 567 890"
-                    type="text"
-                    id="number"
-                    name="number"
-                    className="number"
-                    value={formData.number}
-                    onChange={handleInputChange}
-                  />
-                </div>
-              </div>
-            </div> */}
+           
           </div>
 
           {/* Step 2: Domain Verification*/}
           <div className={`formContainer ${step === 2 ? '' : 'hide'}`} data-step="2">
-            <div className="mainForm">
-              <p className="personal">Domain Verification</p>
-              <p className="personalInfo">You have the option of monthly or yearly billing.</p>
-              <div className="planParent">
-                {/* Plan Selection Logic */}
-                {/* Implement plan selection here */}
-              </div>
-
-              <div className="planTypeParent">
-                <p className={`switchType ${formData.billingType === 'Monthly' ? 'activeType' : ''}`}>
-                  Monthly
-                </p>
-                <label className="switch">
-                  <input
-                    type="checkbox"
-                    className="pricePlanSlider"
-                    onChange={toggleBillingType}
-                  />
-                  <span className="slider round"></span>
-                </label>
-                <p className={`switchType ${formData.billingType === 'Yearly' ? 'activeType' : ''}`}>
-                  Yearly
-                </p>
-              </div>
-            </div>
+           
+        <DomainVerificationForm/>
           </div>
 
           {/* Step 3: Update Name Server*/}
