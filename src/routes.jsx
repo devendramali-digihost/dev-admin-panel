@@ -47,6 +47,11 @@ const routes = [
     element: lazy(() => import('./views/auth/Resetpassword'))
   },
   {
+    exact: 'true',
+    path: '/dev-forms/details-form',
+    element: lazy(() => import('./views/dev-forms/DevForm'))
+  },
+  {
     path: '*',
     layout: AdminLayout,
     routes: [
@@ -62,11 +67,7 @@ const routes = [
         path: '/company/create-new-project',
         element: lazy(() => import('./views/company/CreateNewProject'))
       },
-      {
-        exact: 'true',
-        path: '/dev-forms/details-form',
-        element: lazy(() => import('./views/dev-forms/DevForm'))
-      }
+      
     ]
   }
 ];

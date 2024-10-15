@@ -451,4 +451,478 @@ button[disabled] {
   }
 }
 
+/*css of multi-setp form*/
 
+
+:root {
+  --coolGray: hsl(231, 11%, 70%);
+  --lightGray: hsl(229, 24%, 87%);
+  --white: hsl(0, 0%, 100%);
+ 
+}
+
+.formParentWrapper {
+  display: flex;
+  // flex-direction: row;
+  min-width: 65%;
+  min-height: 520px;
+  border-radius: 14px;
+  padding: 12px;
+  background-color: #fff;
+  margin-top: 20px;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 30%;
+  padding: 28px;
+  background:#f0faf9;
+  border-radius: 12px;
+  padding-block: 32px;
+}
+
+@media all and (max-width: 630px) {
+ 
+
+  .formParentWrapper {
+    font-family: $theme-font-family;
+    display: flex;
+    // flex-direction: column;
+    width: 100%;
+    min-height: 520px;
+    border-radius: 14px;
+    padding: 0;
+    margin-top: 0px;
+    background: linear-gradient(135deg, #435463, #6a798f, #91a0b6, #b8c8de, #dfeef8);
+  }
+
+  .steps {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    gap: 0;
+    width: 100% !important;
+    padding-inline: 28px;
+    border-radius: 0;
+    min-height: 180px !important;
+  }
+
+  .rightSectionParent {
+    position: absolute;
+    top: 82px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    align-self: center;
+    border-radius: 12px;
+    gap: 24px;
+  }
+
+  .rightSectionWrapper {
+    width: 92% !important;
+    align-self: center;
+    background-color: var(--white);
+    border-radius: 12px;
+    padding-block: 32px;
+    padding-bottom: 40px;
+  }
+
+  .mainForm {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-inline: 24px;
+  }
+
+  .info {
+    display: none;
+  }
+
+  .btnWrapper {
+    width: 100% !important;
+    background-color: var(--white);
+    padding-bottom: 0 !important;
+    padding-inline: 14px;
+    padding-block: 16px !important;
+  }
+
+  .planParent {
+    flex-direction: column !important;
+  }
+
+  .plan {
+    padding-top: 24px !important;
+    flex-direction: row !important;
+    gap: 16px !important;
+    min-height: 90px !important;
+  }
+
+  .checkBoxInfo {
+    gap: 16px !important;
+  }
+
+  .thankMsg {
+    max-width: 375px !important;
+    padding-inline: 16px;
+  }
+
+  .thankContainer {
+    align-items: center !important;
+  }
+
+  .label {
+    display: none;
+  }
+}
+
+.step {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #666868;
+  border: 1px solid #666868;
+  color:  var(--white);
+
+  &.active {
+    background-color: #0d3f3b;
+    border: 1px solid #0d3f3b;
+ 
+    color:  var(--white);
+  }
+}
+
+.stepInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.lastStep {
+  visibility: hidden;
+}
+
+.label {
+  font-size: 10px;
+  color: #07211f;
+  font-weight: 400;
+}
+
+.info {
+  margin-top: 4px;
+  color:#07211f;
+  font-weight: 550;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.rightSectionParent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.rightSectionWrapper {
+  margin-top: 32px;
+  width: 75%;
+  align-self: center;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mainForm {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.personal {
+  font-size: 36px;
+  font-weight: 700;
+  font-variant: normal;
+  margin-bottom: 8px;
+  color: #07211f;
+}
+
+.personalInfo {
+  color: var(--coolGray);
+  font-size: 14px;
+  font-weight: 450;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.fieldParent {
+  input {
+    width: 100%;
+    padding-inline: 8px;
+    padding-block: 12px;
+    border-radius: 8px;
+    border: 1.5px solid var(--lightGray);
+    outline: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--marineBlue);
+    cursor: pointer;
+
+    &:focus {
+      border: 1.5px solid var(--purplishBlue);
+    }
+
+    &::placeholder {
+      color: var(--coolGray);
+      font-size: 14px;
+      font-weight: 550;
+    }
+  }
+}
+
+.labelErrorParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+label {
+  font-weight: 500;
+  font-size: 14px !important;
+  color: var(--marineBlue) !important;
+}
+
+input[type=number] {
+  appearance: textfield;
+}
+
+.error {
+  display: none;
+  color: var(--strawberryRed);
+  font-weight: 600;
+
+  &.showError {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+  }
+}
+
+.borderError {
+  border: 1.875px solid var(--strawberryRed) !important;
+}
+
+.hide {
+  display: none;
+}
+
+.blue {
+  color: var(--marineBlue) !important;
+  font-size: 12px;
+}
+
+.hideBtn {
+  visibility: hidden;
+}
+
+.showPrice {
+  display: block;
+}
+
+.btnWrapper {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+}
+
+.next {
+  cursor: pointer;
+  border: none;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #293c45, #4a636b);
+  border-radius: 8px;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.5s;
+
+  &:hover {
+    background-color: var(--lightBlue);
+  }
+}
+
+.skip {
+  cursor: pointer;
+  border: none;
+  padding: 14px 28px;
+  background: var(--lightGray);
+  border-radius: 8px;
+  color: var(--marineBlue);
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.5s;
+
+  &:hover {
+    background-color: var(--marineBlue);
+    color: var(--white);
+  }
+}
+
+.checkBoxInfo {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.plan {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border: 1.5px solid var(--lightGray);
+  border-radius: 8px;
+  min-height: 60px;
+
+  &.activePlan {
+    border: 2px solid var(--purplishBlue);
+  }
+}
+
+.planInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.thankMsg {
+  max-width: 375px !important;
+  padding-inline: 16px;
+}
+
+.thankContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media all and (max-width: 630px) {
+  // Existing media query rules can go here if needed
+}
+// .formParentWrapper {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+.steps {
+  display: flex;
+  align-items: flex-start;
+  position: relative; /* Needed for absolute positioning of lines */
+}
+
+.stepInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  margin: 0 20px; /* Add margin between steps */
+}
+
+.step {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ddd; /* Default background color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #333;
+  transition: background 0.3s, color 0.3s; /* Smooth transition for active step */
+}
+
+.steps{
+ 
+   
+  .label{
+    padding: 0;
+  }
+    .stepInfo{
+      
+      .step {
+        &::after{
+          content: "";
+          height: 39px;
+          bottom: -31px;
+          width: 2px;
+          position: absolute;
+          background: #ddd;
+        }
+        &.active{
+          &::after{
+         
+            background: $primary-color;
+          }
+        }
+        &:last-child::after  {
+          content: none; // Hides the ::after content for the last step
+        }
+      }
+      
+    }
+    
+
+    
+    
+}
+// .steps .stepInfo .step:last-child::after{
+//   content: none;
+// }
+.label {
+  margin-top: 5px;
+}
+
+.info {
+  text-align: center;
+}
+
+.step-line {
+  width: 2px; /* Width of the line */
+  height: 50px; /* Height of the line */
+  background-color: #ddd; /* Default line color */
+  // position: absolute; 
+  // left: 50%;
+  transform: translateX(-50%); /* Centering adjustment */
+}
+
+.step-line.active {
+  background-color: #141b1b; /* Line color for the active step */
+}
+
+/* Hide the last step's line */
+.step.line:last-child {
+  display: none;
+}
+
+/* Additional styles for formContainer and other elements can go here */
