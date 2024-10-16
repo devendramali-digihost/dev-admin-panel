@@ -678,6 +678,17 @@ button[disabled] {
     }
   }
 }
+.custom-list {
+  list-style-type: none; 
+  padding-left: 0;
+}
+
+.custom-list li::before {
+  content: ">"; 
+  padding-right: 8px; 
+  color: #0d3f3b; 
+  font-size:14px
+}
 
 .mainForm {
   display: flex;
@@ -692,7 +703,9 @@ min-height: 52px;
     }
   } 
 }
-
+.prev {
+ color: var(--dark-color); 
+}
 .personal {
   font-size: 28px;
   font-weight: 700;

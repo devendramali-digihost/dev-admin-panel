@@ -16,23 +16,12 @@ export const DomainVerificationForm = () => {
         <Form>
               <Row>
                 <Col lg={6}>
-                  <Form.Group className="mb-3" controlId="CompanyName">
-                    <Form.Label>Company Name</Form.Label>
-                    <Form.Control type="text" placeholder="Company Name" />
+                  <Form.Group className="mb-3" controlId="DomainName">
+                    <Form.Label>Enter Domains</Form.Label>
+                    <Form.Control type="text" placeholder="Enter Domains" />
                   </Form.Group>
                 </Col>
-                <Col lg={6}>
-                  <Form.Group className="mb-3" controlId="CompanyName">
-                    <Form.Label>Domain ID</Form.Label>
-                    <Form.Control type="text" placeholder="Domain ID" />
-                  </Form.Group>
-                </Col>
-                <Col lg={6}>
-                  <Form.Group className="mb-3" controlId="CompanyName">
-                    <Form.Label>Domain Password</Form.Label>
-                    <Form.Control type="password" placeholder="Company Name" />
-                  </Form.Group>
-                </Col>
+                
                 <Col lg={12}>
                   <div className="text-start gap-2 d-flex align-items-center buy-btn">
                     <button type="submit" className="btn btn-primary waves-effect waves-light" variant="primary">

@@ -16,7 +16,7 @@ const CreateNewProject = () => {
         <Row className=''>
         <Col lg={4}>
         <div id="main-search" className="open-search">
-                <div className="input-group">
+                <div className="input-group mt-2">
                   <span
                     role="button"
                     tabIndex="0"

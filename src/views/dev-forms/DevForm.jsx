@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BusinessAccountForm } from './BusinessAccountForm';
 import { DomainVerificationForm } from './DomainVerificationForm';
+import { UpdateNameserver } from './UpdateNameserver';
 
 const MultiStepForm = () => {
   const [step, setStep] = useState(1);
@@ -84,31 +85,8 @@ const MultiStepForm = () => {
 
           {/* Step 3: Update Name Server*/}
           <div className={`formContainer ${step === 3 ? '' : 'hide'}`} data-step="3">
-            <div className="mainForm">
-              <p className="personal">Update Name Server</p>
-              <p className="personalInfo">You have the option of monthly or yearly billing.</p>
-              <div className="planParent">
-                {/* Plan Selection Logic */}
-                {/* Implement plan selection here */}
-              </div>
-
-              <div className="planTypeParent">
-                <p className={`switchType ${formData.billingType === 'Monthly' ? 'activeType' : ''}`}>
-                  Monthly
-                </p>
-                <label className="switch">
-                  <input
-                    type="checkbox"
-                    className="pricePlanSlider"
-                    onChange={toggleBillingType}
-                  />
-                  <span className="slider round"></span>
-                </label>
-                <p className={`switchType ${formData.billingType === 'Yearly' ? 'activeType' : ''}`}>
-                  Yearly
-                </p>
-              </div>
-            </div>
+          
+          <UpdateNameserver/>
           </div>
         </div>
 
