@@ -679,17 +679,19 @@ button[disabled] {
   }
 }
 .custom-list {
-  list-style-type: square; 
+  list-style-type: none; 
   padding-left: 0;
 }
-
+.custom-list li i{
+  font-size:12px
+}
 .custom-list li {
   // content: ">"; 
-  padding: 8px;
+  padding: 6px;
   /* border-bottom: 1px solid #ecebeb; */
-
+font-weight: 500;
   color: #0d3f3b; 
-  font-size:18px
+  font-size:16px
 }
 
 .mainForm {

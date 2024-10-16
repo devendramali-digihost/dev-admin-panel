@@ -12,8 +12,8 @@ export const UpdateNameserver = () => {
     <Row>
         <Col lg={12}>
         <ul className="custom-list">
-            <li>ns1.digihost.in</li>
-            <li>ns1.digihost.in</li>
+            <li><i class="fas fa-chevron-right"></i> ns1.digihost.in</li>
+            <li><i class="fas fa-chevron-right"></i> ns1.digihost.in</li>
         </ul>
         </Col>
     </Row>
