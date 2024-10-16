@@ -9,7 +9,7 @@ export const DomainVerificationForm = () => {
     <React.Fragment>
     <div className="mainForm">
     <p className="personal">Domain Verification Form</p>
-    <p className="personalInfo">Please provide your company details.</p>
+    <p className="personalInfo">Please provide your domain details.</p>
    
       <Row>
         <Col lg={12}>
