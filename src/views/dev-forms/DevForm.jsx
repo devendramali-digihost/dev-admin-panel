@@ -90,9 +90,9 @@ const MultiStepForm = () => {
           </div>
         </div>
 
-        <div className="btnWrapper">
+        <div className="btnWrapper mt-3">
           <p className={`prev ${step === 1 ? 'hideBtn' : ''}`} onClick={prevStep}>
-            Go Back
+          <a href="#"><i class="fas fa-arrow-left"></i> Go Back</a>
           </p>
           <button className="btn btn-primary" onClick={nextStep}>
             {step === 5 ? 'Finish' : 'Next Step'}

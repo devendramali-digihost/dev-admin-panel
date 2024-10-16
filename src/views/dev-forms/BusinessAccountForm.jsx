@@ -161,7 +161,7 @@ export const BusinessAccountForm = () => {
                   <Row className="mb-3">
                     {emailIds.map((data, index) => (
                       <Col md={12} key={index}>
-                        <Form.Group className="mt-3 position-relative" controlId={`EmailId${index}`}>
+                        <Form.Group className="position-relative" controlId={`EmailId${index}`}>
                           <Form.Label>Email ID</Form.Label>
                           <Form.Control
                             type="text"
@@ -194,7 +194,7 @@ export const BusinessAccountForm = () => {
                   <Row className="mb-3">
                     {addresses.map((data, index) => (
                       <Col md={12} key={index}>
-                        <Form.Group className="mt-3 position-relative" controlId={`Address${index}`}>
+                        <Form.Group className="position-relative" controlId={`Address${index}`}>
                           <Form.Label>Address</Form.Label>
                           <Form.Control
                             type="text"

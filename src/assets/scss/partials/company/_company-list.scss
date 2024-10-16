@@ -679,15 +679,17 @@ button[disabled] {
   }
 }
 .custom-list {
-  list-style-type: none; 
+  list-style-type: square; 
   padding-left: 0;
 }
 
-.custom-list li::before {
-  content: ">"; 
-  padding-right: 8px; 
+.custom-list li {
+  // content: ">"; 
+  padding: 8px;
+  /* border-bottom: 1px solid #ecebeb; */
+
   color: #0d3f3b; 
-  font-size:14px
+  font-size:18px
 }
 
 .mainForm {
@@ -703,8 +705,8 @@ min-height: 52px;
     }
   } 
 }
-.prev {
- color: var(--dark-color); 
+.prev a{
+ color: #818181; 
 }
 .personal {
   font-size: 28px;
@@ -716,7 +718,7 @@ min-height: 52px;
 
 .personalInfo {
   color: var(--coolGray);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 450;
   margin-bottom: 20px;
 }
