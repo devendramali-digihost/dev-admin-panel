@@ -8,7 +8,7 @@ export const DomainVerificationForm = () => {
    
     <React.Fragment>
     <div className="mainForm">
-    <p className="personal">Domain Verification Form</p>
+    <p className="personal">Domain Verification Form  <div class="icon-wrapper"><Link to="/company/create-new-project"><i class="fas fa-home custom-icon"><span class="fix-editor">&nbsp;</span></i></Link></div></p>
     <p className="personalInfo">Please provide your domain details.</p>
    
       <Row>

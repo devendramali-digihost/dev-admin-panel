@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Row, Col, Form, Button } from 'react-bootstrap';
 import { MdAdd } from 'react-icons/md';
 import { RiDeleteBin5Fill } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 
 export const BusinessAccountForm = () => {
   // State Hooks
@@ -95,7 +96,13 @@ export const BusinessAccountForm = () => {
   return (
     <React.Fragment>
       <div className="mainForm">
-        <p className="personal">Business Account</p>
+        <p className="personal">Business Account 
+        <div class="icon-wrapper"><Link to="/company/create-new-project"><i class="fas fa-home custom-icon"><span class="fix-editor">&nbsp;</span></i></Link></div>
+          {/* <span className='text-right'>
+          <a href="#" class="btn btn-primary btn-home">
+  <i class="fas fa-home"></i>
+</a></span> */}
+</p>
         <p className="personalInfo">Please provide your company details.</p>
 
         <Row>

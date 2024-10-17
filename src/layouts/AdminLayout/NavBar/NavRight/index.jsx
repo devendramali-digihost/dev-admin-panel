@@ -176,13 +176,13 @@ const NavRight = () => {
 					</Dropdown>
 				</ListGroup.Item>
 
-				<ListGroup.Item as="li" bsPrefix=" " className="waves-effect-1">
+				{/* <ListGroup.Item as="li" bsPrefix=" " className="waves-effect-1">
 				<Dropdown align={'end'} className="drp-user waves-effect">
 					<Dropdown.Toggle as={Link} variant="link" to="#" id="dropdown-basic">
 					<i className="icon feather icon-settings" />
 					</Dropdown.Toggle>
 				</Dropdown>
-				</ListGroup.Item>
+				</ListGroup.Item> */}
 			</ListGroup>
 		</React.Fragment>
 	);

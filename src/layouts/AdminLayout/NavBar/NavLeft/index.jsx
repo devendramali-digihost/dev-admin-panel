@@ -40,7 +40,7 @@ const NavLeft = () => {
         <ListGroup.Item as="li" bsPrefix=" " className="nav-item">
           <NavSearch windowWidth={windowSize.width} />
         </ListGroup.Item>
-        <ListGroup.Item as="li" bsPrefix=" " className={navItemClass.join(' ')}>
+        {/* <ListGroup.Item as="li" bsPrefix=" " className={navItemClass.join(' ')}>
           <Dropdown align={'start'} className="position-static">
             <Dropdown.Toggle variant={'link'} id="dropdown-basic" className="waves-effect dropdown-basic">
               Dropdown
@@ -189,7 +189,7 @@ const NavLeft = () => {
                             </div>
                         </Dropdown.Menu>
           </Dropdown>
-        </ListGroup.Item>
+        </ListGroup.Item> */}
       </ListGroup>
     </React.Fragment>
   );

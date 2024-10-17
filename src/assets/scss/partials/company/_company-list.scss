@@ -878,6 +878,38 @@ input[type=number] {
     border: 2px solid var(--purplishBlue);
   }
 }
+.custom-icon {
+  font-size:18px;
+  background:#fff;
+  background:#16665f;
+  padding:10px;
+  -webkit-border-radius:1100%;
+  -moz-border-radius:100%;
+  -o-border-radius:100%;
+  border-radius:100%;
+  border:6px solid #f0faf9;
+  color:#fff;
+  box-shadow: 0 1px 10px rgba(240, 250, 249, 1);
+  text-align:center;
+  display:table-cell;
+  vertical-align:middle;
+  width:40px;
+  height:40px;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  -o-transition:.5s;
+  transition:.5s;
+}
+.custom-icon:hover {
+  background:#16665f;
+}
+.fix-editor {
+  display:none;
+}
+.icon-wrapper {
+  display:inline-block;
+  float:right;
+}
 
 .planInfo {
   display: flex;

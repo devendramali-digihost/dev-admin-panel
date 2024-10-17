@@ -32,7 +32,7 @@ const CreateNewProject = () => {
         <Col lg={2}></Col>
         <Col lg={6}>
         <div className="text-right mt20">
-              <Link to="/dev-forms/details-form" className="create-button btn btn-primary waves-effect waves-light">
+              <Link onClick={() => window.open('/dev-forms/details-form', '_blank')} className="create-button btn btn-primary waves-effect waves-light">
                 <AiOutlinePlus /> Create New Project
               </Link>
         </div>
@@ -48,11 +48,13 @@ const CreateNewProject = () => {
                   <a href="https://www.lotusdevelopers.com/" target='_blank' className='create-button btn btn-primary waves-effect waves-light'>Preview</a>
                 </div>
               </div>
-              <Card.Body>
-              <Card.Title>Lotus Developers <span style={{ float: 'right' }}><FaRegEye className="view-color"/></span></Card.Title>
-            </Card.Body>
+             
             </div>
-
+            <Card.Body>
+              <Card.Title>Lotus Developers <a href="https://www.lotusdevelopers.com/" target="_blank" style={{ float: 'right' }} className="view-color">
+  <FaRegEye />
+</a></Card.Title>
+            </Card.Body>
         </Card>
 
         </Col>
@@ -65,10 +67,13 @@ const CreateNewProject = () => {
                   <a href="https://www.drgaikwad.com/" target='_blank' className='create-button btn btn-primary waves-effect waves-light'>Preview</a>
                 </div>
               </div>
-              <Card.Body>
-              <Card.Title>Dr. S. Gaikwad  <span style={{ float: 'right' }}><FaRegEye className="view-color"/></span></Card.Title>
-            </Card.Body>
+             
             </div>
+            <Card.Body>
+              <Card.Title>Dr. S. Gaikwad  <a href="https://www.drgaikwad.com/" target="_blank" style={{ float: 'right' }} className="view-color">
+  <FaRegEye />
+</a></Card.Title>
+            </Card.Body>
 
         </Card>
 
@@ -82,11 +87,13 @@ const CreateNewProject = () => {
                   <a href="https://digihostsolutions.com/ongc-live/" target='_blank' className='create-button btn btn-primary waves-effect waves-light'>Preview</a>
                 </div>
               </div>
-              <Card.Body>
-              <Card.Title>ONGC  <span style={{ float: 'right' }}><FaRegEye className="view-color"/></span></Card.Title>
-            </Card.Body>
+              
             </div>
-
+            <Card.Body>
+              <Card.Title>ONGC <a href="https://digihostsolutions.com/ongc-live/" target="_blank" style={{ float: 'right' }} className="view-color">
+  <FaRegEye />
+</a></Card.Title>
+            </Card.Body>
         </Card>
 
         </Col>
@@ -101,11 +108,13 @@ const CreateNewProject = () => {
                   <a href="https://www.digihostsolutions.com/soupherb-new/" target='_blank' className='create-button btn btn-primary waves-effect waves-light'>Preview</a>
                 </div>
               </div>
-              <Card.Body>
-              <Card.Title>SoupHerb - Soulful Sips Of Soma  <span style={{ float: 'right' }}><FaRegEye className="view-color"/></span></Card.Title>
-            </Card.Body>
+              
             </div>
-
+            <Card.Body>
+              <Card.Title>SoupHerb - Soulful Sips Of Soma  <a href="https://www.digihostsolutions.com/soupherb-new/" target="_blank" style={{ float: 'right' }} className="view-color">
+  <FaRegEye />
+</a></Card.Title>
+            </Card.Body>
         </Card>
 
         </Col>
@@ -118,11 +127,13 @@ const CreateNewProject = () => {
                   <a href="https://www.drgaikwad.com/" target='_blank' className='create-button btn btn-primary waves-effect waves-light'>Preview</a>
                 </div>
               </div>
-              <Card.Body>
-              <Card.Title>Dr. S. Gaikwad  <span style={{ float: 'right' }}><FaRegEye className="view-color"/></span></Card.Title>
-            </Card.Body>
+              
             </div>
-
+            <Card.Body>
+              <Card.Title>Dr. S. Gaikwad  <a href="https://www.drgaikwad.com/" target="_blank" style={{ float: 'right' }} className="view-color">
+  <FaRegEye />
+</a></Card.Title>
+            </Card.Body>
         </Card>
 
         </Col>
@@ -135,11 +146,13 @@ const CreateNewProject = () => {
                   <a href="https://digihostsolutions.com/ongc-live/" target='_blank' className='create-button btn btn-primary waves-effect waves-light'>Preview</a>
                 </div>
               </div>
-              <Card.Body>
-              <Card.Title>ONGC  <span style={{ float: 'right' }}><FaRegEye className="view-color"/></span></Card.Title>
-            </Card.Body>
+             
             </div>
-
+            <Card.Body>
+              <Card.Title>ONGC  <a href="https://digihostsolutions.com/ongc-live/" target="_blank" style={{ float: 'right' }} className="view-color">
+  <FaRegEye />
+</a></Card.Title>
+            </Card.Body>
         </Card>
 
         </Col>
