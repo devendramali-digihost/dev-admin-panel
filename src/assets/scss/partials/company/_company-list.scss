@@ -909,63 +909,57 @@ input[type=number] {
   display: flex;
   align-items: flex-start;
   position: relative; /* Needed for absolute positioning of lines */
-}
 
-.stepInfo {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  position: relative;
-  margin: 0 20px; /* Add margin between steps */
-}
-
-.step {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #ddd; /* Default background color */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  color: #333;
-  transition: background 0.3s, color 0.3s; /* Smooth transition for active step */
-}
-
-.steps{
- 
-   
-  .label{
+  .label {
     padding: 0;
   }
-    .stepInfo{
-      
-      .step {
-        &::after{
-          content: "";
-          height: 39px;
-          bottom: -31px;
-          width: 2px;
-          position: absolute;
-          background: #ddd;
-        }
-        &.active{
-          &::after{
-         
-            background: $primary-color;
-          }
-        }
-        &:last-child::after  {
-          content: none; // Hides the ::after content for the last step
+
+  .stepInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    margin: 0 20px; /* Add margin between steps */
+
+    .step {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #ddd; /* Default background color */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #333;
+      transition: background 0.3s, color 0.3s; /* Smooth transition for active step */
+      position: relative;
+
+      &::after {
+        content: "";
+        height: 39px;
+        bottom: -43px;
+        width: 2px;
+        position: absolute;
+        background: #ddd;
+      }
+
+      &.active {
+        background-color: #0d3f3b;
+        border: 1px solid #0d3f3b;
+        color: var(--white);
+        &::after {
+          background: $primary-color;
+          
         }
       }
-      
-    }
-    
 
-    
-    
+      &:nth-child(4)::after {
+        content: none; // Hides the ::after pseudo-element for the third step
+      }
+    }
+  }
 }
+
 // .steps .stepInfo .step:last-child::after{
 //   content: none;
 // }
