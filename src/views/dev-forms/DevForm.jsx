@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BusinessAccountForm } from './BusinessAccountForm';
 import { DomainVerificationForm } from './DomainVerificationForm';
 import { UpdateNameserver } from './UpdateNameserver';
+import logo from '../../assets/images/auth/logo.png';
 
 const MultiStepForm = () => {
   const [step, setStep] = useState(1);
@@ -44,7 +45,7 @@ const MultiStepForm = () => {
     <div className="formParentWrapper" data-step={step}>
       <div className="steps">
         <div className='sidebar-logo'>
-        <img className='logo' src='../src/assets/images/logo-digihost.png'/>
+        <img className='logo' src={logo} />
         </div>
         {[1, 2, 3, 4,5].map((num) => (
           <div className="stepInfo" key={num}>
