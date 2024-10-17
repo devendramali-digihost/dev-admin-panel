@@ -32,7 +32,7 @@ const CreateNewProject = () => {
         <Col lg={2}></Col>
         <Col lg={6}>
         <div className="text-right mt20">
-              <Link target='_blank' to='/dev-forms/details-form' className="create-button btn btn-primary waves-effect waves-light">
+              <Link to='/dev-forms/details-form' className="create-button btn btn-primary waves-effect waves-light">
                 <AiOutlinePlus /> Create New Project
               </Link>
         </div>
