@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Card ,Row, Col, Form,Button} from 'react-bootstrap';
+import { Card ,Row, Col, Form,Button} from 'react-bootstrap';
 import {soupherb, gaikwad,ongc,Lotus} from '../../images'
 import { Link } from 'react-router-dom';
 import { AiOutlinePlus } from 'react-icons/ai';
