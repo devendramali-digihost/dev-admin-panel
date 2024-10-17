@@ -43,6 +43,9 @@ const MultiStepForm = () => {
     <div className='container-fluid'>
     <div className="formParentWrapper" data-step={step}>
       <div className="steps">
+        <div className='sidebar-logo'>
+        <img className='logo' src='../src/assets/images/logo-digihost.png'/>
+        </div>
         {[1, 2, 3, 4,5].map((num) => (
           <div className="stepInfo" key={num}>
             <div className={`step ${step === num ? 'active' : ''}`} data-step={num}>

@@ -605,7 +605,12 @@ button[disabled] {
   align-items: center;
   gap: 20px;
 }
-
+.sidebar-logo{
+  .logo{
+    margin-left: 16px;
+    margin-bottom: 10px;
+  }
+}
 .lastStep {
   visibility: hidden;
 }
@@ -622,6 +627,9 @@ button[disabled] {
   font-weight: 550;
   font-size: 14px;
   letter-spacing: 1px;
+}
+.info td{
+  padding: 6px;
 }
 
 .rightSectionParent {
@@ -965,9 +973,7 @@ input[type=number] {
   margin-top: 5px;
 }
 
-.info {
-  text-align: center;
-}
+
 
 .step-line {
   width: 2px; /* Width of the line */

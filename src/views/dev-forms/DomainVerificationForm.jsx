@@ -15,7 +15,7 @@ export const DomainVerificationForm = () => {
         <Col lg={12}>
         <Form>
               <Row>
-                <Col lg={6}>
+                <Col lg={12}>
                   <Form.Group className="mb-3" controlId="DomainName">
                     <Form.Label>Enter Domains</Form.Label>
                     <Form.Control type="text" placeholder="Enter Domains" />
@@ -32,32 +32,29 @@ export const DomainVerificationForm = () => {
                   </div>
                   <div className="details">
                     <h4>Details</h4>
-                    <ul>
-                      <li className="info">
-                        <span className="dt">Is the domain correct?: </span>
-                        <span>Yes</span>
-                      </li>
-                      <li className="info">
-                        <span className="dt">Registry Domain ID: </span>
-                        <span>HJIW4928</span>
-                      </li>
-                      <li className="info">
-                        <span className="dt">Registrar URL: </span>
-                        <span>HJIW4928</span>
-                      </li>
-                      <li className="info">
-                        <span className="dt">Updated Date: </span>
-                        <span>25th September 2024</span>
-                      </li>
-                      <li className="info">
-                        <span className="dt">Creation Date: </span>
-                        <span>25th September 2024</span>
-                      </li>
-                      <li className="info">
-                        <span className="dt">Registrar Registration Expiration Date: </span>
-                        <span>25th September 2024</span>
-                      </li>
-                    </ul>
+                    <table>
+                      <tr className="info">
+                        <td>Is the domain correct?:</td>
+                        <td>Yes</td>
+                      </tr>
+                      <tr className="info">
+                        <td>Registry Domain ID:</td>
+                        <td>HJIW4928</td>
+                      </tr>
+                      <tr className="info">
+                        <td>Updated Date:</td>
+                        <td>25th September 2024</td>
+                      </tr>
+                      <tr className="info">
+                        <td>Creation Date: </td>
+                        <td>25th September 2024</td>
+                      </tr>
+                      <tr className="info">
+                        <td>Registrar Registration Expiration Date: </td>
+                        <td>25th September 2024</td>
+                      </tr>
+                    </table>
+                  
                   </div>
                 </Col>
               </Row>
