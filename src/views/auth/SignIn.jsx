@@ -1,22 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { NavLink } from 'react-router-dom';
-import loginImage from '../../assets/images/auth/login.jpg';  // Convert to WebP for better performance
-import logo from '../../assets/images/auth/logo.png';
+import loginImage from '../../assets/images/auth/login.jpg';  // Using JPG
+import logo from '../../assets/images/auth/logo.png';  // Using PNG
 import AuthLogin from './JWTLogin';
 
 const SignIn = () => {
+  // Preload the logo for better LCP
+  useEffect(() => {
+    const preloadImage = new Image();
+    preloadImage.src = logo;
+  }, []);
+
   return (
     <React.Fragment>
       <div className="auth-wrapper">
         <Row className="auth-row">
-          <Col sm={6} className="image p-0">
+          <Col sm={12} md={6} className="image p-0">
             <img
               src={loginImage}
               alt="Login"
-              loading="lazy"  // Lazy load non-essential images
+              loading="lazy"  // Lazy load to defer loading of non-essential image
               width="600"
               height="400"
             />
@@ -27,7 +33,7 @@ const SignIn = () => {
               </p>
             </div>
           </Col>
-          <Col sm={6} className="p-0">
+          <Col sm={12} md={6} className="p-0">
             <div className="auth-content">
               <Card className="borderless d-flex align-items-center justify-content-center">
                 <Card.Body>
