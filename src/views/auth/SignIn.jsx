@@ -33,10 +33,11 @@ const SignIn = () => {
               </p>
             </div>
           </Col>
-          <Col sm={12} md={6} className="p-0">
-            <div className="auth-content">
+          <Col sm={12} md={6} className="col-12 auth-content">
+           
               <Card className="borderless d-flex align-items-center justify-content-center">
                 <Card.Body>
+                <div className="">
                   <div className="mb-4 text-center">
                     <div className="logo">
                       <img src={logo} alt="Logo" width="200" height="50" />  {/* Preload the logo */}
@@ -44,10 +45,11 @@ const SignIn = () => {
                     <h5 className="mt-1">Welcome Back!</h5>
                     <p>Sign in to continue to DiigiiHost.</p>
                   </div>
+                  </div>
                   <AuthLogin />
                 </Card.Body>
               </Card>
-            </div>
+            
           </Col>
         </Row>
       </div>
