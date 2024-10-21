@@ -96,7 +96,7 @@ export const BusinessAccountForm = () => {
   return (
     <React.Fragment>
       <div className="mainForm">
-        <p className="personal">Business Account 
+        <p className="personal">Business Account
         <div class="icon-wrapper"><Link to="/company/create-new-project"><i class="fas fa-home custom-icon"><span class="fix-editor">&nbsp;</span></i></Link></div>
           {/* <span className='text-right'>
           <a href="#" class="btn btn-primary btn-home">
@@ -134,7 +134,7 @@ export const BusinessAccountForm = () => {
                 <Col sm={6}>
                   <Row className="mb-3">
                     {contactNumbers.map((data, index) => (
-                      <Col md={12} key={index}>
+                      <Col md={12} key={index} >
                         <Form.Group className="position-relative" controlId={`ContactNumber${index}`}>
                           <Form.Label>Contact Number</Form.Label>
                           <Form.Control
