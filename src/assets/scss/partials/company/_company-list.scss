@@ -458,7 +458,7 @@ button[disabled] {
   --coolGray: hsl(231, 11%, 70%);
   --lightGray: hsl(229, 24%, 87%);
   --white: hsl(0, 0%, 100%);
- 
+
 }
 
 .formParentWrapper {
@@ -484,7 +484,7 @@ button[disabled] {
 }
 
 @media all and (max-width: 630px) {
- 
+
 
   .formParentWrapper {
     font-family: $theme-font-family;
@@ -594,7 +594,7 @@ button[disabled] {
   &.active {
     background-color: #0d3f3b;
     border: 1px solid #0d3f3b;
- 
+
     color:  var(--white);
   }
 }
@@ -660,7 +660,7 @@ button[disabled] {
     padding-top: 1.625rem; // Ensure padding makes space for the label
     padding-bottom: 0.75rem;
     line-height: 1.25;
-    
+
     // Adjusting the label position when floating
     & + label {
       position: absolute;
@@ -687,18 +687,18 @@ button[disabled] {
   }
 }
 .custom-list {
-  list-style-type: none; 
+  list-style-type: none;
   padding-left: 0;
 }
 .custom-list li i{
   font-size:12px
 }
 .custom-list li {
-  // content: ">"; 
+  // content: ">";
   padding: 6px;
   /* border-bottom: 1px solid #ecebeb; */
 font-weight: 500;
-  color: #0d3f3b; 
+  color: #0d3f3b;
   font-size:16px
 }
 
@@ -713,10 +713,10 @@ font-size: 12px;
 height:0;
 min-height: 52px;
     }
-  } 
+  }
 }
 .prev a{
- color: #818181; 
+ color: #818181;
 }
 .personal {
   font-size: 28px;
@@ -981,7 +981,7 @@ input[type=number] {
         color: var(--white);
         &::after {
           background: $primary-color;
-          
+
         }
       }
 
@@ -992,9 +992,9 @@ input[type=number] {
   }
 }
 
-// .steps .stepInfo .step:last-child::after{
-//   content: none;
-// }
+.steps .stepInfo:last-child .step:after{
+  content: none;
+}
 .label {
   margin-top: 5px;
 }
@@ -1005,7 +1005,7 @@ input[type=number] {
   width: 2px; /* Width of the line */
   height: 50px; /* Height of the line */
   background-color: #ddd; /* Default line color */
-  // position: absolute; 
+  // position: absolute;
   // left: 50%;
   transform: translateX(-50%); /* Centering adjustment */
 }
