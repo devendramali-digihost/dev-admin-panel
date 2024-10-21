@@ -71,8 +71,8 @@ const CreateNewProject = () => {
             </div>
             <Card.Body>
               <Card.Title>Dr. S. Gaikwad  <a href="https://www.drgaikwad.com/" target="_blank" style={{ float: 'right' }} className="view-color">
-  <FaRegEye />
-</a></Card.Title>
+             <FaRegEye />
+            </a></Card.Title>
             </Card.Body>
 
         </Card>
@@ -116,7 +116,6 @@ const CreateNewProject = () => {
 </a></Card.Title>
             </Card.Body>
         </Card>
-
         </Col>
         <Col lg={4}>
         <Card className="project-card">
@@ -150,8 +149,8 @@ const CreateNewProject = () => {
             </div>
             <Card.Body>
               <Card.Title>ONGC  <a href="https://digihostsolutions.com/ongc-live/" target="_blank" style={{ float: 'right' }} className="view-color">
-  <FaRegEye />
-</a></Card.Title>
+            <FaRegEye />
+          </a></Card.Title>
             </Card.Body>
         </Card>
 
