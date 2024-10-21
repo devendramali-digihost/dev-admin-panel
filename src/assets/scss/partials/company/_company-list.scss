@@ -1,8 +1,3 @@
-.main-wrapper{
-  // width: 100%;
-  min-height: 100vh;
-  margin: 2vw;
-  // display: flex;
 .company-list {
   .card {
     padding: 25px;
@@ -723,20 +718,20 @@ min-height: 52px;
 .prev a{
  color: #818181;
 }
+.personal {
+  font-size: 28px;
+  font-weight: 700;
+  font-variant: normal;
+  margin-bottom: 10px;
+  color: #07211f;
+}
 
-  .personal {
-    font-size: 28px;
-    font-weight: 700;
-    font-variant: normal;
-    margin-bottom: 10px;
-    color: #07211f;
-  }
-  .personalInfo {
-    color: var(--coolGray);
-    font-size: 16px;
-    font-weight: 450;
-    margin-bottom: 20px;
-  }
+.personalInfo {
+  color: var(--coolGray);
+  font-size: 16px;
+  font-weight: 450;
+  margin-bottom: 20px;
+}
 
 .form {
   display: flex;
@@ -1025,4 +1020,3 @@ input[type=number] {
 }
 
 /* Additional styles for formContainer and other elements can go here */
-}
