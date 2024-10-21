@@ -61,7 +61,9 @@ const MultiStepForm = () => {
                     ? ' Domain Verification'
                     : num === 3
                     ? 'Update Name Server'
-                    : 'Choose Admin Panel Template'}
+                     : num === 4
+                    ? 'Choose Admin Panel Template'
+                    : 'Choose Front Theme'}
                 </p>
               </div>
               {num < 4 && <div className={`${step === num ? 'active' : ''}`}></div>} {/* Vertical Line */}
