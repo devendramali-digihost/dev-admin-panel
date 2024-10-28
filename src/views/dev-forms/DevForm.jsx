@@ -3,6 +3,7 @@ import { BusinessAccountForm } from './BusinessAccountForm';
 import { DomainVerificationForm } from './DomainVerificationForm';
 import { UpdateNameserver } from './UpdateNameserver';
 import logo from '../../assets/images/auth/logo.png';
+import { AdminPanelTemplate } from './AdminPanelTemplate';
 
 const MultiStepForm = () => {
   const [step, setStep] = useState(1);
@@ -94,6 +95,12 @@ const MultiStepForm = () => {
 
             <UpdateNameserver/>
             </div>
+              {/* Step 3: Update Name Server*/}
+              <div className={`formContainer ${step === 4 ? '' : 'hide'}`} data-step="4">
+
+                <AdminPanelTemplate/>
+              </div>
+           
           </div>
 
           <div className="btnWrapper mt-3">

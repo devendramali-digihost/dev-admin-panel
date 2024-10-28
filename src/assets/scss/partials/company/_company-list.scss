@@ -1,4 +1,5 @@
-.company-list {
+
+  .company-list {
   .card {
     padding: 25px;
     h4 {
@@ -641,7 +642,7 @@ button[disabled] {
 
 .rightSectionWrapper {
   margin-top: 32px;
-  width: 75%;
+  width: 90%;
   align-self: center;
 }
 
@@ -816,7 +817,7 @@ input[type=number] {
 }
 
 .btnWrapper {
-  width: 75%;
+  width: 90%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -824,7 +825,26 @@ input[type=number] {
   justify-content: space-between;
   padding-bottom: 16px;
 }
-
+.dropdown-select{
+  display: inline-block;
+}
+.form-btn-panel{
+  display: flex;
+  justify-content: end;
+}
+.m-l-10{
+  margin-left: 10px;
+}
+.btn-drop-category{
+  color: #505d69;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+.admin-card{
+  border-radius: 8px;
+}
 .next {
   cursor: pointer;
   border: none;
@@ -908,7 +928,7 @@ input[type=number] {
 }
 .icon-wrapper {
   display:inline-block;
-  float:right;
+  justify-content: right;
 }
 
 .planInfo {
