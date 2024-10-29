@@ -13,9 +13,7 @@
 .pcoded-header .btn:after {
   right: 0px !important;
 }
-.pcoded-header .btn:focus,
-.pcoded-header .btn:active,
-.pcoded-header .btn:hover {
+.pcoded-header .btn:focus, .pcoded-header .btn:active, .pcoded-header .btn:hover {
   text-decoration: none;
 }
 .pcoded-header .main-search .input-group-text {
@@ -23,4 +21,4 @@
 }
 .pcoded-header .btn > i {
   margin-right: -12px;
-} /*# sourceMappingURL=react-bootstrap.css.map */
+}/*# sourceMappingURL=react-bootstrap.css.map */
