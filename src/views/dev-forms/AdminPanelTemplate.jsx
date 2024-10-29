@@ -33,17 +33,17 @@ export const AdminPanelTemplate = () => {
               <Row>
                 <Col lg={4}>
                 <Form.Group className="mb-3" controlId="DomainName">
-          <div className="input-group rounded search-icon">
-            <Form.Control
-              type="text"
-              placeholder="Search template by"
-              className="" // Make the end of the input rounded
-            />
-            <span className="input-group-text"> {/* Make the start of the icon rounded */}
-              <FaSearch />
-            </span>
-          </div>
-        </Form.Group>
+                  <div className="input-group rounded search-icon">
+                    <Form.Control
+                      type="text"
+                      placeholder="Search template by"
+                      className="" // Make the end of the input rounded
+                    />
+                    <span className="input-group-text"> {/* Make the start of the icon rounded */}
+                      <FaSearch />
+                    </span>
+                  </div>
+                 </Form.Group>
                 </Col>
                 <Col lg={8}>
                   <div className="form-btn-panel">
