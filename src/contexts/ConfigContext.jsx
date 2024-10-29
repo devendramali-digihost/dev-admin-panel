@@ -7,7 +7,7 @@ const initialState = {
   ...CONFIG,
   isOpen: [],
   isTrigger: [],
-  collapseMenu: false, // Ensure this is in the state to track the menu collapse status
+  collapseMenu: false // Ensure this is in the state to track the menu collapse status
 };
 
 const ConfigContext = createContext(initialState);
@@ -71,7 +71,7 @@ const ConfigProvider = ({ children }) => {
 };
 
 ConfigProvider.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 export { ConfigContext, ConfigProvider };

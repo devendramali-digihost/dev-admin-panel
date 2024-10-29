@@ -13,7 +13,7 @@ const MultiStepForm = () => {
     number: '',
     plan: '',
     addOns: [],
-    billingType: 'Monthly',
+    billingType: 'Monthly'
   });
 
   const nextStep = () => setStep((prevStep) => Math.min(prevStep + 1, 5));
@@ -27,9 +27,7 @@ const MultiStepForm = () => {
   const handleCheckboxChange = (e) => {
     const { value, checked } = e.target;
     setFormData((prev) => {
-      const addOns = checked
-        ? [...prev.addOns, value]
-        : prev.addOns.filter((addon) => addon !== value);
+      const addOns = checked ? [...prev.addOns, value] : prev.addOns.filter((addon) => addon !== value);
       return { ...prev, addOns };
     });
   };
@@ -37,18 +35,18 @@ const MultiStepForm = () => {
   const toggleBillingType = () => {
     setFormData((prev) => ({
       ...prev,
-      billingType: prev.billingType === 'Monthly' ? 'Yearly' : 'Monthly',
+      billingType: prev.billingType === 'Monthly' ? 'Yearly' : 'Monthly'
     }));
   };
 
   return (
-    <div className='main-wrapper'>
+    <div className="main-wrapper">
       <div className="formParentWrapper" data-step={step}>
         <div className="steps">
-          <div className='sidebar-logo'>
-          <img className='logo' src={logo} />
+          <div className="sidebar-logo">
+            <img className="logo" src={logo} />
           </div>
-          {[1, 2, 3, 4,5].map((num) => (
+          {[1, 2, 3, 4, 5].map((num) => (
             <div className="stepInfo" key={num}>
               <div className={`step ${step === num ? 'active' : ''}`} data-step={num}>
                 {num}
@@ -59,12 +57,12 @@ const MultiStepForm = () => {
                   {num === 1
                     ? 'Business Account'
                     : num === 2
-                    ? ' Domain Verification'
-                    : num === 3
-                    ? 'Update Name Server'
-                     : num === 4
-                    ? 'Choose Admin Panel Template'
-                    : 'Choose Front Theme'}
+                      ? ' Domain Verification'
+                      : num === 3
+                        ? 'Update Name Server'
+                        : num === 4
+                          ? 'Choose Admin Panel Template'
+                          : 'Choose Front Theme'}
                 </p>
               </div>
               {num < 4 && <div className={`${step === num ? 'active' : ''}`}></div>} {/* Vertical Line */}
@@ -79,33 +77,29 @@ const MultiStepForm = () => {
           <div className="rightSectionWrapper">
             {/* Step 1: Business Account */}
             <div className={`formContainer ${step === 1 ? '' : 'hide'}`} data-step="1">
-
-              <BusinessAccountForm/>
-
+              <BusinessAccountForm />
             </div>
 
             {/* Step 2: Domain Verification*/}
             <div className={`formContainer ${step === 2 ? '' : 'hide'}`} data-step="2">
-
-          <DomainVerificationForm/>
+              <DomainVerificationForm />
             </div>
 
             {/* Step 3: Update Name Server*/}
             <div className={`formContainer ${step === 3 ? '' : 'hide'}`} data-step="3">
-
-            <UpdateNameserver/>
+              <UpdateNameserver />
             </div>
-              {/* Step 3: Update Name Server*/}
-              <div className={`formContainer ${step === 4 ? '' : 'hide'}`} data-step="4">
-
-                <AdminPanelTemplate/>
-              </div>
-           
+            {/* Step 3: Update Name Server*/}
+            <div className={`formContainer ${step === 4 ? '' : 'hide'}`} data-step="4">
+              <AdminPanelTemplate />
+            </div>
           </div>
 
           <div className="btnWrapper mt-3">
             <p className={`prev ${step === 1 ? 'hideBtn' : ''}`} onClick={prevStep}>
-            <a href="#"><i class="fas fa-arrow-left"></i> Go Back</a>
+              <a href="#">
+                <i class="fas fa-arrow-left"></i> Go Back
+              </a>
             </p>
             <button className="btn btn-primary" onClick={nextStep}>
               {step === 5 ? 'Finish' : 'Next Step'}

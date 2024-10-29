@@ -28,12 +28,7 @@ const NavLeft = () => {
     <React.Fragment>
       <ListGroup as="ul" bsPrefix=" " className="navbar-nav mr-auto">
         <ListGroup.Item as="li" bsPrefix=" " className="nav-item">
-          <Link
-            to="#!"
-            className={toggleClass.join(' ')}
-            id="mobile-collapse"
-            onClick={() => dispatch({ type: actionType.COLLAPSE_MENU })}
-          >
+          <Link to="#!" className={toggleClass.join(' ')} id="mobile-collapse" onClick={() => dispatch({ type: actionType.COLLAPSE_MENU })}>
             <span />
           </Link>
         </ListGroup.Item>

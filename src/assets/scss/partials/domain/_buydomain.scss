@@ -1,138 +1,132 @@
-    .buy-domain{
-        .card{
-            padding: 20px 25px;
-            .searchbox{
-                .search-form{
-                    .serch{
-                        width: 460px;
-                        position: relative;
-                       
-                        input{
-                            padding-right: 40px;
-                            height: 45px;
-                        }
-                        .search-icon{
-                            position: absolute;
-                            right: 10px;
-                            transform: translateY(55%);
-                            top: 0;
-                            font-size: 22px;
-                            color: #748892;
-                        }
-                    }
-                    .btn{
-                        font-size: 17px;
-                    }
-                }
-            }
-            .domain-container{
-                margin-top: 1rem;
-                .sold{
+.buy-domain {
+  .card {
+    padding: 20px 25px;
+    .searchbox {
+      .search-form {
+        .serch {
+          width: 460px;
+          position: relative;
 
-                }
-                .avalible{
-                    margin-top: 20px;
-                    h4{
-                        font-size: 16px;
-                        text-transform: uppercase;
-                        font-weight: bold;
-                        color: #373b3b;
-                        margin-bottom: 15px;
-                    }
-                }
-                .item{
-                    padding: 20px 20px;
-                    border: 1px solid $theme-border;
-                    display: flex;
-                    align-items:center ;
-                    border-right: none;
-                    border-left: none;
-                    justify-content: space-between;
+          input {
+            padding-right: 40px;
+            height: 45px;
+          }
+          .search-icon {
+            position: absolute;
+            right: 10px;
+            transform: translateY(55%);
+            top: 0;
+            font-size: 22px;
+            color: #748892;
+          }
+        }
+        .btn {
+          font-size: 17px;
+        }
+      }
+    }
+    .domain-container {
+      margin-top: 1rem;
+      .sold {
+      }
+      .avalible {
+        margin-top: 20px;
+        h4 {
+          font-size: 16px;
+          text-transform: uppercase;
+          font-weight: bold;
+          color: #373b3b;
+          margin-bottom: 15px;
+        }
+      }
+      .item {
+        padding: 20px 20px;
+        border: 1px solid $theme-border;
+        display: flex;
+        align-items: center;
+        border-right: none;
+        border-left: none;
+        justify-content: space-between;
 
-                    &:hover{
-                        background: #f5f5f5;
-                        cursor: pointer;
-                    }
-                    .site{
-                        font-size: 25px;
-                        color: #000;
-                        font-weight: 400;
-                    }
-                    .prize{
-                        font-size: 19px;
-                        color: #000;
-                        font-weight: 500;
-                        display: flex;
-                        align-items: center;
-                        .condition-box{
-                            max-width: 250px;
-                            p{
-                                margin-bottom: 0;
-                                font-size: 12px;
-                            }
-                        }
-                        .buy-btn{
-                            margin-left: 10px;
-                            // background: transparent;
-                            // color: #000;
-                            font-size: 17px;
-                            background: $primary-color;
-                            color: #fff;
-                            border-color: $primary-color;
-                            &:hover{
-                                background: rgb(22.2041984733, 101.626908397, 94.7948473283);
-                            }
-                        }
+        &:hover {
+          background: #f5f5f5;
+          cursor: pointer;
+        }
+        .site {
+          font-size: 25px;
+          color: #000;
+          font-weight: 400;
+        }
+        .prize {
+          font-size: 19px;
+          color: #000;
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+          .condition-box {
+            max-width: 250px;
+            p {
+              margin-bottom: 0;
+              font-size: 12px;
+            }
+          }
+          .buy-btn {
+            margin-left: 10px;
+            // background: transparent;
+            // color: #000;
+            font-size: 17px;
+            background: $primary-color;
+            color: #fff;
+            border-color: $primary-color;
+            &:hover {
+              background: rgb(22.2041984733, 101.626908397, 94.7948473283);
+            }
+          }
+        }
+        &.sold {
+          background: #f5f5f5;
+          &:hover {
+            cursor: default;
+          }
+          .site {
+            color: #9b9b9b;
+          }
+        }
+      }
+    }
+  }
+}
 
-                    }
-                    &.sold{
-                        background: #f5f5f5;
-                        &:hover{
-                            cursor: default;
-                        }
-                        .site{
-                            color: #9b9b9b;
-                           
-                        }
-                    
-                    }
-                }
-            }
-        }
+.nscontainer {
+  .details {
+    ul {
+      padding-left: 1rem;
+      li {
+        display: list-item;
+        color: #000;
+      }
     }
-   
-    .nscontainer{
-        .details{
-            ul{
-                padding-left: 1rem;
-                li{
-                    display: list-item;
-                    color: #000;
-                }
-            }
-        }
-        .ns-no{
-            margin-top: 20px;
-            p{
-                font-size: 16px;
-                color: #000;
-                span{
-                    font-weight: 700;
-                    // color: #455251;
-                    margin-right: 5px;
-                  
-                
-                }
-            }
-        }
+  }
+  .ns-no {
+    margin-top: 20px;
+    p {
+      font-size: 16px;
+      color: #000;
+      span {
+        font-weight: 700;
+        // color: #455251;
+        margin-right: 5px;
+      }
     }
-    .buy-btn{
-        a{
-            color: $primary-color;
-            font-weight: 600;
-            transition: all .3s linear;
-            &:hover{
-                color:$menu-dark-background;
-            }
-        }
+  }
+}
+.buy-btn {
+  a {
+    color: $primary-color;
+    font-weight: 600;
+    transition: all 0.3s linear;
+    &:hover {
+      color: $menu-dark-background;
     }
+  }
+}

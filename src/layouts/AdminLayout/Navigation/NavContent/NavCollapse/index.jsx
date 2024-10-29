@@ -76,14 +76,13 @@ const NavCollapse = ({ collapse, type }) => {
       <Link
         to="#"
         className={navLinkClass.join(' ')}
-        
         onClick={() => dispatch({ type: actionType.COLLAPSE_TOGGLE, menu: { id: collapse.id, type: type } })}
       >
         <NavIcon items={collapse} />
         {itemTitle}
         <NavBadge items={collapse} />
       </Link>
-      <ListGroup variant="flush" bsPrefix=" " as="ul" className={'pcoded-submenu'} > 
+      <ListGroup variant="flush" bsPrefix=" " as="ul" className={'pcoded-submenu'}>
         {navItems}
       </ListGroup>
     </React.Fragment>
@@ -92,7 +91,7 @@ const NavCollapse = ({ collapse, type }) => {
   let mainContent = '';
 
   mainContent = (
-    <ListGroup.Item as="li" bsPrefix=" " className={navItemClass.join(' ')} >
+    <ListGroup.Item as="li" bsPrefix=" " className={navItemClass.join(' ')}>
       {subContent}
     </ListGroup.Item>
   );

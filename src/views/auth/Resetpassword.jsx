@@ -67,7 +67,6 @@ const Resetpassword = () => {
         </Container>
       </div>
     </React.Fragment>
-
   );
 };
 

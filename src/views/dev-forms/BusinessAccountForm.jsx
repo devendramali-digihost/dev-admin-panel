@@ -96,13 +96,20 @@ export const BusinessAccountForm = () => {
   return (
     <React.Fragment>
       <div className="mainForm">
-        <p className="personal">Business Account
-        <div class="icon-wrapper"><Link to="/company/create-new-project"><i class="fas fa-home custom-icon"><span class="fix-editor">&nbsp;</span></i></Link></div>
+        <p className="personal">
+          Business Account
+          <div class="icon-wrapper">
+            <Link to="/company/create-new-project">
+              <i class="fas fa-home custom-icon">
+                <span class="fix-editor">&nbsp;</span>
+              </i>
+            </Link>
+          </div>
           {/* <span className='text-right'>
           <a href="#" class="btn btn-primary btn-home">
   <i class="fas fa-home"></i>
 </a></span> */}
-</p>
+        </p>
         <p className="personalInfo">Please provide your company details.</p>
 
         <Row>
@@ -134,7 +141,7 @@ export const BusinessAccountForm = () => {
                 <Col sm={6}>
                   <Row className="mb-3">
                     {contactNumbers.map((data, index) => (
-                      <Col md={12} key={index} >
+                      <Col md={12} key={index}>
                         <Form.Group className="position-relative" controlId={`ContactNumber${index}`}>
                           <Form.Label>Contact Number</Form.Label>
                           <Form.Control
@@ -145,10 +152,7 @@ export const BusinessAccountForm = () => {
                             placeholder="Contact Number"
                           />
                           {contactNumbers.length > 1 && (
-                            <Button
-                              onClick={() => removeContactNumber(index)}
-                              className="remove-field"
-                            >
+                            <Button onClick={() => removeContactNumber(index)} className="remove-field">
                               <RiDeleteBin5Fill />
                             </Button>
                           )}
@@ -178,10 +182,7 @@ export const BusinessAccountForm = () => {
                             placeholder="Email ID"
                           />
                           {emailIds.length > 1 && (
-                            <Button
-                              onClick={() => removeEmailId(index)}
-                              className="remove-field"
-                            >
+                            <Button onClick={() => removeEmailId(index)} className="remove-field">
                               <RiDeleteBin5Fill />
                             </Button>
                           )}
@@ -211,10 +212,7 @@ export const BusinessAccountForm = () => {
                             placeholder="Address"
                           />
                           {addresses.length > 1 && (
-                            <Button
-                              onClick={() => removeAddress(index)}
-                              className="remove-field"
-                            >
+                            <Button onClick={() => removeAddress(index)} className="remove-field">
                               <RiDeleteBin5Fill />
                             </Button>
                           )}

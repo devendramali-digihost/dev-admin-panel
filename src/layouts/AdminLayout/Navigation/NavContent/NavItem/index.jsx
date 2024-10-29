@@ -28,7 +28,7 @@ const NavItem = ({ item }) => {
   let subContent;
   if (item.external) {
     subContent = (
-      <a href={item.url} target="_blank" rel="noopener noreferrer" className='waves-effect waves-light'>
+      <a href={item.url} target="_blank" rel="noopener noreferrer" className="waves-effect waves-light">
         <NavIcon items={item} />
         {itemTitle}
         <NavBadge items={item} />

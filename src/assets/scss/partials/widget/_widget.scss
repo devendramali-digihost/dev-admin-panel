@@ -1,34 +1,34 @@
 .user-list {
-	.table {
-		td {
-			vertical-align: middle;
-		}
+  .table {
+    td {
+      vertical-align: middle;
+    }
 
-		thead {
-			th {
-				border: 0;
-			}
-		}
-	}
+    thead {
+      th {
+        border: 0;
+      }
+    }
+  }
 }
 
 .Recent-Users {
-	.table {
-		tr {
-			&:first-child {
-				td {
-				border-top: 0;
-				}
-			}
-		}
-		td {
-			vertical-align: middle;
-		}
-		.label {
-			border-radius: 15px;
-			box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
-		}
-	}
+  .table {
+    tr {
+      &:first-child {
+        td {
+          border-top: 0;
+        }
+      }
+    }
+    td {
+      vertical-align: middle;
+    }
+    .label {
+      border-radius: 15px;
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+    }
+  }
 }
 
 .card-social {

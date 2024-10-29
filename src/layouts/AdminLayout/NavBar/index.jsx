@@ -29,7 +29,7 @@ const NavBar = () => {
   };
 
   let moreClass = ['mob-toggler'];
-  
+
   Waves.init();
 
   let collapseClass = ['collapse navbar-collapse'];

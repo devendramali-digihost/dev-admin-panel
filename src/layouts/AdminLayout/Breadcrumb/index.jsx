@@ -28,8 +28,7 @@ const Breadcrumb = () => {
             setMain(item);
             setItem(collapse);
           }
-        }
-        else if (collapse.type && collapse.type === 'breadcrumb') {
+        } else if (collapse.type && collapse.type === 'breadcrumb') {
           if (location.pathname === collapse.url) {
             setMain(item);
             setItem(collapse);
