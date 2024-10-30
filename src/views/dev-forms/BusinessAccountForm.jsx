@@ -139,7 +139,11 @@ export const BusinessAccountForm = () => {
 
                 {/* Contact Numbers Section */}
                 <Col sm={6}>
-                  <Row className="mb-3">
+                <Form.Group className="mb-3" controlId="ClientName">
+                    <Form.Label>Contact Number</Form.Label>
+                    <Form.Control type="text" placeholder="Contact Number" />
+                  </Form.Group>
+                  {/* <Row className="mb-3">
                     {contactNumbers.map((data, index) => (
                       <Col md={12} key={index}>
                         <Form.Group className="position-relative" controlId={`ContactNumber${index}`}>
@@ -164,12 +168,12 @@ export const BusinessAccountForm = () => {
                         </Form.Group>
                       </Col>
                     ))}
-                  </Row>
+                  </Row> */}
                 </Col>
 
                 {/* Email Id Section */}
                 <Col sm={6}>
-                  <Row className="mb-3">
+                  {/* <Row className="mb-3">
                     {emailIds.map((data, index) => (
                       <Col md={12} key={index}>
                         <Form.Group className="position-relative" controlId={`EmailId${index}`}>
@@ -194,12 +198,16 @@ export const BusinessAccountForm = () => {
                         </Form.Group>
                       </Col>
                     ))}
-                  </Row>
+                  </Row> */}
+                    <Form.Group className="mb-3" controlId="ClientName">
+                    <Form.Label>Email Id</Form.Label>
+                    <Form.Control type="text" placeholder="Email Id" />
+                  </Form.Group>
                 </Col>
 
                 {/* Address Section */}
                 <Col sm={6}>
-                  <Row className="mb-3">
+                  {/* <Row className="mb-3">
                     {addresses.map((data, index) => (
                       <Col md={12} key={index}>
                         <Form.Group className="position-relative" controlId={`Address${index}`}>
@@ -224,7 +232,11 @@ export const BusinessAccountForm = () => {
                         </Form.Group>
                       </Col>
                     ))}
-                  </Row>
+                  </Row> */}
+                    <Form.Group className="mb-3" controlId="ClientName">
+                    <Form.Label>Address</Form.Label>
+                    <Form.Control type="text" placeholder="Address" />
+                  </Form.Group>
                 </Col>
               </Row>
             </Form>
