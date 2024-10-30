@@ -39,12 +39,22 @@ const MultiStepForm = () => {
     }));
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (step === 5) {
+      // Final submission logic
+      console.log('Form submitted:', formData);
+    } else {
+      nextStep();
+    }
+  };
+
   return (
     <div className="main-wrapper">
       <div className="formParentWrapper" data-step={step}>
         <div className="steps">
           <div className="sidebar-logo">
-            <img className="logo" src={logo} />
+            <img className="logo" src={logo} alt="Logo" />
           </div>
           {[1, 2, 3, 4, 5].map((num) => (
             <div className="stepInfo" key={num}>
@@ -57,7 +67,7 @@ const MultiStepForm = () => {
                   {num === 1
                     ? 'Business Account'
                     : num === 2
-                      ? ' Domain Verification'
+                      ? 'Domain Verification'
                       : num === 3
                         ? 'Update Name Server'
                         : num === 4
@@ -65,47 +75,41 @@ const MultiStepForm = () => {
                           : 'Choose Front Theme'}
                 </p>
               </div>
-              {num < 4 && <div className={`${step === num ? 'active' : ''}`}></div>} {/* Vertical Line */}
+              {num < 4 && <div className={`${step === num ? 'active' : ''}`}></div>}
             </div>
           ))}
-          {/* <div className={`step lastStep ${step === 5 ? 'active' : ''}`} data-step="5">
-            5
-          </div> */}
         </div>
 
-        <div className="rightSectionParent">
+        <form onSubmit={handleSubmit} className="rightSectionParent">
           <div className="rightSectionWrapper">
-            {/* Step 1: Business Account */}
             <div className={`formContainer ${step === 1 ? '' : 'hide'}`} data-step="1">
-              <BusinessAccountForm />
+              <BusinessAccountForm onChange={handleInputChange} formData={formData} />
             </div>
 
-            {/* Step 2: Domain Verification*/}
             <div className={`formContainer ${step === 2 ? '' : 'hide'}`} data-step="2">
-              <DomainVerificationForm />
+              <DomainVerificationForm onChange={handleInputChange} formData={formData} />
             </div>
 
-            {/* Step 3: Update Name Server*/}
             <div className={`formContainer ${step === 3 ? '' : 'hide'}`} data-step="3">
-              <UpdateNameserver />
+              <UpdateNameserver onChange={handleInputChange} formData={formData} />
             </div>
-            {/* Step 3: Update Name Server*/}
+
             <div className={`formContainer ${step === 4 ? '' : 'hide'}`} data-step="4">
-              <AdminPanelTemplate />
+              <AdminPanelTemplate onChange={handleInputChange} formData={formData} />
             </div>
           </div>
 
           <div className="btnWrapper mt-3">
             <p className={`prev ${step === 1 ? 'hideBtn' : ''}`} onClick={prevStep}>
               <a href="#">
-                <i class="fas fa-arrow-left"></i> Go Back
+                <i className="fas fa-arrow-left"></i> Go Back
               </a>
             </p>
-            <button className="btn btn-primary" onClick={nextStep}>
+            <button type={step === 5 ? 'submit' : 'button'} className="btn btn-primary" onClick={step < 5 ? nextStep : undefined}>
               {step === 5 ? 'Finish' : 'Next Step'}
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );

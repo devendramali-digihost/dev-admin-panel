@@ -66,7 +66,12 @@ const routes = [
         exact: 'true',
         path: '/company/create-new-project',
         element: lazy(() => import('./views/company/CreateNewProject'))
-      }
+      },
+      {
+        exact: 'true',
+        path: '/admin-template/admin-module-list',
+        element: lazy(() => import('./views/admin-template/AdminModuleList'))
+      },
     ]
   }
 ];

@@ -646,6 +646,9 @@ button[disabled] {
   flex-direction: column;
   gap: 16px;
 }
+.form-select.category-form{
+  width:50%
+}
 // General form-floating styles
 .form-floating {
   position: relative;
@@ -1033,6 +1036,22 @@ input[type='number'] {
 /* Hide the last step's line */
 .step.line:last-child {
   display: none;
+}
+.mainForm {
+  opacity: 1;
+  height: auto;
+  transition: opacity 0.5s ease, height 0.5s ease;
+}
+
+.mainForm.hide {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.mainForm.show {
+  opacity: 1;
+  height: auto;
 }
 
 /* Additional styles for formContainer and other elements can go here */

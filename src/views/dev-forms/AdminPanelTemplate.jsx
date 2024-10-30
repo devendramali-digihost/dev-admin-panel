@@ -3,17 +3,32 @@ import { Row, Col, Form, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaSearch, FaEdit, FaThLarge, FaRegEye } from 'react-icons/fa';
 import { admin1, admin2 } from '../../images';
+import Switch from 'react-switch';
 
 export const AdminPanelTemplate = () => {
   const [selectedOption, setSelectedOption] = useState('');
+  const [checked, setChecked] = useState(true);
+  const [showModuleBlock, setShowModuleBlock] = useState(false); // New state for showing ModuleBlock
 
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
   };
 
+  const handleChange = (checked) => {
+    setChecked(checked);
+  };
+
+  const handleViewStructureClick = () => {
+    setShowModuleBlock(true); // Show ModuleBlock
+  };
+
   return (
     <React.Fragment>
-      <div className="mainForm">
+      {/* AdminCardBlock with conditional visibility */}
+      <div
+        className={`mainForm ${showModuleBlock ? 'hide' : 'show'}`} 
+        id="AdminCardBlock"
+      >
         <p className="personal">
           Choose Admin Panel Template{' '}
           <div className="icon-wrapper">
@@ -35,40 +50,41 @@ export const AdminPanelTemplate = () => {
                       <Form.Control
                         type="text"
                         placeholder="Search template by"
-                        className="rounded-start" // Rounded start
+                        className="rounded-start"
                       />
-                      <span className="input-group-text rounded-end"> {/* Rounded end for the icon */}
+                      <span className="input-group-text rounded-end">
                         <FaSearch />
                       </span>
                     </div>
                   </Form.Group>
                 </Col>
                 <Col lg={8}>
-                  <div className="form-btn-panel">
-                    <div>
-                      <select
-                        id="options"
-                        value={selectedOption}
-                        onChange={handleSelectChange}
-                        className="form-select"
-                      >
-                        <option value="" disabled>
-                          Select Category
-                        </option>
-                        <option value="option1">Corporate Business Templates</option>
-                        <option value="option2">Admin Panel Templates</option>
-                        <option value="option3">E-commerce Templates</option>
-                      </select>
-                    </div>
+                <Row>
+                  <div className="form-btn-panel" >
+                    <select
+                      id="options"
+                      value={selectedOption}
+                      onChange={handleSelectChange}
+                      className="form-select category-form"
+                    >
+                      <option value="" disabled>
+                        Select Category
+                      </option>
+                      <option value="option1">Corporate Business Templates</option>
+                      <option value="option2">Admin Panel Templates</option>
+                      <option value="option3">E-commerce Templates</option>
+                    </select>
 
                     <div className="text-right m-l-10">
-                      <Link to="#" className="create-button btn btn-primary waves-effect waves-light">
+                      <Link to="#" className="create-button btn btn-primary">
                         <FaEdit /> Start From Scratch
                       </Link>
                     </div>
                   </div>
+                  </Row>
                 </Col>
               </Row>
+
               <Row>
                 <Col lg={4}>
                   <Card className="project-card admin-card">
@@ -76,23 +92,23 @@ export const AdminPanelTemplate = () => {
                       <Card.Img variant="top" src={admin1} />
                       <div className="overlay">
                         <div className="button">
-                          <a href="#" target="_blank" className="create-button btn btn-primary waves-effect waves-light">
+                          <a href="#" target="_blank" className="create-button btn btn-primary">
                             Preview
                           </a>
-                          <a href="#" target="_blank" className="create-button btn btn-primary waves-effect waves-light">
-                            View Layout
+                          <a onClick={handleViewStructureClick} className="create-button btn btn-primary">
+                            View Structure
                           </a>
                         </div>
                       </div>
                     </div>
                     <Card.Body>
                       <Card.Title>
-                        Template 1{' '}
-                        <div style={{ float: 'right', display: 'inline' }}>
+                        Real Estate
+                        <div style={{ float: 'right' }}>
                           <a href="#" title="View" target="_blank" className="view-color">
                             <FaRegEye />
                           </a>
-                          <a href="#" title="View Layout" target="_blank" className="view-color m-l-10">
+                          <a onClick={handleViewStructureClick} title="View Structure" className="view-color m-l-10">
                             <FaThLarge />
                           </a>
                         </div>
@@ -100,29 +116,30 @@ export const AdminPanelTemplate = () => {
                     </Card.Body>
                   </Card>
                 </Col>
+
                 <Col lg={4}>
                   <Card className="project-card admin-card">
                     <div className="card-image-wrapper">
                       <Card.Img variant="top" src={admin2} />
                       <div className="overlay">
                         <div className="button">
-                          <a href="#" target="_blank" className="create-button btn btn-primary waves-effect waves-light">
+                          <a href="#" target="_blank" className="create-button btn btn-primary">
                             Preview
                           </a>
-                          <a href="#" target="_blank" className="create-button btn btn-primary waves-effect waves-light">
-                            View Layout
+                          <a onClick={handleViewStructureClick} className="create-button btn btn-primary">
+                            View Structure
                           </a>
                         </div>
                       </div>
                     </div>
                     <Card.Body>
                       <Card.Title>
-                        Template 2{' '}
-                        <div style={{ float: 'right', display: 'inline' }}>
+                        Dental
+                        <div style={{ float: 'right' }}>
                           <a href="#" title="View" target="_blank" className="view-color">
                             <FaRegEye />
                           </a>
-                          <a href="#" title="View Layout" target="_blank" className="view-color m-l-10">
+                          <a onClick={handleViewStructureClick} title="View Structure" className="view-color m-l-10">
                             <FaThLarge />
                           </a>
                         </div>
@@ -132,6 +149,32 @@ export const AdminPanelTemplate = () => {
                 </Col>
               </Row>
             </Form>
+          </Col>
+        </Row>
+      </div>
+
+      {/* ModuleBlock with conditional visibility */}
+      <div
+        className={`mainForm ${showModuleBlock ? 'show' : 'hide'}`} 
+        id="ModuleBlock"
+      >
+        <p className="personal">
+            Dental Modules List{' '}
+          <div className="icon-wrapper">
+            <Link to="/company/create-new-project">
+              <i className="fas fa-home custom-icon">
+                <span className="fix-editor">&nbsp;</span>
+              </i>
+            </Link>
+          </div>
+        </p>
+
+        <Row>
+          <Col lg={12}>
+            <label>
+              <span>Switch with default style</span>
+              <Switch onChange={handleChange} checked={checked} />
+            </label>
           </Col>
         </Row>
       </div>
