@@ -4,67 +4,74 @@ import { NavLink } from 'react-router-dom';
 import logo from '../../assets/images/auth/logo.png';
 import { MdLockOutline } from 'react-icons/md';
 import loginImage from '../../assets/images/auth/login.jpg';
+import AuthLogin from './JWTLogin';
 const Resetpassword = () => {
   return (
     <React.Fragment>
       <div className="auth-wrapper">
-        <Container fluid>
-          <Row className="auth-row">
-            <Col sm={4} className="p-0">
-              <div className="auth-content">
-                <Card className="borderless text-center">
-                  <Card.Body>
-                    <div className="mb-4">
-                      <div className="logo">
-                        <img src={logo} alt="" />
-                      </div>
-                      <h5 className="mt-1">Welcome Back !</h5>
-                      <p>Sign in to continue to DigiHost.</p>
+        <Row className="auth-row">
+          <Col sm={12} md={6} className="image p-0">
+            <img
+              src={loginImage}
+              alt="Login"
+              loading="lazy"
+              width="600"
+              height="400"
+            />
+            <div className="copyright_form">
+              <p>
+                Copyright © {new Date().getFullYear()} Dev Panel. All Rights Reserved. Powered By:{' '}
+                <NavLink to={'https://www.digihost.in/'} target="_blank">
+                  DigiHost Tech Solutions Pvt. Ltd.
+                </NavLink>
+              </p>
+            </div>
+          </Col>
+          <Col sm={12} md={6} className="col-12 auth-content">
+            <Card className="borderless d-flex align-items-center justify-content-center">
+              <Card.Body>
+                <div className="">
+                  <div className="mb-4 text-center">
+                    <div className="logo">
+                      <img src={logo} alt="Logo" width="200" height="50" /> 
                     </div>
-                    <form action="">
-                      <Form.Group className="mb-3" controlId="password">
-                        <div className="input-container">
-                          <Form.Label>New Password</Form.Label>
-                          <Form.Control type="password" placeholder="Enter New Password" name="password" />
-                          <span className="icon">
-                            <MdLockOutline />
-                          </span>
-                        </div>
-                      </Form.Group>
-                      <Form.Group className="mb-3" controlId="password">
-                        <div className="input-container">
-                          <Form.Label>New Password</Form.Label>
-                          <Form.Control type="password" placeholder="Confirm New Password" name="password" />
-                          <span className="icon">
-                            <MdLockOutline />
-                          </span>
-                        </div>
-                      </Form.Group>
+                    <h5 className="mt-1">Welcome Back!</h5>
+                    <p>Reset Your Password.</p>
+                  </div>
+                </div>
+                <form action="">
+                      <FloatingLabel controlId="floatingInput" label="Old Password" className="mb-3">
+                      <Form.Control
+                              type="email"
+                              placeholder="Old Password"
+                            />
+                          </FloatingLabel>
+                       <FloatingLabel controlId="floatingInput" label="New Password" className="mb-3">
+                      <Form.Control
+                              type="email"
+                              placeholder="New Password"
+                            />
+                          </FloatingLabel>
+                          
                       <Row className="mt-4">
-                        <Col mt={2}>
-                          <Button className="btn-block mb-4" color="primary" size="large" type="submit" variant="primary">
+                        <Col sm={12} mt={1}>
+                          <Button className="btn-block" color="primary" size="large" type="submit" variant="primary">
                             Reset
                           </Button>
                         </Col>
-                      </Row>
-                    </form>
-                    <div className="below-text">
-                      <p>
+                        <Col sm={12} mt={2}>
+                        <div className="below-text mt-3 text-center">
+                      <p className='mb-4'>
                         Don't have an account ? <NavLink to={'#'}>Register</NavLink>{' '}
                       </p>
-                      <p>Copyright © 2024 DigiHost - All Rights Reserved.</p>
                     </div>
-                  </Card.Body>
-                </Card>
-              </div>
-            </Col>
-            <Col sm={8} className="p-0">
-              <div className="image">
-                <img src={loginImage} alt="" />
-              </div>
-            </Col>
-          </Row>
-        </Container>
+                        </Col>
+                      </Row>
+                    </form>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
       </div>
     </React.Fragment>
   );
