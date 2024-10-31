@@ -649,6 +649,78 @@ button[disabled] {
 .form-select.category-form{
   width:50%
 }
+.module-list {
+  display: grid;
+  gap: 1rem;
+
+  .module-switch {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+
+    .switch-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+
+      .switch {
+        width: 56px;
+        height: 28px;
+        background: #008800;
+        border-radius: 14px;
+        position: relative;
+        cursor: pointer;
+        transition: background 0.25s;
+
+        &::before {
+          content: "";
+          width: 26px;
+          height: 26px;
+          background: #fff;
+          border-radius: 50%;
+          position: absolute;
+          top: 1px;
+          left: 1px;
+          transition: transform 0.25s;
+        }
+
+        &.active {
+          background: #ff0000;
+
+          &::before {
+            transform: translateX(28px);
+          }
+        }
+      }
+    }
+  }
+}
+
+.module-list{
+  .module-switch{
+    .react-switch-bg {
+      height: 20px !important;
+      background: rgb(22, 102, 95) !important;
+      div{
+        height: 20px !important;
+        width: 29px !important;
+      }
+    }
+   .switch-label span{
+    color: #6f6464;
+   }
+    .react-switch-handle{
+     
+      width:14px !important;
+      height:14px !important;
+      top:3px !important;
+    }
+  }
+}
 // General form-floating styles
 .form-floating {
   position: relative;

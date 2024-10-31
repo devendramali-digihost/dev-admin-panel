@@ -40,7 +40,7 @@ export const AdminPanelTemplate = () => {
   // State to keep track of which switches are checked
   const [switchStates, setSwitchStates] = useState(
     switchesData.reduce((acc, item) => {
-      acc[item.id] = false;
+      acc[item.id] = true;
       return acc;
     }, {})
   );
@@ -54,7 +54,9 @@ export const AdminPanelTemplate = () => {
   };
 
   return (
+    
     <React.Fragment>
+      
       {/* AdminCardBlock with conditional visibility */}
       <div
         className={`mainForm ${showModuleBlock ? "hide" : "show"}`}
@@ -238,7 +240,7 @@ export const AdminPanelTemplate = () => {
           <Col lg={12}>
             <div className="module-list">
               {/* <h3>Dental Modules</h3> */}
-              <div className="checkboxes">
+              <div className="checkboxes module-switch">
                 {/* <label>
                   <span>Services</span>
                   <Switch onChange={handleChange} checked={checked} />
