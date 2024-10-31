@@ -4004,6 +4004,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"clsx@npm:^2.1.0":
+  version: 2.1.1
+  resolution: "clsx@npm:2.1.1"
+  checksum: 10c0/c4c8eb865f8c82baab07e71bfa8897c73454881c4f99d6bc81585aecd7c441746c1399d08363dc096c550cceaf97bd4ce1e8854e1771e9998d9f94c4fe075839
+  languageName: node
+  linkType: hard
+
 "color-convert@npm:2.0.1, color-convert@npm:^2.0.1":
   version: 2.0.1
   resolution: "color-convert@npm:2.0.1"
@@ -4556,6 +4563,7 @@ __metadata:
     react-router-dom: "npm:^6.22.3"
     react-select: "npm:^5.8.1"
     react-switch: "npm:^7.0.0"
+    react-toastify: "npm:^10.0.6"
     react-tooltip: "npm:^5.28.0"
     sass: "npm:^1.79.3"
     styled-components: "npm:^6.1.13"
@@ -7477,6 +7485,18 @@ __metadata:
     react: ^15.3.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
     react-dom: ^15.3.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
   checksum: 10c0/fe5d2fc7c25998de5ff8c0f5a0013d43bb5dc89564d97b03f9e0202761a00127e477d4d670e8cc2885cfcacbc98e87c0c3555a1398d0db1403db45598d0dc753
+  languageName: node
+  linkType: hard
+
+"react-toastify@npm:^10.0.6":
+  version: 10.0.6
+  resolution: "react-toastify@npm:10.0.6"
+  dependencies:
+    clsx: "npm:^2.1.0"
+  peerDependencies:
+    react: ">=18"
+    react-dom: ">=18"
+  checksum: 10c0/4042b716d008295d0feab32488d1e88ec655a1b7a9176fa7d253c70387578a8a0c04aca0ff86d20e1722f3b4baadae8970f50f462940d67a90453c307dd350a9
   languageName: node
   linkType: hard
 

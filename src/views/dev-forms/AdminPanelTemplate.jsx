@@ -28,9 +28,13 @@ export const AdminPanelTemplate = () => {
     { label: "Testimonials ", id: 3 },
     { label: "Gallery ", id: 4 },
     { label: "Videos", id: 5 },
-    { label: "Blogs ", id: 5 },
-    { label: "Slider", id: 5 },
-    { label: "Video Testimonials", id: 5 },
+    { label: "Blogs ", id: 6 },
+    { label: "Slider", id: 7 },
+    { label: "Video Testimonials", id: 8 },
+    { label: "Blogs without category", id: 9 },
+    { label: "Gallery without category", id: 10 },
+    { label: "Team", id: 11 },
+    { label: "Before/After Images", id: 12 },
   ];
 
   // State to keep track of which switches are checked

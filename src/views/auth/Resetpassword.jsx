@@ -1,20 +1,109 @@
-import React from "react";
+import React, { useState } from "react";
+import { useEffect } from "react";
 import {
   Card,
   Row,
   Col,
   Button,
   Form,
+  Alert,
   FloatingLabel,
   Container,
 } from "react-bootstrap";
+import * as Yup from "yup";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/images/auth/logo.png";
 import { MdLockOutline } from "react-icons/md";
 import loginImage from "../../assets/images/auth/login.jpg";
 import { Formik } from "formik";
+import { FiAlertTriangle } from "react-icons/fi";
+// import { useAuth } from "../../store/auth";
+import { toast } from "react-toastify";
+import { useParams, useNavigate } from "react-router-dom";
 
 const Resetpassword = () => {
+  const { token } = useParams();
+
+  const navigate = useNavigate();
+  // const { storeTokenInLS } = useAuth();
+
+  // const [email, setEmail] = useState("");
+
+  // useEffect(() => {
+  //   const verifyToken = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         "http://localhost:5000/api/auth/verify-reset-token",
+  //         {
+  //           method: "POST",
+  //           headers: { "Content-Type": "application/json" },
+  //           body: JSON.stringify({ token }), // Send token as an object
+  //         }
+  //       );
+
+  //       const data = await response.json();
+
+  //       if (data.valid) {
+  //         setEmail(data.email);
+  //       } else {
+  //         toast.error("Session Timed Out or Invalid URL");
+  //         setTimeout(() => {
+  //           navigate("/auth/signin");
+  //         }, 2000);
+  //       }
+  //     } catch (error) {
+  //       toast.error("Invalid or expired token");
+  //       setTimeout(() => {
+  //         navigate("/auth/signin");
+  //       }, 2000);
+  //     }
+  //   };
+
+  //   verifyToken();
+  // }, [token, navigate]);
+
+  // Validation Schema
+  const validationSchema = Yup.object().shape({
+    password: Yup.string()
+      .min(8, "Password must be at least 8 characters")
+      .required("Password is required"),
+    cpassword: Yup.string()
+      .oneOf([Yup.ref("password"), null], "Passwords must match")
+      .required("Confirm Password is required"),
+  });
+
+  const handleSubmit = async (values, { setSubmitting, setErrors }) => {
+    console.log(values);
+    try {
+      const response = await fetch(
+        "http://localhost:5000/api/auth/resetpassword",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email,
+            password: values.password,
+            cpassword: values.cpassword,
+          }),
+        }
+      );
+      const res_data = await response.json();
+
+      if (response.ok) {
+        toast.success(res_data.msg);
+
+        setTimeout(() => {
+          navigate("/auth/signin");
+        }, 2000);
+      } else {
+        setErrors({ submit: res_data.message || "Login failed" });
+      }
+    } catch (error) {
+      setErrors({ submit: "Server error. Please try again later." });
+    }
+    setSubmitting(false);
+  };
+
   return (
     <React.Fragment>
       <div className="auth-wrapper">
@@ -49,7 +138,11 @@ const Resetpassword = () => {
                     <p>Reset Your Password.</p>
                   </div>
                 </div>
-                <Formik initialValues={{}} validationSchema={{}}>
+                <Formik
+                  initialValues={{ password: "", cpassword: "" }}
+                  validationSchema={validationSchema}
+                  onSubmit={handleSubmit}
+                >
                   {({
                     errors,
                     handleBlur,
@@ -59,16 +152,19 @@ const Resetpassword = () => {
                     touched,
                     values,
                   }) => (
-                    <form action="" onSubmit={handleSubmit}>
+                    <form noValidate onSubmit={handleSubmit}>
                       <Form.Group className="mb-3" controlId="old-password">
                         <FloatingLabel
                           controlId="floatingInput"
-                          label="Old Password"
+                          label="New Password"
                           className="mb-3"
                         >
                           <Form.Control
-                            type="email"
-                            placeholder="Old Password"
+                            type="text"
+                            placeholder="New Password"
+                            onBlur={handleBlur}
+                            onChange={handleChange}
+                            name="password"
                           />
                         </FloatingLabel>
                         {touched.password && errors.password && (
@@ -80,17 +176,20 @@ const Resetpassword = () => {
                       <Form.Group className="mb-3" controlId="new-password">
                         <FloatingLabel
                           controlId="floatingInput"
-                          label="New Password"
+                          label="Confirm Password"
                           className="mb-3"
                         >
                           <Form.Control
-                            type="email"
-                            placeholder="New Password"
+                            type="text"
+                            placeholder="Confirm Password"
+                            onBlur={handleBlur}
+                            onChange={handleChange}
+                            name="cpassword"
                           />
                         </FloatingLabel>
-                        {touched.password && errors.password && (
+                        {touched.cpassword && errors.cpassword && (
                           <small className="text-danger form-text d-flex justify-content-start align-items-center gap-1">
-                            <FiAlertTriangle /> {errors.password}
+                            <FiAlertTriangle /> {errors.cpassword}
                           </small>
                         )}
                       </Form.Group>
