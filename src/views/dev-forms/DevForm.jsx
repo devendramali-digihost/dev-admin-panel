@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { FaSearch, FaEdit, FaThLarge, FaRegEye } from "react-icons/fa";
 import { admin1, admin2 } from "../../images";
 import Switch from "react-switch";
+import { DomainVerificationForm } from "./DomainVerificationForm";
 
 const MultiStepForm = () => {
   const [step, setStep] = useState(1);
@@ -320,11 +321,11 @@ const MultiStepForm = () => {
               className={`formContainer ${step === 2 ? "" : "hide"}`}
               data-step="2"
             >
-              {/* <DomainVerificationForm
+              <DomainVerificationForm
                 onChange={handleInputChange}
                 formData={formData}
-              /> */}
-              <div className="mainForm">
+              />
+              {/* <div className="mainForm">
                 <p className="personal">
                   Domain Verification Form{" "}
                   <div class="icon-wrapper">
@@ -397,7 +398,7 @@ const MultiStepForm = () => {
                     </Form>
                   </Col>
                 </Row>
-              </div>
+              </div> */}
             </div>
 
             <div
