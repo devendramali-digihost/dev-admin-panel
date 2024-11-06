@@ -6,8 +6,7 @@ import { FaSearch, FaEdit, FaThLarge, FaRegEye } from "react-icons/fa";
 import { admin1, admin2 , website1, website2 } from "../../images";
 import { AiOutlineImport } from "react-icons/ai";
 import Switch from "react-switch";
-import { DomainVerificationForm } from "./DomainVerificationForm";
-import { StractModule} from "./StractModule"
+
 const MultiStepForm = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
