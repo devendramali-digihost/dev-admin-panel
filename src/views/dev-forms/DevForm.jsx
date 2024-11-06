@@ -810,14 +810,14 @@ const MultiStepForm = ({ num }) => {
                       </Col>
 
                       <Col lg={4}>
-                        <div className="text-right">
+                        {/* <div className="text-right">
                           <Link
                             to="/dev-forms/details-form"
                             className="create-button btn btn-primary waves-effect waves-light"
                           >
                             <AiOutlineImport /> Import Additional Modules
                           </Link>
-                        </div>
+                        </div> */}
                       </Col>
                     </Row>
                     <Row className="m-t-30">
@@ -972,7 +972,7 @@ const MultiStepForm = ({ num }) => {
                               type="checkbox"
                               checked={isSendMailChecked}
                               onChange={handleSendMailCheckboxChange}
-                              disabled={!isFirstChecked} // Disable until first checkbox is selected
+                              
                             />
                             &nbsp;Send mail to client for template approval
                           </label>
