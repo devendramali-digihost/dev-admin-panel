@@ -6,8 +6,9 @@ import { FaSearch, FaEdit, FaThLarge, FaRegEye } from "react-icons/fa";
 import { admin1, admin2 , website1, website2 } from "../../images";
 import { AiOutlineImport } from "react-icons/ai";
 import Switch from "react-switch";
+import { DomainVerificationForm } from "./DomainVerificationForm";
 
-const MultiStepForm = () => {
+const MultiStepForm = ({ num }) => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     name: "",
@@ -20,6 +21,8 @@ const MultiStepForm = () => {
 
   const nextStep = () => setStep((prevStep) => Math.min(prevStep + 1, 5));
   const prevStep = () => setStep((prevStep) => Math.max(prevStep - 1, 1));
+
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -63,7 +66,17 @@ const MultiStepForm = () => {
   const [showModuleBlock, setShowModuleBlock] = useState(false); // New state for showing ModuleBlock
 
   const [showScratchModules, setShowScratchModules] = useState(false);
-
+  const [selectedCards, setSelectedCards] = useState({});
+  const [reviewCards, setReviewCards] = useState({});
+  
+  const handleSelectCard = (id) => {
+    setSelectedCards((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
+  
+  const handleSendForReview = (id) => {
+    setReviewCards((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
+  
   const handleStartFromScratchClick = () => {
     setShowScratchModules(true); // Show ScratchModules div on click
   };
@@ -137,14 +150,14 @@ const handleSendMailCheckboxChange = () => {
   }
 };
  // State to manage selected cards
- const [selectedCards, setSelectedCards] = useState({});
+//  const [selectedCards, setSelectedCards] = useState({});
 
- const handleSelectCard = (cardId) => {
-   setSelectedCards((prevState) => ({
-     ...prevState,
-     [cardId]: !prevState[cardId], // Toggle selection
-   }));
- };
+//  const handleSelectCard = (cardId) => {
+//    setSelectedCards((prevState) => ({
+//      ...prevState,
+//      [cardId]: !prevState[cardId], 
+//    }));
+//  };
 
 
 
@@ -691,18 +704,19 @@ const handleSendMailCheckboxChange = () => {
                     </div>
                   </p>
                   <Row>
-                  <Col lg={4}>
+                  <Col lg={3}>
                   <div className="module-list">
-                  <div class="checkboxes module-switch">
+                  <div class="checkboxes module-switch switch-no-bg">
                   <label className="switch-label">
-                    <span>Select All</span>
+                   
                     <Switch onChange={handleSelectAllChange} checked={selectAll} />
+                    <span>Select All</span>
                   </label>
                   </div>
                   </div>
                   </Col>
                  
-                  <Col lg={4}>
+                  <Col lg={5}>
                 
         </Col>
                   
@@ -740,18 +754,19 @@ const handleSendMailCheckboxChange = () => {
                 {showScratchModules && (
                 <div className="SracthModules" id="SracthModules">
                 <Row>
-                  <Col lg={4}>
+                  <Col lg={3}>
                   <div className="module-list">
-                  <div class="checkboxes module-switch">
+                  <div class="checkboxes module-switch switch-no-bg">
                   <label className="switch-label">
-                    <span>Select All</span>
+                    
                     <Switch onChange={handleSelectAllChange} checked={selectAll} />
+                    <span>Select All</span>
                   </label>
                   </div>
                   </div>
                   </Col>
                  
-                  <Col lg={4}>
+                  <Col lg={5}>
                   <Form.Group className="mb-3" controlId="DomainName">
                               <div className="input-group rounded">
                                 <Form.Control
@@ -820,15 +835,21 @@ const handleSendMailCheckboxChange = () => {
                   <i class="fas fa-home"></i>
                 </a></span> */}
                 </p>
-                <p className="personalInfo">
-                  Please Choose Front Theme
-                </p>
+               
                 <Row>
                     <Col lg={12}>
                       <Form>
                         <Row>
-                          <Col lg={4}>
+                          <Col lg={6}>
+                          <p className="personalInfo">
+                  Please Choose Front Theme
+                </p>
+                            
+                          </Col>
+                          <Col lg={6}>
+                            <Row>
                             <Form.Group className="mb-3" controlId="DomainName">
+                           
                               <div className="input-group rounded">
                                 <Form.Control
                                   type="text"
@@ -840,58 +861,65 @@ const handleSendMailCheckboxChange = () => {
                                 </span>
                               </div>
                             </Form.Group>
-                          </Col>
-                          <Col lg={8}>
-                            <Row>
-                             
                             </Row>
                           </Col>
                         </Row>
-
                         <Row>
-      {cardData.map((card) => (
-        <Col lg={4} key={card.id}>
-          <Card className={`project-card admin-card ${selectedCards[card.id] ? "selected" : ""}`}>
-            <div className="card-image-wrapper">
-              <Card.Img variant="top" src={card.image} />
-              <div className="overlay">
-                <div className="button">
-                  <a href="#" target="_blank" className="create-button btn btn-primary">
-                    Preview
-                  </a>
-                  {/* <a onClick={handleViewStructureClick} className="create-button btn btn-primary">
-                    View Structure
-                  </a> */}
-                </div>
-              </div>
+  {cardData.map((card) => (
+    <Col lg={4} key={card.id}>
+      <Card
+        className={`project-card admin-card ${selectedCards[card.id] ? "selected" : ""}`}
+      >
+        <div className="card-image-wrapper">
+          <Card.Img variant="top" src={card.image} />
+          <div className="overlay">
+          <div className="checbox-pos">
+            {/* Checkbox to select the entire card */}
+            <label>
+            <input
+    type="checkbox"
+    checked={selectedCards[card.id] || false}
+    onChange={() => handleSelectCard(card.id)}
+  />
+            </label>
+          </div>
+            <div className="button">
+           
+          
+              <a href="#" target="_blank" className="create-button btn btn-primary">
+                Preview
+              </a>
             </div>
-            <Card.Body>
-              <Card.Title>
-                {card.title}
-                <div style={{ float: "right" }}>
-                  <a href="#" title="View" target="_blank" className="view-color">
-                    <FaRegEye />
-                  </a>
-                  {/* <a onClick={handleViewStructureClick} title="View Structure" className="view-color m-l-10">
-                    <FaThLarge />
-                  </a> */}
-                </div>
-              </Card.Title>
-              <div>
-                <label>
-                  <input
-                    type="checkbox"
-                    checked={selectedCards[card.id] || false}
-                    onChange={() => handleSelectCard(card.id)}
-                  />
-                 &nbsp;Send for review
-                </label>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-      ))}
-    </Row>
+          </div>
+        </div>
+        <Card.Body>
+          <Card.Title>
+            {card.title}
+            <div style={{ float: "right" }}>
+              <a href="#" title="View" target="_blank" className="view-color">
+                <FaRegEye />
+              </a>
+            </div>
+          </Card.Title>
+
+         
+          <div>
+            {/* Independent checkbox for "Send for review" */}
+            <label className="label-check">
+              <input
+                type="checkbox"
+                checked={reviewCards[card.id] || false}
+                onChange={() => handleSendForReview(card.id)}
+              />
+              &nbsp;Send for review
+            </label>
+          </div>
+        </Card.Body>
+      </Card>
+    </Col>
+  ))}
+</Row>
+
                         <Row>
                         <div>
      
@@ -929,14 +957,14 @@ const handleSendMailCheckboxChange = () => {
                 <i className="fas fa-arrow-left"></i> Go Back
               </a>
             </p>
-            <button
+            {/* <button
               type={step === 5 ? "submit" : "button"}
               className="btn btn-primary"
               onClick={step < 5 ? nextStep : undefined}
             >
               
               {step === 5 ? "Skip" : "Next Step"}
-            </button>
+            </button> */}
             <button
               type={step === 5 ? "submit" : "button"}
               className="btn btn-primary"

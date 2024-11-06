@@ -41,13 +41,27 @@
       margin-bottom: 0;
       padding: 10px 0;
     }
+    
   }
-
+  .checbox-pos input[type=checkbox]:checked {
+    background-color: #16665f;
+    border-color: #16665f;
+}
+.label-check{
+  display: flex;
+  align-items: baseline;
+}
+.project-card .card-body label{
+  display: flex !important;
+  align-items: center !important;
+}
   .card-image-wrapper {
     position: relative;
     width: 100%;
     overflow: hidden;
-    border: 1px solid #eee;
+    border: 0px solid #eee;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     img {
       width: 100%;
       display: block;
@@ -700,6 +714,86 @@ button[disabled] {
     }
   }
 }
+.card-label {
+  display: block;
+  cursor: pointer;
+}
+
+.project-card.admin-card {
+  transition: border-color 0.3s;
+}
+.checbox-pos{
+  position: absolute;
+  right: 5px;
+  top: 5px;
+
+}
+.checbox-pos input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 24px; /* Adjust size as needed */
+  height: 24px;
+  border: 2px solid #007bff;
+  border-radius: 50%; /* Makes it round */
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Background color and border on hover */
+.checbox-pos input[type="checkbox"]:hover {
+  background-color: #f0f8ff; /* Light hover color */
+  border-color: #0056b3; /* Darker border on hover */
+}
+
+/* Background color when checked */
+.checbox-pos input[type="checkbox"]:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Custom checkmark when checked */
+.checbox-pos input[type="checkbox"]:checked::before {
+  content: "✓"; /* Checkmark symbol */
+  color: white;
+  font-size: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.module-list .module-switch.switch-no-bg .switch-label{
+  background-color: transparent !important;
+  border:1px solid #eee;
+}
+.module-list .module-switch.switch-no-bg .switch-label span{
+  color:#1a776f;
+ 
+}
+
+.checbox-pos input:checked + label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 9px;
+  width: 6px;
+  height: 14px;
+  border: solid #1a776f;
+  border-width: 0 1px 1px 0;
+  transform: rotate(45deg);
+}
+.project-card.admin-card:hover {
+  border: 1px solid #1a776f; /* Hover border color */
+}
+
+.project-card.admin-card.selected {
+  border: 1px solid #1a776f; /* Selected border color */
+}
+
+
 
 .module-list{
   .module-switch{
