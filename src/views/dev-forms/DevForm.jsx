@@ -967,10 +967,10 @@ const MultiStepForm = ({ num }) => {
                         <div>
                           <br />
 
-                          <label>
+                          <label class="label-check">
                             <input
                               type="checkbox"
-                              checked={isSendMailChecked}
+                              // checked={isSendMailChecked}
                               onChange={handleSendMailCheckboxChange}
                               
                             />
