@@ -207,7 +207,13 @@ export const DomainVerificationForm = () => {
                 <h4>Yes, I already have.</h4>
               </div>
             </div>
-            <div className="search-container">
+            <div
+              className={
+                buystatus === "have"
+                  ? "search-container have-already"
+                  : "search-container"
+              }
+            >
               <div className="row justify-content-center">
                 <div className="col-lg-8">
                   <div className="search">
@@ -215,11 +221,17 @@ export const DomainVerificationForm = () => {
                     <div className="serchicon" onClick={handleShowSearchDomain}>
                       <IoSearchOutline />
                       {/* <img src={search} alt="search" /> */}
+                      <button className="btn btn-primary veri">Verify</button>
                     </div>
                   </div>
-                  {/* <h5 className="w-100 text-center mt-3">
-                  I already have a domain for my website
-                </h5> */}
+                  <h5 className="w-100 text-center mt-3">
+                    <span className="register">
+                      This domain is already registered
+                    </span>
+                    <span className="not-register">
+                      This domain is already registered
+                    </span>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -276,7 +288,7 @@ export const DomainVerificationForm = () => {
                   </h4> */}
                     <div className="premium-btn">
                       <a href="#!" className="btn btn-primary">
-                        Confirm Domain
+                        Confirm Purchase
                       </a>
                     </div>
                   </div>
@@ -333,7 +345,7 @@ export const DomainVerificationForm = () => {
                               fill="#8AFAF3"
                             />
                           </svg> */}
-                          Confirm Domain
+                          Confirm Purchase
                         </a>
                       </div>
                     </div>
