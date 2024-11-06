@@ -78,10 +78,10 @@ const MultiStepForm = ({ num }) => {
   const handleStartFromScratchClick = () => {
     setShowScratchModules(true); // Show ScratchModules div on click
   };
-  // const handleResetClick = () => {
-  //   setShowScratchModules(false); // Hide ScratchModules div on reset
-  //   console.log("Reset clicked!");
-  // };
+  const handleResetStartFromScratchClick = () => {
+    setShowScratchModules(false); // Hide ScratchModules div on reset
+    console.log("Reset clicked!");
+  };
   const [selectAll, setSelectAll] = useState(true); // New state for "Select All"
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
@@ -191,6 +191,7 @@ const MultiStepForm = ({ num }) => {
               key={num}
               onClick={() => {
                 if (num === 4) handleResetClick();
+                if (num === 4) handleResetStartFromScratchClick();
               }}
             >
               <div
@@ -748,6 +749,7 @@ const MultiStepForm = ({ num }) => {
                         <Link
                           to="/dev-forms/details-form"
                           className="create-button btn btn-primary waves-effect waves-light"
+                          // onClick={handleStartFromScratchClick}
                         >
                           <AiOutlineImport /> Import Additional Modules
                         </Link>
@@ -972,7 +974,6 @@ const MultiStepForm = ({ num }) => {
                               type="checkbox"
                               // checked={isSendMailChecked}
                               onChange={handleSendMailCheckboxChange}
-                              
                             />
                             &nbsp;Send mail to client for template approval
                           </label>
