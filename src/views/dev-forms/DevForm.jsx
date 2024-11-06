@@ -648,6 +648,7 @@ const MultiStepForm = ({ num }) => {
                                         <FaRegEye />
                                       </a>
                                       <a
+                                      href="#"
                                         onClick={handleViewStructureClick}
                                         title="View Structure"
                                         className="view-color m-l-10"
@@ -695,6 +696,7 @@ const MultiStepForm = ({ num }) => {
                                         <FaRegEye />
                                       </a>
                                       <a
+                                      href="#"
                                         onClick={handleViewStructureClick}
                                         title="View Structure"
                                         className="view-color m-l-10"
@@ -943,12 +945,25 @@ const MultiStepForm = ({ num }) => {
                                     >
                                       <FaRegEye />
                                     </a>
+                                    <div className="checbox-pos">
+                                     <label>
+                                      <input
+                                        type="checkbox"
+                                        checked={
+                                          selectedCards[card.id] || false
+                                        }
+                                        onChange={() =>
+                                          handleSelectCard(card.id)
+                                        }
+                                      />
+                                    </label>
+                                    </div>
                                   </div>
                                 </Card.Title>
 
                                 <div>
                                   {/* Independent checkbox for "Send for review" */}
-                                  <label className="label-check">
+                                  <label className="label-check checbox-size">
                                     <input
                                       type="checkbox"
                                       checked={reviewCards[card.id] || false}
@@ -969,7 +984,7 @@ const MultiStepForm = ({ num }) => {
                         <div>
                           <br />
 
-                          <label class="label-check">
+                          <label class="label-check checbox-size">
                             <input
                               type="checkbox"
                               // checked={isSendMailChecked}
@@ -979,6 +994,8 @@ const MultiStepForm = ({ num }) => {
                           </label>
 
                           <br />
+                          <button className="btn btn-primary">Skip</button>
+           
                         </div>
                       </Row>
                     </Form>
