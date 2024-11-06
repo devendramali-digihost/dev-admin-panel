@@ -7,19 +7,21 @@ import Switch from "react-switch";
 
 export const AdminPanelTemplate = () => {
   const [selectedOption, setSelectedOption] = useState("");
-  const [checked, setChecked] = useState(true);
-  const [showModuleBlock, setShowModuleBlock] = useState(false); // New state for showing ModuleBlock
+  const [showDentalModuleBlock, setShowDentalModuleBlock] = useState(false);
+  const [showRealEstateModuleBlock, setShowRealEstateModuleBlock] = useState(false);
 
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
   };
 
-  // const handleChange = (checked) => {
-  //   setChecked(checked);
-  // };
-
-  const handleViewStructureClick = () => {
-    setShowModuleBlock(true); // Show ModuleBlock
+  const handleViewStructureClick = (module) => {
+    if (module === "Dental") {
+      setShowDentalModuleBlock(true);
+      setShowRealEstateModuleBlock(false);
+    } else if (module === "RealEstate") {
+      setShowRealEstateModuleBlock(true);
+      setShowDentalModuleBlock(false);
+    }
   };
 
   const switchesData = [
@@ -37,7 +39,6 @@ export const AdminPanelTemplate = () => {
     { label: "Before/After Images", id: 12 },
   ];
 
-  // State to keep track of which switches are checked
   const [switchStates, setSwitchStates] = useState(
     switchesData.reduce((acc, item) => {
       acc[item.id] = true;
@@ -45,7 +46,6 @@ export const AdminPanelTemplate = () => {
     }, {})
   );
 
-  // Handler to toggle individual switch states
   const handleChange = (id) => {
     setSwitchStates((prevStates) => ({
       ...prevStates,
@@ -54,12 +54,12 @@ export const AdminPanelTemplate = () => {
   };
 
   return (
-    
     <React.Fragment>
-      
       {/* AdminCardBlock with conditional visibility */}
       <div
-        className={`mainForm ${showModuleBlock ? "hide" : "show"}`}
+        className={`mainForm ${
+          showDentalModuleBlock || showRealEstateModuleBlock ? "hide" : "show"
+        }`}
         id="AdminCardBlock"
       >
         <p className="personal">
@@ -135,7 +135,7 @@ export const AdminPanelTemplate = () => {
                             Preview
                           </a>
                           <a
-                            onClick={handleViewStructureClick}
+                            onClick={() => handleViewStructureClick("RealEstate")}
                             className="create-button btn btn-primary"
                           >
                             View Structure
@@ -156,7 +156,7 @@ export const AdminPanelTemplate = () => {
                             <FaRegEye />
                           </a>
                           <a
-                            onClick={handleViewStructureClick}
+                            onClick={() => handleViewStructureClick("RealEstate")}
                             title="View Structure"
                             className="view-color m-l-10"
                           >
@@ -182,7 +182,7 @@ export const AdminPanelTemplate = () => {
                             Preview
                           </a>
                           <a
-                            onClick={handleViewStructureClick}
+                            onClick={() => handleViewStructureClick("Dental")}
                             className="create-button btn btn-primary"
                           >
                             View Structure
@@ -203,7 +203,7 @@ export const AdminPanelTemplate = () => {
                             <FaRegEye />
                           </a>
                           <a
-                            onClick={handleViewStructureClick}
+                            onClick={() => handleViewStructureClick("Dental")}
                             title="View Structure"
                             className="view-color m-l-10"
                           >
@@ -220,45 +220,37 @@ export const AdminPanelTemplate = () => {
         </Row>
       </div>
 
-      {/* ModuleBlock with conditional visibility */}
-      <div
-        className={`mainForm ${showModuleBlock ? "show" : "hide"}`}
-        id="ModuleBlock"
-      >
-        <p className="personal">
-          Dental Modules List{" "}
-          <div className="icon-wrapper">
-            <Link to="/company/create-new-project">
-              <i className="fas fa-home custom-icon">
-                <span className="fix-editor">&nbsp;</span>
-              </i>
-            </Link>
-          </div>
-        </p>
-
-        <Row>
-          <Col lg={12}>
-            <div className="module-list">
-              {/* <h3>Dental Modules</h3> */}
-              <div className="checkboxes module-switch">
-                {/* <label>
-                  <span>Services</span>
-                  <Switch onChange={handleChange} checked={checked} />
-                </label> */}
-                {switchesData.map((switchItem) => (
-                  <label key={switchItem.id} className="switch-label">
-                    <span>{switchItem.label}</span>
-                    <Switch
-                      onChange={() => handleChange(switchItem.id)}
-                      checked={switchStates[switchItem.id]}
-                    />
-                  </label>
-                ))}
+      {/* Dental ModuleBlock */}
+      {showDentalModuleBlock && (
+        <div className="mainForm show" id="DentalModuleBlock">
+          <p className="personal">Dental</p>
+          <Row>
+            <Col lg={12}>
+              <div className="module-list">
+                <div className="checkboxes module-switch">
+                  {switchesData.map((switchItem) => (
+                    <label key={switchItem.id} className="switch-label">
+                      <span>{switchItem.label}</span>
+                      <Switch
+                        onChange={() => handleChange(switchItem.id)}
+                        checked={switchStates[switchItem.id]}
+                      />
+                    </label>
+                  ))}
+                </div>
               </div>
-            </div>
-          </Col>
-        </Row>
-      </div>
+            </Col>
+          </Row>
+        </div>
+      )}
+
+      {/* Real Estate ModuleBlock */}
+      {showRealEstateModuleBlock && (
+        <div className="mainForm show" id="RealEstateModuleBlock">
+          <p className="personal">Real Estate Modules List</p>
+          {/* Add specific content or switches for Real Estate here */}
+        </div>
+      )}
     </React.Fragment>
   );
 };

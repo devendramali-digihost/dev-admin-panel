@@ -663,10 +663,11 @@ button[disabled] {
       align-items: center;
       justify-content: space-between;
       padding: 10px;
-      border: 1px solid #ddd;
+      border: 1px solid #6fada8;
       border-radius: 8px;
-      background-color: #f9f9f9;
-
+      background-color: #f0faf9;
+      flex: 1 1 22%;
+      margin-bottom: 0 !important;
       .switch {
         width: 56px;
         height: 28px;
@@ -703,6 +704,7 @@ button[disabled] {
 .module-list{
   .module-switch{
     .react-switch-bg {
+      width:50px !important;
       height: 20px !important;
       background: rgb(22, 102, 95) !important;
       div{
@@ -712,12 +714,14 @@ button[disabled] {
     }
    .switch-label span{
     color: #6f6464;
+    font-size: 12px;
    }
     .react-switch-handle{
      
       width:14px !important;
       height:14px !important;
       top:3px !important;
+      left: 3px !important;
     }
   }
 }

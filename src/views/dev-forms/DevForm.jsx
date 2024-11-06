@@ -3,9 +3,11 @@ import { Row, Col, Form, Card } from "react-bootstrap";
 import logo from "../../assets/images/auth/logo.png";
 import { Link } from "react-router-dom";
 import { FaSearch, FaEdit, FaThLarge, FaRegEye } from "react-icons/fa";
-import { admin1, admin2 } from "../../images";
+import { admin1, admin2 , website1, website2 } from "../../images";
+import { AiOutlineImport } from "react-icons/ai";
 import Switch from "react-switch";
-
+import { DomainVerificationForm } from "./DomainVerificationForm";
+import { StractModule} from "./StractModule"
 const MultiStepForm = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -61,6 +63,12 @@ const MultiStepForm = () => {
   const [checked, setChecked] = useState(true);
   const [showModuleBlock, setShowModuleBlock] = useState(false); // New state for showing ModuleBlock
 
+  const [showScratchModules, setShowScratchModules] = useState(false);
+
+  const handleStartFromScratchClick = () => {
+    setShowScratchModules(true); // Show ScratchModules div on click
+  };
+  const [selectAll, setSelectAll] = useState(true); // New state for "Select All"
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
   };
@@ -104,7 +112,47 @@ const MultiStepForm = () => {
     }));
   };
   // //////////////// Admin Panel Template ///////////////
+// Handle "Select All" toggle
+const handleSelectAllChange = (checked) => {
+  setSelectAll(checked);
+  const newSwitchStates = {};
+  switchesData.forEach((item) => {
+    newSwitchStates[item.id] = checked;
+  });
+  setSwitchStates(newSwitchStates);
+};
 
+// Handle category selection
+const [isFirstChecked, setIsFirstChecked] = useState(false);
+const [isSendMailChecked, setIsSendMailChecked] = useState(false);
+
+// Toggle first checkbox state
+const handleFirstCheckboxChange = () => {
+  setIsFirstChecked(!isFirstChecked);
+};
+
+// Toggle second checkbox state if it's enabled
+const handleSendMailCheckboxChange = () => {
+  if (isFirstChecked) {
+    setIsSendMailChecked(!isSendMailChecked);
+  }
+};
+ // State to manage selected cards
+ const [selectedCards, setSelectedCards] = useState({});
+
+ const handleSelectCard = (cardId) => {
+   setSelectedCards((prevState) => ({
+     ...prevState,
+     [cardId]: !prevState[cardId], // Toggle selection
+   }));
+ };
+
+
+
+ const cardData = [
+   { id: 1, title: "Real Estate", image: website1 }, // Replace with actual image path
+   { id: 2, title: "Dental", image: website2 },
+ ];
   return (
     <div className="main-wrapper">
       <div className="formParentWrapper" data-step={step}>
@@ -320,11 +368,11 @@ const MultiStepForm = () => {
               className={`formContainer ${step === 2 ? "" : "hide"}`}
               data-step="2"
             >
-              {/* <DomainVerificationForm
+              <DomainVerificationForm
                 onChange={handleInputChange}
                 formData={formData}
-              /> */}
-              <div className="mainForm">
+              />
+              {/* <div className="mainForm">
                 <p className="personal">
                   Domain Verification Form{" "}
                   <div class="icon-wrapper">
@@ -397,7 +445,7 @@ const MultiStepForm = () => {
                     </Form>
                   </Col>
                 </Row>
-              </div>
+              </div> */}
             </div>
 
             <div
@@ -457,6 +505,7 @@ const MultiStepForm = () => {
               /> */}
               <div className="admin-template">
                 {/* AdminCardBlock with conditional visibility */}
+                {!showScratchModules && (
                 <div
                   className={`mainForm ${showModuleBlock ? "hide" : "show"}`}
                   id="AdminCardBlock"
@@ -517,6 +566,7 @@ const MultiStepForm = () => {
                                   <Link
                                     to="#"
                                     className="create-button btn btn-primary"
+                                    onClick={handleStartFromScratchClick}
                                   >
                                     <FaEdit /> Start From Scratch
                                   </Link>
@@ -625,14 +675,14 @@ const MultiStepForm = () => {
                     </Col>
                   </Row>
                 </div>
-
+                )}
                 {/* ModuleBlock with conditional visibility */}
                 <div
                   className={`mainForm ${showModuleBlock ? "show" : "hide"}`}
                   id="ModuleBlock"
                 >
                   <p className="personal">
-                    Dental Modules List{" "}
+                    Dental{" "}
                     <div className="icon-wrapper">
                       <Link to="/company/create-new-project">
                         <i className="fas fa-home custom-icon">
@@ -641,8 +691,31 @@ const MultiStepForm = () => {
                       </Link>
                     </div>
                   </p>
-
                   <Row>
+                  <Col lg={4}>
+                  <div className="module-list">
+                  <div class="checkboxes module-switch">
+                  <label className="switch-label">
+                    <span>Select All</span>
+                    <Switch onChange={handleSelectAllChange} checked={selectAll} />
+                  </label>
+                  </div>
+                  </div>
+                  </Col>
+                 
+                  <Col lg={4}>
+                
+        </Col>
+                  
+                  <Col lg={4}>
+                  <div className="text-right">
+            <Link to="/dev-forms/details-form" className="create-button btn btn-primary waves-effect waves-light">
+            < AiOutlineImport /> Import Additional Modules
+            </Link>
+          </div>
+                  </Col>
+                  </Row>
+                  <Row className="m-t-30">
                     <Col lg={12}>
                       <div className="module-list">
                         {/* <h3>Dental Modules</h3> */}
@@ -665,8 +738,187 @@ const MultiStepForm = () => {
                     </Col>
                   </Row>
                 </div>
+                {showScratchModules && (
+                <div className="SracthModules" id="SracthModules">
+                <Row>
+                  <Col lg={4}>
+                  <div className="module-list">
+                  <div class="checkboxes module-switch">
+                  <label className="switch-label">
+                    <span>Select All</span>
+                    <Switch onChange={handleSelectAllChange} checked={selectAll} />
+                  </label>
+                  </div>
+                  </div>
+                  </Col>
+                 
+                  <Col lg={4}>
+                  <Form.Group className="mb-3" controlId="DomainName">
+                              <div className="input-group rounded">
+                                <Form.Control
+                                  type="text"
+                                  placeholder="Search modules by"
+                                  className="rounded-start"
+                                />
+                                <span className="input-group-text rounded-end">
+                                  <FaSearch />
+                                </span>
+                              </div>
+                            </Form.Group>
+        </Col>
+                  
+                  <Col lg={4}>
+                  <div className="text-right">
+            <Link to="/dev-forms/details-form" className="create-button btn btn-primary waves-effect waves-light">
+            < AiOutlineImport /> Import Additional Modules
+            </Link>
+          </div>
+                  </Col>
+                  </Row>
+                  <Row className="m-t-30">
+                    <Col lg={12}>
+                      <div className="module-list">
+                        {/* <h3>Dental Modules</h3> */}
+                        <div className="checkboxes module-switch">
+                          {/* <label>
+                  <span>Services</span>
+                  <Switch onChange={handleChange} checked={checked} />
+                </label> */}
+                          {switchesData.map((switchItem) => (
+                            <label key={switchItem.id} className="switch-label">
+                              <span>{switchItem.label}</span>
+                              <Switch
+                                onChange={() => handleChange(switchItem.id)}
+                                checked={switchStates[switchItem.id]}
+                              />
+                            </label>
+                          ))}
+                        </div>
+                      </div>
+                    </Col>
+                  </Row>
+                </div>
+                 )}
               </div>
             </div>
+            <div
+              className={`formContainer ${step === 5 ? "" : "hide"}`}
+              data-step="5"
+            >
+
+<div className="mainForm">
+                <p className="personal">
+                Choose Front Theme
+                  <div class="icon-wrapper">
+                    <Link to="/company/create-new-project">
+                      <i class="fas fa-home custom-icon">
+                        <span class="fix-editor">&nbsp;</span>
+                      </i>
+                    </Link>
+                  </div>
+                  {/* <span className='text-right'>
+                          <a href="#" class="btn btn-primary btn-home">
+                  <i class="fas fa-home"></i>
+                </a></span> */}
+                </p>
+                <p className="personalInfo">
+                  Please Choose Front Theme
+                </p>
+                <Row>
+                    <Col lg={12}>
+                      <Form>
+                        <Row>
+                          <Col lg={4}>
+                            <Form.Group className="mb-3" controlId="DomainName">
+                              <div className="input-group rounded">
+                                <Form.Control
+                                  type="text"
+                                  placeholder="Search template by"
+                                  className="rounded-start"
+                                />
+                                <span className="input-group-text rounded-end">
+                                  <FaSearch />
+                                </span>
+                              </div>
+                            </Form.Group>
+                          </Col>
+                          <Col lg={8}>
+                            <Row>
+                             
+                            </Row>
+                          </Col>
+                        </Row>
+
+                        <Row>
+      {cardData.map((card) => (
+        <Col lg={4} key={card.id}>
+          <Card className={`project-card admin-card ${selectedCards[card.id] ? "selected" : ""}`}>
+            <div className="card-image-wrapper">
+              <Card.Img variant="top" src={card.image} />
+              <div className="overlay">
+                <div className="button">
+                  <a href="#" target="_blank" className="create-button btn btn-primary">
+                    Preview
+                  </a>
+                  {/* <a onClick={handleViewStructureClick} className="create-button btn btn-primary">
+                    View Structure
+                  </a> */}
+                </div>
+              </div>
+            </div>
+            <Card.Body>
+              <Card.Title>
+                {card.title}
+                <div style={{ float: "right" }}>
+                  <a href="#" title="View" target="_blank" className="view-color">
+                    <FaRegEye />
+                  </a>
+                  {/* <a onClick={handleViewStructureClick} title="View Structure" className="view-color m-l-10">
+                    <FaThLarge />
+                  </a> */}
+                </div>
+              </Card.Title>
+              <div>
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={selectedCards[card.id] || false}
+                    onChange={() => handleSelectCard(card.id)}
+                  />
+                 &nbsp;Send for review
+                </label>
+              </div>
+            </Card.Body>
+          </Card>
+        </Col>
+      ))}
+    </Row>
+                        <Row>
+                        <div>
+     
+
+      <br />
+
+      <label>
+        <input
+          type="checkbox"
+          checked={isSendMailChecked}
+          onChange={handleSendMailCheckboxChange}
+          disabled={!isFirstChecked} // Disable until first checkbox is selected
+        />
+        &nbsp;Send mail to client for template approval
+      </label>
+
+      <br />
+
+    
+    </div>
+                        </Row>
+                      </Form>
+                    </Col>
+                  </Row>
+                </div>
+              </div>
           </div>
 
           <div className="btnWrapper mt-3">
@@ -683,7 +935,16 @@ const MultiStepForm = () => {
               className="btn btn-primary"
               onClick={step < 5 ? nextStep : undefined}
             >
-              {step === 5 ? "Finish" : "Next Step"}
+              
+              {step === 5 ? "Skip" : "Next Step"}
+            </button>
+            <button
+              type={step === 5 ? "submit" : "button"}
+              className="btn btn-primary"
+              onClick={step < 5 ? nextStep : undefined}
+            >
+              
+              {step === 5 ? "Proceed" : "Next Step"}
             </button>
           </div>
         </form>

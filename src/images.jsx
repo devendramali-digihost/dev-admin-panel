@@ -11,6 +11,8 @@ import ongc from './assets/images/projects/ongc.jpg';
 import Lotus from './assets/images/projects/Lotus.jpg';
 import admin1 from './assets/images/projects/admin-1.png';
 import admin2 from './assets/images/projects/admin-2.webp';
+import website1 from './assets/images/projects/website-1.png';
+import website2 from './assets/images/projects/website-2.png';
 
 export {
   dashboardImg1,
@@ -25,5 +27,8 @@ export {
   ongc,
   Lotus,
   admin1,
-  admin2
+  admin2,
+  website1,
+  website2
+
 };
