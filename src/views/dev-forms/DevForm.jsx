@@ -3,7 +3,7 @@ import { Row, Col, Form, Card } from "react-bootstrap";
 import logo from "../../assets/images/auth/logo.png";
 import { Link } from "react-router-dom";
 import { FaSearch, FaEdit, FaThLarge, FaRegEye } from "react-icons/fa";
-import { admin1, admin2 , website1, website2 } from "../../images";
+import { admin1, admin2, website1, website2 } from "../../images";
 import { AiOutlineImport } from "react-icons/ai";
 import Switch from "react-switch";
 import { DomainVerificationForm } from "./DomainVerificationForm";
@@ -21,8 +21,6 @@ const MultiStepForm = ({ num }) => {
 
   const nextStep = () => setStep((prevStep) => Math.min(prevStep + 1, 5));
   const prevStep = () => setStep((prevStep) => Math.max(prevStep - 1, 1));
-
-
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -68,18 +66,22 @@ const MultiStepForm = ({ num }) => {
   const [showScratchModules, setShowScratchModules] = useState(false);
   const [selectedCards, setSelectedCards] = useState({});
   const [reviewCards, setReviewCards] = useState({});
-  
+
   const handleSelectCard = (id) => {
     setSelectedCards((prev) => ({ ...prev, [id]: !prev[id] }));
   };
-  
+
   const handleSendForReview = (id) => {
     setReviewCards((prev) => ({ ...prev, [id]: !prev[id] }));
   };
-  
+
   const handleStartFromScratchClick = () => {
     setShowScratchModules(true); // Show ScratchModules div on click
   };
+  // const handleResetClick = () => {
+  //   setShowScratchModules(false); // Hide ScratchModules div on reset
+  //   console.log("Reset clicked!");
+  // };
   const [selectAll, setSelectAll] = useState(true); // New state for "Select All"
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
@@ -91,6 +93,11 @@ const MultiStepForm = ({ num }) => {
 
   const handleViewStructureClick = () => {
     setShowModuleBlock(true); // Show ModuleBlock
+  };
+
+  const handleResetClick = () => {
+    setShowModuleBlock(false); // Show ModuleBlock
+    console.log("Reset clicked!");
   };
 
   const switchesData = [
@@ -124,47 +131,53 @@ const MultiStepForm = ({ num }) => {
     }));
   };
   // //////////////// Admin Panel Template ///////////////
-// Handle "Select All" toggle
-const handleSelectAllChange = (checked) => {
-  setSelectAll(checked);
-  const newSwitchStates = {};
-  switchesData.forEach((item) => {
-    newSwitchStates[item.id] = checked;
-  });
-  setSwitchStates(newSwitchStates);
-};
+  // Handle "Select All" toggle
+  const handleSelectAllChange = (checked) => {
+    setSelectAll(checked);
+    const newSwitchStates = {};
+    switchesData.forEach((item) => {
+      newSwitchStates[item.id] = checked;
+    });
+    setSwitchStates(newSwitchStates);
+  };
 
-// Handle category selection
-const [isFirstChecked, setIsFirstChecked] = useState(false);
-const [isSendMailChecked, setIsSendMailChecked] = useState(false);
+  // Handle category selection
+  const [isFirstChecked, setIsFirstChecked] = useState(false);
+  const [isSendMailChecked, setIsSendMailChecked] = useState(false);
 
-// Toggle first checkbox state
-const handleFirstCheckboxChange = () => {
-  setIsFirstChecked(!isFirstChecked);
-};
+  // Toggle first checkbox state
+  const handleFirstCheckboxChange = () => {
+    setIsFirstChecked(!isFirstChecked);
+  };
 
-// Toggle second checkbox state if it's enabled
-const handleSendMailCheckboxChange = () => {
-  if (isFirstChecked) {
-    setIsSendMailChecked(!isSendMailChecked);
-  }
-};
- // State to manage selected cards
-//  const [selectedCards, setSelectedCards] = useState({});
+  // Toggle second checkbox state if it's enabled
+  const handleSendMailCheckboxChange = () => {
+    if (isFirstChecked) {
+      setIsSendMailChecked(!isSendMailChecked);
+    }
+  };
+  // State to manage selected cards
+  //  const [selectedCards, setSelectedCards] = useState({});
 
-//  const handleSelectCard = (cardId) => {
-//    setSelectedCards((prevState) => ({
-//      ...prevState,
-//      [cardId]: !prevState[cardId], 
-//    }));
-//  };
+  //  const handleSelectCard = (cardId) => {
+  //    setSelectedCards((prevState) => ({
+  //      ...prevState,
+  //      [cardId]: !prevState[cardId],
+  //    }));
+  //  };
 
+  const cardData = [
+    { id: 1, title: "Real Estate", image: website1 }, // Replace with actual image path
+    { id: 2, title: "Dental", image: website2 },
+  ];
 
+  //  For click and show
+  const [showMain, setShowMain] = useState(true);
+  const handleShowMain = () => {
+    setShowMain(!showMain);
+  };
+  //  For click and show
 
- const cardData = [
-   { id: 1, title: "Real Estate", image: website1 }, // Replace with actual image path
-   { id: 2, title: "Dental", image: website2 },
- ];
   return (
     <div className="main-wrapper">
       <div className="formParentWrapper" data-step={step}>
@@ -173,10 +186,17 @@ const handleSendMailCheckboxChange = () => {
             <img className="logo" src={logo} alt="Logo" />
           </div>
           {[1, 2, 3, 4, 5].map((num) => (
-            <div className="stepInfo" key={num}>
+            <div
+              className="stepInfo"
+              key={num}
+              onClick={() => {
+                if (num === 4) handleResetClick();
+              }}
+            >
               <div
                 className={`step ${step === num ? "active" : ""}`}
                 data-step={num}
+                // onClick={num === 4 ? handleResetClick : null}
               >
                 {num}
               </div>
@@ -518,175 +538,178 @@ const handleSendMailCheckboxChange = () => {
               <div className="admin-template">
                 {/* AdminCardBlock with conditional visibility */}
                 {!showScratchModules && (
-                <div
-                  className={`mainForm ${showModuleBlock ? "hide" : "show"}`}
-                  id="AdminCardBlock"
-                >
-                  <p className="personal">
-                    Choose Admin Panel Template{" "}
-                    <div className="icon-wrapper">
-                      <Link to="/company/create-new-project">
-                        <i className="fas fa-home custom-icon">
-                          <span className="fix-editor">&nbsp;</span>
-                        </i>
-                      </Link>
-                    </div>
-                  </p>
+                  <div
+                    className={`mainForm ${showModuleBlock ? "hide" : "show"}`}
+                    id="AdminCardBlock"
+                  >
+                    <p className="personal">
+                      Choose Admin Panel Template{" "}
+                      <div className="icon-wrapper">
+                        <Link to="/company/create-new-project">
+                          <i className="fas fa-home custom-icon">
+                            <span className="fix-editor">&nbsp;</span>
+                          </i>
+                        </Link>
+                      </div>
+                    </p>
 
-                  <Row>
-                    <Col lg={12}>
-                      <Form>
-                        <Row>
-                          <Col lg={4}>
-                            <Form.Group className="mb-3" controlId="DomainName">
-                              <div className="input-group rounded">
-                                <Form.Control
-                                  type="text"
-                                  placeholder="Search template by"
-                                  className="rounded-start"
-                                />
-                                <span className="input-group-text rounded-end">
-                                  <FaSearch />
-                                </span>
-                              </div>
-                            </Form.Group>
-                          </Col>
-                          <Col lg={8}>
-                            <Row>
-                              <div className="form-btn-panel">
-                                <select
-                                  id="options"
-                                  value={selectedOption}
-                                  onChange={handleSelectChange}
-                                  className="form-select category-form"
-                                >
-                                  <option value="" disabled>
-                                    Select Category
-                                  </option>
-                                  <option value="option1">
-                                    Corporate Business Templates
-                                  </option>
-                                  <option value="option2">
-                                    Admin Panel Templates
-                                  </option>
-                                  <option value="option3">
-                                    E-commerce Templates
-                                  </option>
-                                </select>
-
-                                <div className="text-right m-l-10">
-                                  <Link
-                                    to="#"
-                                    className="create-button btn btn-primary"
-                                    onClick={handleStartFromScratchClick}
+                    <Row>
+                      <Col lg={12}>
+                        <Form>
+                          <Row>
+                            <Col lg={4}>
+                              <Form.Group
+                                className="mb-3"
+                                controlId="DomainName"
+                              >
+                                <div className="input-group rounded">
+                                  <Form.Control
+                                    type="text"
+                                    placeholder="Search template by"
+                                    className="rounded-start"
+                                  />
+                                  <span className="input-group-text rounded-end">
+                                    <FaSearch />
+                                  </span>
+                                </div>
+                              </Form.Group>
+                            </Col>
+                            <Col lg={8}>
+                              <Row>
+                                <div className="form-btn-panel">
+                                  <select
+                                    id="options"
+                                    value={selectedOption}
+                                    onChange={handleSelectChange}
+                                    className="form-select category-form"
                                   >
-                                    <FaEdit /> Start From Scratch
-                                  </Link>
-                                </div>
-                              </div>
-                            </Row>
-                          </Col>
-                        </Row>
+                                    <option value="" disabled>
+                                      Select Category
+                                    </option>
+                                    <option value="option1">
+                                      Corporate Business Templates
+                                    </option>
+                                    <option value="option2">
+                                      Admin Panel Templates
+                                    </option>
+                                    <option value="option3">
+                                      E-commerce Templates
+                                    </option>
+                                  </select>
 
-                        <Row>
-                          <Col lg={4}>
-                            <Card className="project-card admin-card">
-                              <div className="card-image-wrapper">
-                                <Card.Img variant="top" src={admin1} />
-                                <div className="overlay">
-                                  <div className="button">
-                                    <a
-                                      href="#"
-                                      target="_blank"
+                                  <div className="text-right m-l-10">
+                                    <Link
+                                      to="#"
                                       className="create-button btn btn-primary"
+                                      onClick={handleStartFromScratchClick}
                                     >
-                                      Preview
-                                    </a>
-                                    <a
-                                      onClick={handleViewStructureClick}
-                                      className="create-button btn btn-primary"
-                                    >
-                                      View Structure
-                                    </a>
+                                      <FaEdit /> Start From Scratch
+                                    </Link>
                                   </div>
                                 </div>
-                              </div>
-                              <Card.Body>
-                                <Card.Title>
-                                  Real Estate
-                                  <div style={{ float: "right" }}>
-                                    <a
-                                      href="#"
-                                      title="View"
-                                      target="_blank"
-                                      className="view-color"
-                                    >
-                                      <FaRegEye />
-                                    </a>
-                                    <a
-                                      onClick={handleViewStructureClick}
-                                      title="View Structure"
-                                      className="view-color m-l-10"
-                                    >
-                                      <FaThLarge />
-                                    </a>
-                                  </div>
-                                </Card.Title>
-                              </Card.Body>
-                            </Card>
-                          </Col>
+                              </Row>
+                            </Col>
+                          </Row>
 
-                          <Col lg={4}>
-                            <Card className="project-card admin-card">
-                              <div className="card-image-wrapper">
-                                <Card.Img variant="top" src={admin2} />
-                                <div className="overlay">
-                                  <div className="button">
-                                    <a
-                                      href="#"
-                                      target="_blank"
-                                      className="create-button btn btn-primary"
-                                    >
-                                      Preview
-                                    </a>
-                                    <a
-                                      onClick={handleViewStructureClick}
-                                      className="create-button btn btn-primary"
-                                    >
-                                      View Structure
-                                    </a>
+                          <Row>
+                            <Col lg={4}>
+                              <Card className="project-card admin-card">
+                                <div className="card-image-wrapper">
+                                  <Card.Img variant="top" src={admin1} />
+                                  <div className="overlay">
+                                    <div className="button">
+                                      <a
+                                        href="#"
+                                        target="_blank"
+                                        className="create-button btn btn-primary"
+                                      >
+                                        Preview
+                                      </a>
+                                      <a
+                                        onClick={handleViewStructureClick}
+                                        className="create-button btn btn-primary"
+                                      >
+                                        View Structure
+                                      </a>
+                                    </div>
                                   </div>
                                 </div>
-                              </div>
-                              <Card.Body>
-                                <Card.Title>
-                                  Dental
-                                  <div style={{ float: "right" }}>
-                                    <a
-                                      href="#"
-                                      title="View"
-                                      target="_blank"
-                                      className="view-color"
-                                    >
-                                      <FaRegEye />
-                                    </a>
-                                    <a
-                                      onClick={handleViewStructureClick}
-                                      title="View Structure"
-                                      className="view-color m-l-10"
-                                    >
-                                      <FaThLarge />
-                                    </a>
+                                <Card.Body>
+                                  <Card.Title>
+                                    Real Estate
+                                    <div style={{ float: "right" }}>
+                                      <a
+                                        href="#"
+                                        title="View"
+                                        target="_blank"
+                                        className="view-color"
+                                      >
+                                        <FaRegEye />
+                                      </a>
+                                      <a
+                                        onClick={handleViewStructureClick}
+                                        title="View Structure"
+                                        className="view-color m-l-10"
+                                      >
+                                        <FaThLarge />
+                                      </a>
+                                    </div>
+                                  </Card.Title>
+                                </Card.Body>
+                              </Card>
+                            </Col>
+
+                            <Col lg={4}>
+                              <Card className="project-card admin-card">
+                                <div className="card-image-wrapper">
+                                  <Card.Img variant="top" src={admin2} />
+                                  <div className="overlay">
+                                    <div className="button">
+                                      <a
+                                        href="#"
+                                        target="_blank"
+                                        className="create-button btn btn-primary"
+                                      >
+                                        Preview
+                                      </a>
+                                      <a
+                                        onClick={handleViewStructureClick}
+                                        className="create-button btn btn-primary"
+                                      >
+                                        View Structure
+                                      </a>
+                                    </div>
                                   </div>
-                                </Card.Title>
-                              </Card.Body>
-                            </Card>
-                          </Col>
-                        </Row>
-                      </Form>
-                    </Col>
-                  </Row>
-                </div>
+                                </div>
+                                <Card.Body>
+                                  <Card.Title>
+                                    Dental
+                                    <div style={{ float: "right" }}>
+                                      <a
+                                        href="#"
+                                        title="View"
+                                        target="_blank"
+                                        className="view-color"
+                                      >
+                                        <FaRegEye />
+                                      </a>
+                                      <a
+                                        onClick={handleViewStructureClick}
+                                        title="View Structure"
+                                        className="view-color m-l-10"
+                                      >
+                                        <FaThLarge />
+                                      </a>
+                                    </div>
+                                  </Card.Title>
+                                </Card.Body>
+                              </Card>
+                            </Col>
+                          </Row>
+                        </Form>
+                      </Col>
+                    </Row>
+                  </div>
                 )}
                 {/* ModuleBlock with conditional visibility */}
                 <div
@@ -704,29 +727,32 @@ const handleSendMailCheckboxChange = () => {
                     </div>
                   </p>
                   <Row>
-                  <Col lg={3}>
-                  <div className="module-list">
-                  <div class="checkboxes module-switch switch-no-bg">
-                  <label className="switch-label">
-                   
-                    <Switch onChange={handleSelectAllChange} checked={selectAll} />
-                    <span>Select All</span>
-                  </label>
-                  </div>
-                  </div>
-                  </Col>
-                 
-                  <Col lg={5}>
-                
-        </Col>
-                  
-                  <Col lg={4}>
-                  <div className="text-right">
-            <Link to="/dev-forms/details-form" className="create-button btn btn-primary waves-effect waves-light">
-            < AiOutlineImport /> Import Additional Modules
-            </Link>
-          </div>
-                  </Col>
+                    <Col lg={3}>
+                      <div className="module-list">
+                        <div class="checkboxes module-switch switch-no-bg">
+                          <label className="switch-label">
+                            <Switch
+                              onChange={handleSelectAllChange}
+                              checked={selectAll}
+                            />
+                            <span>Select All</span>
+                          </label>
+                        </div>
+                      </div>
+                    </Col>
+
+                    <Col lg={5}></Col>
+
+                    <Col lg={4}>
+                      <div className="text-right">
+                        <Link
+                          to="/dev-forms/details-form"
+                          className="create-button btn btn-primary waves-effect waves-light"
+                        >
+                          <AiOutlineImport /> Import Additional Modules
+                        </Link>
+                      </div>
+                    </Col>
                   </Row>
                   <Row className="m-t-30">
                     <Col lg={12}>
@@ -752,77 +778,84 @@ const handleSendMailCheckboxChange = () => {
                   </Row>
                 </div>
                 {showScratchModules && (
-                <div className="SracthModules" id="SracthModules">
-                <Row>
-                  <Col lg={3}>
-                  <div className="module-list">
-                  <div class="checkboxes module-switch switch-no-bg">
-                  <label className="switch-label">
-                    
-                    <Switch onChange={handleSelectAllChange} checked={selectAll} />
-                    <span>Select All</span>
-                  </label>
-                  </div>
-                  </div>
-                  </Col>
-                 
-                  <Col lg={5}>
-                  <Form.Group className="mb-3" controlId="DomainName">
-                              <div className="input-group rounded">
-                                <Form.Control
-                                  type="text"
-                                  placeholder="Search modules by"
-                                  className="rounded-start"
-                                />
-                                <span className="input-group-text rounded-end">
-                                  <FaSearch />
-                                </span>
-                              </div>
-                            </Form.Group>
-        </Col>
-                  
-                  <Col lg={4}>
-                  <div className="text-right">
-            <Link to="/dev-forms/details-form" className="create-button btn btn-primary waves-effect waves-light">
-            < AiOutlineImport /> Import Additional Modules
-            </Link>
-          </div>
-                  </Col>
-                  </Row>
-                  <Row className="m-t-30">
-                    <Col lg={12}>
-                      <div className="module-list">
-                        {/* <h3>Dental Modules</h3> */}
-                        <div className="checkboxes module-switch">
-                          {/* <label>
+                  <div className="SracthModules" id="SracthModules">
+                    <Row>
+                      <Col lg={3}>
+                        <div className="module-list">
+                          <div class="checkboxes module-switch switch-no-bg">
+                            <label className="switch-label">
+                              <Switch
+                                onChange={handleSelectAllChange}
+                                checked={selectAll}
+                              />
+                              <span>Select All</span>
+                            </label>
+                          </div>
+                        </div>
+                      </Col>
+
+                      <Col lg={5}>
+                        <Form.Group className="mb-3" controlId="DomainName">
+                          <div className="input-group rounded">
+                            <Form.Control
+                              type="text"
+                              placeholder="Search modules by"
+                              className="rounded-start"
+                            />
+                            <span className="input-group-text rounded-end">
+                              <FaSearch />
+                            </span>
+                          </div>
+                        </Form.Group>
+                      </Col>
+
+                      <Col lg={4}>
+                        <div className="text-right">
+                          <Link
+                            to="/dev-forms/details-form"
+                            className="create-button btn btn-primary waves-effect waves-light"
+                          >
+                            <AiOutlineImport /> Import Additional Modules
+                          </Link>
+                        </div>
+                      </Col>
+                    </Row>
+                    <Row className="m-t-30">
+                      <Col lg={12}>
+                        <div className="module-list">
+                          {/* <h3>Dental Modules</h3> */}
+                          <div className="checkboxes module-switch">
+                            {/* <label>
                   <span>Services</span>
                   <Switch onChange={handleChange} checked={checked} />
                 </label> */}
-                          {switchesData.map((switchItem) => (
-                            <label key={switchItem.id} className="switch-label">
-                              <span>{switchItem.label}</span>
-                              <Switch
-                                onChange={() => handleChange(switchItem.id)}
-                                checked={switchStates[switchItem.id]}
-                              />
-                            </label>
-                          ))}
+                            {switchesData.map((switchItem) => (
+                              <label
+                                key={switchItem.id}
+                                className="switch-label"
+                              >
+                                <span>{switchItem.label}</span>
+                                <Switch
+                                  onChange={() => handleChange(switchItem.id)}
+                                  checked={switchStates[switchItem.id]}
+                                />
+                              </label>
+                            ))}
+                          </div>
                         </div>
-                      </div>
-                    </Col>
-                  </Row>
-                </div>
-                 )}
+                      </Col>
+                    </Row>
+                  </div>
+                )}
               </div>
             </div>
             <div
               className={`formContainer ${step === 5 ? "" : "hide"}`}
               data-step="5"
             >
-
-<div className="mainForm">
+              <div className="mainForm">
                 <p className="personal">
-                Choose Front Theme
+                  Choose Front Theme
                   <div class="icon-wrapper">
                     <Link to="/company/create-new-project">
                       <i class="fas fa-home custom-icon">
@@ -835,21 +868,19 @@ const handleSendMailCheckboxChange = () => {
                   <i class="fas fa-home"></i>
                 </a></span> */}
                 </p>
-               
+
                 <Row>
-                    <Col lg={12}>
-                      <Form>
-                        <Row>
-                          <Col lg={6}>
+                  <Col lg={12}>
+                    <Form>
+                      <Row>
+                        <Col lg={6}>
                           <p className="personalInfo">
-                  Please Choose Front Theme
-                </p>
-                            
-                          </Col>
-                          <Col lg={6}>
-                            <Row>
+                            Please Choose Front Theme
+                          </p>
+                        </Col>
+                        <Col lg={6}>
+                          <Row>
                             <Form.Group className="mb-3" controlId="DomainName">
-                           
                               <div className="input-group rounded">
                                 <Form.Control
                                   type="text"
@@ -861,91 +892,99 @@ const handleSendMailCheckboxChange = () => {
                                 </span>
                               </div>
                             </Form.Group>
-                            </Row>
+                          </Row>
+                        </Col>
+                      </Row>
+                      <Row>
+                        {cardData.map((card) => (
+                          <Col lg={4} key={card.id}>
+                            <Card
+                              className={`project-card admin-card ${selectedCards[card.id] ? "selected" : ""}`}
+                            >
+                              <div className="card-image-wrapper">
+                                <Card.Img variant="top" src={card.image} />
+                                <div className="overlay">
+                                  <div className="checbox-pos">
+                                    {/* Checkbox to select the entire card */}
+                                    <label>
+                                      <input
+                                        type="checkbox"
+                                        checked={
+                                          selectedCards[card.id] || false
+                                        }
+                                        onChange={() =>
+                                          handleSelectCard(card.id)
+                                        }
+                                      />
+                                    </label>
+                                  </div>
+                                  <div className="button">
+                                    <a
+                                      href="#"
+                                      target="_blank"
+                                      className="create-button btn btn-primary"
+                                    >
+                                      Preview
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                              <Card.Body>
+                                <Card.Title>
+                                  {card.title}
+                                  <div style={{ float: "right" }}>
+                                    <a
+                                      href="#"
+                                      title="View"
+                                      target="_blank"
+                                      className="view-color"
+                                    >
+                                      <FaRegEye />
+                                    </a>
+                                  </div>
+                                </Card.Title>
+
+                                <div>
+                                  {/* Independent checkbox for "Send for review" */}
+                                  <label className="label-check">
+                                    <input
+                                      type="checkbox"
+                                      checked={reviewCards[card.id] || false}
+                                      onChange={() =>
+                                        handleSendForReview(card.id)
+                                      }
+                                    />
+                                    &nbsp;Send for review
+                                  </label>
+                                </div>
+                              </Card.Body>
+                            </Card>
                           </Col>
-                        </Row>
-                        <Row>
-  {cardData.map((card) => (
-    <Col lg={4} key={card.id}>
-      <Card
-        className={`project-card admin-card ${selectedCards[card.id] ? "selected" : ""}`}
-      >
-        <div className="card-image-wrapper">
-          <Card.Img variant="top" src={card.image} />
-          <div className="overlay">
-          <div className="checbox-pos">
-            {/* Checkbox to select the entire card */}
-            <label>
-            <input
-    type="checkbox"
-    checked={selectedCards[card.id] || false}
-    onChange={() => handleSelectCard(card.id)}
-  />
-            </label>
-          </div>
-            <div className="button">
-           
-          
-              <a href="#" target="_blank" className="create-button btn btn-primary">
-                Preview
-              </a>
-            </div>
-          </div>
-        </div>
-        <Card.Body>
-          <Card.Title>
-            {card.title}
-            <div style={{ float: "right" }}>
-              <a href="#" title="View" target="_blank" className="view-color">
-                <FaRegEye />
-              </a>
-            </div>
-          </Card.Title>
+                        ))}
+                      </Row>
 
-         
-          <div>
-            {/* Independent checkbox for "Send for review" */}
-            <label className="label-check">
-              <input
-                type="checkbox"
-                checked={reviewCards[card.id] || false}
-                onChange={() => handleSendForReview(card.id)}
-              />
-              &nbsp;Send for review
-            </label>
-          </div>
-        </Card.Body>
-      </Card>
-    </Col>
-  ))}
-</Row>
-
-                        <Row>
+                      <Row>
                         <div>
-     
+                          <br />
 
-      <br />
+                          <label>
+                            <input
+                              type="checkbox"
+                              checked={isSendMailChecked}
+                              onChange={handleSendMailCheckboxChange}
+                              disabled={!isFirstChecked} // Disable until first checkbox is selected
+                            />
+                            &nbsp;Send mail to client for template approval
+                          </label>
 
-      <label>
-        <input
-          type="checkbox"
-          checked={isSendMailChecked}
-          onChange={handleSendMailCheckboxChange}
-          disabled={!isFirstChecked} // Disable until first checkbox is selected
-        />
-        &nbsp;Send mail to client for template approval
-      </label>
-
-      <br />
-
-    
-    </div>
-                        </Row>
-                      </Form>
-                    </Col>
-                  </Row>
-                </div>
+                          <br />
+                        </div>
+                      </Row>
+                    </Form>
+                  </Col>
+                </Row>
               </div>
+            </div>
           </div>
 
           <div className="btnWrapper mt-3">
@@ -970,7 +1009,6 @@ const handleSendMailCheckboxChange = () => {
               className="btn btn-primary"
               onClick={step < 5 ? nextStep : undefined}
             >
-              
               {step === 5 ? "Proceed" : "Next Step"}
             </button>
           </div>
