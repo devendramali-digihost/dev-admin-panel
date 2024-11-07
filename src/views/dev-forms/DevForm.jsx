@@ -54,9 +54,7 @@ const MultiStepForm = ({ num }) => {
     }
   };
 
-  // //////////////// Business Form ///////////////
 
-  // //////////////// Business Form ///////////////
 
   // //////////////// Admin Panel Template ///////////////
   const [selectedOption, setSelectedOption] = useState("");
