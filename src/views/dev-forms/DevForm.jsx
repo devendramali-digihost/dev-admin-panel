@@ -9,7 +9,7 @@ import Switch from "react-switch";
 import { DomainVerificationForm } from "./DomainVerificationForm";
 
 const MultiStepForm = ({ num }) => {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(1);    
   const [formData, setFormData] = useState({
     name: "",
     email: "",
