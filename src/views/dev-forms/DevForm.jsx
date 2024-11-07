@@ -237,10 +237,7 @@ const MultiStepForm = ({ num }) => {
                       </i>
                     </Link>
                   </div>
-                  {/* <span className='text-right'>
-                          <a href="#" class="btn btn-primary btn-home">
-                  <i class="fas fa-home"></i>
-                </a></span> */}
+
                 </p>
                 <p className="personalInfo">
                   Please provide your company details.
