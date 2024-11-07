@@ -9,7 +9,7 @@ import Switch from "react-switch";
 import { DomainVerificationForm } from "./DomainVerificationForm";
 
 const MultiStepForm = ({ num }) => {
-  const [step, setStep] = useState(1);    
+  const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -82,7 +82,6 @@ const MultiStepForm = ({ num }) => {
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
   };
-
 
 
   const handleViewStructureClick = () => {
