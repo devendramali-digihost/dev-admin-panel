@@ -225,9 +225,9 @@ export const DomainVerificationForm = () => {
                     </div>
                   </div>
                   <h5 className="w-100 text-center mt-3">
-                    <span className="register">
+                    {/* <span className="register">
                       This domain is already registered
-                    </span>
+                    </span> */}
                     <span className="not-register">
                       This domain is already registered
                     </span>
