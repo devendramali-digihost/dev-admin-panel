@@ -41,7 +41,7 @@
       margin-bottom: 0;
       padding: 10px 0;
     }
-    
+
   }
   .checbox-pos input[type=checkbox]:checked {
     background-color: #16665f;
@@ -725,7 +725,7 @@ button[disabled] {
 .checbox-pos{
   position: absolute;
   right: 5px;
-  top: 5px;
+ bottom: 35px;
 
 }
 .checbox-pos input[type="checkbox"] {
@@ -777,7 +777,7 @@ align-items: flex-start !important;
 }
 .module-list .module-switch.switch-no-bg .switch-label span{
   color:#1a776f;
- 
+
 }
 
 .checbox-pos input:checked + label:after {
@@ -792,9 +792,9 @@ align-items: flex-start !important;
   border-width: 0 1px 1px 0;
   transform: rotate(45deg);
 }
-.project-card.admin-card:hover {
-  border: 1px solid #1a776f; /* Hover border color */
-}
+// .project-card.admin-card:hover {
+//   border: 1px solid #1a776f; /* Hover border color */
+// }
 
 .project-card.admin-card.selected {
   border: 1px solid #1a776f; /* Selected border color */
@@ -818,7 +818,7 @@ align-items: flex-start !important;
     font-size: 12px;
    }
     .react-switch-handle{
-     
+
       width:14px !important;
       height:14px !important;
       top:3px !important;

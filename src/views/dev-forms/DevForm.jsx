@@ -908,8 +908,8 @@ const MultiStepForm = ({ num }) => {
                               <div className="card-image-wrapper">
                                 <Card.Img variant="top" src={card.image} />
                                 <div className="overlay">
-                                  <div className="checbox-pos">
-                                    {/* Checkbox to select the entire card */}
+                                  {/* <div className="checbox-pos">
+
                                     <label>
                                       <input
                                         type="checkbox"
@@ -921,7 +921,7 @@ const MultiStepForm = ({ num }) => {
                                         }
                                       />
                                     </label>
-                                  </div>
+                                  </div> */}
                                   <div className="button">
                                     <a
                                       href="#"
@@ -937,14 +937,14 @@ const MultiStepForm = ({ num }) => {
                                 <Card.Title>
                                   {card.title}
                                   <div style={{ float: "right" }}>
-                                    <a
+                                    {/* <a
                                       href="#"
                                       title="View"
                                       target="_blank"
                                       className="view-color"
                                     >
                                       <FaRegEye />
-                                    </a>
+                                    </a> */}
                                     <div className="checbox-pos">
                                      <label>
                                       <input
@@ -995,7 +995,7 @@ const MultiStepForm = ({ num }) => {
 
                           <br />
                           <button className="btn btn-primary">Skip</button>
-           
+
                         </div>
                       </Row>
                     </Form>
@@ -1019,7 +1019,7 @@ const MultiStepForm = ({ num }) => {
               className="btn btn-primary"
               onClick={step < 5 ? nextStep : undefined}
             >
-              
+
               {step === 5 ? "Skip" : "Next Step"}
             </button> */}
             <button
