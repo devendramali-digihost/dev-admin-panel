@@ -54,8 +54,6 @@ const MultiStepForm = ({ num }) => {
     }
   };
 
-
-
   // //////////////// Admin Panel Template ///////////////
   const [selectedOption, setSelectedOption] = useState("");
   const [checked, setChecked] = useState(true);
@@ -85,9 +83,7 @@ const MultiStepForm = ({ num }) => {
     setSelectedOption(event.target.value);
   };
 
-  // const handleChange = (checked) => {
-  //   setChecked(checked);
-  // };
+
 
   const handleViewStructureClick = () => {
     setShowModuleBlock(true); // Show ModuleBlock
