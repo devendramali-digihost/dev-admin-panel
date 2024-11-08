@@ -62,14 +62,10 @@ const routes = [
     layout: AdminLayout,
     routes: [
       // Company list
-      // {
-      //   path: '*',
-      //   exact: 'true',
-      //   element: () => <Navigate to={BASE_URL} />
-      // },
       {
         path: "*",
-        element: () => <Navigate to={BASE_URL} replace />,
+        exact: "true",
+        element: () => <Navigate to={BASE_URL} />,
       },
 
       {
