@@ -64,8 +64,8 @@ const routes = [
       // Company list
       {
         path: "*",
-        exact: "true",
-        element: () => <Navigate to={BASE_URL} />,
+        // exact: "true",
+        element: () => <Navigate to={BASE_URL} replace />,
       },
 
       {
