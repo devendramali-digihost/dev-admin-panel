@@ -69,38 +69,6 @@ const AddModule = () => {
     { value: "Data Editor", label: "Data Editor" },
   ];
 
-  //   Style in Datatable
-  const customStyles = {
-    header: {
-      style: {
-        // minHeight: "56px",
-        // backgroundColor: "#646868",
-        // fontSize: "18px",
-        // fontWeight: "bold",
-      },
-    },
-    rows: {
-      style: {
-        // minHeight: "72px", // Adjust row height
-        // fontSize: "16px",
-      },
-      highlightOnHoverStyle: {
-        // backgroundColor: "#dce1e3", // Row hover background color
-        // color: "black",
-        // fontWeight: "bold",
-        // transitionDuration: "0.15s",
-        // transitionProperty: "background-color",
-      },
-    },
-    cells: {
-      style: {
-        // paddingLeft: "8px", // cell padding
-        // paddingRight: "8px",
-      },
-    },
-  };
-  //   Style in Datatable
-
   // Columns for DataTable
   const columns = [
     {
@@ -190,7 +158,7 @@ const AddModule = () => {
       cell: (row, index) => (
         <div className="d-flex align-items-center">
           {/* Always show the 'Add Row' button on the last row */}
-          {index === rows.length - 1 ? (
+          {index === 0 ? (
             <Button
               className="waves-effect waves-light"
               variant="primary"
@@ -282,7 +250,6 @@ const AddModule = () => {
               <DataTable
                 columns={columns}
                 data={filteredRows} // Use filtered rows
-                customStyles={customStyles}
                 responsive
                 striped
               />
