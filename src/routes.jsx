@@ -57,16 +57,7 @@ const routes = [
     path: "/dev-forms/details-form",
     element: lazy(() => import("./views/dev-forms/DevForm")),
   },
-  {
-    exact: "true",
-    path: "/module/add-module",
-    element: lazy(() => import("./views/module/AddModule")),
-  },
-  {
-    exact: "true",
-    path: "/module/module-list",
-    element: lazy(() => import("./views/module/ModuleList")),
-  },
+
   {
     path: "*",
     layout: AdminLayout,
@@ -87,6 +78,16 @@ const routes = [
         exact: "true",
         path: "/admin-template/admin-module-list",
         element: lazy(() => import("./views/admin-template/AdminModuleList")),
+      },
+      {
+        exact: "true",
+        path: "/module/add-module",
+        element: lazy(() => import("./views/module/AddModule")),
+      },
+      {
+        exact: "true",
+        path: "/module/module-list",
+        element: lazy(() => import("./views/module/ModuleList")),
       },
     ],
   },
