@@ -13,7 +13,7 @@
       border: 1px solid $secondary-color;
       font-size: 14px;
       padding: 2.98px 7.3px;
-    &:hover {
+      &:hover {
         color: #fff;
         background: $secondary-color;
       }
@@ -41,18 +41,18 @@
       padding: 10px 0px;
     }
   }
-  .checbox-pos input[type=checkbox]:checked {
+  .checbox-pos input[type="checkbox"]:checked {
     background-color: #16665f;
     border-color: #16665f;
-}
-.label-check{
-  display: flex;
-  align-items: center;
-}
-.project-card .card-body label{
-  display: flex !important;
-  align-items: center !important;
-}
+  }
+  .label-check {
+    display: flex;
+    align-items: center;
+  }
+  .project-card .card-body label {
+    display: flex !important;
+    align-items: center !important;
+  }
   .card-image-wrapper {
     position: relative;
     width: 100%;
@@ -271,7 +271,7 @@ button[disabled] {
   font-size: 14px;
 }
 
-.input[type='file'] {
+.input[type="file"] {
   background-color: #4caf50; /* Green background */
   border: none;
   color: white;
@@ -286,7 +286,7 @@ button[disabled] {
   transition: background-color 0.3s ease;
 }
 
-.input[type='file']:hover {
+.input[type="file"]:hover {
   background-color: #45a049; /* Darker green on hover */
 }
 
@@ -501,7 +501,14 @@ button[disabled] {
     border-radius: 14px;
     padding: 0;
     margin-top: 0px;
-    background: linear-gradient(135deg, #435463, #6a798f, #91a0b6, #b8c8de, #dfeef8);
+    background: linear-gradient(
+      135deg,
+      #435463,
+      #6a798f,
+      #91a0b6,
+      #b8c8de,
+      #dfeef8
+    );
   }
 
   .steps {
@@ -656,8 +663,8 @@ button[disabled] {
   flex-direction: column;
   gap: 16px;
 }
-.form-select.category-form{
-  width:50%
+.form-select.category-form {
+  width: 50%;
 }
 .module-list {
   display: grid;
@@ -718,11 +725,10 @@ button[disabled] {
 .project-card.admin-card {
   transition: border-color 0.3s;
 }
-.checbox-pos{
+.checbox-pos {
   position: absolute;
   right: 5px;
- bottom: 35px;
-
+  bottom: 35px;
 }
 .checbox-pos input[type="checkbox"] {
   -webkit-appearance: none;
@@ -735,11 +741,13 @@ button[disabled] {
   position: relative;
   cursor: pointer;
   outline: none;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }
-.checbox-size{
+.checbox-size {
   display: flex !important;
-align-items: flex-start !important;
+  align-items: flex-start !important;
 }
 .checbox-size input[type="checkbox"] {
   width: 16px; /* Adjust size as needed */
@@ -767,17 +775,16 @@ align-items: flex-start !important;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.module-list .module-switch.switch-no-bg .switch-label{
+.module-list .module-switch.switch-no-bg .switch-label {
   background-color: transparent !important;
-  border:1px solid #eee;
+  border: 1px solid #eee;
 }
-.module-list .module-switch.switch-no-bg .switch-label span{
-  color:#1a776f;
-
+.module-list .module-switch.switch-no-bg .switch-label span {
+  color: #1a776f;
 }
 
 .checbox-pos input:checked + label:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 2px;
@@ -796,28 +803,25 @@ align-items: flex-start !important;
   border: 1px solid #1a776f; /* Selected border color */
 }
 
-
-
-.module-list{
-  .module-switch{
+.module-list {
+  .module-switch {
     .react-switch-bg {
-      width:50px !important;
+      width: 50px !important;
       height: 20px !important;
       background: rgb(22, 102, 95) !important;
-      div{
+      div {
         height: 20px !important;
         width: 29px !important;
       }
     }
-   .switch-label span{
-    color: #6f6464;
-    font-size: 12px;
-   }
-    .react-switch-handle{
-
-      width:14px !important;
-      height:14px !important;
-      top:3px !important;
+    .switch-label span {
+      color: #6f6464;
+      font-size: 12px;
+    }
+    .react-switch-handle {
+      width: 14px !important;
+      height: 14px !important;
+      top: 3px !important;
       left: 3px !important;
     }
   }
@@ -950,7 +954,7 @@ label {
   color: var(--marineBlue) !important;
 }
 
-input[type='number'] {
+input[type="number"] {
   appearance: textfield;
 }
 
@@ -1102,7 +1106,7 @@ input[type='number'] {
   display: inline-block;
   float: right;
 }
-.search-icon{
+.search-icon {
   border-radius: 10px;
 }
 .planInfo {
@@ -1163,7 +1167,7 @@ input[type='number'] {
       position: relative;
 
       &::after {
-        content: '';
+        content: "";
         height: 39px;
         bottom: -43px;
         width: 2px;
@@ -1214,7 +1218,9 @@ input[type='number'] {
 .mainForm {
   opacity: 1;
   height: auto;
-  transition: opacity 0.5s ease, height 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    height 0.5s ease;
 }
 
 .mainForm.hide {
