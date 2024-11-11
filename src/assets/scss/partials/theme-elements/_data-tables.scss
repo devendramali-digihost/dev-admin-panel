@@ -202,19 +202,23 @@
 
 .rdt_TableBody {
   .form-control {
-    height: auto;
+    height: auto !important;
     padding: 0.27rem 0.55rem;
     font-size: 0.85rem;
   }
 }
 
+.css-19bb58m {
+  margin: 0;
+}
+
 .css-1xc3v61-indicatorContainer,
 .css-hlgwow {
-  padding: 0.27rem 0.55rem;
+  padding: 0.27rem 0.55rem !important;
 }
 
 .css-nalcay-control {
-  min-height: 0;
+  min-height: 0 !important;
 }
 
 .fFPLVZ:not(:last-of-type) {

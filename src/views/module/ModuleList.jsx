@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Container, Card, Row, Col, Form, Button } from "react-bootstrap";
 import { FaCopy, FaFileExcel, FaFilePdf, FaPrint } from "react-icons/fa";
-import DataTable from "react-data-table-component"; // Assuming you are using this for DataTable
+import DataTable from "react-data-table-component";
 import { FaEdit, FaWrench, FaTrashAlt, FaChartLine } from 'react-icons/fa';
 const ModuleList = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchClass, setSearchClass] = useState(["search-input"]); // Initialize with default classes
+  const [searchClass, setSearchClass] = useState(["search-input"]);
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);

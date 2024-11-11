@@ -1,3 +1,32 @@
 .add-module {
   margin-top: 50px;
+  .data_tableHeader {
+    .form-control {
+      height: auto;
+      padding: 0.27rem 0.55rem;
+    }
+    #main-search {
+      .input-group {
+        display: flex;
+        align-items: center;
+        padding: 5px 5px 5px 15px;
+        border: none;
+        height: 38px;
+        padding-right: 39px;
+        background-color: #f1f5f7 !important;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border-radius: 10px;
+        align-content: center;
+        border: 0 !important;
+
+        .form-control {
+          background-color: #f1f5f7;
+        }
+        .input-group-text {
+          padding-left: 0 !important;
+        }
+      }
+    }
+  }
 }
