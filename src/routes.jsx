@@ -60,12 +60,12 @@ const routes = [
   {
     exact: "true",
     path: "/module/add-module",
-    element: lazy(() => import("./views/module/AddModule.jsx")),
+    element: lazy(() => import("./views/module/AddModule")),
   },
   {
     exact: "true",
     path: "/module/module-list",
-    element: lazy(() => import("./views/module/ModuleList.jsx")),
+    element: lazy(() => import("./views/module/ModuleList")),
   },
   {
     path: "*",
