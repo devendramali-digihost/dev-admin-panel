@@ -1,20 +1,54 @@
-import { dashboardImg1, dashboardImg2, dashboardImg3, dashboardImg4, adminTemplate, createProject } from './../src/images';
+import {
+  dashboardImg1,
+  dashboardImg2,
+  dashboardImg3,
+  dashboardImg4,
+  adminTemplate,
+  createProject,
+} from "./../src/images";
 const menuItems = {
   items: [
     {
-      id: 'navigation',
-      title: 'Navigation',
-      type: 'group',
-      icon: 'icon-navigation',
+      id: "navigation",
+      title: "Navigation",
+      type: "group",
+      icon: "icon-navigation",
       children: [
         {
-          id: 'dashboard',
-          title: 'Create New Page',
-          type: 'item',
-          icon: 'feather icon-file-text',
+          id: "dashboard",
+          title: "Create New Page",
+          type: "item",
+          icon: "feather icon-file-text",
           src: dashboardImg4,
-          url: '/company/create-new-project'
-        }
+          url: "/company/create-new-project",
+        },
+        {
+          id: "module",
+          title: "Module",
+          type: "collapse",
+          icon: "feather icon-file-text",
+          src: dashboardImg4,
+          // url: "/company/create-new-project",
+
+          children: [
+            {
+              id: "module",
+              title: "Add Module",
+              type: "item",
+              icon: "feather icon-file-text",
+              // src: dashboardImg4,
+              url: "/module/add-module",
+            },
+            {
+              id: "module",
+              title: "Module List",
+              type: "item",
+              icon: "feather icon-file-text",
+              // src: dashboardImg4,
+              url: "/module/module-list",
+            },
+          ],
+        },
         // {
         // 	id: 'auth',
         // 	title: 'Authentication',
@@ -52,9 +86,9 @@ const menuItems = {
         // 		}
         // 	]
         // },
-      ]
-    }
-  ]
+      ],
+    },
+  ],
 };
 
 export default menuItems;

@@ -58,6 +58,16 @@ const routes = [
     element: lazy(() => import("./views/dev-forms/DevForm")),
   },
   {
+    exact: "true",
+    path: "/module/add-module",
+    element: lazy(() => import("./views/module/AddModule.jsx")),
+  },
+  {
+    exact: "true",
+    path: "/module/module-list",
+    element: lazy(() => import("./views/module/ModuleList.jsx")),
+  },
+  {
     path: "*",
     layout: AdminLayout,
     routes: [
