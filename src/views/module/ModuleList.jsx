@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { Container, Card, Row, Col, Form, Button } from "react-bootstrap";
 import { FaCopy, FaFileExcel, FaFilePdf, FaPrint } from "react-icons/fa";
 import DataTable from "react-data-table-component";
-import { FaEdit, FaWrench, FaTrashAlt, FaChartLine } from 'react-icons/fa';
+import { FaEdit, FaTrashAlt } from 'react-icons/fa';
+
 const ModuleList = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchClass, setSearchClass] = useState(["search-input"]);
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
-    // Add additional search logic if needed
   };
 
   const searchOnHandler = () => {
@@ -21,6 +21,7 @@ const ModuleList = () => {
       name: 'Sr No #',
       selector: row => row.srNo,
       sortable: true,
+      width: '300px', // Setting width for Sr No column
     },
     {
       name: 'Page Name',
@@ -34,46 +35,34 @@ const ModuleList = () => {
           <a href="#" className="btn btn-action" title="Edit Product">
             <FaEdit />
           </a>
-          <a href="#" className="btn btn-action" title="Update Product Status">
-            <FaWrench />
-          </a>
+
           <a href="#" className="btn btn-action" title="Delete Product">
             <FaTrashAlt />
           </a>
-          <a href="#" className="btn btn-action" title="Edit SEO">
-            <FaChartLine />
-          </a>
+
         </div>
       ),
+      style: {
+        textAlign: 'right', // Aligning Actions column to the right
+      },
     },
   ];
 
-  // Custom styles (optional)
-const customStyles = {
-  rows: {
-    style: {
-      minHeight: '72px',
+  const customStyles = {
+    rows: {
+      style: {
+        minHeight: '20px',
+      },
     },
-  },
-  headCells: {
-    style: {
-      fontWeight: 'bold',
-      fontSize: '16px',
-      backgroundColor: '#e3f2fd',
+    headCells: {
+      style: {
+        fontWeight: 'bold',
+        fontSize: '16px',
+        backgroundColor: '#e3f2fd',
+      },
     },
-  },
-};
+  };
 
-const DataTableComponent = () => (
-  <DataTable
-    columns={columns}
-    data={filteredRows}
-    customStyles={customStyles}
-    responsive
-    striped
-  />
-);
-  // Define row data (filteredRows)
   const filteredRows = [
     { srNo: 1, pageName: 'Test' },
     { srNo: 2, pageName: 'Blog Category' },
@@ -84,6 +73,7 @@ const DataTableComponent = () => (
     { srNo: 7, pageName: 'Add Blog Category' },
     { srNo: 8, pageName: 'Add Products' },
   ];
+
   return (
     <Container>
       <Row>
@@ -95,17 +85,17 @@ const DataTableComponent = () => (
                   <h3>Module List</h3>
                 </Col>
                 <Col md={6}>
-                <div className="dt-buttons btn-group">
+                  <div className="dt-buttons btn-group">
                     <Button className="btn btn-outline-secondary">
                       <FaCopy style={{ marginRight: "5px" }} />
                       Copy
                     </Button>
                     <Button className="btn btn-outline-secondary">
-                      <FaFileExcel style={{ marginRight: "5px"}} />
+                      <FaFileExcel style={{ marginRight: "5px" }} />
                       Excel
                     </Button>
                     <Button className="btn btn-outline-secondary">
-                      <FaFilePdf style={{ marginRight: "5px"}} />
+                      <FaFilePdf style={{ marginRight: "5px" }} />
                       PDF
                     </Button>
                     <Button className="btn btn-outline-secondary">
@@ -115,7 +105,6 @@ const DataTableComponent = () => (
                   </div>
                 </Col>
                 <Col md={6} className="text-end">
-
                   <div className="data_tableHeader">
                     <div id="main-search" className={searchClass.join(" ")}>
                       <div className="input-group" onClick={searchOnHandler}>

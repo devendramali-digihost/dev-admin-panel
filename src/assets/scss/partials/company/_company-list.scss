@@ -1259,7 +1259,7 @@ input[type="number"] {
   height: 28px;
   padding: 0;
   border-radius: 50px;
-  margin: 0px;
+  margin: 0px 8px;
 
 }
   .module-action a.btn-action:hover {
@@ -1273,4 +1273,16 @@ input[type="number"] {
 }
 .module-list .card-body{
   padding: 0px 25px 30px !important;
+}
+.btn-check:checked + .btn:not([class*=btn-]), :not(.btn-check) + .btn:active, .btn:first-child:active, .btn.active, .btn.show{
+
+
+  --bs-btn-active-bg: #1a776f;
+  --bs-btn-active-border-color: #1a776f
+
+}
+
+.module-list .jyxXZY{
+  max-width: 125px !important;
+  min-width: 125px !important;
 }
