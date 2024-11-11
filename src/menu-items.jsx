@@ -16,7 +16,7 @@ const menuItems = {
       children: [
         {
           id: "dashboard",
-          title: "Create New Page",
+          title: "Dashboard",
           type: "item",
           icon: "feather icon-file-text",
           src: dashboardImg4,

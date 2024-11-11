@@ -210,6 +210,9 @@ const AddModule = () => {
           <Card className="create_new_page_card add-module">
             <Card.Header>
               <Row className="justify-content-between">
+              <Col md={12}>
+                  <h3>Add Module</h3>
+                </Col>
                 <Col lg={4}>
                   <div className="data_tableHeader">
                     <div className="search-input">
