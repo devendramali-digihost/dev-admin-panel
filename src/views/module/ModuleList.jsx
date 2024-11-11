@@ -1,9 +1,11 @@
 import React from "react";
 
-export const ModuleList = () => {
+const ModuleList = () => {
   return (
-    <div className="add-module">
+    <div className="module-list">
       <h1>Module list</h1>
     </div>
   );
 };
+
+export default ModuleList;
