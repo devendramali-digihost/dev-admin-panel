@@ -1229,3 +1229,20 @@ input[type='number'] {
 }
 
 /* Additional styles for formContainer and other elements can go here */
+.module-list .btn-outline-secondary{
+  background-color: #1a776f;
+  border-color: #1a776f;
+  border:none;
+  color:#fff;
+
+  margin:10px
+}
+.module-list .btn-outline-secondary:hover{
+  background: #f0faf9;
+  border:none;
+  color:#000;
+  margin:10px
+}
+.module-list .btn-outline-secondary.ml0{
+  margin-left:0;
+}
