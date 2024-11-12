@@ -196,8 +196,13 @@
   }
 }
 
-.hudJpJ {
-  min-height: 0;
+.hudJpJ,
+.css-1thsgv7-control {
+  min-height: 0 !important;
+}
+
+.css-1thsgv7-control {
+  border: 0 !important;
 }
 
 .rdt_TableBody {

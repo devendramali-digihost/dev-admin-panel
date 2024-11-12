@@ -7,10 +7,10 @@ import { MdDeleteOutline } from "react-icons/md";
 
 const AddModule = () => {
   const [rows, setRows] = useState([
-    { name: "", age: "" },
-    { name: "", age: "" },
-    { name: "", age: "" },
-    { name: "", age: "" },
+    { name: "id", age: "11" },
+    { name: "status", age: "11" },
+    { name: "createdBy", age: "11" },
+    { name: "createdDate", age: "11" },
   ]);
   const [searchTerm, setSearchTerm] = useState(""); // State to hold the search term
   const [searchClass, setSearchClass] = useState([""]); // State for dynamic search class
@@ -48,9 +48,11 @@ const AddModule = () => {
 
   // Options for Select components
   const options = [
-    { value: "1", label: "1" },
-    { value: "2", label: "2" },
-    { value: "3", label: "3" },
+    { value: "INT", label: "INT" },
+    { value: "VARCHAR", label: "VARCHAR" },
+    { value: "TEXT", label: "TEXT" },
+    { value: "LONGTEXT", label: "LONGTEXT" },
+    { value: "DATETIME", label: "DATETIME" },
   ];
   const keyOptions = [
     { value: "Primary Key", label: "Primary Key" },
@@ -84,6 +86,7 @@ const AddModule = () => {
           name="name"
           className="form-control"
           value={row.name}
+          disabled={index < 4}
           onChange={(e) => handleChange(index, e)}
           placeholder="Enter name"
         />
@@ -202,16 +205,9 @@ const AddModule = () => {
       cell: (row, index) => (
         <div className="d-flex align-items-center">
           {/* Show the 'Add Row' button only on the last row */}
-          {index === 0 ? (
-            <Button
-              className="waves-effect waves-light"
-              variant="primary"
-              onClick={handleAddRow}
-              style={{ marginRight: "5px" }} // Adjust spacing for alignment
-            >
-              <FaPlus />
-            </Button>
-          ) : null}
+          {/* {index === 0 ? (
+            
+          ) : null} */}
 
           {/* Show the 'Delete' button only on rows that are not part of the initial static rows */}
           {index >= 4 ? (
@@ -290,6 +286,14 @@ const AddModule = () => {
                 responsive
                 striped
               />
+              <Button
+                className="waves-effect waves-light"
+                variant="primary"
+                onClick={handleAddRow}
+                style={{ marginRight: "5px", marginTop: "20px" }} // Adjust spacing for alignment
+              >
+                <FaPlus /> Add Row
+              </Button>
               <Row>
                 <Col lg={12}>
                   <div className="text-end mt-5">
