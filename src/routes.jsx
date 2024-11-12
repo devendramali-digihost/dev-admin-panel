@@ -89,6 +89,16 @@ const routes = [
         path: "/module/module-list",
         element: lazy(() => import("./views/module/ModuleList")),
       },
+      {
+        exact: "true",
+        path: "/module-preview/add-module-preview",
+        element: lazy(() => import("./views/module-preview/AddModulePreview")),
+      },
+      {
+        exact: "true",
+        path: "/module-preview/list-module-preview",
+        element: lazy(() => import("./views/module-preview/ListModulePreview")),
+      },
     ],
   },
 ];

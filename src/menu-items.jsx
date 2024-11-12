@@ -28,14 +28,13 @@ const menuItems = {
           type: "collapse",
           icon: "feather icon-file-text",
           src: dashboardImg4,
-          // url: "/company/create-new-project",
 
           children: [
             {
               id: "module",
               title: "Add Module",
               type: "item",
-              icon: "feather icon-file-text",
+              // icon: "feather icon-file-text",
               // src: dashboardImg4,
               url: "/module/add-module",
             },
@@ -43,9 +42,35 @@ const menuItems = {
               id: "module",
               title: "Module List",
               type: "item",
-              icon: "feather icon-file-text",
+              // icon: "feather icon-file-text",
               // src: dashboardImg4,
               url: "/module/module-list",
+            },
+          ],
+        },
+        {
+          id: "module-preview",
+          title: "Module Preview",
+          type: "collapse",
+          icon: "feather icon-file-text",
+          src: dashboardImg4,
+
+          children: [
+            {
+              id: "module-preview",
+              title: "Add Module Preview",
+              type: "item",
+              // icon: "feather icon-file-text",
+              // src: dashboardImg4,
+              url: "/module-preview/add-module-preview",
+            },
+            {
+              id: "module-preview",
+              title: "Module List Preview",
+              type: "item",
+              // icon: "feather icon-file-text",
+              // src: dashboardImg4,
+              url: "/module-preview/list-module-preview",
             },
           ],
         },

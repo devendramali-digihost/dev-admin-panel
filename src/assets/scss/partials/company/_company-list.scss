@@ -1235,54 +1235,53 @@ input[type="number"] {
 }
 
 /* Additional styles for formContainer and other elements can go here */
-.module-list .btn-outline-secondary{
+.module-list .btn-outline-secondary {
   background-color: #1a776f;
   border-color: #1a776f;
-  border:none;
-  color:#fff;
-
-  margin:10px
+  border: none;
+  color: #fff;
+  margin: 10px;
 }
-.module-list .btn-outline-secondary:hover{
+.module-list .btn-outline-secondary:hover {
   background: #f0faf9;
-  border:none;
-  color:#000;
-  margin:10px
+  border: none;
+  color: #000;
+  margin: 10px;
 }
-.module-list .btn-outline-secondary.ml0{
-  margin-left:0;
+.module-list .btn-outline-secondary.ml0 {
+  margin-left: 0;
 }
-.module-action a.btn-action{
-  background: #F3F3F3;
-  color: #3F4254;
+.module-action a.btn-action {
+  background: #f3f3f3;
+  color: #3f4254;
   width: 28px;
   height: 28px;
   padding: 0;
   border-radius: 50px;
   margin: 0px 8px;
-
 }
-  .module-action a.btn-action:hover {
+.module-action a.btn-action:hover {
   color: #1a776f;
 }
-.module-action .kWafnY{
+.module-action .kWafnY {
   min-height: 0 !important;
 }
-.module-list .data_tableHeader .search-input{
+.module-list .data_tableHeader .search-input {
   float: right;
 }
-.module-list .card-body{
+.module-list .card-body {
   padding: 0px 25px 30px !important;
 }
-.btn-check:checked + .btn:not([class*=btn-]), :not(.btn-check) + .btn:active, .btn:first-child:active, .btn.active, .btn.show{
-
-
+.btn-check:checked + .btn:not([class*="btn-"]),
+:not(.btn-check) + .btn:active,
+.btn:first-child:active,
+.btn.active,
+.btn.show {
   --bs-btn-active-bg: #1a776f;
-  --bs-btn-active-border-color: #1a776f
-
+  --bs-btn-active-border-color: #1a776f;
 }
 
-.module-list .jyxXZY{
+.module-list .jyxXZY {
   max-width: 125px !important;
   min-width: 125px !important;
 }
