@@ -34,3 +34,37 @@
   font-size: 1.2rem;
   font-weight: 500;
 }
+
+.list-module-preview .module-list .module-switch .switch-label {
+  padding: 0;
+  background: none;
+  text-align: center;
+  border: 0;
+}
+
+.thumb {
+  cursor: pointer;
+  background: #f3f3f3;
+  color: #3f4254;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border-radius: 50px;
+  margin: 0px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #bbf4d7;
+  color: #0ea458;
+
+  &.down {
+    background: #f4bbbb;
+    color: #a40e0e;
+  }
+}
+
+.list-module-preview {
+  .form-check-input {
+    margin-top: 0;
+  }
+}
