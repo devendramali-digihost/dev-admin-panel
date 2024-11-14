@@ -275,13 +275,6 @@ const ListModulePreview = () => {
                           value={searchTerm}
                           onChange={handleSearch}
                         />
-                        <Form.Control
-                          type="text"
-                          id="m-search"
-                          placeholder="Search Page Name"
-                          value={searchTerm}
-                          onChange={handleSearch}
-                        />
                       </div>
                     </div>
                   </div>
