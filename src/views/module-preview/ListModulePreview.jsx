@@ -162,13 +162,13 @@ const ListModulePreview = () => {
         />
       ),
       sortable: true,
-      width: "300px",
+      // width: "300px",
     },
     {
       name: "Sr No #",
       selector: (row) => row.srNo,
       sortable: true,
-      width: "300px",
+      // width: "300px",
     },
     {
       name: "Page Name",
