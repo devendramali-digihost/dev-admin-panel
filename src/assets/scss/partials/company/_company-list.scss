@@ -147,12 +147,12 @@
   }
 }
 
-.rdt_Pagination {
-  #pagination-first-page,
-  #pagination-last-page {
-    display: none;
-  }
-}
+// .rdt_Pagination {
+//   #pagination-first-page,
+//   #pagination-last-page {
+//     display: none;
+//   }
+// }
 
 // .pagination {
 //   display: flex;
@@ -192,12 +192,12 @@
 }
 
 /* Hide the previous and next buttons */
-.rdt_Pagination button:first-child,
-.rdt_Pagination button:last-child,
-#pagination-next-page,
-#pagination-previous-page {
-  display: none;
-}
+// .rdt_Pagination button:first-child,
+// .rdt_Pagination button:last-child,
+// #pagination-next-page,
+// #pagination-previous-page {
+//   display: none;
+// }
 
 /* Style the pagination numbers */
 .rdt_Pagination {
