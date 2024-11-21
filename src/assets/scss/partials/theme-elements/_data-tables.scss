@@ -201,9 +201,9 @@
   min-height: 0 !important;
 }
 
-.css-1thsgv7-control {
-  border: 0 !important;
-}
+// .css-1thsgv7-control {
+//   border: 0 !important;
+// }
 
 .rdt_TableBody {
   .form-control {
@@ -311,3 +311,15 @@
 //   background-color: #007bff;
 //   color: white;
 // }
+
+.add-module-table {
+  .rdt_TableBody {
+    .sc-dstKZu {
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3) {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,59 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { Container, Card, Row, Col, Form, Button } from "react-bootstrap";
 import { FaCopy, FaFileExcel, FaFilePdf, FaPrint } from "react-icons/fa";
 import DataTable from "react-data-table-component";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import Switch from "react-switch";
 import { FaThumbsUp, FaThumbsDown } from "react-icons/fa";
+import ReactPaginate from "react-paginate";
+
+const rowsPerPage = 10;
 
 const ListModulePreview = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchClass, setSearchClass] = useState(["search-input"]);
   const [thumb, setThumb] = useState(false);
   const [headerCheckbox, setHeaderCheckbox] = useState(false);
-
-  // const filteredRows = [
-  //   { srNo: 1, pageName: "Test" },
-  //   { srNo: 2, pageName: "Blog Category" },
-  //   { srNo: 3, pageName: "Blog Category" },
-  //   { srNo: 4, pageName: "FAQ" },
-  //   { srNo: 5, pageName: "Testimonials" },
-  //   { srNo: 6, pageName: "SEO PAGE" },
-  //   { srNo: 7, pageName: "Add Blog Category" },
-  //   { srNo: 8, pageName: "Add Products" },
-  // ];
-
-  // const [rowCheckboxes, setRowCheckboxes] = useState(
-  //   filteredRows.map((row) => ({ id: row.srNo, checked: false })) // Initialize based on your row data
-  // );
-
-  // const handleHeaderCheckboxChange = () => {
-  //   const newHeaderCheckboxState = !headerCheckbox;
-  //   setHeaderCheckbox(newHeaderCheckboxState);
-
-  //   // Update all row checkboxes to match the header checkbox state
-  //   const updatedRowCheckboxes = rowCheckboxes.map((row) => ({
-  //     ...row,
-  //     checked: newHeaderCheckboxState,
-  //   }));
-  //   setRowCheckboxes(updatedRowCheckboxes);
-  // };
-
-  // // Handler for individual row checkbox changes
-  // const handleRowCheckboxChange = (id) => {
-  //   const updatedRowCheckboxes = rowCheckboxes.map((row) =>
-  //     row.srNo === id ? { ...row, checked: !row.checked } : row
-  //   );
-  //   setRowCheckboxes(updatedRowCheckboxes);
-
-  //   // Update header checkbox state based on the updated individual row checkboxes
-  //   const allChecked = updatedRowCheckboxes.every((row) => row.checked);
-  //   setHeaderCheckbox(allChecked);
-  // };
-
-  // const toggleThumb = () => {
-  //   setThumb(!thumb);
-  // };
+  const [currentPage, setCurrentPage] = useState(0);
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
@@ -86,7 +47,9 @@ const ListModulePreview = () => {
     );
   };
 
-  const [filteredRows, setFilteredRows] = useState([
+  // const [filteredRows, setFilteredRows] = useState(data);
+
+  const data = [
     { srNo: 1, pageName: "Test", thumb: false, switchState: true },
     { srNo: 2, pageName: "Blog Category", thumb: false, switchState: true },
     { srNo: 3, pageName: "Blog Category", thumb: false, switchState: true },
@@ -95,22 +58,11 @@ const ListModulePreview = () => {
     { srNo: 6, pageName: "SEO PAGE", thumb: false, switchState: true },
     { srNo: 7, pageName: "Add Blog Category", thumb: false, switchState: true },
     { srNo: 8, pageName: "Add Products", thumb: false, switchState: true },
-  ]);
-
-  // const filteredRows = [
-  //   { srNo: 1, pageName: "Test" },
-  //   { srNo: 2, pageName: "Blog Category" },
-  //   { srNo: 3, pageName: "Blog Category" },
-  //   { srNo: 4, pageName: "FAQ" },
-  //   { srNo: 5, pageName: "Testimonials" },
-  //   { srNo: 6, pageName: "SEO PAGE" },
-  //   { srNo: 7, pageName: "Add Blog Category" },
-  //   { srNo: 8, pageName: "Add Products" },
-  // ];
+  ];
 
   // Initialize row checkboxes with srNo as unique identifier
   const [rowCheckboxes, setRowCheckboxes] = useState(
-    filteredRows.map((row) => ({ id: row.srNo, checked: false }))
+    data.map((row) => ({ id: row.srNo, checked: false }))
   );
 
   const handleHeaderCheckboxChange = () => {
@@ -135,7 +87,7 @@ const ListModulePreview = () => {
   };
 
   const toggleThumb = (id) => {
-    setFilteredRows((prevRows) =>
+    data((prevRows) =>
       prevRows.map((row) =>
         row.srNo === id ? { ...row, thumb: !row.thumb } : row
       )
@@ -245,6 +197,19 @@ const ListModulePreview = () => {
     },
   };
 
+  const filteredRows = useMemo(() => {
+    return data.filter((row) =>
+      row.pageName.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }, [searchTerm, data]);
+
+  const startIndex = currentPage * rowsPerPage;
+  const endIndex = startIndex + rowsPerPage;
+
+  const handlePageClick = (event) => {
+    setCurrentPage(event.selected);
+  };
+
   return (
     <Container className="list-module-preview">
       <Row>
@@ -255,7 +220,7 @@ const ListModulePreview = () => {
                 <Col md={6}>
                   <h3>List Module Preview</h3>
                 </Col>
-                <Col md={6} className="text-end">
+                <Col md={4} className="text-end">
                   <div className="data_tableHeader">
                     <div id="main-search" className={searchClass.join(" ")}>
                       <div className="input-group" onClick={searchOnHandler}>
@@ -284,21 +249,22 @@ const ListModulePreview = () => {
             <Card.Body>
               <DataTable
                 columns={columns}
-                data={filteredRows}
+                data={filteredRows.slice(startIndex, endIndex)}
                 customStyles={customStyles}
                 responsive
                 striped
               />
-              <Row>
-                <Col lg={12} className="text-end mt-5">
-                  <Button
-                    variant="primary"
-                    className="waves-effect waves-light"
-                  >
-                    Submit
-                  </Button>
-                </Col>
-              </Row>
+              <ReactPaginate
+                previousLabel={"Previous"}
+                nextLabel={"Next"}
+                breakLabel={"..."}
+                pageCount={Math.ceil(filteredRows.length / rowsPerPage)}
+                marginPagesDisplayed={2}
+                pageRangeDisplayed={3}
+                onPageChange={handlePageClick}
+                containerClassName={"pagination"}
+                activeClassName={"active"}
+              />
             </Card.Body>
           </Card>
         </Col>

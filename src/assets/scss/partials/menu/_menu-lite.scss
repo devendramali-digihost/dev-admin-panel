@@ -1321,9 +1321,6 @@
 /* menu [ vertical ] css end */
 
 /* main content start */
-.pcoded-wrapper {
-  /*margin-top: 70px;*/
-}
 
 .pcoded-content {
   position: relative;
@@ -1331,6 +1328,7 @@
   padding: 25px;
   min-height: calc(100vh - 130px);
   padding-top: 95px;
+  padding-bottom: 60px;
 }
 
 .pcoded-main-container {
