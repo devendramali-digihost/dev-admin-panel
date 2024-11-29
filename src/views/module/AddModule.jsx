@@ -7,6 +7,10 @@ import { useParams, useNavigate } from "react-router-dom";
 import { FaPlus } from "react-icons/fa6";
 import { MdDeleteOutline } from "react-icons/md";
 import { toast } from "react-toastify";
+import { MdKeyboardBackspace } from "react-icons/md";
+import Modal from "react-bootstrap/Modal";
+// import Icon from "src/assets/images/sidebar/dashboard.svg";
+// import Icon from "/src/assets/images/sidebar/dashboard.svg";
 
 const AddModule = () => {
   const { id } = useParams();
@@ -337,6 +341,82 @@ const AddModule = () => {
     setSearchClass([""]); // Custom logic to handle closing the search
   };
 
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const options = [
+    {
+      value: "Blog",
+      label: "Blog",
+      image: "/src/assets/images/sidebar/dashboard.svg",
+    },
+    {
+      value: "Testimonial",
+      label: "Testimonial",
+      image: "/src/assets/images/sidebar/dashboard.svg",
+    },
+    {
+      value: "Services",
+      label: "Services",
+      image: "/src/assets/images/sidebar/dashboard.svg",
+    },
+    {
+      value: "About",
+      label: "About",
+      image: "/src/assets/images/sidebar/dashboard.svg",
+    },
+    {
+      value: "Others",
+      label: "Others",
+      image: "/src/assets/images/sidebar/dashboard.svg",
+    },
+  ];
+
+  const handleSelectChange = (index, option, field) => {
+    setSelectedOption(option);
+    if (option.value === "Others") {
+      setShow(true); // Open modal if "Others" is selected
+    }
+  };
+
+  const CustomSelectOption = ({ data, innerRef, innerProps }) => (
+    <div
+      ref={innerRef}
+      {...innerProps}
+      style={{ display: "flex", alignItems: "center", padding: "10px" }}
+    >
+      <img
+        src={data.image}
+        alt={data.label}
+        style={{
+          width: "25px",
+          height: "25px",
+          marginRight: "12px",
+        }}
+      />
+      {data.label}
+    </div>
+  );
+
+  const CustomSingleValue = ({ data }) => (
+    <div style={{ display: "flex", alignItems: "center" }}>
+      <img
+        src={data.image}
+        alt={data.label}
+        style={{
+          width: "25px",
+          height: "25px",
+          marginRight: "18px",
+        }}
+      />
+      {data.label}
+    </div>
+  );
+
   return (
     <React.Fragment>
       <Row>
@@ -344,55 +424,49 @@ const AddModule = () => {
           <form onSubmit={handlesubmitbtn}>
             <Card className="create_new_page_card add-module add-module-table">
               <Card.Header>
-                <Row className="justify-content-between">
-                  <Col md={12}>
-                    <h3>Add Module</h3>
-                  </Col>
+                <Row className="">
                   <Col lg={4}>
                     <div className="data_tableHeader">
                       <div className="search-input mb-1">
-                        <Form.Label className="w-50 mb-0">Page Name</Form.Label>
-                        <div>
-                          <Form.Control
-                            type="text"
-                            value={table_name}
-                            onChange={handleinput}
-                            name="table_name"
-                            placeholder="Page Name"
-                          />
-                          {errors.table_name && (
-                            <span className="text-danger pg-er">
-                              {errors.table_name}
-                            </span>
-                          )}
-                        </div>
+                        <Form.Label>Icon Title</Form.Label>
+                        <Form.Control
+                          type="text"
+                          value={table_name}
+                          onChange={handleinput}
+                          name="table_name"
+                          placeholder="Icon Title"
+                        />
+                        {errors.table_name && (
+                          <span className="text-danger pg-er">
+                            {errors.table_name}
+                          </span>
+                        )}
                       </div>
                     </div>
                   </Col>
-                  <Col lg={3}>
+                  <Col lg={4}>
                     <div className="data_tableHeader">
-                      {/* Your custom search component */}
-                      <div id="main-search" className={searchClass.join(" ")}>
-                        {/* <div className="input-group" onClick={searchOnHandler}>
-                          <span
-                            onKeyDown={searchOnHandler}
-                            role="button"
-                            tabIndex="0"
-                            className="input-group-append search-btn"
-                            style={{ borderRadius: "50%", marginRight: 15 }}
-                          >
-                            <i className="feather icon-search input-group-text" />
-                          </span>
-                          <input
-                            type="text"
-                            id="m-search"
-                            className="form-control"
-                            placeholder="Search Page Name"
-                            value={searchTerm}
-                            onChange={handleSearch}
-                          />
-                        </div> */}
-                      </div>
+                      <Form.Label>Select Title</Form.Label>
+                      <Select
+                        options={options}
+                        value={selectedOption}
+                        onChange={(option) => handleSelectChange(0, option, "")}
+                        components={{
+                          Option: CustomSelectOption,
+                          SingleValue: CustomSingleValue,
+                        }}
+                      />
+                    </div>
+                  </Col>
+                  <Col lg={4}>
+                    <div className="data_tableHeader">
+                      <Form.Group className="mb-3" controlId="PageName">
+                        <Form.Label>Upload</Form.Label>
+                        <Form.Control
+                          type="file"
+                          placeholder="Page Name"
+                        ></Form.Control>
+                      </Form.Group>
                     </div>
                   </Col>
                 </Row>
@@ -415,14 +489,25 @@ const AddModule = () => {
 
                 <Row>
                   <Col lg={12}>
-                    <div className="text-end mt-5">
-                      <Button
-                        type="submit"
-                        className="waves-effect waves-light"
-                        variant="primary"
-                      >
-                        Submit
-                      </Button>
+                    <div className="d-flex justify-content-between mt-3 align-items-center">
+                      <div className="text-end">
+                        <Button
+                          type="submit"
+                          className="back-button"
+                          variant="primary"
+                        >
+                          <MdKeyboardBackspace /> Back
+                        </Button>
+                      </div>
+                      <div className="text-end">
+                        <Button
+                          type="submit"
+                          className="waves-effect waves-light"
+                          variant="primary"
+                        >
+                          Submit
+                        </Button>
+                      </div>
                     </div>
                   </Col>
                 </Row>
@@ -431,6 +516,40 @@ const AddModule = () => {
           </form>
         </Col>
       </Row>
+      <Modal show={show} onHide={handleClose} className="other-icon-modal">
+        <Modal.Header closeButton></Modal.Header>
+        <Modal.Body>
+          <h3>Upload Other Icons</h3>
+          <form action="">
+            <div className="mb-3">
+              <div className="search-input mb-1">
+                <Form.Label>Icon Title</Form.Label>
+                <Form.Control
+                  type="text"
+                  value={table_name}
+                  onChange={handleinput}
+                  name="table_name"
+                  placeholder="Page Name"
+                />
+              </div>
+            </div>
+            <div className="mb-3">
+              <Form.Group className="mb-3" controlId="PageName">
+                <Form.Label>Upload Icon</Form.Label>
+                <Form.Control
+                  type="file"
+                  placeholder="Page Name"
+                ></Form.Control>
+              </Form.Group>
+            </div>
+            <div className="text-center mt-4">
+              <Button variant="primary" onClick={handleClose}>
+                Submit
+              </Button>
+            </div>
+          </form>
+        </Modal.Body>
+      </Modal>
     </React.Fragment>
   );
 };

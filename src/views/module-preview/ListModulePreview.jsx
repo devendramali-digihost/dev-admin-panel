@@ -24,32 +24,7 @@ const ListModulePreview = () => {
     // Logic for handling search input interactions
   };
 
-  const switchesData = [{ label: "", id: 1 }];
-  const [switchStates, setSwitchStates] = useState(
-    switchesData.reduce((acc, item) => {
-      acc[item.id] = true;
-      return acc;
-    }, {})
-  );
-
-  // const handleChange = (id) => {
-  //   setSwitchStates((prevStates) => ({
-  //     ...prevStates,
-  //     [id]: !prevStates[id],
-  //   }));
-  // };
-
-  const handleChange = (id) => {
-    setFilteredRows((prevRows) =>
-      prevRows.map((row) =>
-        row.srNo === id ? { ...row, switchState: !row.switchState } : row
-      )
-    );
-  };
-
-  // const [filteredRows, setFilteredRows] = useState(data);
-
-  const data = [
+  const [data, setData] = useState([
     { srNo: 1, pageName: "Test", thumb: false, switchState: true },
     { srNo: 2, pageName: "Blog Category", thumb: false, switchState: true },
     { srNo: 3, pageName: "Blog Category", thumb: false, switchState: true },
@@ -58,7 +33,15 @@ const ListModulePreview = () => {
     { srNo: 6, pageName: "SEO PAGE", thumb: false, switchState: true },
     { srNo: 7, pageName: "Add Blog Category", thumb: false, switchState: true },
     { srNo: 8, pageName: "Add Products", thumb: false, switchState: true },
-  ];
+  ]);
+
+  const handleChange = (id) => {
+    setData((prevRows) =>
+      prevRows.map((row) =>
+        row.srNo === id ? { ...row, switchState: !row.switchState } : row
+      )
+    );
+  };
 
   // Initialize row checkboxes with srNo as unique identifier
   const [rowCheckboxes, setRowCheckboxes] = useState(
@@ -87,7 +70,7 @@ const ListModulePreview = () => {
   };
 
   const toggleThumb = (id) => {
-    data((prevRows) =>
+    setData((prevRows) =>
       prevRows.map((row) =>
         row.srNo === id ? { ...row, thumb: !row.thumb } : row
       )
@@ -114,13 +97,11 @@ const ListModulePreview = () => {
         />
       ),
       sortable: true,
-      // width: "300px",
     },
     {
       name: "Sr No #",
       selector: (row) => row.srNo,
       sortable: true,
-      // width: "300px",
     },
     {
       name: "Page Name",
@@ -130,17 +111,6 @@ const ListModulePreview = () => {
     {
       name: "Current Status",
       selector: (row) => (
-        // <div className="checkboxes module-switch">
-        //   {/* {switchesData.map((switchItem) => ( */}
-        //   <label key={row.srNo} className="switch-label">
-        //     {/* <span>{row.pageName}</span> */}
-        //     <Switch
-        //       onChange={() => handleChange(row.srNo)}
-        //       checked={row.switchStates}
-        //     />
-        //   </label>
-        //   {/* ))} */}
-        // </div>
         <div className="checkboxes module-switch">
           <label key={row.srNo} className="switch-label">
             <Switch
