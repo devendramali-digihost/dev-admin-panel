@@ -39,8 +39,6 @@ const MultiStepForm = ({ num }) => {
     setCartItems(cartItems.filter((item) => item.id !== id));
   };
 
-
-
   const handleCheckboxChange = (e) => {
     const { value, checked } = e.target;
     setFormData((prev) => {
@@ -96,7 +94,6 @@ const MultiStepForm = ({ num }) => {
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
   };
-
 
   const handleViewStructureClick = () => {
     setShowModuleBlock(true); // Show ModuleBlock
@@ -246,7 +243,6 @@ const MultiStepForm = ({ num }) => {
                       </i>
                     </Link>
                   </div>
-
                 </p>
                 <p className="personalInfo">
                   Please provide your company details.
@@ -652,7 +648,7 @@ const MultiStepForm = ({ num }) => {
                                         <FaRegEye />
                                       </a>
                                       <a
-                                      href="#"
+                                        href="#"
                                         onClick={handleViewStructureClick}
                                         title="View Structure"
                                         className="view-color m-l-10"
@@ -700,7 +696,7 @@ const MultiStepForm = ({ num }) => {
                                         <FaRegEye />
                                       </a>
                                       <a
-                                      href="#"
+                                        href="#"
                                         onClick={handleViewStructureClick}
                                         title="View Structure"
                                         className="view-color m-l-10"
@@ -819,65 +815,60 @@ const MultiStepForm = ({ num }) => {
                       </Col>
 
                       <Col lg={4}>
-                        {/* <div className="text-right">
-                          <Link
-                            to="/dev-forms/details-form"
-                            className="create-button btn btn-primary waves-effect waves-light"
-                          >
-                            <AiOutlineImport /> Import Additional Modules
-                          </Link>
-                        </div> */}
-                        <button className="cart-button btn btn-primary" onClick={() => setCartOpen(!cartOpen)}>
-        {cartOpen ? "Close Cart" : "Open Cart"}
-      </button>
-      {cartOpen && (
-        <div
-          className="cart-overlay"
-          onClick={() => setCartOpen(false)}
-        ></div>
-      )}
+                        {/* <button>Open</button> */}
+                        <div
+                          className="cart-button btn btn-primary"
+                          onClick={() => setCartOpen(!cartOpen)}
+                        >
+                          {cartOpen ? "Close Cart" : "Open Cart"}
+                          open
+                        </div>
+                        {cartOpen && (
+                          <div
+                            className="cart-overlay"
+                            onClick={() => setCartOpen(false)}
+                          ></div>
+                        )}
                       </Col>
-
                     </Row>
                     <Row className="m-t-30">
                       <Col lg={12}>
-                      <div className="module-cart">
-
-                      <div className={`cart-panel ${cartOpen ? "open" : ""}`}>
-        <button className="close-button" onClick={() => setCartOpen(false)}>
-          ✖
-        </button>
-        <h2>Module List</h2>
-        {cartItems.length > 0 ? (
-          <ul className="cart-list">
-            {cartItems.map((item) => (
-              <li key={item.id} className="cart-item">
-                <span>{item.name}</span>
-                <button
-                  className="delete-button"
-                  onClick={() => removeItem(item.id)}
-                >
-                  <MdDeleteOutline />
-                </button>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="empty-message">Your list is empty.</p>
-        )}
-      </div>
-
-
-                  </div>
+                        <div className="module-cart">
+                          <div
+                            className={`cart-panel ${cartOpen ? "open" : ""}`}
+                          >
+                            <div
+                              className="close-button"
+                              onClick={() => setCartOpen(false)}
+                            >
+                              ✖
+                            </div>
+                            <h2>Module List</h2>
+                            {cartItems.length > 0 ? (
+                              <ul className="cart-list">
+                                {cartItems.map((item) => (
+                                  <li key={item.id} className="cart-item">
+                                    <span>{item.name}</span>
+                                    <button
+                                      className="delete-button"
+                                      onClick={() => removeItem(item.id)}
+                                    >
+                                      <MdDeleteOutline />
+                                    </button>
+                                  </li>
+                                ))}
+                              </ul>
+                            ) : (
+                              <p className="empty-message">
+                                Your list is empty.
+                              </p>
+                            )}
+                          </div>
+                        </div>
                       </Col>
                       <Col lg={12}>
                         <div className="module-list">
-                          {/* <h3>Dental Modules</h3> */}
                           <div className="checkboxes module-switch">
-                            {/* <label>
-                  <span>Services</span>
-                  <Switch onChange={handleChange} checked={checked} />
-                </label> */}
                             {switchesData.map((switchItem) => (
                               <label
                                 key={switchItem.id}
@@ -896,7 +887,6 @@ const MultiStepForm = ({ num }) => {
                     </Row>
                   </div>
                 )}
-
               </div>
             </div>
             <div
@@ -992,17 +982,17 @@ const MultiStepForm = ({ num }) => {
                                       <FaRegEye />
                                     </a> */}
                                     <div className="checbox-pos">
-                                     <label>
-                                      <input
-                                        type="checkbox"
-                                        checked={
-                                          selectedCards[card.id] || false
-                                        }
-                                        onChange={() =>
-                                          handleSelectCard(card.id)
-                                        }
-                                      />
-                                    </label>
+                                      <label>
+                                        <input
+                                          type="checkbox"
+                                          checked={
+                                            selectedCards[card.id] || false
+                                          }
+                                          onChange={() =>
+                                            handleSelectCard(card.id)
+                                          }
+                                        />
+                                      </label>
                                     </div>
                                   </div>
                                 </Card.Title>
@@ -1041,7 +1031,6 @@ const MultiStepForm = ({ num }) => {
 
                           <br />
                           <button className="btn btn-primary">Skip</button>
-
                         </div>
                       </Row>
                     </Form>
