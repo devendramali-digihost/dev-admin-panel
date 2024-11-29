@@ -7,6 +7,7 @@ import { admin1, admin2, website1, website2 } from "../../images";
 import { AiOutlineImport } from "react-icons/ai";
 import Switch from "react-switch";
 import { DomainVerificationForm } from "./DomainVerificationForm";
+import { MdDeleteOutline } from "react-icons/md";
 
 const MultiStepForm = ({ num }) => {
   const [step, setStep] = useState(1);
@@ -26,6 +27,19 @@ const MultiStepForm = ({ num }) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+  const [cartOpen, setCartOpen] = useState(false);
+
+  const [cartItems, setCartItems] = useState([
+    { id: 1, name: "Services" },
+    { id: 2, name: "FAQ" },
+    { id: 3, name: "Gallery without category" },
+  ]);
+
+  const removeItem = (id) => {
+    setCartItems(cartItems.filter((item) => item.id !== id));
+  };
+
+
 
   const handleCheckboxChange = (e) => {
     const { value, checked } = e.target;
@@ -704,6 +718,7 @@ const MultiStepForm = ({ num }) => {
                     </Row>
                   </div>
                 )}
+
                 {/* ModuleBlock with conditional visibility */}
                 <div
                   className={`mainForm ${showModuleBlock ? "show" : "hide"}`}
@@ -812,9 +827,49 @@ const MultiStepForm = ({ num }) => {
                             <AiOutlineImport /> Import Additional Modules
                           </Link>
                         </div> */}
+                        <button className="cart-button btn btn-primary" onClick={() => setCartOpen(!cartOpen)}>
+        {cartOpen ? "Close Cart" : "Open Cart"}
+      </button>
+      {cartOpen && (
+        <div
+          className="cart-overlay"
+          onClick={() => setCartOpen(false)}
+        ></div>
+      )}
                       </Col>
+
                     </Row>
                     <Row className="m-t-30">
+                      <Col lg={12}>
+                      <div className="module-cart">
+
+                      <div className={`cart-panel ${cartOpen ? "open" : ""}`}>
+        <button className="close-button" onClick={() => setCartOpen(false)}>
+          ✖
+        </button>
+        <h2>Module List</h2>
+        {cartItems.length > 0 ? (
+          <ul className="cart-list">
+            {cartItems.map((item) => (
+              <li key={item.id} className="cart-item">
+                <span>{item.name}</span>
+                <button
+                  className="delete-button"
+                  onClick={() => removeItem(item.id)}
+                >
+                  <MdDeleteOutline />
+                </button>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="empty-message">Your list is empty.</p>
+        )}
+      </div>
+
+
+                  </div>
+                      </Col>
                       <Col lg={12}>
                         <div className="module-list">
                           {/* <h3>Dental Modules</h3> */}
@@ -841,6 +896,7 @@ const MultiStepForm = ({ num }) => {
                     </Row>
                   </div>
                 )}
+
               </div>
             </div>
             <div
