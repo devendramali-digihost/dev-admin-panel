@@ -815,13 +815,11 @@ const MultiStepForm = ({ num }) => {
                       </Col>
 
                       <Col lg={4}>
-                        {/* <button>Open</button> */}
                         <div
                           className="cart-button btn btn-primary"
                           onClick={() => setCartOpen(!cartOpen)}
                         >
-                          {cartOpen ? "Close Cart" : "Open Cart"}
-                          open
+                          {cartOpen ? "Close Modules" : "Show Modules"}
                         </div>
                         {cartOpen && (
                           <div
