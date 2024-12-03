@@ -8,6 +8,7 @@ import { AiOutlineImport } from "react-icons/ai";
 import Switch from "react-switch";
 import { DomainVerificationForm } from "./DomainVerificationForm";
 import { MdDeleteOutline } from "react-icons/md";
+import { LiaTimesSolid } from "react-icons/lia";
 
 const MultiStepForm = ({ num }) => {
   const [step, setStep] = useState(1);
@@ -578,7 +579,7 @@ const MultiStepForm = ({ num }) => {
                             <Col lg={8}>
                               <Row>
                                 <div className="form-btn-panel">
-                                  <select
+                                  {/* <select
                                     id="options"
                                     value={selectedOption}
                                     onChange={handleSelectChange}
@@ -596,7 +597,7 @@ const MultiStepForm = ({ num }) => {
                                     <option value="option3">
                                       E-commerce Templates
                                     </option>
-                                  </select>
+                                  </select> */}
 
                                   <div className="text-right m-l-10">
                                     <Link
@@ -798,7 +799,6 @@ const MultiStepForm = ({ num }) => {
                           </div>
                         </div>
                       </Col>
-
                       <Col lg={5}>
                         <Form.Group className="mb-3" controlId="DomainName">
                           <div className="input-group rounded">
@@ -813,7 +813,6 @@ const MultiStepForm = ({ num }) => {
                           </div>
                         </Form.Group>
                       </Col>
-
                       <Col lg={4}>
                         <div
                           className="cart-button btn btn-primary"
@@ -830,41 +829,7 @@ const MultiStepForm = ({ num }) => {
                       </Col>
                     </Row>
                     <Row className="m-t-30">
-                      <Col lg={12}>
-                        <div className="module-cart">
-                          <div
-                            className={`cart-panel ${cartOpen ? "open" : ""}`}
-                          >
-                            <div
-                              className="close-button"
-                              onClick={() => setCartOpen(false)}
-                            >
-                              ✖
-                            </div>
-                            <h2>Module List</h2>
-                            {cartItems.length > 0 ? (
-                              <ul className="cart-list">
-                                {cartItems.map((item) => (
-                                  <li key={item.id} className="cart-item">
-                                    <span>{item.name}</span>
-                                    <button
-                                      className="delete-button"
-                                      onClick={() => removeItem(item.id)}
-                                    >
-                                      <MdDeleteOutline />
-                                    </button>
-                                  </li>
-                                ))}
-                              </ul>
-                            ) : (
-                              <p className="empty-message">
-                                Your list is empty.
-                              </p>
-                            )}
-                          </div>
-                        </div>
-                      </Col>
-                      <Col lg={12}>
+                      <Col lg={8}>
                         <div className="module-list">
                           <div className="checkboxes module-switch">
                             {switchesData.map((switchItem) => (
@@ -879,6 +844,39 @@ const MultiStepForm = ({ num }) => {
                                 />
                               </label>
                             ))}
+                          </div>
+                        </div>
+                      </Col>
+                      <Col lg={4}>
+                        <div className="module-cart">
+                          <div className="cart-panel">
+                            <h2>Module List</h2>
+                            {cartItems.length > 0 ? (
+                              <ul className="cart-list">
+                                {cartItems.map((item) => (
+                                  <li key={item.id} className="cart-item">
+                                    <span>{item.name}</span>
+                                    <button
+                                      className="delete-button"
+                                      onClick={() => removeItem(item.id)}
+                                    >
+                                      <LiaTimesSolid />
+                                    </button>
+                                  </li>
+                                ))}
+                              </ul>
+                            ) : (
+                              <p className="empty-message">
+                                Your list is empty.
+                              </p>
+                            )}
+                            <div className="input-bottom">
+                              <input
+                                type="text"
+                                className="form-control"
+                                placeholder="Enter template name"
+                              />
+                            </div>
                           </div>
                         </div>
                       </Col>

@@ -1314,27 +1314,20 @@ input[type="number"] {
   }
 
   .cart-panel {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 300px;
-    height: 100%;
     background-color: #f9f9f9;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0 3px rgb(0 0 0 / 17%);
     transition: right 0.3s ease-in-out;
     z-index: 20;
     padding: 20px;
     box-sizing: border-box;
-
-    &.open {
-      right: 0;
-    }
+    height: 64vh;
+    // padding-bottom: 1px;
 
     h2 {
       margin-top: 0;
       color: rgb(22, 102, 95);
-      text-align: center;
-      font-size: 20px;
+      font-size: 18px;
+      font-weight: 500;
     }
 
     .close-button {
@@ -1356,13 +1349,20 @@ input[type="number"] {
       list-style: none;
       padding: 0;
       margin: 20px 0;
+      margin-bottom: 0;
+
+      // display: flex;
+      // flex-wrap: wrap;
+      // align-items: center;
+      // gap: 20px;
 
       .cart-item {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 10px 0;
-        border-bottom: 1px solid #ddd;
+        padding: 8px 0;
+        gap: 10px;
+        border-bottom: 1px solid #d3e9e7;
 
         &:last-child {
           border-bottom: none;
@@ -1372,11 +1372,17 @@ input[type="number"] {
           background-color: #ff5252;
           color: white;
           border: none;
-          padding: 5px 10px;
+          // padding: 5px 10px;
           border-radius: 5px;
-          font-size: 14px;
+          font-size: 13px;
           cursor: pointer;
           transition: background-color 0.3s ease;
+          width: 25px;
+          height: 25px;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
           &:hover {
             background-color: #cc0000;
@@ -1391,4 +1397,13 @@ input[type="number"] {
       color: #555;
     }
   }
+}
+
+.input-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px 15px;
+  width: 100%;
+  background: #f9f9f9;
 }
