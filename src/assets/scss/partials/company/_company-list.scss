@@ -41,7 +41,7 @@
       padding: 10px 0px;
     }
   }
-  .checbox-pos input[type="checkbox"]:checked {
+  .checbox-pos input[type="radio"]:checked {
     background-color: #16665f;
     border-color: #16665f;
   }
@@ -730,7 +730,7 @@ button[disabled] {
   right: 5px;
   bottom: 35px;
 }
-.checbox-pos input[type="checkbox"] {
+.checbox-pos input[type="radio"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -749,24 +749,24 @@ button[disabled] {
   display: flex !important;
   align-items: flex-start !important;
 }
-.checbox-size input[type="checkbox"] {
+.checbox-size input[type="radio"] {
   width: 16px; /* Adjust size as needed */
   height: 16px;
 }
 /* Background color and border on hover */
-.checbox-pos input[type="checkbox"]:hover {
+.checbox-pos input[type="radio"]:hover {
   background-color: #f0f8ff; /* Light hover color */
   border-color: #16665f; /* Darker border on hover */
 }
 
 /* Background color when checked */
-.checbox-pos input[type="checkbox"]:checked {
+.checbox-pos input[type="radio"]:checked {
   background-color: #16665f;
   border-color: #16665f;
 }
 
 /* Custom checkmark when checked */
-.checbox-pos input[type="checkbox"]:checked::before {
+.checbox-pos input[type="radio"]:checked::before {
   content: "✓"; /* Checkmark symbol */
   color: white;
   font-size: 16px;
@@ -1406,4 +1406,35 @@ input[type="number"] {
   padding: 10px 15px;
   width: 100%;
   background: #f9f9f9;
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .checbox-pos {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    height: 20px;
+    display: block;
+
+    &input[type="radio"] {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.module-list .module-switch .switch-label {
+  max-width: 200px;
+}
+
+.import-module {
+  h4 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1a1a1a;
+  }
 }

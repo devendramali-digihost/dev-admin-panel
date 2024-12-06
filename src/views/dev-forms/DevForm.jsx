@@ -21,6 +21,18 @@ const MultiStepForm = ({ num }) => {
     billingType: "Monthly",
   });
 
+  const [clickedChecks, setClickedChecks] = useState(null);
+
+  const handleClickedCheck = (id) => {
+    setClickedChecks(id);
+    // setClickedChecks(((prev) => ({ ...prev, [id]: !prev[id] })));
+  };
+
+  const templateCards = [
+    { id: 1, title: "Dental", image: website1 },
+    { id: 2, title: "Real Estate", image: website2 },
+  ];
+
   const nextStep = () => setStep((prevStep) => Math.min(prevStep + 1, 5));
   const prevStep = () => setStep((prevStep) => Math.max(prevStep - 1, 1));
 
@@ -84,8 +96,11 @@ const MultiStepForm = ({ num }) => {
     setReviewCards((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
-  const handleStartFromScratchClick = () => {
-    setShowScratchModules(true); // Show ScratchModules div on click
+  const [ClickedModule, setClickedModule] = useState(false);
+
+  const handleStartFromScratchClick = (targetModule) => {
+    setShowScratchModules(true);
+    setClickedModule(targetModule);
   };
   const handleResetStartFromScratchClick = () => {
     setShowScratchModules(false); // Hide ScratchModules div on reset
@@ -603,7 +618,11 @@ const MultiStepForm = ({ num }) => {
                                     <Link
                                       to="#"
                                       className="create-button btn btn-primary"
-                                      onClick={handleStartFromScratchClick}
+                                      onClick={() =>
+                                        handleStartFromScratchClick(
+                                          "startFromScratch"
+                                        )
+                                      }
                                     >
                                       <FaEdit /> Start From Scratch
                                     </Link>
@@ -614,101 +633,80 @@ const MultiStepForm = ({ num }) => {
                           </Row>
 
                           <Row>
-                            <Col lg={4}>
-                              <Card className="project-card admin-card">
-                                <div className="card-image-wrapper">
-                                  <Card.Img variant="top" src={admin1} />
-                                  <div className="overlay">
-                                    <div className="button">
-                                      <a
-                                        href="#"
-                                        target="_blank"
-                                        className="create-button btn btn-primary"
-                                      >
-                                        Preview
-                                      </a>
-                                      <a
-                                        onClick={handleViewStructureClick}
-                                        className="create-button btn btn-primary"
-                                      >
-                                        View Structure
-                                      </a>
+                            {templateCards.map((templateCard) => (
+                              <Col lg={4}>
+                                <Card
+                                  className={`project-card admin-card ${clickedChecks === templateCard.id ? "selected" : ""}`}
+                                >
+                                  <div className="card-image-wrapper">
+                                    <Card.Img
+                                      variant="top"
+                                      src={templateCard.image}
+                                    />
+                                    <div className="overlay">
+                                      <div className="button">
+                                        <a
+                                          href="#"
+                                          target="_blank"
+                                          className="create-button btn btn-primary"
+                                        >
+                                          Preview
+                                        </a>
+                                        <a
+                                          onClick={handleViewStructureClick}
+                                          className="create-button btn btn-primary"
+                                        >
+                                          View Structure
+                                        </a>
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                                <Card.Body>
-                                  <Card.Title>
-                                    Real Estate
-                                    <div style={{ float: "right" }}>
-                                      <a
-                                        href="#"
-                                        title="View"
-                                        target="_blank"
-                                        className="view-color"
+                                  <Card.Body>
+                                    <Card.Title>
+                                      {templateCard.title}
+                                      <div
+                                        style={{ float: "right" }}
+                                        className="card-icon"
                                       >
-                                        <FaRegEye />
-                                      </a>
-                                      <a
-                                        href="#"
-                                        onClick={handleViewStructureClick}
-                                        title="View Structure"
-                                        className="view-color m-l-10"
-                                      >
-                                        <FaThLarge />
-                                      </a>
-                                    </div>
-                                  </Card.Title>
-                                </Card.Body>
-                              </Card>
-                            </Col>
-
-                            <Col lg={4}>
-                              <Card className="project-card admin-card">
-                                <div className="card-image-wrapper">
-                                  <Card.Img variant="top" src={admin2} />
-                                  <div className="overlay">
-                                    <div className="button">
-                                      <a
-                                        href="#"
-                                        target="_blank"
-                                        className="create-button btn btn-primary"
-                                      >
-                                        Preview
-                                      </a>
-                                      <a
-                                        onClick={handleViewStructureClick}
-                                        className="create-button btn btn-primary"
-                                      >
-                                        View Structure
-                                      </a>
-                                    </div>
-                                  </div>
-                                </div>
-                                <Card.Body>
-                                  <Card.Title>
-                                    Dental
-                                    <div style={{ float: "right" }}>
-                                      <a
-                                        href="#"
-                                        title="View"
-                                        target="_blank"
-                                        className="view-color"
-                                      >
-                                        <FaRegEye />
-                                      </a>
-                                      <a
-                                        href="#"
-                                        onClick={handleViewStructureClick}
-                                        title="View Structure"
-                                        className="view-color m-l-10"
-                                      >
-                                        <FaThLarge />
-                                      </a>
-                                    </div>
-                                  </Card.Title>
-                                </Card.Body>
-                              </Card>
-                            </Col>
+                                        <a
+                                          href="#"
+                                          title="View"
+                                          target="_blank"
+                                          className="view-color"
+                                        >
+                                          <FaRegEye />
+                                        </a>
+                                        <a
+                                          href="#"
+                                          onClick={handleViewStructureClick}
+                                          title="View Structure"
+                                          className="view-color"
+                                        >
+                                          <FaThLarge />
+                                        </a>
+                                        <span className="checbox-pos">
+                                          <label>
+                                            <input
+                                              type="radio"
+                                              name="templateCardRadio" // Ensures mutual exclusivity
+                                              checked={
+                                                clickedChecks ===
+                                                templateCard.id
+                                              }
+                                              onChange={() =>
+                                                handleClickedCheck(
+                                                  templateCard.id
+                                                )
+                                              }
+                                            />
+                                          </label>
+                                        </span>
+                                      </div>
+                                    </Card.Title>
+                                  </Card.Body>
+                                </Card>
+                              </Col>
+                            ))}
                           </Row>
                         </Form>
                       </Col>
@@ -732,7 +730,7 @@ const MultiStepForm = ({ num }) => {
                     </div>
                   </p>
                   <Row>
-                    <Col lg={3}>
+                    {/* <Col lg={3}>
                       <div className="module-list">
                         <div class="checkboxes module-switch switch-no-bg">
                           <label className="switch-label">
@@ -744,16 +742,18 @@ const MultiStepForm = ({ num }) => {
                           </label>
                         </div>
                       </div>
-                    </Col>
+                    </Col> */}
 
-                    <Col lg={5}></Col>
+                    {/* <Col lg={5}></Col> */}
 
-                    <Col lg={4}>
+                    <Col lg={12}>
                       <div className="text-right">
                         <Link
                           to="/dev-forms/details-form"
                           className="create-button btn btn-primary waves-effect waves-light"
-                          // onClick={handleStartFromScratchClick}
+                          onClick={() =>
+                            handleStartFromScratchClick("importModule")
+                          }
                         >
                           <AiOutlineImport /> Import Additional Modules
                         </Link>
@@ -784,103 +784,158 @@ const MultiStepForm = ({ num }) => {
                   </Row>
                 </div>
                 {showScratchModules && (
-                  <div className="SracthModules" id="SracthModules">
-                    <Row>
-                      <Col lg={3}>
-                        <div className="module-list">
-                          <div class="checkboxes module-switch switch-no-bg">
-                            <label className="switch-label">
-                              <Switch
-                                onChange={handleSelectAllChange}
-                                checked={selectAll}
-                              />
-                              <span>Select All</span>
-                            </label>
-                          </div>
-                        </div>
-                      </Col>
-                      <Col lg={5}>
-                        <Form.Group className="mb-3" controlId="DomainName">
-                          <div className="input-group rounded">
-                            <Form.Control
-                              type="text"
-                              placeholder="Search modules by"
-                              className="rounded-start"
-                            />
-                            <span className="input-group-text rounded-end">
-                              <FaSearch />
-                            </span>
-                          </div>
-                        </Form.Group>
-                      </Col>
-                      <Col lg={4}>
-                        <div
-                          className="cart-button btn btn-primary"
-                          onClick={() => setCartOpen(!cartOpen)}
-                        >
-                          {cartOpen ? "Close Modules" : "Show Modules"}
-                        </div>
-                        {cartOpen && (
-                          <div
-                            className="cart-overlay"
-                            onClick={() => setCartOpen(false)}
-                          ></div>
-                        )}
-                      </Col>
-                    </Row>
-                    <Row className="m-t-30">
-                      <Col lg={8}>
-                        <div className="module-list">
-                          <div className="checkboxes module-switch">
-                            {switchesData.map((switchItem) => (
-                              <label
-                                key={switchItem.id}
-                                className="switch-label"
-                              >
-                                <span>{switchItem.label}</span>
-                                <Switch
-                                  onChange={() => handleChange(switchItem.id)}
-                                  checked={switchStates[switchItem.id]}
+                  <div
+                    className={`SracthModules ${ClickedModule === "importModule" ? "import-module" : "start-from-scratch"}`}
+                    id="SracthModules"
+                  >
+                    {ClickedModule === "startFromScratch" && (
+                      <>
+                        <Row>
+                          <Col lg={3}>
+                            <div className="module-list">
+                              <div class="checkboxes module-switch switch-no-bg">
+                                <label className="switch-label">
+                                  <Switch
+                                    onChange={handleSelectAllChange}
+                                    checked={selectAll}
+                                  />
+                                  <span>Select All</span>
+                                </label>
+                              </div>
+                            </div>
+                          </Col>
+                          <Col lg={5}>
+                            <Form.Group className="mb-3" controlId="DomainName">
+                              <div className="input-group rounded">
+                                <Form.Control
+                                  type="text"
+                                  placeholder="Search modules by"
+                                  className="rounded-start"
                                 />
-                              </label>
-                            ))}
-                          </div>
-                        </div>
-                      </Col>
-                      <Col lg={4}>
-                        <div className="module-cart">
-                          <div className="cart-panel">
-                            <h2>Module List</h2>
-                            {cartItems.length > 0 ? (
-                              <ul className="cart-list">
-                                {cartItems.map((item) => (
-                                  <li key={item.id} className="cart-item">
-                                    <span>{item.name}</span>
-                                    <button
-                                      className="delete-button"
-                                      onClick={() => removeItem(item.id)}
-                                    >
-                                      <LiaTimesSolid />
-                                    </button>
-                                  </li>
-                                ))}
-                              </ul>
-                            ) : (
-                              <p className="empty-message">
-                                Your list is empty.
-                              </p>
+                                <span className="input-group-text rounded-end">
+                                  <FaSearch />
+                                </span>
+                              </div>
+                            </Form.Group>
+                          </Col>
+                          <Col lg={4}>
+                            <div
+                              className="cart-button btn btn-primary"
+                              onClick={() => setCartOpen(!cartOpen)}
+                            >
+                              {cartOpen ? "Close Modules" : "Show Modules"}
+                            </div>
+                            {cartOpen && (
+                              <div
+                                className="cart-overlay"
+                                onClick={() => setCartOpen(false)}
+                              ></div>
                             )}
-                            <div className="input-bottom">
-                              <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Enter template name"
-                              />
+                          </Col>
+                        </Row>
+                        <Row className="m-t-30">
+                          <Col lg={8}>
+                            <div className="module-list">
+                              <div className="checkboxes module-switch">
+                                {switchesData.map((switchItem) => (
+                                  <label
+                                    key={switchItem.id}
+                                    className="switch-label"
+                                  >
+                                    <span>{switchItem.label}</span>
+                                    <Switch
+                                      onChange={() =>
+                                        handleChange(switchItem.id)
+                                      }
+                                      checked={switchStates[switchItem.id]}
+                                    />
+                                  </label>
+                                ))}
+                              </div>
+                            </div>
+                          </Col>
+                          <Col lg={4}>
+                            <div className="module-cart">
+                              <div className="cart-panel">
+                                <h2>Module List</h2>
+                                {cartItems.length > 0 ? (
+                                  <ul className="cart-list">
+                                    {cartItems.map((item) => (
+                                      <li key={item.id} className="cart-item">
+                                        <span>{item.name}</span>
+                                        <button
+                                          className="delete-button"
+                                          onClick={() => removeItem(item.id)}
+                                        >
+                                          <LiaTimesSolid />
+                                        </button>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                ) : (
+                                  <p className="empty-message">
+                                    Your list is empty.
+                                  </p>
+                                )}
+                                <div className="input-bottom">
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="Enter template name"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </Col>
+                        </Row>
+                      </>
+                    )}
+                    {ClickedModule === "importModule" && (
+                      <Row className="mt-5">
+                        <Col lg={12}>
+                          <Row>
+                            <Col lg={7} className="ms-auto pe-0">
+                              <h4>Additional Module</h4>
+                            </Col>
+                            <Col lg={5} className="ms-auto pe-0">
+                              <Form.Group
+                                className="mb-4"
+                                controlId="DomainName"
+                              >
+                                <div className="input-group rounded">
+                                  <Form.Control
+                                    type="text"
+                                    placeholder="Search modules by"
+                                    className="rounded-start"
+                                  />
+                                  <span className="input-group-text rounded-end">
+                                    <FaSearch />
+                                  </span>
+                                </div>
+                              </Form.Group>
+                            </Col>
+                          </Row>
+                        </Col>
+                        <Col lg={12}>
+                          <div className="module-list">
+                            <div className="checkboxes module-switch">
+                              {switchesData.map((switchItem) => (
+                                <label
+                                  key={switchItem.id}
+                                  className="switch-label"
+                                >
+                                  <span>{switchItem.label}</span>
+                                  <Switch
+                                    onChange={() => handleChange(switchItem.id)}
+                                    checked={switchStates[switchItem.id]}
+                                  />
+                                </label>
+                              ))}
                             </div>
                           </div>
-                        </div>
-                      </Col>
-                    </Row>
+                        </Col>
+                      </Row>
+                    )}
                   </div>
                 )}
               </div>
