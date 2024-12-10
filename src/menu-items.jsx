@@ -74,6 +74,32 @@ const menuItems = {
             },
           ],
         },
+        {
+          id: "product",
+          title: "Product",
+          type: "collapse",
+          icon: "feather icon-file-text",
+          src: dashboardImg4,
+
+          children: [
+            {
+              id: "product",
+              title: "Add Product",
+              type: "item",
+              // icon: "feather icon-file-text",
+              // src: dashboardImg4,
+              url: "/product/add-products",
+            },
+            {
+              id: "product",
+              title: "Product List",
+              type: "item",
+              // icon: "feather icon-file-text",
+              // src: dashboardImg4,
+              url: "/module-preview/list-module-preview",
+            },
+          ],
+        },
         // {
         // 	id: 'auth',
         // 	title: 'Authentication',

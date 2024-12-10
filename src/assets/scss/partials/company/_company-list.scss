@@ -747,7 +747,7 @@ button[disabled] {
 }
 .checbox-size {
   display: flex !important;
-  align-items: flex-start !important;
+  align-items: center !important;
 }
 .checbox-size input[type="radio"] {
   width: 16px; /* Adjust size as needed */
@@ -1438,3 +1438,100 @@ input[type="number"] {
     color: #1a1a1a;
   }
 }
+
+.form-check-input {
+  width: 1.2em;
+  height: 1.2em;
+}
+
+// Add Product
+.row-head {
+  background: #f0faf9;
+}
+.addons {
+  h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  h5 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .websites {
+    margin-bottom: 30px;
+    .row-head {
+      h6 {
+        font-size: 15px;
+        font-weight: 600;
+        color: #444;
+        margin-bottom: 0;
+        padding: 12px 0px;
+      }
+    }
+    .row-field {
+      border-bottom: 1px solid #e9edec;
+      .data {
+        padding: 10px 0px;
+        button {
+          padding: 0.27rem 0.75rem;
+          font-size: 14px;
+          height: 2.2rem;
+          width: 2.2rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+.info-design {
+  margin-bottom: 35px;
+  h4 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 15px;
+  }
+}
+
+.table-product {
+  thead {
+    th {
+      background: #f0faf9;
+    }
+  }
+  tr {
+    td {
+      background: #fff;
+    }
+
+    &:hover {
+      background: rgba(240, 250, 249, 0.411) !important;
+      td {
+        background: rgba(240, 250, 249, 0.411) !important;
+        color: #444;
+      }
+    }
+  }
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  border: none;
+  color: #ffffff;
+  box-shadow: 0 -5px 10px 0 rgba(0, 0, 0, 0.05);
+  background: #1a776f;
+}
+
+.nav-tabs {
+  margin-bottom: 0 !important;
+}
+// .tab-content {
+//   padding-bottom: 1px;
+// }
+
+// Add Product

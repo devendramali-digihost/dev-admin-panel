@@ -13,6 +13,11 @@ export const DomainVerificationForm = () => {
     setShowSearchDomain(!showSearchDomain);
   };
 
+  const handleResetDomainVerification = () => {
+    setShowSearchDomain(false); // Hide ScratchModules div on reset
+    console.log("Reset clicked!");
+  };
+
   const buyevent = (status) => {
     setbuystatus(status);
   };

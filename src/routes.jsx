@@ -99,6 +99,11 @@ const routes = [
         path: "/module-preview/list-module-preview",
         element: lazy(() => import("./views/module-preview/ListModulePreview")),
       },
+      {
+        exact: "true",
+        path: "/product/add-products",
+        element: lazy(() => import("./views/product/AddProducts")),
+      },
     ],
   },
 ];
